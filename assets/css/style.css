@@ -791,6 +791,7 @@ body {
   border: 1px solid #287dfa;
   font-weight: 500; }
   .theme-btn:hover {
+      border-color: #287dfa;
     background-color: #fff;
     color: #287dfa; }
 

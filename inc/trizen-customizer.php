@@ -71,6 +71,54 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				),
 			)));
 
+			/*--------------------------
+			 *  Header
+			 * -------------------------*/
+			$wp_customize->add_panel('trizen_header_panel_options', array(
+				'title'    => __('Header', 'trizen'),
+				'priority' => 2,
+			));
+			/* Header Bar */
+			$wp_customize->add_section('trizen_header_options', array(
+				'title'           => __('Header Bar', 'trizen'),
+				'priority'        => 2,
+				'panel'           => 'trizen_header_panel_options',
+				'active_callback' => 'trizen_hd_bar_callback'
+			));
+			// Contact Info Heading
+			$wp_customize->add_setting('trizen_hd_bar_heading', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_hd_bar_heading', array(
+				'label'           => __('Contact Info', 'trizen'),
+				'section'         => 'trizen_header_options',
+				'settings'        => 'trizen_hd_bar_heading',
+				'type'            => 'hidden',
+			));
+			// Mobile Number
+			$wp_customize->add_setting('trizen_hd_bar_mobile_num', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_hd_bar_mobile_num', array(
+				'label'           => __('Mobile Number', 'trizen'),
+				'section'         => 'trizen_header_options',
+				'settings'        => 'trizen_hd_bar_mobile_num',
+				'type'            => 'text',
+			));
+			// Email
+			$wp_customize->add_setting('trizen_hd_bar_email', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_hd_bar_email', array(
+				'label'           => __('Email', 'trizen'),
+				'section'         => 'trizen_header_options',
+				'settings'        => 'trizen_hd_bar_email',
+				'type'            => 'text',
+			));
+
 			/*----------------------------------------
 			 * Selective Refresh
 			 * --------------------------------------*/

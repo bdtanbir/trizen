@@ -236,6 +236,11 @@ button,
 select {
 	text-transform: none;
 }
+input:focus,
+select:focus,
+button:focus {
+	outline: none;
+}
 
 /**
  * Correct the inability to style clickable types in iOS and Safari.
@@ -1006,6 +1011,26 @@ textarea {
 
 
 /*-------------------------------------------
+	 Login Register Form
+---------------------------------------------*/
+.trizen-msg-status {
+	text-align: center;
+	background: green;
+	color: var(--white_color);
+	border-radius: 4px;
+	margin-bottom: 10px;
+}
+.trizen-msg-status.loginerror {
+	background: red;
+}
+#trizen-login-form button i,
+#trizen-register-form button i {
+	animation: rotating 1s infinite linear;
+}
+
+
+
+/*-------------------------------------------
 	 Blog
 ---------------------------------------------*/
 .blog-masonry {
@@ -1034,3 +1059,13 @@ textarea {
 	max-width: 100%;
 }
 
+
+
+@keyframes rotating {
+	to {
+		transform: rotate(0);
+	}
+	from {
+		transform: rotate(-360deg);
+	}
+}
