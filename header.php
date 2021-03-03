@@ -28,17 +28,26 @@
 if(function_exists('wp_body_open')) {
 	wp_body_open();
 }
+
+$header_bar = get_theme_mod('show_header_bar', 1);
+$preloader  = get_theme_mod('show_preloader', 1);
 ?>
 
 <!-- start cssload-loader -->
-<?php //get_template_part('./layout/loader'); ?>
+<?php
+if($preloader == 1) {
+	get_template_part( './layout/loader' );
+} ?>
 <!-- end cssload-loader -->
 
 <!-- ================================
             START HEADER AREA
 ================================= -->
 <header class="header-area">
-	<?php get_template_part('template-parts/header/header-bar'); ?>
+	<?php
+    if($header_bar == 1) {
+		get_template_part( 'template-parts/header/header-bar' );
+	} ?>
 	<div class="header-menu-wrapper padding-right-100px padding-left-100px">
 		<div class="container-fluid">
 			<div class="row">

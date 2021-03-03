@@ -78,3 +78,15 @@ EOD;
 add_action( 'wp_enqueue_scripts', 'trizen_scripts' );
 
 
+function trizen_admin_script()
+{
+	wp_enqueue_style(
+		'trizen-global-css',
+		get_template_directory_uri().( '/assets/css/trizen-global.css' ),
+		time()
+	);
+
+}
+add_action('admin_enqueue_scripts', 'trizen_admin_script');
+
+

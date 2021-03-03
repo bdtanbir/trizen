@@ -1,0 +1,38 @@
+
+.customize-control-hidden .customize-control-title {
+    background: #0d233e;
+    color: #fff;
+    font-size: 18px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    cursor: text;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: .5px;
+}
+.customize-control select,
+.customize-control textarea,
+.customize-control input {
+    padding: 8px 20px 8px 20px;
+    font-size: 14px;
+    color: #0d233e;
+    border: 1px solid rgba(127, 136, 151, 0.2);
+    font-weight: 400;
+    background-color: #fff;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.customize-control select:focus,
+.customize-control textarea:focus,
+.customize-control input:focus {
+    box-shadow: none;
+    outline: none;
+    border-color: #287DFA;
+}
+

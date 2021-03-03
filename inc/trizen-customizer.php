@@ -72,6 +72,51 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 			)));
 
 			/*--------------------------
+			 *  General Options
+			 * -------------------------*/
+			$wp_customize->add_section('trizen_general_options', array(
+				'title'           => __('General', 'trizen'),
+				'priority'        => 1,
+			));
+			/* Show Header Bar */
+			$wp_customize->add_setting('show_header_bar', array(
+				'default'           => true,
+				'transport'         => 'refresh',
+				'sanitize_callback' => array($this, 'sanitize_checkbox'),
+			));
+			$wp_customize->add_control('show_header_bar', array(
+				'label'    => __('Show Header Bar', 'trizen'),
+				'section'  => 'trizen_general_options',
+				'settings' => 'show_header_bar',
+				'type'     => 'checkbox',
+			));
+			/* Show PreLoader */
+			$wp_customize->add_setting('show_preloader', array(
+				'default'           => true,
+				'transport'         => 'refresh',
+				'sanitize_callback' => array($this, 'sanitize_checkbox'),
+			));
+			$wp_customize->add_control('show_preloader', array(
+				'label'    => __('Show PreLoader', 'trizen'),
+				'section'  => 'trizen_general_options',
+				'settings' => 'show_preloader',
+				'type'     => 'checkbox',
+			));
+			/* Show Static InfoBox */
+			$wp_customize->add_setting('show_static_infobox', array(
+				'default'           => false,
+				'transport'         => 'refresh',
+				'sanitize_callback' => array($this, 'sanitize_checkbox'),
+			));
+			$wp_customize->add_control('show_static_infobox', array(
+				'label'    => __('Show Static Page\'s InfoBox', 'trizen'),
+				'section'  => 'trizen_general_options',
+				'settings' => 'show_static_infobox',
+				'type'     => 'checkbox',
+			));
+
+
+			/*--------------------------
 			 *  Header
 			 * -------------------------*/
 			$wp_customize->add_panel('trizen_header_panel_options', array(
@@ -83,7 +128,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'title'           => __('Header Bar', 'trizen'),
 				'priority'        => 2,
 				'panel'           => 'trizen_header_panel_options',
-				'active_callback' => 'trizen_hd_bar_callback'
+				'active_callback' => 'trizen_show_header_bar_callback'
 			));
 			// Contact Info Heading
 			$wp_customize->add_setting('trizen_hd_bar_heading', array(
@@ -119,6 +164,187 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'type'            => 'text',
 			));
 
+
+			/*--------------------------
+			 *  Footer
+			 * -------------------------*/
+			$wp_customize->add_panel('trizen_footer_panel_options', array(
+				'title'    => __('Footer', 'trizen'),
+				'priority' => 200,
+			));
+			/* Static InfoBox */
+			$wp_customize->add_section('trizen_footer_stc_pg_options', array(
+				'title'           => __('Static InfoBox', 'trizen'),
+				'priority'        => 2,
+				'panel'           => 'trizen_footer_panel_options',
+				'active_callback' => 'trizen_show_static_pg_infobox_callback'
+			));
+			/* Box 1 */
+			$wp_customize->add_setting('trizen_stc_pg_infobox_hd', array(
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_stc_pg_infobox_hd', array(
+				'label'           => __('Box 1', 'trizen'),
+				'section'         => 'trizen_footer_stc_pg_options',
+				'settings'        => 'trizen_stc_pg_infobox_hd',
+				'type'            => 'hidden',
+			));
+			// Box 1 Title
+			$wp_customize->add_setting('trizen_stc_pg_infobox_1_title', array(
+				'transform'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_stc_pg_infobox_1_title', array(
+				'label'           => __('Title', 'trizen'),
+				'section'         => 'trizen_footer_stc_pg_options',
+				'settings'        => 'trizen_stc_pg_infobox_1_title',
+				'type'            => 'text',
+			));
+			// Box 1 Content
+			$wp_customize->add_setting('trizen_stc_pg_infobox_1_content', array(
+				'transform'         => 'postMessage',
+				'sanitize_callback' => 'trizen_sanitize_textarea',
+			));
+			$wp_customize->add_control('trizen_stc_pg_infobox_1_content', array(
+				'label'           => __('Content', 'trizen'),
+				'section'         => 'trizen_footer_stc_pg_options',
+				'settings'        => 'trizen_stc_pg_infobox_1_content',
+				'type'            => 'textarea',
+			));
+			// Box 1 box URL
+			$wp_customize->add_setting('trizen_stc_pg_infobox_1_bx_url', array(
+				'default'           => __('#', 'trizen'),
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_stc_pg_infobox_1_bx_url', array(
+				'label'    => __('Box Link', 'trizen'),
+				'section'  => 'trizen_footer_stc_pg_options',
+				'settings' => 'trizen_stc_pg_infobox_1_bx_url',
+				'type'     => 'text',
+			));
+			/* -------------------------------------------------------------- */
+			/* Box 2 */
+			$wp_customize->add_setting('trizen_stc_pg_infobox_hd2', array(
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_stc_pg_infobox_hd2', array(
+				'label'           => __('Box 2', 'trizen'),
+				'section'         => 'trizen_footer_stc_pg_options',
+				'settings'        => 'trizen_stc_pg_infobox_hd2',
+				'type'            => 'hidden',
+			));
+			// Box 2 Title
+			$wp_customize->add_setting('trizen_stc_pg_infobox_2_title', array(
+				'transform'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_stc_pg_infobox_2_title', array(
+				'label'           => __('Title', 'trizen'),
+				'section'         => 'trizen_footer_stc_pg_options',
+				'settings'        => 'trizen_stc_pg_infobox_2_title',
+				'type'            => 'text',
+			));
+			// Box 2 Content
+			$wp_customize->add_setting('trizen_stc_pg_infobox_2_content', array(
+				'transform'         => 'postMessage',
+				'sanitize_callback' => 'trizen_sanitize_textarea',
+			));
+			$wp_customize->add_control('trizen_stc_pg_infobox_2_content', array(
+				'label'           => __('Content', 'trizen'),
+				'section'         => 'trizen_footer_stc_pg_options',
+				'settings'        => 'trizen_stc_pg_infobox_2_content',
+				'type'            => 'textarea',
+			));
+			// Box 2 box URL
+			$wp_customize->add_setting('trizen_stc_pg_infobox_2_bx_url', array(
+				'default'           => __('#', 'trizen'),
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_stc_pg_infobox_2_bx_url', array(
+				'label'    => __('Box Link', 'trizen'),
+				'section'  => 'trizen_footer_stc_pg_options',
+				'settings' => 'trizen_stc_pg_infobox_2_bx_url',
+				'type'     => 'text',
+			));
+			/* -------------------------------------------------------------- */
+			/* Box 3 */
+			$wp_customize->add_setting('trizen_stc_pg_infobox_hd3', array(
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_stc_pg_infobox_hd3', array(
+				'label'           => __('Box 3', 'trizen'),
+				'section'         => 'trizen_footer_stc_pg_options',
+				'settings'        => 'trizen_stc_pg_infobox_hd3',
+				'type'            => 'hidden',
+			));
+			// Box 3 Title
+			$wp_customize->add_setting('trizen_stc_pg_infobox_3_title', array(
+				'transform'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_stc_pg_infobox_3_title', array(
+				'label'           => __('Title', 'trizen'),
+				'section'         => 'trizen_footer_stc_pg_options',
+				'settings'        => 'trizen_stc_pg_infobox_3_title',
+				'type'            => 'text',
+			));
+			// Box 3 Content
+			$wp_customize->add_setting('trizen_stc_pg_infobox_3_content', array(
+				'transform'         => 'postMessage',
+				'sanitize_callback' => 'trizen_sanitize_textarea',
+			));
+			$wp_customize->add_control('trizen_stc_pg_infobox_3_content', array(
+				'label'           => __('Content', 'trizen'),
+				'section'         => 'trizen_footer_stc_pg_options',
+				'settings'        => 'trizen_stc_pg_infobox_3_content',
+				'type'            => 'textarea',
+			));
+			// Box 3 box URL
+			$wp_customize->add_setting('trizen_stc_pg_infobox_3_bx_url', array(
+				'default'           => __('#', 'trizen'),
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_stc_pg_infobox_3_bx_url', array(
+				'label'    => __('Box Link', 'trizen'),
+				'section'  => 'trizen_footer_stc_pg_options',
+				'settings' => 'trizen_stc_pg_infobox_3_bx_url',
+				'type'     => 'text',
+			));
+
+			/* CTA */
+			$wp_customize->add_section('trizen_footer_stc_cta_options', array(
+				'title'           => __('CTA', 'trizen'),
+				'priority'        => 3,
+				'panel'           => 'trizen_footer_panel_options',
+			));
+			// CTA Title
+			$wp_customize->add_setting('trizen_stc_cta_title', array(
+				'default'           => __('#', 'trizen'),
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_stc_cta_title', array(
+				'label'    => __('Title', 'trizen'),
+				'section'  => 'trizen_footer_stc_cta_options',
+				'settings' => 'trizen_stc_cta_title',
+				'type'     => 'text',
+			));
+			// CTA Shortcode
+			$wp_customize->add_setting('trizen_stc_cta_shortcode', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_stc_cta_shortcode', array(
+				'label'       => __('Shortcode', 'trizen'),
+				'section'     => 'trizen_footer_stc_cta_options',
+				'settings'    => 'trizen_stc_cta_shortcode',
+				'type'        => 'textarea',
+				'description' => __('Enter mailchimp shortcode here. <strong>[shortcode]</strong>', 'trizen')
+			));
+
 			/*----------------------------------------
 			 * Selective Refresh
 			 * --------------------------------------*/
@@ -130,6 +356,24 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				$wp_customize->selective_refresh->add_partial('blogdescription', array(
 					'selector'        => '.site-description',
 					'render_callback' => 'trizen_customize_partial_blogdescription',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_stc_pg_infobox_1_title', array(
+					'selector'        => '.info-area .icon-box .info__title',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_stc_pg_infobox_1_content', array(
+					'selector'        => '.info-area .icon-box .info__desc',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_stc_pg_infobox_2_title', array(
+					'selector'        => '.info-area .icon-box .info__title',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_stc_pg_infobox_2_content', array(
+					'selector'        => '.info-area .icon-box .info__desc',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_stc_pg_infobox_3_title', array(
+					'selector'        => '.info-area .icon-box .info__title',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_stc_pg_infobox_3_content', array(
+					'selector'        => '.info-area .icon-box .info__desc',
 				));
 			}
 
@@ -241,12 +485,21 @@ if( ! function_exists( 'trizen_sanitize_textarea' ) ) {
 
 
 /* callback functions */
-/*if ( ! function_exists( 'trizen_hd_bar_user_action_callback' ) ) {
-	function trizen_hd_bar_user_action_callback( $control ) {
-		if ( $control->manager->get_setting( 'trizen_enable_hd_user_action' )->value() == 1 ) {
+if ( ! function_exists( 'trizen_show_header_bar_callback' ) ) {
+	function trizen_show_header_bar_callback( $control ) {
+		if ( $control->manager->get_setting( 'show_header_bar' )->value() == 1 ) {
 			return true;
 		} else {
 			return false;
 		}
 	}
-}*/
+}
+if ( ! function_exists( 'trizen_show_static_pg_infobox_callback' ) ) {
+	function trizen_show_static_pg_infobox_callback( $control ) {
+		if ( $control->manager->get_setting( 'show_static_infobox' )->value() == 1 ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
