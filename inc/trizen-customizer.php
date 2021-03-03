@@ -126,6 +126,18 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'settings' => 'show_static_footer_cta',
 				'type'     => 'checkbox',
 			));
+			/* Show Footer Left Widget */
+			$wp_customize->add_setting('show_footer_lf_widget', array(
+				'default'           => false,
+				'transport'         => 'refresh',
+				'sanitize_callback' => array($this, 'sanitize_checkbox'),
+			));
+			$wp_customize->add_control('show_footer_lf_widget', array(
+				'label'    => __('Show Footer Left Widget', 'trizen'),
+				'section'  => 'trizen_general_options',
+				'settings' => 'show_footer_lf_widget',
+				'type'     => 'checkbox',
+			));
 
 
 			/*--------------------------
@@ -355,6 +367,58 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'settings'    => 'trizen_stc_cta_shortcode',
 				'type'        => 'textarea',
 				'description' => __('Enter mailchimp shortcode here. <strong>[shortcode]</strong>', 'trizen')
+			));
+
+
+			/* Footer Left Widget */
+			$wp_customize->add_section('trizen_footer_lf_widget_options', array(
+				'title'           => __('Footer Left Widget', 'trizen'),
+				'priority'        => 4,
+				'panel'           => 'trizen_footer_panel_options',
+			));
+			// Footer Left Widget Content
+			$wp_customize->add_setting('trizen_foot_lf_widget_content', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'trizen_sanitize_textarea',
+			));
+			$wp_customize->add_control('trizen_foot_lf_widget_content', array(
+				'label'    => __('Content', 'trizen'),
+				'section'  => 'trizen_footer_lf_widget_options',
+				'settings' => 'trizen_foot_lf_widget_content',
+				'type'     => 'textarea',
+			));
+			// Footer Left Widget Address
+			$wp_customize->add_setting('trizen_foot_lf_widget_address', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'trizen_sanitize_textarea',
+			));
+			$wp_customize->add_control('trizen_foot_lf_widget_address', array(
+				'label'    => __('Address', 'trizen'),
+				'section'  => 'trizen_footer_lf_widget_options',
+				'settings' => 'trizen_foot_lf_widget_address',
+				'type'     => 'textarea',
+			));
+			// Footer Left Widget Number
+			$wp_customize->add_setting('trizen_foot_lf_widget_pn_num', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_foot_lf_widget_pn_num', array(
+				'label'    => __('Phone Number', 'trizen'),
+				'section'  => 'trizen_footer_lf_widget_options',
+				'settings' => 'trizen_foot_lf_widget_pn_num',
+				'type'     => 'text',
+			));
+			// Footer Left Widget Email
+			$wp_customize->add_setting('trizen_foot_lf_widget_email', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_foot_lf_widget_email', array(
+				'label'    => __('Email', 'trizen'),
+				'section'  => 'trizen_footer_lf_widget_options',
+				'settings' => 'trizen_foot_lf_widget_email',
+				'type'     => 'text',
 			));
 
 			/*----------------------------------------

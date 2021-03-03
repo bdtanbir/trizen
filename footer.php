@@ -9,6 +9,7 @@
  * @package trizen
  */
 
+$footer_lf_widget = get_theme_mod('show_footer_lf_widget');
 ?>
 
 
@@ -18,20 +19,12 @@
 <section class="footer-area section-bg padding-top-100px padding-bottom-30px">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 responsive-column">
-                <div class="footer-item">
-                    <div class="footer-logo padding-bottom-30px">
-                        <a href="index.html" class="foot__logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="logo"></a>
-                    </div><!-- end logo -->
-                    <p class="footer__desc">Morbi convallis bibendum urna ut viverra. Maecenas consequat</p>
-                    <ul class="list-items pt-3">
-                        <li>3015 Grand Ave, Coconut Grove,<br> Cerrick Way, FL 12345</li>
-                        <li>+123-456-789</li>
-                        <li><a href="#">trizen@yourwebsite.com</a></li>
-                    </ul>
-                </div><!-- end footer-item -->
-            </div><!-- end col-lg-3 -->
-            <div class="col-lg-3 responsive-column">
+            <?php
+            if($footer_lf_widget == 1) {
+	            get_template_part( 'template-parts/footer/footer-left-widget' );
+            }
+            ?>
+            <!--<div class="col-lg-3 responsive-column">
                 <div class="footer-item">
                     <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Company</h4>
                     <ul class="list-items list--items">
@@ -42,8 +35,8 @@
                         <li><a href="contact.html">Support</a></li>
                         <li><a href="#">Advertising</a></li>
                     </ul>
-                </div><!-- end footer-item -->
-            </div><!-- end col-lg-3 -->
+                </div>
+            </div>
             <div class="col-lg-3 responsive-column">
                 <div class="footer-item">
                     <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Other Services</h4>
@@ -55,8 +48,8 @@
                         <li><a href="#">All Hotels</a></li>
                         <li><a href="#">TV Ads</a></li>
                     </ul>
-                </div><!-- end footer-item -->
-            </div><!-- end col-lg-3 -->
+                </div>
+            </div>
             <div class="col-lg-3 responsive-column">
                 <div class="footer-item">
                     <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Other Links</h4>
@@ -68,9 +61,9 @@
                         <li><a href="#">Create an Account</a></li>
                         <li><a href="#">Trizen Reviews</a></li>
                     </ul>
-                </div><!-- end footer-item -->
-            </div><!-- end col-lg-3 -->
-        </div><!-- end row -->
+                </div>
+            </div>-->
+        </div>
         <div class="row align-items-center">
             <div class="col-lg-8">
                 <div class="term-box footer-item">
@@ -80,7 +73,7 @@
                         <li><a href="#">Help Center</a></li>
                     </ul>
                 </div>
-            </div><!-- end col-lg-8 -->
+            </div>
             <div class="col-lg-4">
                 <div class="footer-social-box text-right">
                     <ul class="social-profile">
@@ -90,9 +83,9 @@
                         <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
                     </ul>
                 </div>
-            </div><!-- end col-lg-4 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
+            </div>
+        </div>
+    </div>
     <div class="section-block mt-4"></div>
     <div class="container">
         <div class="row align-items-center">
@@ -102,17 +95,17 @@
                         &copy; Copyright Trizen 2020. Made with
                         <span class="la la-heart"></span> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
                     </p>
-                </div><!-- end copy-right -->
-            </div><!-- end col-lg-7 -->
+                </div>
+            </div>
             <div class="col-lg-5">
                 <div class="copy-right-content d-flex align-items-center justify-content-end padding-top-30px">
                     <h3 class="title font-size-15 pr-2">We Accept</h3>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/payment-img.png" alt="">
-                </div><!-- end copy-right-content -->
-            </div><!-- end col-lg-5 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end footer-area -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- ================================
        START FOOTER AREA
 ================================= -->
