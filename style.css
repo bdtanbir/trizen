@@ -53,6 +53,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
+:root {
+	--primary_color: #287dfa;
+	--secondary_color: #0d233e;
+	--white_color: #ffffff;
+}
+
 
 /* Normalize
 --------------------------------------------- */
@@ -239,6 +245,8 @@ button,
 [type="reset"],
 [type="submit"] {
 	-webkit-appearance: button;
+	padding-top: 0;
+	padding-bottom: 0;
 }
 
 /**
@@ -402,10 +410,10 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 1rem;
-	line-height: 1.5;
+	font-size: 16px;
+	line-height: 28px;
+	font-family: Roboto,sans-serif;
+	color: #5d646d;
 }
 
 h1,
@@ -418,7 +426,7 @@ h6 {
 }
 
 p {
-	margin-bottom: 1.5em;
+	/*margin-bottom: 1.5em;*/
 }
 
 dfn,
@@ -482,25 +490,6 @@ hr {
 	margin-bottom: 1.5em;
 }
 
-ul,
-ol {
-	margin: 0 0 1.5em 3em;
-}
-
-ul {
-	list-style: disc;
-}
-
-ol {
-	list-style: decimal;
-}
-
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
-}
-
 dt {
 	font-weight: 700;
 }
@@ -553,6 +542,44 @@ a:focus {
 a:hover,
 a:active {
 	outline: 0;
+}
+
+
+/* Pagination */
+.pagination {
+	margin-top: 30px;
+}
+.pagination .nav-links {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+.pagination .nav-links > * {
+	color: var(--primary_color);
+	margin-right: 5px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	border: none;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+	background-color: rgba(40,125,250,.07);
+	width: 34px;
+	line-height: 34px;
+	padding: 0;
+	text-align: center;
+	height: 34px;
+	position: relative;
+	display: block;
+}
+.pagination .nav-links > *:hover,
+.pagination .nav-links .current {
+	background: var(--primary_color);
+	color: var(--white_color);
 }
 
 /* Forms
@@ -967,3 +994,43 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+
+/*-------------------------------------------
+	 Blog
+---------------------------------------------*/
+.site-name {
+	color: var(--secondary_color);
+}
+
+
+
+/*-------------------------------------------
+	 Blog
+---------------------------------------------*/
+.blog-masonry {
+	display: block;
+	width: 100%;
+}
+.blog-card .post-categories {
+	padding-bottom: 25px;
+}
+.blog-card .post-categories a {
+	position: relative;
+	top: 0;
+	left: 0;
+	color: var(--secondary_color);
+}
+.author-content .author-img img {
+	background-color: inherit;
+}
+
+
+/*-------------------------------------------
+	 Footer
+---------------------------------------------*/
+.footer-area img {
+	width: auto;
+	max-width: 100%;
+}
+
