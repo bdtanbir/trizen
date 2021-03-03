@@ -114,6 +114,18 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'settings' => 'show_static_infobox',
 				'type'     => 'checkbox',
 			));
+			/* Show Static CTA */
+			$wp_customize->add_setting('show_static_footer_cta', array(
+				'default'           => false,
+				'transport'         => 'refresh',
+				'sanitize_callback' => array($this, 'sanitize_checkbox'),
+			));
+			$wp_customize->add_control('show_static_footer_cta', array(
+				'label'    => __('Show Static Footer CTA', 'trizen'),
+				'section'  => 'trizen_general_options',
+				'settings' => 'show_static_footer_cta',
+				'type'     => 'checkbox',
+			));
 
 
 			/*--------------------------
@@ -319,10 +331,10 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'title'           => __('CTA', 'trizen'),
 				'priority'        => 3,
 				'panel'           => 'trizen_footer_panel_options',
+				'active_callback' => 'trizen_show_static_pg_cta_callback',
 			));
 			// CTA Title
 			$wp_customize->add_setting('trizen_stc_cta_title', array(
-				'default'           => __('#', 'trizen'),
 				'transport'         => 'refresh',
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
@@ -497,6 +509,15 @@ if ( ! function_exists( 'trizen_show_header_bar_callback' ) ) {
 if ( ! function_exists( 'trizen_show_static_pg_infobox_callback' ) ) {
 	function trizen_show_static_pg_infobox_callback( $control ) {
 		if ( $control->manager->get_setting( 'show_static_infobox' )->value() == 1 ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+if ( ! function_exists( 'trizen_show_static_pg_cta_callback' ) ) {
+	function trizen_show_static_pg_cta_callback( $control ) {
+		if ( $control->manager->get_setting( 'show_static_footer_cta' )->value() == 1 ) {
 			return true;
 		} else {
 			return false;
