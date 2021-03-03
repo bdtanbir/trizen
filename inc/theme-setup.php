@@ -118,13 +118,13 @@ add_action( 'after_setup_theme', 'trizen_content_width', 0 );
 function trizen_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'trizen' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'trizen' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'name'          => esc_html__( 'Footer Widgets', 'trizen' ),
+			'id'            => 'footer-widgets',
+			'description'   => esc_html__( 'Add Footer widgets here.', 'trizen' ),
+			'before_widget' => '<div class="col-lg-3 responsive-column"><div id="%1$s" class="footer-item %2$s">',
+			'after_widget'  => '</div></div>',
+			'before_title'  => '<h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">',
+			'after_title'   => '</h4>',
 		)
 	);
 }

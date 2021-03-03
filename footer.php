@@ -16,54 +16,20 @@ $footer_lf_widget = get_theme_mod('show_footer_lf_widget');
 <!-- ================================
        START FOOTER AREA
 ================================= -->
+
 <section class="footer-area section-bg padding-top-100px padding-bottom-30px">
     <div class="container">
-        <div class="row">
-            <?php
-            if($footer_lf_widget == 1) {
-	            get_template_part( 'template-parts/footer/footer-left-widget' );
-            }
-            ?>
-            <!--<div class="col-lg-3 responsive-column">
-                <div class="footer-item">
-                    <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Company</h4>
-                    <ul class="list-items list--items">
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="blog-grid.html">News</a></li>
-                        <li><a href="contact.html">Support</a></li>
-                        <li><a href="#">Advertising</a></li>
-                    </ul>
-                </div>
+        <?php if(is_active_sidebar('footer-widgets') || $footer_lf_widget == 1) { ?>
+            <div class="row">
+                <?php
+                    if($footer_lf_widget == 1) {
+                        get_template_part( 'template-parts/footer/footer-left-widget' );
+                    }
+
+                    dynamic_sidebar('footer-widgets');
+                ?>
             </div>
-            <div class="col-lg-3 responsive-column">
-                <div class="footer-item">
-                    <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Other Services</h4>
-                    <ul class="list-items list--items">
-                        <li><a href="#">Investor Relations</a></li>
-                        <li><a href="#">Trizen.com Rewards</a></li>
-                        <li><a href="#">Partners</a></li>
-                        <li><a href="#">List My Hotel</a></li>
-                        <li><a href="#">All Hotels</a></li>
-                        <li><a href="#">TV Ads</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 responsive-column">
-                <div class="footer-item">
-                    <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Other Links</h4>
-                    <ul class="list-items list--items">
-                        <li><a href="#">USA Vacation Packages</a></li>
-                        <li><a href="#">USA Flights</a></li>
-                        <li><a href="#">USA Hotels</a></li>
-                        <li><a href="#">USA Car Hire</a></li>
-                        <li><a href="#">Create an Account</a></li>
-                        <li><a href="#">Trizen Reviews</a></li>
-                    </ul>
-                </div>
-            </div>-->
-        </div>
+        <?php } ?>
         <div class="row align-items-center">
             <div class="col-lg-8">
                 <div class="term-box footer-item">
