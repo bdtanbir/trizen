@@ -421,6 +421,79 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'type'     => 'text',
 			));
 
+			/* Footer Security Links */
+			$wp_customize->add_section('trizen_footer_security_links_options', array(
+				'title'           => __('Footer Security Links', 'trizen'),
+				'priority'        => 5,
+				'panel'           => 'trizen_footer_panel_options',
+			));
+			// Footer Security Terms & Condition
+			$wp_customize->add_setting('trizen_foot_security_terms_title', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_foot_security_terms_title', array(
+				'label'    => __('Terms Title', 'trizen'),
+				'section'  => 'trizen_footer_security_links_options',
+				'settings' => 'trizen_foot_security_terms_title',
+				'type'     => 'text',
+			));
+			// Footer Security Terms & Condition URL
+			$wp_customize->add_setting('trizen_foot_security_terms_url', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_foot_security_terms_url', array(
+				'label'    => __('Terms URL', 'trizen'),
+				'section'  => 'trizen_footer_security_links_options',
+				'settings' => 'trizen_foot_security_terms_url',
+				'type'     => 'text',
+			));
+			// Footer Security Privacy
+			$wp_customize->add_setting('trizen_foot_security_privacy_title', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_foot_security_privacy_title', array(
+				'label'    => __('Privacy Title', 'trizen'),
+				'section'  => 'trizen_footer_security_links_options',
+				'settings' => 'trizen_foot_security_privacy_title',
+				'type'     => 'text',
+			));
+			// Footer Security Privacy URL
+			$wp_customize->add_setting('trizen_foot_security_privacy_url', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_foot_security_privacy_url', array(
+				'label'    => __('Privacy URL', 'trizen'),
+				'section'  => 'trizen_footer_security_links_options',
+				'settings' => 'trizen_foot_security_privacy_url',
+				'type'     => 'text',
+			));
+			// Footer Security Privacy
+			$wp_customize->add_setting('trizen_foot_security_help_title', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_foot_security_help_title', array(
+				'label'    => __('Help Title', 'trizen'),
+				'section'  => 'trizen_footer_security_links_options',
+				'settings' => 'trizen_foot_security_help_title',
+				'type'     => 'text',
+			));
+			// Footer Security Privacy URL
+			$wp_customize->add_setting('trizen_foot_security_help_url', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_foot_security_help_url', array(
+				'label'    => __('Help URL', 'trizen'),
+				'section'  => 'trizen_footer_security_links_options',
+				'settings' => 'trizen_foot_security_help_url',
+				'type'     => 'text',
+			));
+
 			/*----------------------------------------
 			 * Selective Refresh
 			 * --------------------------------------*/
@@ -450,6 +523,15 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				));
 				$wp_customize->selective_refresh->add_partial('trizen_stc_pg_infobox_3_content', array(
 					'selector'        => '.info-area .icon-box .info__desc',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_stc_cta_title', array(
+					'selector'        => '.subscriber-area .section-heading h2',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_stc_cta_shortcode', array(
+					'selector'        => '.subscriber-area .subscriber-box .contact-form-action',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_foot_lf_widget_content', array(
+					'selector'        => '.footer-area .footer-item .footer__desc',
 				));
 			}
 

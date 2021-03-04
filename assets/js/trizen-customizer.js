@@ -49,6 +49,21 @@
 			$( '.info-area .icon-box .info__desc' ).text( to );
 		} );
 	} );
+	wp.customize( 'trizen_stc_cta_title', function( value ) {
+		value.bind( function( to ) {
+			$( '.subscriber-area .section-heading h2' ).text( to );
+		} );
+	} );
+	wp.customize( 'trizen_stc_cta_shortcode', function( value ) {
+		value.bind( function( to ) {
+			$( '.subscriber-area .subscriber-box .contact-form-action' ).text( to );
+		} );
+	} );
+	wp.customize( 'trizen_foot_lf_widget_content', function( value ) {
+		value.bind( function( to ) {
+			$( '.footer-area .footer-item .footer__desc' ).text( to );
+		} );
+	} );
 
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {

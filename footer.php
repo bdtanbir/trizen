@@ -10,6 +10,13 @@
  */
 
 $footer_lf_widget = get_theme_mod('show_footer_lf_widget');
+
+$footer_security_terms_title = get_theme_mod('trizen_foot_security_terms_title');
+$footer_security_terms_url  = get_theme_mod('trizen_foot_security_terms_url');
+$footer_security_privacy_title  = get_theme_mod('trizen_foot_security_privacy_title');
+$footer_security_privacy_url  = get_theme_mod('trizen_foot_security_privacy_url');
+$footer_security_help_title  = get_theme_mod('trizen_foot_security_help_title');
+$footer_security_help_url  = get_theme_mod('trizen_foot_security_help_url');
 ?>
 
 
@@ -34,9 +41,23 @@ $footer_lf_widget = get_theme_mod('show_footer_lf_widget');
             <div class="col-lg-8">
                 <div class="term-box footer-item">
                     <ul class="list-items list--items d-flex align-items-center">
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Help Center</a></li>
+                        <?php if(!empty($footer_security_terms_title)) { ?>
+                            <li>
+                                <a href="<?php echo esc_url($footer_security_terms_url); ?>"><?php echo esc_html($footer_security_terms_title); ?></a>
+                            </li>
+                        <?php } if(!empty($footer_security_privacy_title)) { ?>
+                            <li>
+                                <a href="<?php echo esc_url($footer_security_privacy_url); ?>">
+                                    <?php echo esc_html($footer_security_privacy_title); ?>
+                                </a>
+                            </li>
+                        <?php } if(!empty($footer_security_help_title)) { ?>
+                            <li>
+                                <a href="<?php echo esc_url($footer_security_help_url); ?>">
+                                    <?php echo esc_html($footer_security_help_title); ?>
+                                </a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
