@@ -74,6 +74,16 @@
 			$( '.header-right-action .user-login-btn' ).text( to );
 		} );
 	} );
+	wp.customize( 'trizen_hd_user_action_logout_title', function( value ) {
+		value.bind( function( to ) {
+			$( '.header-right-action .user-logout-btn' ).text( to );
+		} );
+	} );
+	wp.customize( 'trizen_hd_user_action_signup_title', function( value ) {
+		value.bind( function( to ) {
+			$( '.header-right-action .user-signup-btn' ).text( to );
+		} );
+	} );
 
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {

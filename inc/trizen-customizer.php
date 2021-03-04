@@ -214,12 +214,36 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 			$wp_customize->add_setting('trizen_hd_user_action_login_title', array(
 				'default'           => __('Login', 'trizen'),
 				'transport'         => 'refresh',
-				'sanitize_callback' => 'wp_filter_nohtml_kses',
+				'sanitize_callback' => 'trizen_sanitize_textarea',
 			));
 			$wp_customize->add_control('trizen_hd_user_action_login_title', array(
 				'label'           => __('Login Title', 'trizen'),
 				'section'         => 'trizen_header_options',
 				'settings'        => 'trizen_hd_user_action_login_title',
+				'type'            => 'text',
+			));
+			// User Action: Logout Title
+			$wp_customize->add_setting('trizen_hd_user_action_logout_title', array(
+				'default'           => __('Logout', 'trizen'),
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'trizen_sanitize_textarea',
+			));
+			$wp_customize->add_control('trizen_hd_user_action_logout_title', array(
+				'label'           => __('Logout Title', 'trizen'),
+				'section'         => 'trizen_header_options',
+				'settings'        => 'trizen_hd_user_action_logout_title',
+				'type'            => 'text',
+			));
+			// User Action: SignUp Title
+			$wp_customize->add_setting('trizen_hd_user_action_signup_title', array(
+				'default'           => __('Sign Up', 'trizen'),
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'trizen_sanitize_textarea',
+			));
+			$wp_customize->add_control('trizen_hd_user_action_signup_title', array(
+				'label'           => __('Sign Up Title', 'trizen'),
+				'section'         => 'trizen_header_options',
+				'settings'        => 'trizen_hd_user_action_signup_title',
 				'type'            => 'text',
 			));
 
@@ -851,6 +875,12 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				));
 				$wp_customize->selective_refresh->add_partial('trizen_hd_user_action_login_title', array(
 					'selector'        => '.header-right-action .user-login-btn',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_hd_user_action_logout_title', array(
+					'selector'        => '.header-right-action .user-logout-btn',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_hd_user_action_signup_title', array(
+					'selector'        => '.header-right-action .user-signup-btn',
 				));
 			}
 
