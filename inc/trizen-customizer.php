@@ -246,6 +246,38 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'settings'        => 'trizen_hd_user_action_signup_title',
 				'type'            => 'text',
 			));
+			/*---------------------
+				Header Menu Bar
+			-----------------------*/
+			$wp_customize->add_section('trizen_header_menu_options', array(
+				'title'           => __('Header Menu Bar', 'trizen'),
+				'priority'        => 4,
+				'panel'           => 'trizen_header_panel_options',
+			));
+			// Header Menu Bar Button
+			$wp_customize->add_setting('trizen_hd_menu_bar_btn_text', array(
+				'default'           => __('Become Local Expert', 'trizen'),
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_hd_menu_bar_btn_text', array(
+				'label'           => __('Header Button', 'trizen'),
+				'section'         => 'trizen_header_menu_options',
+				'settings'        => 'trizen_hd_menu_bar_btn_text',
+				'type'            => 'text',
+			));
+			// Header Menu Bar Button URL
+			$wp_customize->add_setting('trizen_hd_menu_bar_btn_url', array(
+				'default'           => __('#', 'trizen'),
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_hd_menu_bar_btn_url', array(
+				'label'           => __('Header Button URL', 'trizen'),
+				'section'         => 'trizen_header_menu_options',
+				'settings'        => 'trizen_hd_menu_bar_btn_url',
+				'type'            => 'text',
+			));
 
 
 			/*--------------------------
@@ -881,6 +913,9 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				));
 				$wp_customize->selective_refresh->add_partial('trizen_hd_user_action_signup_title', array(
 					'selector'        => '.header-right-action .user-signup-btn',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_hd_menu_bar_btn_text', array(
+					'selector'        => '.menu-wrapper .nav-btn',
 				));
 			}
 
