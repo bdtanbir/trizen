@@ -2861,46 +2861,6 @@ body {
     .breadcrumb-area .image-box {
       display: none; } }
 
-/*==== bread-bg ======*/
-.bread-bg {
-  background-image: url("../images/bread-bg.jpg"); }
-
-/*==== bread-bg-2 ======*/
-.bread-bg-2 {
-  background-image: url("../images/bread-bg2.jpg"); }
-
-/*==== bread-bg-3 ======*/
-.bread-bg-3 {
-  background-image: url("../images/bread-bg3.jpg"); }
-
-/*==== bread-bg-4 ======*/
-.bread-bg-4 {
-  background-image: url("../images/bread-bg4.jpg"); }
-
-/*==== bread-bg-5 ======*/
-.bread-bg-5 {
-  background-image: url("../images/team-cta-bg.jpg"); }
-
-/*==== bread-bg-6 ======*/
-.bread-bg-6 {
-  background-image: url("../images/bread-bg5.jpg"); }
-
-/*==== bread-bg-7 ======*/
-.bread-bg-7 {
-  background-image: url("../images/bread-bg6.jpg"); }
-
-/*==== bread-bg-8 ======*/
-.bread-bg-8 {
-  background-image: url("../images/bread-bg7.jpg"); }
-
-/*==== bread-bg-9 ======*/
-.bread-bg-9 {
-  background-image: url("../images/bread-bg8.jpg"); }
-
-/*==== bread-bg-10 ======*/
-.bread-bg-10 {
-  background-image: url("../images/bread-bg9.jpg"); }
-
 /*==== bread-svg ======*/
 .bread-svg {
   position: absolute;

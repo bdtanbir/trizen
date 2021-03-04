@@ -1,9 +1,17 @@
+<?php
+    $breadcrumb_shape = get_theme_mod('show_breadcrumb_overlay_shape', 1);
 
+if($breadcrumb_shape == 1) {
+    $breadcrumb_shape_show = '';
+} else {
+	$breadcrumb_shape_show = 'hide-before';
+}
+?>
 
 <!-- ================================
     START BREADCRUMB AREA
 ================================= -->
-<section class="breadcrumb-area bread-bg-9">
+<section class="breadcrumb-area bread-bg-9 static-breadcrumb <?php echo esc_attr($breadcrumb_shape_show); ?>">
 	<div class="breadcrumb-wrap">
 		<div class="container">
 			<div class="row align-items-center">
@@ -11,7 +19,7 @@
 					<div class="col-lg-6">
 						<div class="breadcrumb-content">
 							<div class="section-heading">
-								<h2 class="sec__title text-white"><?php echo trizen_breadcrumb_title() ?></h2>
+								<h2 class="sec__title"><?php echo trizen_breadcrumb_title() ?></h2>
 							</div>
 						</div>
 					</div>

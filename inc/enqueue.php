@@ -40,6 +40,56 @@ EOD;
 
 
 
+	$breadcrumb_bg = get_theme_mod('trizen_breadcrumb1_bg');
+	$breadcrumb1_pt = get_theme_mod('trizen_breadcrumb1_wrapper_pt', 90);
+	$breadcrumb1_pb = get_theme_mod('trizen_breadcrumb1_wrapper_pb', 100);
+	$breadcrumb1_title_clr = get_theme_mod('trizen_breadcrumb_title_clr', __('#ffffff', 'trizen'));
+	$breadcrumb1_title_size = get_theme_mod('trizen_breadcrumb1_title_size', 40);
+	$breadcrumb1_bdc_bg = get_theme_mod('trizen_breadcrumb1_bdc_bg', __('rgba(0, 0, 0, 0.3)', 'trizen'));
+	$breadcrumb1_bdc_clr = get_theme_mod('trizen_breadcrumb1_bdc_clr', __('#ffffff', 'trizen'));
+	$breadcrumb1_bdc_hv_clr = get_theme_mod('trizen_breadcrumb1_bdc_hv_clr', __('#287dfa', 'trizen'));
+	$breadcrumb1_bdc_size = get_theme_mod('trizen_breadcrumb1_bdc_size', 16);
+	?>
+	<style>
+        .breadcrumb-area.static-breadcrumb {
+            <?php if(!empty($breadcrumb_bg)) { ?>
+                background-image: url("<?php echo esc_url($breadcrumb_bg); ?>");
+            <?php } if(!empty($breadcrumb1_pt)) { ?>
+                padding-top: <?php echo esc_attr($breadcrumb1_pt); ?>px;
+            <?php } if(!empty($breadcrumb1_pb)) { ?>
+                padding-bottom: <?php echo esc_attr($breadcrumb1_pb); ?>px;
+            <?php } ?>
+        }
+        .breadcrumb-area.static-breadcrumb .breadcrumb-content h2 {
+            <?php if(!empty($breadcrumb1_title_clr)) { ?>
+                color: <?php echo esc_attr($breadcrumb1_title_clr); ?>;
+            <?php } if(!empty($breadcrumb1_title_clr)) { ?>
+                font-size: <?php echo esc_attr($breadcrumb1_title_size); ?>px;
+            <?php } ?>
+        }
+        .breadcrumb-area.static-breadcrumb .breadcrumb-list .list-items {
+            <?php if(!empty($breadcrumb1_bdc_bg)) { ?>
+                background: <?php echo esc_attr($breadcrumb1_bdc_bg); ?>;
+            <?php } ?>
+        }
+        .breadcrumb-area.static-breadcrumb .breadcrumb-list .list-items li a,
+        .breadcrumb-area.static-breadcrumb .breadcrumb-list .list-items li {
+            <?php if(!empty($breadcrumb1_bdc_clr)) { ?>
+                color: <?php echo esc_attr($breadcrumb1_bdc_clr); ?>;
+            <?php } ?>
+        }
+        .breadcrumb-area.static-breadcrumb .breadcrumb-list .list-items li a:hover {
+            <?php if(!empty($breadcrumb1_bdc_hv_clr)) { ?>
+                color: <?php echo esc_attr($breadcrumb1_bdc_hv_clr); ?>;
+            <?php } ?>
+        }
+        .breadcrumb-area.static-breadcrumb .breadcrumb-list .list-items li {
+            <?php if(!empty($breadcrumb1_bdc_size)) { ?>
+                font-size: <?php echo esc_attr($breadcrumb1_bdc_size); ?>;
+            <?php } ?>
+        }
+	</style>
+	<?php
 	wp_enqueue_script('lib-jquery-ui', get_template_directory_uri() .'/assets/js/jquery-ui.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('lib-bootstrap-popper-min', get_template_directory_uri() .'/assets/js/popper.min.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('lib-bootstrap-min', get_template_directory_uri() .'/assets/js/bootstrap.min.js', array('jquery'), '1.0.0', true);
@@ -53,8 +103,8 @@ EOD;
 	wp_enqueue_script('lib-fancybox-min', get_template_directory_uri() .'/assets/js/jquery.fancybox.min.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('lib-countTo-min', get_template_directory_uri() .'/assets/js/jquery.countTo.min.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('lib-animated-headline', get_template_directory_uri() .'/assets/js/animated-headline.js', array('jquery'), '1.0.0', true);
-//	wp_enqueue_script('lib-jquery-ripples-min', get_template_directory_uri() .'/assets/js/jquery.ripples-min.js', array('jquery'), '1.0.0', true);
-//	wp_enqueue_script('lib-quantity-input-js', get_template_directory_uri() .'/assets/js/quantity-input.js', array('jquery'), '1.0.0', true);
+	wp_enqueue_script('lib-jquery-ripples-min', get_template_directory_uri() .'/assets/js/jquery.ripples-min.js', array('jquery'), '1.0.0', true);
+	wp_enqueue_script('lib-quantity-input-js', get_template_directory_uri() .'/assets/js/quantity-input.js', array('jquery'), '1.0.0', true);
 
 	wp_enqueue_script( 'trizen-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 

@@ -5,7 +5,7 @@
     font-size: 18px;
     padding: 3px 10px;
     border-radius: 4px;
-    cursor: text;
+    cursor: context-menu;
     margin-bottom: 10px;
     font-family: 'Roboto', sans-serif;
     letter-spacing: .5px;
@@ -13,7 +13,7 @@
 .customize-control select,
 .customize-control textarea,
 .customize-control input {
-    padding: 8px 20px 8px 20px;
+    padding: 8px 15px 8px 15px;
     font-size: 14px;
     color: #0d233e;
     border: 1px solid rgba(127, 136, 151, 0.2);
@@ -34,5 +34,27 @@
     box-shadow: none;
     outline: none;
     border-color: #287DFA;
+}
+ul#sub-accordion-section-trizen_breadcrumb1_options {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+ul#sub-accordion-section-trizen_breadcrumb1_options > li {
+    width: 100%;
+}
+ul#sub-accordion-section-trizen_breadcrumb1_options > li#customize-control-trizen_breadcrumb1_bdc_size,
+ul#sub-accordion-section-trizen_breadcrumb1_options > li#customize-control-trizen_breadcrumb1_bdc_bg,
+ul#sub-accordion-section-trizen_breadcrumb1_options > li#customize-control-trizen_breadcrumb1_title_size,
+ul#sub-accordion-section-trizen_breadcrumb1_options > li#customize-control-trizen_breadcrumb_title_clr,
+ul#sub-accordion-section-trizen_breadcrumb1_options > li#customize-control-trizen_breadcrumb1_wrapper_pt,
+ul#sub-accordion-section-trizen_breadcrumb1_options > li#customize-control-trizen_breadcrumb1_wrapper_pb {
+    width: 49%;
+}
+.wp-picker-container .hidden {
+    display: none !important;
+}
+.wp-picker-open + .wp-picker-input-wrap {
+    display: block !important;
 }
 

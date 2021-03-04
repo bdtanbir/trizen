@@ -69,6 +69,11 @@
 			$( '.copy-right .copy__desc' ).text( to );
 		} );
 	} );
+	wp.customize( 'trizen_hd_user_action_login_title', function( value ) {
+		value.bind( function( to ) {
+			$( '.header-right-action .user-login-btn' ).text( to );
+		} );
+	} );
 
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {
@@ -87,6 +92,52 @@
 					color: to,
 				} );
 			}
+		} );
+	} );
+
+	wp.customize( 'trizen_breadcrumb1_bg', function( value ) {
+		value.bind( function( to ) {
+			$( '.breadcrumb-area.static-breadcrumb' ).css('background-image', 'url('+to+')');
+		} );
+	} );
+	wp.customize( 'trizen_breadcrumb1_wrapper_pt', function( value ) {
+		value.bind( function( to ) {
+			$( '.breadcrumb-area.static-breadcrumb' ).css('padding-top', to+'px');
+		} );
+	} );
+	wp.customize( 'trizen_breadcrumb1_wrapper_pb', function( value ) {
+		value.bind( function( to ) {
+			$( '.breadcrumb-area.static-breadcrumb' ).css('padding-bottom', to+'px');
+		} );
+	} );
+	wp.customize( 'trizen_breadcrumb_title_clr', function( value ) {
+		value.bind( function( to ) {
+			$( '.breadcrumb-area.static-breadcrumb .breadcrumb-content h2' ).css('color', to);
+		} );
+	} );
+	wp.customize( 'trizen_breadcrumb1_title_size', function( value ) {
+		value.bind( function( to ) {
+			$( '.breadcrumb-area.static-breadcrumb .breadcrumb-content h2' ).css('font-size', to+'px');
+		} );
+	} );
+	wp.customize( 'trizen_breadcrumb1_bdc_bg', function( value ) {
+		value.bind( function( to ) {
+			$( '.breadcrumb-area.static-breadcrumb .breadcrumb-list .list-items' ).css('background', to);
+		} );
+	} );
+	wp.customize( 'trizen_breadcrumb1_bdc_clr', function( value ) {
+		value.bind( function( to ) {
+			$( '.breadcrumb-area.static-breadcrumb .breadcrumb-list .list-items li, .breadcrumb-area.static-breadcrumb .breadcrumb-list .list-items li a' ).css('color', to);
+		} );
+	} );
+	wp.customize( 'trizen_breadcrumb1_bdc_hv_clr', function( value ) {
+		value.bind( function( to ) {
+			$( '.breadcrumb-area.static-breadcrumb .breadcrumb-list .list-items li a:hover' ).css('color', to);
+		} );
+	} );
+	wp.customize( 'trizen_breadcrumb1_bdc_size', function( value ) {
+		value.bind( function( to ) {
+			$( '.breadcrumb-area.static-breadcrumb .breadcrumb-list .list-items li' ).css('font-size', to+'px');
 		} );
 	} );
 }( jQuery ) );

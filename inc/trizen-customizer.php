@@ -138,6 +138,18 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'settings' => 'show_footer_lf_widget',
 				'type'     => 'checkbox',
 			));
+			/* Show Breadcrumb Overlay Shape */
+			$wp_customize->add_setting('show_breadcrumb_overlay_shape', array(
+				'default'           => true,
+				'transport'         => 'refresh',
+				'sanitize_callback' => array($this, 'sanitize_checkbox'),
+			));
+			$wp_customize->add_control('show_breadcrumb_overlay_shape', array(
+				'label'    => __('Show Breadcrumb Overlay Shape', 'trizen'),
+				'section'  => 'trizen_general_options',
+				'settings' => 'show_breadcrumb_overlay_shape',
+				'type'     => 'checkbox',
+			));
 
 
 			/*--------------------------
@@ -187,6 +199,210 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'settings'        => 'trizen_hd_bar_email',
 				'type'            => 'text',
 			));
+			// User Action Heading
+			$wp_customize->add_setting('trizen_hd_user_action_hd', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_hd_user_action_hd', array(
+				'label'           => __('User Action', 'trizen'),
+				'section'         => 'trizen_header_options',
+				'settings'        => 'trizen_hd_user_action_hd',
+				'type'            => 'hidden',
+			));
+			// User Action: Login Title
+			$wp_customize->add_setting('trizen_hd_user_action_login_title', array(
+				'default'           => __('Login', 'trizen'),
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_hd_user_action_login_title', array(
+				'label'           => __('Login Title', 'trizen'),
+				'section'         => 'trizen_header_options',
+				'settings'        => 'trizen_hd_user_action_login_title',
+				'type'            => 'text',
+			));
+
+
+			/*--------------------------
+			 *  Breadcrumb(s)
+			 * -------------------------*/
+			$wp_customize->add_panel('trizen_breadcrumbs_panel_options', array(
+				'title'    => __('Breadcrumb(s)', 'trizen'),
+				'priority' => 50,
+			));
+			/* Breadcrumb 1 */
+			$wp_customize->add_section('trizen_breadcrumb1_options', array(
+				'title'           => __('Breadcrumb 1', 'trizen'),
+				'priority'        => 2,
+				'panel'           => 'trizen_breadcrumbs_panel_options',
+			));
+			// Breadcrumb 1 BG
+			$wp_customize->add_setting('trizen_breadcrumb1_bg', array(
+				'transport'         => 'postMessage',
+				'sanitize_callback' => [$this, 'sanitize_file']
+			));
+			$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'trizen_breadcrumb1_bg', array(
+				'type'          => 'upload',
+				'label'         => __('Background', 'trizen'),
+				'section'       => 'trizen_breadcrumb1_options',
+				'settings'      => 'trizen_breadcrumb1_bg',
+				'button_labels' => array(
+					'select'       => __('Select Image', 'trizen'),
+					'change'       => __('Change Image', 'trizen'),
+					'remove'       => __('Remove', 'trizen'),
+					'default'      => __('Default', 'trizen'),
+					'placeholder'  => __('No Image selected', 'trizen'),
+					'frame_title'  => __('Select Image', 'trizen'),
+					'frame_button' => __('Choose Image', 'trizen'),
+
+				),
+			)));
+			// Wrapper Style
+			$wp_customize->add_setting('trizen_breadcrumb1_wrapper_hd', array(
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_breadcrumb1_wrapper_hd', array(
+				'label'    => __('Wrapper', 'trizen'),
+				'section'  => 'trizen_breadcrumb1_options',
+				'settings' => 'trizen_breadcrumb1_wrapper_hd',
+				'type'     => 'hidden',
+			));
+			// Wrapper Padding-top
+			$wp_customize->add_setting('trizen_breadcrumb1_wrapper_pt', array(
+				'default'           => 90,
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_breadcrumb1_wrapper_pt', array(
+				'label'    => __('Padding Top', 'trizen'),
+				'section'  => 'trizen_breadcrumb1_options',
+				'settings' => 'trizen_breadcrumb1_wrapper_pt',
+				'type'     => 'number',
+				'choices'  => array(
+					'min'  => 0,
+					'max'  => 500,
+					'step' => 1,
+				),
+			));
+			// Wrapper Padding-bottom
+			$wp_customize->add_setting('trizen_breadcrumb1_wrapper_pb', array(
+				'default'           => 100,
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_breadcrumb1_wrapper_pb', array(
+				'label'    => __('Padding Bottom', 'trizen'),
+				'section'  => 'trizen_breadcrumb1_options',
+				'settings' => 'trizen_breadcrumb1_wrapper_pb',
+				'type'     => 'number',
+				'choices'  => array(
+					'min'  => 0,
+					'max'  => 500,
+					'step' => 1,
+				),
+			));
+			// Title Style
+			$wp_customize->add_setting('trizen_breadcrumb1_title_hd', array(
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_breadcrumb1_title_hd', array(
+				'label'    => __('Title', 'trizen'),
+				'section'  => 'trizen_breadcrumb1_options',
+				'settings' => 'trizen_breadcrumb1_title_hd',
+				'type'     => 'hidden',
+			));
+			// Title Color
+			$wp_customize->add_setting('trizen_breadcrumb_title_clr', array(
+				'default'           => __('#ffffff', 'trizen'),
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport'         => 'postMessage'
+			));
+			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_breadcrumb_title_clr', array(
+				'type'    => 'color',
+				'label'   => __('Color', 'trizen'),
+				'section' => 'trizen_breadcrumb1_options',
+			)));
+			// Title Font-size
+			$wp_customize->add_setting('trizen_breadcrumb1_title_size', array(
+				'default'           => 40,
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_breadcrumb1_title_size', array(
+				'label'    => __('Font Size', 'trizen'),
+				'section'  => 'trizen_breadcrumb1_options',
+				'settings' => 'trizen_breadcrumb1_title_size',
+				'type'     => 'number',
+				'choices'  => array(
+					'min'  => 0,
+					'max'  => 500,
+					'step' => 1,
+				),
+			));
+			// Breadcrumb Style
+			$wp_customize->add_setting('trizen_breadcrumb1_bdc_hd', array(
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_breadcrumb1_bdc_hd', array(
+				'label'    => __('Breadcrumb', 'trizen'),
+				'section'  => 'trizen_breadcrumb1_options',
+				'settings' => 'trizen_breadcrumb1_bdc_hd',
+				'type'     => 'hidden',
+			));
+			// Breadcrumb BG
+			$wp_customize->add_setting('trizen_breadcrumb1_bdc_bg', array(
+				'default'           => __('rgba(0, 0, 0, 0.3)', 'trizen'),
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport'         => 'postMessage'
+			));
+			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_breadcrumb1_bdc_bg', array(
+				'type'    => 'color',
+				'label'   => __('Background', 'trizen'),
+				'section' => 'trizen_breadcrumb1_options',
+			)));
+			// Breadcrumb Font-size
+			$wp_customize->add_setting('trizen_breadcrumb1_bdc_size', array(
+				'default'           => 16,
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_breadcrumb1_bdc_size', array(
+				'label'    => __('Font Size', 'trizen'),
+				'section'  => 'trizen_breadcrumb1_options',
+				'settings' => 'trizen_breadcrumb1_bdc_size',
+				'type'     => 'number',
+				'choices'  => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+			));
+			// Breadcrumb Color
+			$wp_customize->add_setting('trizen_breadcrumb1_bdc_clr', array(
+				'default'           => __('#ffffff', 'trizen'),
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport'         => 'postMessage'
+			));
+			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_breadcrumb1_bdc_clr', array(
+				'type'    => 'color',
+				'label'   => __('Color', 'trizen'),
+				'section' => 'trizen_breadcrumb1_options',
+			)));
+			// Breadcrumb Hover Color
+			$wp_customize->add_setting('trizen_breadcrumb1_bdc_hv_clr', array(
+				'default'           => __('#287dfa', 'trizen'),
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport'         => 'postMessage'
+			));
+			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_breadcrumb1_bdc_hv_clr', array(
+				'type'    => 'color',
+				'label'   => __('Hover Color', 'trizen'),
+				'section' => 'trizen_breadcrumb1_options',
+			)));
 
 
 			/*--------------------------
@@ -632,6 +848,9 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				));
 				$wp_customize->selective_refresh->add_partial('trizen_copyright_txt', array(
 					'selector'        => '.copy-right .copy__desc',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_hd_user_action_login_title', array(
+					'selector'        => '.header-right-action .user-login-btn',
 				));
 			}
 
