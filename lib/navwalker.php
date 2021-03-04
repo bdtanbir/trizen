@@ -18,13 +18,13 @@
  */
 
 // Check if Class Exists.
-if ( ! class_exists( 'WP_Aduca_Navwalker' ) ) {
+if ( ! class_exists( 'WP_Trizen_Navwalker' ) ) {
 	/**
-	 * WP_Aduca_Navwalker class.
+	 * WP_Trizen_Navwalker class.
 	 *
 	 * @extends Walker_Nav_Menu
 	 */
-	class WP_Aduca_Navwalker extends Walker_Nav_Menu {
+	class WP_Trizen_Navwalker extends Walker_Nav_Menu {
 
 		/**
 		 * Starts the list before the elements are added.
@@ -364,7 +364,7 @@ if ( ! class_exists( 'WP_Aduca_Navwalker' ) ) {
 				if ( $menu_class ) {
 					$fallback_output .= ' class="' . esc_attr( $menu_class ) . '"'; }
 				$fallback_output .= '>';
-				$fallback_output .= '<li class="nav-item"><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" class="nav-link" title="' . esc_attr__( 'Add a menu', 'aduca' ) . '">' . esc_html__( 'Add a menu', 'aduca' ) . '</a></li>';
+				$fallback_output .= '<li class="nav-item"><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" class="nav-link" title="' . esc_attr__( 'Add a menu', 'trizen' ) . '">' . esc_html__( 'Add a menu', 'trizen' ) . '</a></li>';
 				$fallback_output .= '</ul>';
 				if ( $container ) {
 					$fallback_output .= '</' . esc_attr( $container ) . '>';
@@ -372,7 +372,7 @@ if ( ! class_exists( 'WP_Aduca_Navwalker' ) ) {
 
 				// If $args has 'echo' key and it's true echo, otherwise return.
 				if ( array_key_exists( 'echo', $args ) && $args['echo'] ) {
-					$allowed_html = aduca_wses_allowed_menu_html();
+					$allowed_html = trizen_wses_allowed_menu_html();
 					echo wp_kses($fallback_output, $allowed_html); // WPCS: XSS OK.
 				} else {
 					return $fallback_output;

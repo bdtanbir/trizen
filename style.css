@@ -1031,8 +1031,41 @@ textarea {
 
 
 /*-------------------------------------------
-	 Blog
+	 Header
 ---------------------------------------------*/
+.main-menu-content ul li a {
+	padding: 0 0 22px 0;
+}
+.main-menu-content ul li.dropdown > a:after {
+	content: "\f107";
+	font-family: 'Line Awesome Free';
+	font-weight: 900;
+	border: none;
+	color: var(--secondary_color);
+	font-size: 12px;
+	width: auto;
+	height: auto;
+	transform: translateY(2px);
+}
+.main-menu-content ul li.mega-menu .dropdown-menu-item {
+	width: 850px;
+	left: -345px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.main-menu-content ul li.mega-menu .dropdown-menu-item > li {
+	width: 25%;
+	border-right: 1px solid rgba(128,137,150,.1);
+}
+.main-menu-content ul li.mega-menu .dropdown-menu-item > li a:hover {
+	background: none;
+}
+
+
+
+	/*-------------------------------------------
+         Blog
+    ---------------------------------------------*/
 .blog-masonry {
 	display: block;
 	width: 100%;
@@ -1048,6 +1081,9 @@ textarea {
 }
 .author-content .author-img img {
 	background-color: inherit;
+}
+.blog-card.empty-blog-image .card-img {
+	padding-top: 40px;
 }
 .blog-card.empty-blog-image .card-body {
 	position: relative;
