@@ -4144,7 +4144,7 @@ body {
     transition: all 0.3s;
     padding: 4px 18px;
     display: block; }
-  .tag-list li:hover a {
+  .tag-list li a:hover {
     color: #287dfa;
     border-color: #287dfa; }
 
@@ -4865,6 +4865,7 @@ body {
         -ms-transition: all 0.3s;
         -o-transition: all 0.3s;
         transition: all 0.3s; }
+.blog-card-layout-2 .post-categories a:hover,
         .post-share ul li .post-share-dropdown li a:hover {
           color: #287dfa; }
   .post-share ul li:hover .post-share-dropdown {
@@ -4879,11 +4880,13 @@ body {
   -ms-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -o-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+.blog-card-layout-2 .post-categories a,
   .blog-card-layout-2 .post-categories .badge {
     border: 1px solid rgba(128, 137, 150, 0.2);
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px; }
+    .blog-card-layout-2 .post-categories a:hover,
     .blog-card-layout-2 .post-categories .badge:hover {
       border-color: #287dfa; }
   .blog-card-layout-2 .card-body {
@@ -7925,7 +7928,7 @@ body {
   filter: grayscale(0); }
 
 /*=============== comments ===============*/
-.comment {
+/*.comment {
   border-bottom: 1px solid rgba(128, 137, 150, 0.1);
   margin-bottom: 40px;
   padding-bottom: 40px;
@@ -7940,7 +7943,7 @@ body {
   @media only screen and (min-width: 320px) and (max-width: 479px) {
     .comment {
       text-align: center;
-      display: block; } }
+      display: block; } }*/
 
 /*=============== comments-avatar ===============*/
 .comment-avatar .avatar__img {

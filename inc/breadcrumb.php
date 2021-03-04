@@ -16,7 +16,7 @@ if($breadcrumb_shape == 1) {
 		<div class="container">
 			<div class="row align-items-center">
 				<?php if(trizen_breadcrumb_title()) { ?>
-					<div class="col-lg-6">
+					<div class="col-lg-7">
 						<div class="breadcrumb-content">
 							<div class="section-heading">
 								<h2 class="sec__title"><?php echo trizen_breadcrumb_title() ?></h2>
@@ -26,7 +26,7 @@ if($breadcrumb_shape == 1) {
 				<?php }
 				if ( function_exists('add_UA_widget_categories') ) {
 					?>
-					<div class="col-lg-6">
+					<div class="col-lg-5">
 						<div class="breadcrumb-list text-right">
                             <ul class="list-items">
                                 <?php

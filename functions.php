@@ -39,6 +39,11 @@ require get_template_directory() . '/inc/trizen-customizer.php';
 require get_template_directory() . '/lib/navwalker.php';
 
 /**
+ * Custom Comment
+ */
+require get_template_directory() . '/inc/custom-comments.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
