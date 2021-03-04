@@ -494,6 +494,103 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'type'     => 'text',
 			));
 
+
+			/* Footer Social Links */
+			$wp_customize->add_section('trizen_footer_social_links_options', array(
+				'title'           => __('Footer Social Links/Copyright', 'trizen'),
+				'priority'        => 6,
+				'panel'           => 'trizen_footer_panel_options',
+			));
+			// Footer Social Facebook URL
+			$wp_customize->add_setting('trizen_foot_social_fb', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_foot_social_fb', array(
+				'label'    => __('Facebook (URL)', 'trizen'),
+				'section'  => 'trizen_footer_social_links_options',
+				'settings' => 'trizen_foot_social_fb',
+				'type'     => 'text',
+			));
+			// Footer Social Twitter URL
+			$wp_customize->add_setting('trizen_foot_social_tw', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_foot_social_tw', array(
+				'label'    => __('Twitter (URL)', 'trizen'),
+				'section'  => 'trizen_footer_social_links_options',
+				'settings' => 'trizen_foot_social_tw',
+				'type'     => 'text',
+			));
+			// Footer Social Instagram URL
+			$wp_customize->add_setting('trizen_foot_social_inc', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_foot_social_inc', array(
+				'label'    => __('Instagram (URL)', 'trizen'),
+				'section'  => 'trizen_footer_social_links_options',
+				'settings' => 'trizen_foot_social_inc',
+				'type'     => 'text',
+			));
+			// Footer Social Linkedin URL
+			$wp_customize->add_setting('trizen_foot_social_ln', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_foot_social_ln', array(
+				'label'    => __('Linkedin (URL)', 'trizen'),
+				'section'  => 'trizen_footer_social_links_options',
+				'settings' => 'trizen_foot_social_ln',
+				'type'     => 'text',
+			));
+			// Footer Social Google+ URL
+			$wp_customize->add_setting('trizen_foot_social_ggl', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_foot_social_ggl', array(
+				'label'    => __('Google+ (URL)', 'trizen'),
+				'section'  => 'trizen_footer_social_links_options',
+				'settings' => 'trizen_foot_social_ggl',
+				'type'     => 'text',
+			));
+			// Footer Social Pinterest URL
+			$wp_customize->add_setting('trizen_foot_social_pnt', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_foot_social_pnt', array(
+				'label'    => __('Pinterest (URL)', 'trizen'),
+				'section'  => 'trizen_footer_social_links_options',
+				'settings' => 'trizen_foot_social_pnt',
+				'type'     => 'text',
+			));
+			// Footer Social Github URL
+			$wp_customize->add_setting('trizen_foot_social_gt', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_foot_social_gt', array(
+				'label'    => __('Github (URL)', 'trizen'),
+				'section'  => 'trizen_footer_social_links_options',
+				'settings' => 'trizen_foot_social_gt',
+				'type'     => 'text',
+			));
+			// Copyright text
+			$wp_customize->add_setting('trizen_copyright_txt', array(
+				'default'           => __('&copy; Copyright Trizen 2020. Made with <i class="la la-heart"></i> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>', 'trizen'),
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'trizen_sanitize_textarea'
+			));
+			$wp_customize->add_control('trizen_copyright_txt', array(
+				'label'    => __('Copyright text', 'trizen'),
+				'section'  => 'trizen_footer_social_links_options',
+				'settings' => 'trizen_copyright_txt',
+				'type'     => 'textarea',
+			));
+
 			/*----------------------------------------
 			 * Selective Refresh
 			 * --------------------------------------*/
@@ -532,6 +629,9 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				));
 				$wp_customize->selective_refresh->add_partial('trizen_foot_lf_widget_content', array(
 					'selector'        => '.footer-area .footer-item .footer__desc',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_copyright_txt', array(
+					'selector'        => '.copy-right .copy__desc',
 				));
 			}
 

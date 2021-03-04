@@ -1049,6 +1049,9 @@ textarea {
 .author-content .author-img img {
 	background-color: inherit;
 }
+.blog-card.empty-blog-image .card-body {
+	position: relative;
+}
 
 
 /*-------------------------------------------

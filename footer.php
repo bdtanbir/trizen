@@ -17,6 +17,10 @@ $footer_security_privacy_title  = get_theme_mod('trizen_foot_security_privacy_ti
 $footer_security_privacy_url  = get_theme_mod('trizen_foot_security_privacy_url');
 $footer_security_help_title  = get_theme_mod('trizen_foot_security_help_title');
 $footer_security_help_url  = get_theme_mod('trizen_foot_security_help_url');
+
+$copyright = get_theme_mod('trizen_copyright_txt', __('&copy; Copyright Trizen 2020. Made with <i class="la la-heart"></i> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>', 'trizen'));
+
+$allowed_html = trizen_wses_allowed_menu_html();
 ?>
 
 
@@ -38,56 +42,43 @@ $footer_security_help_url  = get_theme_mod('trizen_foot_security_help_url');
             </div>
         <?php } ?>
         <div class="row align-items-center">
-            <div class="col-lg-8">
-                <div class="term-box footer-item">
-                    <ul class="list-items list--items d-flex align-items-center">
-                        <?php if(!empty($footer_security_terms_title)) { ?>
-                            <li>
-                                <a href="<?php echo esc_url($footer_security_terms_url); ?>"><?php echo esc_html($footer_security_terms_title); ?></a>
-                            </li>
-                        <?php } if(!empty($footer_security_privacy_title)) { ?>
-                            <li>
-                                <a href="<?php echo esc_url($footer_security_privacy_url); ?>">
-                                    <?php echo esc_html($footer_security_privacy_title); ?>
-                                </a>
-                            </li>
-                        <?php } if(!empty($footer_security_help_title)) { ?>
-                            <li>
-                                <a href="<?php echo esc_url($footer_security_help_url); ?>">
-                                    <?php echo esc_html($footer_security_help_title); ?>
-                                </a>
-                            </li>
-                        <?php } ?>
-                    </ul>
+	        <?php if(!empty($footer_security_terms_title) || !empty($footer_security_privacy_title) || !empty($footer_security_help_title)) { ?>
+                <div class="col-lg-8">
+                    <div class="term-box footer-item">
+                        <ul class="list-items list--items d-flex align-items-center">
+                            <?php if(!empty($footer_security_terms_title)) { ?>
+                                <li>
+                                    <a href="<?php echo esc_url($footer_security_terms_url); ?>"><?php echo esc_html($footer_security_terms_title); ?></a>
+                                </li>
+                            <?php } if(!empty($footer_security_privacy_title)) { ?>
+                                <li>
+                                    <a href="<?php echo esc_url($footer_security_privacy_url); ?>">
+                                        <?php echo esc_html($footer_security_privacy_title); ?>
+                                    </a>
+                                </li>
+                            <?php } if(!empty($footer_security_help_title)) { ?>
+                                <li>
+                                    <a href="<?php echo esc_url($footer_security_help_url); ?>">
+                                        <?php echo esc_html($footer_security_help_title); ?>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="footer-social-box text-right">
-                    <ul class="social-profile">
-                        <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                        <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                        <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
-                    </ul>
-                </div>
-            </div>
+	        <?php } ?>
+
+            <?php get_template_part('template-parts/footer/footer-social-links'); ?>
         </div>
     </div>
     <div class="section-block mt-4"></div>
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-7">
+        <div class="row align-items-center text-center">
+            <div class="col-lg-12">
                 <div class="copy-right padding-top-30px">
                     <p class="copy__desc">
-                        &copy; Copyright Trizen 2020. Made with
-                        <span class="la la-heart"></span> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
+                        <?php echo wp_kses($copyright, $allowed_html); ?>
                     </p>
-                </div>
-            </div>
-            <div class="col-lg-5">
-                <div class="copy-right-content d-flex align-items-center justify-content-end padding-top-30px">
-                    <h3 class="title font-size-15 pr-2">We Accept</h3>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/payment-img.png" alt="">
                 </div>
             </div>
         </div>

@@ -1,6 +1,12 @@
+<?php
+    if(empty(get_the_post_thumbnail())) {
+        $empty_img = 'empty-blog-image';
+    } else {
+	    $empty_img = '';
+    }
+?>
 
-
-<div class="card-item blog-card">
+<div <?php post_class('card-item blog-card ' . $empty_img); ?>>
 	<div class="card-img">
         <?php the_post_thumbnail(); ?>
 		<div class="post-format icon-element">

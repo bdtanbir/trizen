@@ -9030,7 +9030,7 @@ body {
     transition: all 0.3s; }
     .copy__desc a:hover {
       color: #287dfa; }
-  .copy__desc span {
+  .copy__desc i {
     animation: heartBeat 1000ms infinite linear;
     color: #287dfa; }
 

@@ -64,6 +64,11 @@
 			$( '.footer-area .footer-item .footer__desc' ).text( to );
 		} );
 	} );
+	wp.customize( 'trizen_copyright_txt', function( value ) {
+		value.bind( function( to ) {
+			$( '.copy-right .copy__desc' ).text( to );
+		} );
+	} );
 
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {
