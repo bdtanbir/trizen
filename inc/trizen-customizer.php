@@ -150,6 +150,18 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'settings' => 'show_breadcrumb_overlay_shape',
 				'type'     => 'checkbox',
 			));
+			/* Show Related Post */
+			$wp_customize->add_setting('show_related_post', array(
+				'default'           => true,
+				'transport'         => 'refresh',
+				'sanitize_callback' => array($this, 'sanitize_checkbox'),
+			));
+			$wp_customize->add_control('show_related_post', array(
+				'label'    => __('Show Related Post', 'trizen'),
+				'section'  => 'trizen_general_options',
+				'settings' => 'show_related_post',
+				'type'     => 'checkbox',
+			));
 
 
 			/*--------------------------
@@ -459,6 +471,63 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'label'   => __('Hover Color', 'trizen'),
 				'section' => 'trizen_breadcrumb1_options',
 			)));
+
+
+			/*--------------------------
+			 *  Blog
+			 * -------------------------*/
+			$wp_customize->add_panel('trizen_blog_panel_options', array(
+				'title'    => __('Blog', 'trizen'),
+				'priority' => 200,
+			));
+			/* Blog Related Post */
+			$wp_customize->add_section('trizen_related_post_options', array(
+				'title'           => __('Blog Related Post', 'trizen'),
+				'priority'        => 2,
+				'panel'           => 'trizen_blog_panel_options',
+				'active_callback' => 'trizen_show_related_post_callback',
+			));
+			// Blog Related Post Title
+			$wp_customize->add_setting('trizen_related_post_title', array(
+				'default'           => __('Related Posts', 'trizen'),
+				'transform'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_related_post_title', array(
+				'label'           => __('Section Title', 'trizen'),
+				'section'         => 'trizen_related_post_options',
+				'settings'        => 'trizen_related_post_title',
+				'type'            => 'text',
+			));
+			// Blog Related Post Posts per Page
+			$wp_customize->add_setting('trizen_related_post_ppp', array(
+				'default'           => 2,
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_related_post_ppp', array(
+				'label'    => __('Posts Per page', 'trizen'),
+				'section'  => 'trizen_related_post_options',
+				'settings' => 'trizen_related_post_ppp',
+				'type'     => 'number',
+				'choices'  => array(
+					'min'  => 1,
+					'max'  => 6,
+					'step' => 1,
+				),
+			));
+			// Blog Related Post ID(s)
+			$wp_customize->add_setting('trizen_related_post_ids', array(
+				'transform'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_related_post_ids', array(
+				'label'           => __('Posts ID(s)', 'trizen'),
+				'section'         => 'trizen_related_post_options',
+				'settings'        => 'trizen_related_post_ids',
+				'type'            => 'text',
+				'description'     => __('Enter Post\'s ID(s) here. Example(s): <strong>1,2,3,4</strong>', 'trizen')
+			));
 
 
 			/*--------------------------
@@ -917,6 +986,9 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				$wp_customize->selective_refresh->add_partial('trizen_hd_menu_bar_btn_text', array(
 					'selector'        => '.menu-wrapper .nav-btn',
 				));
+				$wp_customize->selective_refresh->add_partial('trizen_related_post_title', array(
+					'selector'        => '.related-posts .title',
+				));
 			}
 
 			add_action('wp_enqueue_scripts', [$this, 'customize_preview_js']);
@@ -1048,6 +1120,15 @@ if ( ! function_exists( 'trizen_show_static_pg_infobox_callback' ) ) {
 if ( ! function_exists( 'trizen_show_static_pg_cta_callback' ) ) {
 	function trizen_show_static_pg_cta_callback( $control ) {
 		if ( $control->manager->get_setting( 'show_static_footer_cta' )->value() == 1 ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+if ( ! function_exists( 'trizen_show_related_post_callback' ) ) {
+	function trizen_show_related_post_callback( $control ) {
+		if ( $control->manager->get_setting( 'show_related_post' )->value() == 1 ) {
 			return true;
 		} else {
 			return false;
