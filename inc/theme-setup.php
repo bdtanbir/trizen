@@ -127,6 +127,17 @@ function trizen_widgets_init() {
 			'after_title'   => '</h4>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Blog Sidebar', 'trizen' ),
+			'id'            => 'blog-sidebar',
+			'description'   => esc_html__( 'Add Blog Sidebar Widgets here.', 'trizen' ),
+			'before_widget' => '<div id="%1$s" class="sidebar-widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="title stroke-shape">',
+			'after_title'   => '</h3>',
+		)
+	);
 }
 add_action( 'widgets_init', 'trizen_widgets_init' );
 

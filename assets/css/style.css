@@ -5071,17 +5071,20 @@ body {
   @media (max-width: 375px) {
     .recent-post-card {
       display: block; } }
+  .recent-post-card .card-img {
+      padding-right: 10px;
+  }
   .recent-post-card .card-img img {
     height: auto;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px; }
-  .recent-post-card .card-body {
-    padding: 0 0 0 10px; }
+.recent-post-card .card-body {
+    padding: 0;
+}
     @media (max-width: 375px) {
-      .recent-post-card .card-body {
-        padding-top: 10px;
-        padding-left: 0; } }
+      .recent-post-card .card-img {
+        padding: 10px 0 0 0; } }
   .recent-post-card .card-title {
     font-size: 15px; }
   .recent-post-card .card-meta {
