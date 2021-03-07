@@ -10,6 +10,9 @@ $breadcrumb_shape     = get_theme_mod('show_breadcrumb_overlay_shape', 1);
 $hotel_video_btn_text = get_theme_mod('trizen_hotel_details_bdc_video_btn_txt', __('Video', 'trizen'));
 $hotel_photo_btn_text = get_theme_mod('trizen_hotel_details_bdc_photo_btn_txt', __('More Photos', 'trizen'));
 
+$hotel_regular_price = get_post_meta( get_the_ID(), 'trizen_hotel_regular_price', true );
+$hotel_sale_price    = get_post_meta( get_the_ID(), 'trizen_hotel_sale_price', true );
+
 if($breadcrumb_shape == 1) {
 	$breadcrumb_shape_show = '';
 } else {
@@ -1274,10 +1277,35 @@ if($breadcrumb_shape == 1) {
 							<div class="sidebar-widget single-content-widget">
 								<div class="sidebar-widget-item">
 									<div class="sidebar-book-title-wrap mb-3">
-										<h3>Popular</h3>
-										<p><span class="text-form">From</span><span class="text-value ml-2 mr-1">$399.00</span> <span class="before-price">$412.00</span></p>
+										<h3><?php esc_html_e('Popular','trizen'); ?></h3>
+                                        <?php
+                                        if(!empty($hotel_regular_price) && !empty($hotel_sale_price)) { ?>
+                                            <p>
+                                                <span class="text-form"><?php esc_html_e('From', 'trizen'); ?></span>
+                                                <span class="text-value ml-2 mr-1">$<?php echo esc_html($hotel_sale_price); ?></span>
+                                                <span class="before-price">$<?php echo esc_html($hotel_regular_price); ?></span>
+                                            </p>
+                                        <?php } else {
+                                            if(!empty($hotel_regular_price)) {
+                                            ?>
+                                                <p>
+                                                    <span class="text-form"><?php esc_html_e('From', 'trizen'); ?></span>
+                                                    <span class="text-value ml-2">$<?php echo esc_html($hotel_regular_price); ?></span>
+                                                </p>
+                                            <?php
+                                            } else {
+                                                if(!empty($hotel_sale_price) && empty($hotel_regular_price)) { ?>
+                                                    <p>
+                                                        <span class="text-form">
+                                                            <?php esc_html_e('We are sorry! First add', 'trizen'); ?><strong><?php esc_html_e(' Regular Price', 'trizen'); ?></strong><?php esc_html_e(' and then sale price!', 'trizen'); ?>
+                                                        </span>
+                                                    </p>
+                                                <?php
+                                                }
+                                            }
+                                        }?>
 									</div>
-								</div><!-- end sidebar-widget-item -->
+								</div>
 								<div class="sidebar-widget-item">
 									<div class="contact-form-action">
 										<form action="#">
