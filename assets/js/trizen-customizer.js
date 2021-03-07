@@ -84,6 +84,16 @@
 			$( '.header-right-action .user-signup-btn' ).text( to );
 		} );
 	} );
+	wp.customize( 'trizen_hotel_details_bdc_video_btn_txt', function( value ) {
+		value.bind( function( to ) {
+			$( '.hotel-details-breadcrumb .breadcrumb-btn .hotel-video-btn' ).text( to );
+		} );
+	} );
+	wp.customize( 'trizen_hotel_details_bdc_photo_btn_txt', function( value ) {
+		value.bind( function( to ) {
+			$( '.hotel-details-breadcrumb .breadcrumb-btn .hotel-gallery-btn' ).text( to );
+		} );
+	} );
 
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {
@@ -105,9 +115,24 @@
 		} );
 	} );
 
+	wp.customize( 'trizen_hotel_details_bdc_bg', function( value ) {
+		value.bind( function( to ) {
+			$( '.hotel-details-breadcrumb' ).css('background-image', 'url('+to+')');
+		} );
+	} );
 	wp.customize( 'trizen_breadcrumb1_bg', function( value ) {
 		value.bind( function( to ) {
 			$( '.breadcrumb-area.static-breadcrumb' ).css('background-image', 'url('+to+')');
+		} );
+	} );
+	wp.customize( 'trizen_hotel_details_bdc_wrap_pt', function( value ) {
+		value.bind( function( to ) {
+			$( '.hotel-details-breadcrumb .breadcrumb-btn' ).css('padding-top', to+'px');
+		} );
+	} );
+	wp.customize( 'trizen_hotel_details_bdc_wrap_pb', function( value ) {
+		value.bind( function( to ) {
+			$( '.hotel-details-breadcrumb .breadcrumb-btn' ).css('padding-bottom', to+'px');
 		} );
 	} );
 	wp.customize( 'trizen_breadcrumb1_wrapper_pt', function( value ) {
@@ -148,6 +173,46 @@
 	wp.customize( 'trizen_breadcrumb1_bdc_size', function( value ) {
 		value.bind( function( to ) {
 			$( '.breadcrumb-area.static-breadcrumb .breadcrumb-list .list-items li' ).css('font-size', to+'px');
+		} );
+	} );
+	wp.customize( 'trizen_hotel_details_bdc_video_btn_clr', function( value ) {
+		value.bind( function( to ) {
+			$( '.hotel-details-breadcrumb .breadcrumb-btn .hotel-video-btn' ).css('color', to);
+		} );
+	} );
+	wp.customize( 'trizen_hotel_details_bdc_video_btn_bg', function( value ) {
+		value.bind( function( to ) {
+			$( '.hotel-details-breadcrumb .breadcrumb-btn .hotel-video-btn' ).css('background', to);
+		} );
+	} );
+	wp.customize( 'trizen_hotel_details_bdc_video_btn_clr_hv', function( value ) {
+		value.bind( function( to ) {
+			$( '.hotel-details-breadcrumb .breadcrumb-btn .hotel-video-btn:hover' ).css('color', to);
+		} );
+	} );
+	wp.customize( 'trizen_hotel_details_bdc_video_btn_bg_hv', function( value ) {
+		value.bind( function( to ) {
+			$( '.hotel-details-breadcrumb .breadcrumb-btn .hotel-video-btn:hover' ).css('background', to);
+		} );
+	} );
+	wp.customize( 'trizen_hotel_details_bdc_photo_btn_clr', function( value ) {
+		value.bind( function( to ) {
+			$( '.hotel-details-breadcrumb .breadcrumb-btn .hotel-gallery-btn' ).css('color', to);
+		} );
+	} );
+	wp.customize( 'trizen_hotel_details_bdc_photo_btn_bg', function( value ) {
+		value.bind( function( to ) {
+			$( '.hotel-details-breadcrumb .breadcrumb-btn .hotel-gallery-btn' ).css('background', to);
+		} );
+	} );
+	wp.customize( 'trizen_hotel_details_bdc_photo_btn_clr_hv', function( value ) {
+		value.bind( function( to ) {
+			$( '.hotel-details-breadcrumb .breadcrumb-btn .hotel-gallery-btn:hover' ).css('color', to);
+		} );
+	} );
+	wp.customize( 'trizen_hotel_details_bdc_photo_btn_bg_hv', function( value ) {
+		value.bind( function( to ) {
+			$( '.hotel-details-breadcrumb .breadcrumb-btn .hotel-gallery-btn:hover' ).css('background', to);
 		} );
 	} );
 }( jQuery ) );

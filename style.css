@@ -531,10 +531,6 @@ a {
 	color: #4169e1;
 }
 
-a:visited {
-	color: #800080;
-}
-
 a:hover,
 a:focus,
 a:active {
@@ -1081,12 +1077,32 @@ textarea {
 .hide-before:before {
 	display: none;
 }
-
+.breadcrumb-btn {
+	padding-top: 225px;
+	padding-bottom: 30px;
+}
+.breadcrumb-btn .btn-box {
+	position: relative;
+	bottom: 0;
+}
 .search-highlight {
 	background: #f7f013;
 	color: #0d233e;
 	padding: 0 3px;
 }
+
+
+
+/*-------------------------------------------
+	 Hotel
+---------------------------------------------*/
+.breadcrumb-btn .theme-btn:not([href]):not([tabindex]):hover {
+	color: var(--white_color);
+}
+.accordion-item .card-header .btn {
+	border: none;
+}
+
 
 
 

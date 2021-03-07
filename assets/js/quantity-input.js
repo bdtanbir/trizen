@@ -1,14 +1,14 @@
 /*====== Quantity ========*/
-$(document).on('click', '.qtyDec, .qtyInc', function () {
-    var $button = $(this);
+jQuery(document).on('click', '.qtyDec, .qtyInc', function () {
+    var $button = jQuery(this);
     numberButtonFunc($button);
 });
 
 function numberButtonFunc($button) {
     var oldValue = $button.parent().find("input").val();
     var total = 0;
-    $('input[type="text"]').each(function () {
-        total += parseInt($(this).val());
+    jQuery('input[type="text"]').each(function () {
+        total += parseInt(jQuery(this).val());
     });
     var newVal;
     if ($button.hasClass('qtyInc')) {
@@ -23,37 +23,37 @@ function numberButtonFunc($button) {
     $button.parent().find("input").val(newVal).trigger('change');
 }
 
-$('.gty-container').each(function () {
-    var parent = $(this);
+jQuery('.gty-container').each(function () {
+    var parent = jQuery(this);
     // Adult quantity number
-    $('input[name="adult_number"]', parent).change(function () {
-        var adults = parseInt($(this).val());
+    jQuery('input[name="adult_number"]', parent).change(function () {
+        var adults = parseInt(jQuery(this).val());
         var html = adults;
         if (typeof adults == 'number') {
             if (adults < 2) {
-                html = adults + ' ' + $('.adult', parent).data('text');
+                html = adults + ' ' + jQuery('.adult', parent).data('text');
             } else {
-                html = adults + ' ' + $('.adult', parent).data('text-multi');
+                html = adults + ' ' + jQuery('.adult', parent).data('text-multi');
             }
         }
-        $('.adult', parent).html(html);
+        jQuery('.adult', parent).html(html);
     });
-    $('input[name="adult_number"]', parent).trigger('change');
+    jQuery('input[name="adult_number"]', parent).trigger('change');
 
     // Children quantity number
-    $('input[name="child_number"]', parent).change(function () {
-        var children = parseInt($(this).val());
+    jQuery('input[name="child_number"]', parent).change(function () {
+        var children = parseInt(jQuery(this).val());
         var html = children;
         if (typeof children == 'number') {
             if (children < 2) {
-                html = children + ' ' + $('.children', parent).data('text');
+                html = children + ' ' + jQuery('.children', parent).data('text');
             } else {
-                html = children + ' ' + $('.children', parent).data('text-multi');
+                html = children + ' ' + jQuery('.children', parent).data('text-multi');
             }
         }
-        $('.children', parent).html(html);
+        jQuery('.children', parent).html(html);
     });
-    $('input[name="child_number"]', parent).trigger('change');
+    jQuery('input[name="child_number"]', parent).trigger('change');
 
 
 });

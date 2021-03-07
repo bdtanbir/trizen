@@ -5,12 +5,12 @@ function trizen_scripts() {
 	wp_enqueue_style('lib-all-min', '//pro.fontawesome.com/releases/v5.10.0/css/all.css');
 	if ( !function_exists('add_UA_widget_categories')) {
 		wp_enqueue_style('lib-bootstrap-min', get_theme_file_uri('/assets/css/bootstrap.min.css'));
-		wp_enqueue_style('lib-bootstrap-select-min', get_theme_file_uri('/assets/css/bootstrap-select.min.css'));
 		wp_enqueue_style('lib-line-awesome', '//maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css');
 
 		wp_enqueue_style( 'owl-carousel-min', get_theme_file_uri( '/assets/css/owl.carousel.min.css' ) );
 		wp_enqueue_style( 'owl-theme-default-min', get_theme_file_uri( '/assets/css/owl.theme.default.min.css' ) );
 	}
+	wp_enqueue_style('lib-bootstrap-select-min', get_theme_file_uri('/assets/css/bootstrap-select.min.css'));
 	wp_enqueue_style( 'lib-jquery-fancybox-min', get_theme_file_uri( '/assets/css/jquery.fancybox.min.css' ) );
 	wp_enqueue_style( 'lib-daterangepicker', get_theme_file_uri( '/assets/css/daterangepicker.css' ) );
 	wp_enqueue_style( 'lib-animate-min', get_theme_file_uri( '/assets/css/animate.min.css' ) );
@@ -40,7 +40,10 @@ EOD;
 
 
 
+	$hotel_details_breadcrumb_bg = get_theme_mod('trizen_hotel_details_bdc_bg');
 	$breadcrumb_bg = get_theme_mod('trizen_breadcrumb1_bg');
+	$hotel_details_bdc_pt = get_theme_mod('trizen_hotel_details_bdc_wrap_pt', 225);
+	$hotel_details_bdc_pb = get_theme_mod('trizen_hotel_details_bdc_wrap_pb', 30);
 	$breadcrumb1_pt = get_theme_mod('trizen_breadcrumb1_wrapper_pt', 90);
 	$breadcrumb1_pb = get_theme_mod('trizen_breadcrumb1_wrapper_pb', 100);
 	$breadcrumb1_title_clr = get_theme_mod('trizen_breadcrumb_title_clr', __('#ffffff', 'trizen'));
@@ -49,8 +52,28 @@ EOD;
 	$breadcrumb1_bdc_clr = get_theme_mod('trizen_breadcrumb1_bdc_clr', __('#ffffff', 'trizen'));
 	$breadcrumb1_bdc_hv_clr = get_theme_mod('trizen_breadcrumb1_bdc_hv_clr', __('#287dfa', 'trizen'));
 	$breadcrumb1_bdc_size = get_theme_mod('trizen_breadcrumb1_bdc_size', 16);
+	$hotel_details_bdc_video_btn_clr = get_theme_mod('trizen_hotel_details_bdc_video_btn_clr', __('#5d646d', 'trizen'));
+	$hotel_details_bdc_video_btn_bg = get_theme_mod('trizen_hotel_details_bdc_video_btn_bg', __('#ffffff', 'trizen'));
+	$hotel_details_bdc_video_btn_clr_hv = get_theme_mod('trizen_hotel_details_bdc_video_btn_clr_hv', __('#ffffff', 'trizen'));
+	$hotel_details_bdc_video_btn_bg_hv = get_theme_mod('trizen_hotel_details_bdc_video_btn_bg_hv', __('#287dfa', 'trizen'));
+	$hotel_details_bdc_photo_btn_clr = get_theme_mod('trizen_hotel_details_bdc_photo_btn_clr', __('#5d646d', 'trizen'));
+	$hotel_details_bdc_photo_btn_bg = get_theme_mod('trizen_hotel_details_bdc_photo_btn_bg', __('#ffffff', 'trizen'));
+	$hotel_details_bdc_photo_btn_clr_hv = get_theme_mod('trizen_hotel_details_bdc_photo_btn_clr_hv', __('#ffffff', 'trizen'));
+	$hotel_details_bdc_photo_btn_bg_hv = get_theme_mod('trizen_hotel_details_bdc_photo_btn_bg_hv', __('#287dfa', 'trizen'));
 	?>
 	<style>
+        .hotel-details-breadcrumb {
+        <?php if(!empty($hotel_details_breadcrumb_bg)) { ?>
+            background-image: url("<?php echo esc_url($hotel_details_breadcrumb_bg); ?>");
+        <?php } ?>
+        }
+        .hotel-details-breadcrumb .breadcrumb-btn {
+            <?php if(!empty($hotel_details_bdc_pt)) { ?>
+                padding-top: <?php echo esc_attr($hotel_details_bdc_pt); ?>px;
+            <?php } if(!empty($hotel_details_bdc_pb)) { ?>
+                padding-bottom: <?php echo esc_attr($hotel_details_bdc_pb); ?>px;
+            <?php } ?>
+        }
         .breadcrumb-area.static-breadcrumb {
             <?php if(!empty($breadcrumb_bg)) { ?>
                 background-image: url("<?php echo esc_url($breadcrumb_bg); ?>");
@@ -86,6 +109,34 @@ EOD;
         .breadcrumb-area.static-breadcrumb .breadcrumb-list .list-items li {
             <?php if(!empty($breadcrumb1_bdc_size)) { ?>
                 font-size: <?php echo esc_attr($breadcrumb1_bdc_size); ?>;
+            <?php } ?>
+        }
+        .hotel-details-breadcrumb .breadcrumb-btn .hotel-video-btn {
+            <?php if(!empty($hotel_details_bdc_video_btn_clr)) { ?>
+                color: <?php echo esc_attr($hotel_details_bdc_video_btn_clr); ?>;
+            <?php } if(!empty($hotel_details_bdc_video_btn_bg)) { ?>
+                background: <?php echo esc_attr($hotel_details_bdc_video_btn_bg); ?>;
+            <?php } ?>
+        }
+        .hotel-details-breadcrumb .breadcrumb-btn .hotel-video-btn:hover {
+            <?php if(!empty($hotel_details_bdc_video_btn_clr_hv)) { ?>
+                color: <?php echo esc_attr($hotel_details_bdc_video_btn_clr_hv); ?>;
+            <?php } if(!empty($hotel_details_bdc_video_btn_bg_hv)) { ?>
+                background: <?php echo esc_attr($hotel_details_bdc_video_btn_bg_hv); ?>;
+            <?php } ?>
+        }
+        .hotel-details-breadcrumb .breadcrumb-btn .hotel-gallery-btn {
+            <?php if(!empty($hotel_details_bdc_photo_btn_clr)) { ?>
+                color: <?php echo esc_attr($hotel_details_bdc_photo_btn_clr); ?>;
+            <?php } if(!empty($hotel_details_bdc_photo_btn_bg)) { ?>
+                background: <?php echo esc_attr($hotel_details_bdc_photo_btn_bg); ?>;
+            <?php } ?>
+        }
+        .hotel-details-breadcrumb .breadcrumb-btn .hotel-gallery-btn:hover {
+            <?php if(!empty($hotel_details_bdc_photo_btn_clr_hv)) { ?>
+                color: <?php echo esc_attr($hotel_details_bdc_photo_btn_clr_hv); ?>;
+            <?php } if(!empty($hotel_details_bdc_photo_btn_bg_hv)) { ?>
+                background: <?php echo esc_attr($hotel_details_bdc_photo_btn_bg_hv); ?>;
             <?php } ?>
         }
 	</style>

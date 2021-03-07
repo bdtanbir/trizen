@@ -473,6 +473,216 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 			)));
 
 
+			/* Hotel Details Breadcrumb Customize */
+			$wp_customize->add_section('trizen_hotel_details_bdc_options', array(
+				'title'           => __('Hotel Details Breadcrumb', 'trizen'),
+				'priority'        => 2,
+				'panel'           => 'trizen_breadcrumbs_panel_options',
+			));
+			// Breadcrumb BG
+			$wp_customize->add_setting('trizen_hotel_details_bdc_bg', array(
+				'transport'         => 'postMessage',
+				'sanitize_callback' => [$this, 'sanitize_file']
+			));
+			$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'trizen_hotel_details_bdc_bg', array(
+				'type'          => 'upload',
+				'label'         => __('Background', 'trizen'),
+				'section'       => 'trizen_hotel_details_bdc_options',
+				'settings'      => 'trizen_hotel_details_bdc_bg',
+				'button_labels' => array(
+					'select'       => __('Select Image', 'trizen'),
+					'change'       => __('Change Image', 'trizen'),
+					'remove'       => __('Remove', 'trizen'),
+					'default'      => __('Default', 'trizen'),
+					'placeholder'  => __('No Image selected', 'trizen'),
+					'frame_title'  => __('Select Image', 'trizen'),
+					'frame_button' => __('Choose Image', 'trizen'),
+
+				),
+			)));
+			// Wrapper Style
+			$wp_customize->add_setting('trizen_hotel_details_bdc_wrap_hd', array(
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_hotel_details_bdc_wrap_hd', array(
+				'label'    => __('Wrapper', 'trizen'),
+				'section'  => 'trizen_hotel_details_bdc_options',
+				'settings' => 'trizen_hotel_details_bdc_wrap_hd',
+				'type'     => 'hidden',
+			));
+			// Wrapper Padding-top
+			$wp_customize->add_setting('trizen_hotel_details_bdc_wrap_pt', array(
+				'default'           => 225,
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_hotel_details_bdc_wrap_pt', array(
+				'label'    => __('Padding Top', 'trizen'),
+				'section'  => 'trizen_hotel_details_bdc_options',
+				'settings' => 'trizen_hotel_details_bdc_wrap_pt',
+				'type'     => 'number',
+				'choices'  => array(
+					'min'  => 0,
+					'max'  => 500,
+					'step' => 1,
+				),
+			));
+			// Wrapper Padding-bottom
+			$wp_customize->add_setting('trizen_hotel_details_bdc_wrap_pb', array(
+				'default'           => 30,
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_hotel_details_bdc_wrap_pb', array(
+				'label'    => __('Padding Bottom', 'trizen'),
+				'section'  => 'trizen_hotel_details_bdc_options',
+				'settings' => 'trizen_hotel_details_bdc_wrap_pb',
+				'type'     => 'number',
+				'choices'  => array(
+					'min'  => 0,
+					'max'  => 500,
+					'step' => 1,
+				),
+			));
+
+			// Video Button Style
+			$wp_customize->add_setting('trizen_hotel_details_bdc_video_btn_hd', array(
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_hotel_details_bdc_video_btn_hd', array(
+				'label'    => __('Video Button', 'trizen'),
+				'section'  => 'trizen_hotel_details_bdc_options',
+				'settings' => 'trizen_hotel_details_bdc_video_btn_hd',
+				'type'     => 'hidden',
+			));
+			// Video Button Text
+			$wp_customize->add_setting('trizen_hotel_details_bdc_video_btn_txt', array(
+				'default'           => __('Video', 'trizen'),
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_hotel_details_bdc_video_btn_txt', array(
+				'label'    => __('Text', 'trizen'),
+				'section'  => 'trizen_hotel_details_bdc_options',
+				'settings' => 'trizen_hotel_details_bdc_video_btn_txt',
+				'type'     => 'text',
+			));
+			// Video Button Color
+			$wp_customize->add_setting('trizen_hotel_details_bdc_video_btn_clr', array(
+				'default'           => __('#5d646d', 'trizen'),
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport'         => 'postMessage'
+			));
+			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_hotel_details_bdc_video_btn_clr', array(
+				'type'    => 'color',
+				'label'   => __('Color', 'trizen'),
+				'section' => 'trizen_hotel_details_bdc_options',
+			)));
+			// Video Button Background
+			$wp_customize->add_setting('trizen_hotel_details_bdc_video_btn_bg', array(
+				'default'           => __('#ffffff', 'trizen'),
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport'         => 'postMessage'
+			));
+			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_hotel_details_bdc_video_btn_bg', array(
+				'type'    => 'color',
+				'label'   => __('Background', 'trizen'),
+				'section' => 'trizen_hotel_details_bdc_options',
+			)));
+			// Video Button Hover Color
+			$wp_customize->add_setting('trizen_hotel_details_bdc_video_btn_clr_hv', array(
+				'default'           => __('#ffffff', 'trizen'),
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport'         => 'postMessage'
+			));
+			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_hotel_details_bdc_video_btn_clr_hv', array(
+				'type'    => 'color',
+				'label'   => __('Hover Color', 'trizen'),
+				'section' => 'trizen_hotel_details_bdc_options',
+			)));
+			// Video Button Hover Background
+			$wp_customize->add_setting('trizen_hotel_details_bdc_video_btn_bg_hv', array(
+				'default'           => __('#287dfa', 'trizen'),
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport'         => 'postMessage'
+			));
+			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_hotel_details_bdc_video_btn_bg_hv', array(
+				'type'    => 'color',
+				'label'   => __('Hover Background', 'trizen'),
+				'section' => 'trizen_hotel_details_bdc_options',
+			)));
+
+			// More Photo Button Style
+			$wp_customize->add_setting('trizen_hotel_details_bdc_photo_btn_hd', array(
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_hotel_details_bdc_photo_btn_hd', array(
+				'label'    => __('More Photos Button', 'trizen'),
+				'section'  => 'trizen_hotel_details_bdc_options',
+				'settings' => 'trizen_hotel_details_bdc_photo_btn_hd',
+				'type'     => 'hidden',
+			));
+			// More Photo Button Text
+			$wp_customize->add_setting('trizen_hotel_details_bdc_photo_btn_txt', array(
+				'default'           => __('More Photos', 'trizen'),
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_hotel_details_bdc_photo_btn_txt', array(
+				'label'    => __('Text', 'trizen'),
+				'section'  => 'trizen_hotel_details_bdc_options',
+				'settings' => 'trizen_hotel_details_bdc_photo_btn_txt',
+				'type'     => 'text',
+			));
+			// More Photo Button Color
+			$wp_customize->add_setting('trizen_hotel_details_bdc_photo_btn_clr', array(
+				'default'           => __('#5d646d', 'trizen'),
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport'         => 'postMessage'
+			));
+			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_hotel_details_bdc_photo_btn_clr', array(
+				'type'    => 'color',
+				'label'   => __('Color', 'trizen'),
+				'section' => 'trizen_hotel_details_bdc_options',
+			)));
+			// More Photo Button Background
+			$wp_customize->add_setting('trizen_hotel_details_bdc_photo_btn_bg', array(
+				'default'           => __('#ffffff', 'trizen'),
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport'         => 'postMessage'
+			));
+			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_hotel_details_bdc_photo_btn_bg', array(
+				'type'    => 'color',
+				'label'   => __('Background', 'trizen'),
+				'section' => 'trizen_hotel_details_bdc_options',
+			)));
+			// More Photo Button Hover Color
+			$wp_customize->add_setting('trizen_hotel_details_bdc_photo_btn_clr_hv', array(
+				'default'           => __('#ffffff', 'trizen'),
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport'         => 'postMessage'
+			));
+			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_hotel_details_bdc_photo_btn_clr_hv', array(
+				'type'    => 'color',
+				'label'   => __('Hover Color', 'trizen'),
+				'section' => 'trizen_hotel_details_bdc_options',
+			)));
+			// More Photo Button Hover Background
+			$wp_customize->add_setting('trizen_hotel_details_bdc_photo_btn_bg_hv', array(
+				'default'           => __('#287dfa', 'trizen'),
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport'         => 'postMessage'
+			));
+			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_hotel_details_bdc_photo_btn_bg_hv', array(
+				'type'    => 'color',
+				'label'   => __('Hover Background', 'trizen'),
+				'section' => 'trizen_hotel_details_bdc_options',
+			)));
+
+
 			/*--------------------------
 			 *  Blog
 			 * -------------------------*/
@@ -988,6 +1198,12 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				));
 				$wp_customize->selective_refresh->add_partial('trizen_related_post_title', array(
 					'selector'        => '.related-posts .title',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_hotel_details_bdc_video_btn_txt', array(
+					'selector'        => '.hotel-details-breadcrumb .breadcrumb-btn .hotel-video-btn',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_hotel_details_bdc_photo_btn_txt', array(
+					'selector'        => '.hotel-details-breadcrumb .breadcrumb-btn .hotel-gallery-btn',
 				));
 			}
 

@@ -35,14 +35,26 @@
     outline: none;
     border-color: #287DFA;
 }
+ul#sub-accordion-section-trizen_hotel_details_bdc_options,
 ul#sub-accordion-section-trizen_breadcrumb1_options {
     display: flex !important;
     flex-wrap: wrap;
     justify-content: space-between;
 }
+ul#sub-accordion-section-trizen_hotel_details_bdc_options > li,
 ul#sub-accordion-section-trizen_breadcrumb1_options > li {
     width: 100%;
 }
+ul#sub-accordion-section-trizen_hotel_details_bdc_options > li#customize-control-trizen_hotel_details_bdc_photo_btn_bg_hv,
+ul#sub-accordion-section-trizen_hotel_details_bdc_options > li#customize-control-trizen_hotel_details_bdc_photo_btn_clr_hv,
+ul#sub-accordion-section-trizen_hotel_details_bdc_options > li#customize-control-trizen_hotel_details_bdc_photo_btn_bg,
+ul#sub-accordion-section-trizen_hotel_details_bdc_options > li#customize-control-trizen_hotel_details_bdc_photo_btn_clr,
+ul#sub-accordion-section-trizen_hotel_details_bdc_options > li#customize-control-trizen_hotel_details_bdc_video_btn_bg_hv,
+ul#sub-accordion-section-trizen_hotel_details_bdc_options > li#customize-control-trizen_hotel_details_bdc_video_btn_clr_hv,
+ul#sub-accordion-section-trizen_hotel_details_bdc_options > li#customize-control-trizen_hotel_details_bdc_video_btn_bg,
+ul#sub-accordion-section-trizen_hotel_details_bdc_options > li#customize-control-trizen_hotel_details_bdc_video_btn_clr,
+ul#sub-accordion-section-trizen_hotel_details_bdc_options > li#customize-control-trizen_hotel_details_bdc_wrap_pb,
+ul#sub-accordion-section-trizen_hotel_details_bdc_options > li#customize-control-trizen_hotel_details_bdc_wrap_pt,
 ul#sub-accordion-section-trizen_breadcrumb1_options > li#customize-control-trizen_breadcrumb1_bdc_size,
 ul#sub-accordion-section-trizen_breadcrumb1_options > li#customize-control-trizen_breadcrumb1_bdc_bg,
 ul#sub-accordion-section-trizen_breadcrumb1_options > li#customize-control-trizen_breadcrumb1_title_size,
