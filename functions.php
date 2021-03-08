@@ -299,9 +299,6 @@ if( ! function_exists( 'trizen_auth_user_login' ) ){
 }
 
 
-
-
-
 function __search_by_title_only( $search, $wp_query )
 {
 	global $wpdb;

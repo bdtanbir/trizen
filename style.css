@@ -432,7 +432,7 @@ h6 {
 }
 
 p {
-	/*margin-bottom: 1.5em;*/
+	margin-bottom: 10px;
 }
 
 dfn,
@@ -1099,8 +1099,23 @@ textarea {
 .breadcrumb-btn .theme-btn:not([href]):not([tabindex]):hover {
 	color: var(--white_color);
 }
+.sidebar-widget-item input,
 .accordion-item .card-header .btn {
 	border: none;
+}
+.single-feature-icon {
+	line-height: 42px;
+}
+.accordion>.card:not(:first-of-type):not(:last-of-type),
+.accordion>.card:last-of-type,
+.accordion>.card:first-of-type {
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid rgba(128, 137, 150, 0.2);
+}
+.accordion p {
+	margin-bottom: 0;
 }
 
 

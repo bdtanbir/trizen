@@ -18,6 +18,12 @@ if($breadcrumb_shape == 1) {
 } else {
 	$breadcrumb_shape_show = 'hide-before';
 }
+
+
+$hotel_facilities = get_categories( array ( 'taxonomy' => 'hotel_facilities' ) );
+$trizen_hotel_features_data   = get_post_meta(get_the_ID(), 'trizen_hotel_features_data_group', true);
+
+$trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data_group', true);
 ?>
 
 
@@ -89,7 +95,9 @@ if($breadcrumb_shape == 1) {
 							<ul>
 								<li><a data-scroll="description" href="#description" class="scroll-link active">Hotel Details</a></li>
 								<li><a data-scroll="availability" href="#availability" class="scroll-link">Availability</a></li>
-								<li><a data-scroll="amenities" href="#amenities" class="scroll-link">Amenities</a></li>
+                                <?php if($hotel_facilities) { ?>
+                                    <li><a data-scroll="amenities" href="#amenities" class="scroll-link">Amenities</a></li>
+                                <?php } ?>
 								<li><a data-scroll="faq" href="#faq" class="scroll-link">Faq</a></li>
 								<li><a data-scroll="reviews" href="#reviews" class="scroll-link">Reviews</a></li>
 							</ul>
@@ -112,115 +120,30 @@ if($breadcrumb_shape == 1) {
                                     <?php } ?>
 									<div class="d-flex align-items-center pt-2">
                                         <?php if(!empty($hotel_address)) { ?>
-                                            <p class="mr-2"><?php echo esc_html($hotel_address); ?></p>
+                                            <p class="mr-2 mb-0"><?php echo esc_html($hotel_address); ?></p>
                                         <?php } ?>
-										<p>
+										<p class="mb-0">
 											<span class="badge badge-warning text-white font-size-16">4.7</span>
 											<span>(4,209 Reviews)</span>
 										</p>
 									</div>
-								</div><!-- end single-content-item -->
-								<div class="section-block"></div>
-								<div class="single-content-item py-4">
-									<div class="row">
-										<div class="col-lg-4 responsive-column">
-											<div class="single-tour-feature d-flex align-items-center mb-3">
-												<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-													<i class="la la-hotel"></i>
-												</div>
-												<div class="single-feature-titles">
-													<h3 class="title font-size-15 font-weight-medium">Hotel Type</h3>
-													<span class="font-size-13">4 Star</span>
-												</div>
-											</div><!-- end single-tour-feature -->
-										</div><!-- end col-lg-4 -->
-										<div class="col-lg-4 responsive-column">
-											<div class="single-tour-feature d-flex align-items-center mb-3">
-												<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-													<i class="la la-user"></i>
-												</div>
-												<div class="single-feature-titles">
-													<h3 class="title font-size-15 font-weight-medium">Extra People</h3>
-													<span class="font-size-13">No Charge</span>
-												</div>
-											</div><!-- end single-tour-feature -->
-										</div><!-- end col-lg-4 -->
-										<div class="col-lg-4 responsive-column">
-											<div class="single-tour-feature d-flex align-items-center mb-3">
-												<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-													<i class="la la-bed"></i>
-												</div>
-												<div class="single-feature-titles">
-													<h3 class="title font-size-15 font-weight-medium">Minimum Stay</h3>
-													<span class="font-size-13">2 Nights</span>
-												</div>
-											</div><!-- end single-tour-feature -->
-										</div><!-- end col-lg-4 -->
-										<div class="col-lg-4 responsive-column">
-											<div class="single-tour-feature d-flex align-items-center mb-3">
-												<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-													<i class="la la-money"></i>
-												</div>
-												<div class="single-feature-titles">
-													<h3 class="title font-size-15 font-weight-medium">Security Deposit</h3>
-													<span class="font-size-13">$279</span>
-												</div>
-											</div><!-- end single-tour-feature -->
-										</div><!-- end col-lg-4 -->
-										<div class="col-lg-4 responsive-column">
-											<div class="single-tour-feature d-flex align-items-center mb-3">
-												<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-													<i class="la la-globe"></i>
-												</div>
-												<div class="single-feature-titles">
-													<h3 class="title font-size-15 font-weight-medium">Country</h3>
-													<span class="font-size-13">France</span>
-												</div>
-											</div><!-- end single-tour-feature -->
-										</div><!-- end col-lg-4 -->
-										<div class="col-lg-4 responsive-column">
-											<div class="single-tour-feature d-flex align-items-center mb-3">
-												<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-													<i class="la la-map"></i>
-												</div>
-												<div class="single-feature-titles">
-													<h3 class="title font-size-15 font-weight-medium">City</h3>
-													<span class="font-size-13">Paris</span>
-												</div>
-											</div><!-- end single-tour-feature -->
-										</div><!-- end col-lg-4 -->
-										<div class="col-lg-4 responsive-column">
-											<div class="single-tour-feature d-flex align-items-center mb-3">
-												<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-													<i class="la la-user"></i>
-												</div>
-												<div class="single-feature-titles">
-													<h3 class="title font-size-15 font-weight-medium">Neighborhood</h3>
-													<span class="font-size-13">République</span>
-												</div>
-											</div><!-- end single-tour-feature -->
-										</div><!-- end col-lg-4 -->
-										<div class="col-lg-4 responsive-column">
-											<div class="single-tour-feature d-flex align-items-center mb-3">
-												<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-													<i class="la la-times"></i>
-												</div>
-												<div class="single-feature-titles">
-													<h3 class="title font-size-15 font-weight-medium">Cancellation</h3>
-													<span class="font-size-13">Strict</span>
-												</div>
-											</div><!-- end single-tour-feature -->
-										</div><!-- end col-lg-4 -->
-									</div><!-- end row -->
-								</div><!-- end single-content-item -->
+								</div>
+                                <?php if($trizen_hotel_features_data) {
+                                    get_template_part('template-parts/hotel/hotel-features');
+                                } ?>
 								<div class="section-block"></div>
 								<div class="single-content-item padding-top-40px padding-bottom-40px">
-									<h3 class="title font-size-20">About Hilton Hotel and Resorts</h3>
-									<p class="py-3">Per consequat adolescens ex, cu nibh commune temporibus vim, ad sumo viris eloquentiam sed. Mea appareat omittantur eloquentiam ad, nam ei quas oportere democritum. Prima causae admodum id est, ei timeam inimicus sed. Sit an meis aliquam, cetero inermis vel ut. An sit illum euismod facilisis, tamquam vulputate pertinacia eum at.</p>
-									<p>Cum et probo menandri. Officiis consulatu pro et, ne sea sale invidunt, sed ut sint blandit efficiendi. Atomorum explicari eu qui, est enim quaerendum te. Quo harum viris id. Per ne quando dolore evertitur, pro ad cibo commune.</p>
-								</div><!-- end single-content-item -->
+                                    <?php if(!empty(get_the_title())) { ?>
+                                        <h3 class="title font-size-20 mb-3">
+                                            <?php esc_html_e('About ', 'trizen'); the_title(); ?>
+                                        </h3>
+                                    <?php }
+
+                                    the_content();
+                                    ?>
+								</div>
 								<div class="section-block"></div>
-							</div><!-- end description -->
+							</div>
 							<div id="availability" class="page-scroll">
 								<div class="single-content-item padding-top-40px padding-bottom-30px">
 									<h3 class="title font-size-20">Availability</h3>
@@ -644,299 +567,16 @@ if($breadcrumb_shape == 1) {
 									</div><!-- end cabin-type -->
 								</div><!-- end single-content-item -->
 								<div class="section-block"></div>
-							</div><!-- end location-map -->
-							<div id="amenities" class="page-scroll">
-								<div class="single-content-item padding-top-40px padding-bottom-20px">
-									<h3 class="title font-size-20">Amenities</h3>
-									<div class="amenities-feature-item pt-4">
-										<div class="row">
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-wifi"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">WI-FI</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-check"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Swimming Pool</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-television"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Television</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-coffee"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Coffee</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-tree"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Air Conditioning</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-gear"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Fitness Facility</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-check"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Fridge</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-glass"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Wine Bar</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-music"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Entertainment</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-lock"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Secure Vault</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-car"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Pick And Drop</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-check"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Room Service</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-check-circle"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Pets Allowed</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-coffee"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Breakfast</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-car"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Free Parking</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-fire"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Fire Place</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-wheelchair"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Handicap Accessible</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-user-secret"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Doorman</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-building"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Elevator In Building</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-gift"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Suitable For Events</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-											<div class="col-lg-4 responsive-column">
-												<div class="single-tour-feature d-flex align-items-center mb-3">
-													<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-														<i class="la la-gamepad"></i>
-													</div>
-													<div class="single-feature-titles">
-														<h3 class="title font-size-15 font-weight-medium">Play Place</h3>
-													</div>
-												</div><!-- end single-tour-feature -->
-											</div><!-- end col-lg-4 -->
-										</div><!-- end row -->
-									</div>
-								</div><!-- end single-content-item -->
-								<div class="section-block"></div>
-							</div><!-- end faq -->
-							<div id="faq" class="page-scroll">
-								<div class="single-content-item padding-top-40px padding-bottom-40px">
-									<h3 class="title font-size-20">FAQs</h3>
-									<div class="accordion accordion-item padding-top-30px" id="accordionExample2">
-										<div class="card">
-											<div class="card-header" id="faqHeadingFour">
-												<h2 class="mb-0">
-													<button class="btn btn-link d-flex align-items-center justify-content-end flex-row-reverse font-size-16" type="button" data-toggle="collapse" data-target="#faqCollapseFour" aria-expanded="true" aria-controls="faqCollapseFour">
-														<span class="ml-3">How do I know a reservation is accepted or confirmed?</span>
-														<i class="la la-minus"></i>
-														<i class="la la-plus"></i>
-													</button>
-												</h2>
-											</div>
-											<div id="faqCollapseFour" class="collapse show" aria-labelledby="faqHeadingFour" data-parent="#accordionExample2">
-												<div class="card-body d-flex">
-													<p>Mea appareat omittantur eloquentiam ad, nam ei quas oportere democritum. Prima causae admodum id est, ei timeam inimicus sed. Sit an meis aliquam, cetero inermis vel ut. An sit illum euismod facilisis Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-												</div>
-											</div>
-										</div><!-- end card -->
-										<div class="card">
-											<div class="card-header" id="faqHeadingFive">
-												<h2 class="mb-0">
-													<button class="btn btn-link d-flex align-items-center justify-content-end flex-row-reverse font-size-16" type="button" data-toggle="collapse" data-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
-														<span class="ml-3">Am I allowed to decline reservation requests?</span>
-														<i class="la la-minus"></i>
-														<i class="la la-plus"></i>
-													</button>
-												</h2>
-											</div>
-											<div id="faqCollapseFive" class="collapse" aria-labelledby="faqHeadingFive" data-parent="#accordionExample2">
-												<div class="card-body d-flex">
-													<p>Mea appareat omittantur eloquentiam ad, nam ei quas oportere democritum. Prima causae admodum id est, ei timeam inimicus sed. Sit an meis aliquam, cetero inermis vel ut. An sit illum euismod facilisis Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-												</div>
-											</div>
-										</div><!-- end card -->
-										<div class="card">
-											<div class="card-header" id="faqHeadingSix">
-												<h2 class="mb-0">
-													<button class="btn btn-link d-flex align-items-center justify-content-end flex-row-reverse font-size-16" type="button" data-toggle="collapse" data-target="#faqCollapseSix" aria-expanded="false" aria-controls="faqCollapseSix">
-														<span class="ml-3">What happens if I let a reservation request expire?</span>
-														<i class="la la-minus"></i>
-														<i class="la la-plus"></i>
-													</button>
-												</h2>
-											</div>
-											<div id="faqCollapseSix" class="collapse" aria-labelledby="faqHeadingSix" data-parent="#accordionExample2">
-												<div class="card-body d-flex">
-													<p>Mea appareat omittantur eloquentiam ad, nam ei quas oportere democritum. Prima causae admodum id est, ei timeam inimicus sed. Sit an meis aliquam, cetero inermis vel ut. An sit illum euismod facilisis Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-												</div>
-											</div>
-										</div><!-- end card -->
-										<div class="card">
-											<div class="card-header" id="faqHeadingSeven">
-												<h2 class="mb-0">
-													<button class="btn btn-link d-flex align-items-center justify-content-end flex-row-reverse font-size-16" type="button" data-toggle="collapse" data-target="#faqCollapseSeven" aria-expanded="false" aria-controls="faqCollapseSeven">
-														<span class="ml-3">How do I set reservation requirements?</span>
-														<i class="la la-minus"></i>
-														<i class="la la-plus"></i>
-													</button>
-												</h2>
-											</div>
-											<div id="faqCollapseSeven" class="collapse" aria-labelledby="faqHeadingSeven" data-parent="#accordionExample2">
-												<div class="card-body d-flex">
-													<p>Mea appareat omittantur eloquentiam ad, nam ei quas oportere democritum. Prima causae admodum id est, ei timeam inimicus sed. Sit an meis aliquam, cetero inermis vel ut. An sit illum euismod facilisis Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-												</div>
-											</div>
-										</div><!-- end card -->
-									</div>
-								</div><!-- end single-content-item -->
-								<div class="section-block"></div>
-							</div><!-- end faq -->
+							</div>
+                            <?php if($hotel_facilities) {
+                                get_template_part('template-parts/hotel/hotel-amenities');
+                            }
+
+                            if( !empty( $trizen_hotel_faqs_data ) ) {
+                                get_template_part( 'template-parts/hotel/hotel-faqs' );
+                            }
+                            ?>
+
 							<div id="reviews" class="page-scroll">
 								<div class="single-content-item padding-top-40px padding-bottom-40px">
 									<h3 class="title font-size-20">Reviews</h3>
@@ -948,7 +588,7 @@ if($breadcrumb_shape == 1) {
 													<p>Excellent</p>
 													<span>Based on 4 reviews</span>
 												</div>
-											</div><!-- end col-lg-4 -->
+											</div>
 											<div class="col-lg-8">
 												<div class="review-bars">
 													<div class="row">
@@ -959,12 +599,12 @@ if($breadcrumb_shape == 1) {
 																	<div class="progressbar-box flex-shrink-0">
 																		<div class="progressbar-line" data-percent="70%">
 																			<div class="progressbar-line-item bar-bg-1"></div>
-																		</div> <!-- End Skill Bar -->
+																		</div>
 																	</div>
 																	<div class="bar-percent">4.6</div>
 																</div>
-															</div><!-- end progress-item -->
-														</div><!-- end col-lg-6 -->
+															</div>
+														</div>
 														<div class="col-lg-6">
 															<div class="progress-item">
 																<h3 class="progressbar-title">Location</h3>
@@ -972,12 +612,12 @@ if($breadcrumb_shape == 1) {
 																	<div class="progressbar-box flex-shrink-0">
 																		<div class="progressbar-line" data-percent="55%">
 																			<div class="progressbar-line-item bar-bg-2"></div>
-																		</div> <!-- End Skill Bar -->
+																		</div>
 																	</div>
 																	<div class="bar-percent">4.7</div>
 																</div>
-															</div><!-- end progress-item -->
-														</div><!-- end col-lg-6 -->
+															</div>
+														</div>
 														<div class="col-lg-6">
 															<div class="progress-item">
 																<h3 class="progressbar-title">Value for Money</h3>
@@ -985,12 +625,12 @@ if($breadcrumb_shape == 1) {
 																	<div class="progressbar-box flex-shrink-0">
 																		<div class="progressbar-line" data-percent="40%">
 																			<div class="progressbar-line-item bar-bg-3"></div>
-																		</div> <!-- End Skill Bar -->
+																		</div>
 																	</div>
 																	<div class="bar-percent">2.6</div>
 																</div>
-															</div><!-- end progress-item -->
-														</div><!-- end col-lg-6 -->
+															</div>
+														</div>
 														<div class="col-lg-6">
 															<div class="progress-item">
 																<h3 class="progressbar-title">Cleanliness</h3>
@@ -998,12 +638,12 @@ if($breadcrumb_shape == 1) {
 																	<div class="progressbar-box flex-shrink-0">
 																		<div class="progressbar-line" data-percent="60%">
 																			<div class="progressbar-line-item bar-bg-4"></div>
-																		</div> <!-- End Skill Bar -->
+																		</div>
 																	</div>
 																	<div class="bar-percent">3.6</div>
 																</div>
-															</div><!-- end progress-item -->
-														</div><!-- end col-lg-6 -->
+															</div>
+														</div>
 														<div class="col-lg-6">
 															<div class="progress-item">
 																<h3 class="progressbar-title">Facilities</h3>
@@ -1011,20 +651,20 @@ if($breadcrumb_shape == 1) {
 																	<div class="progressbar-box flex-shrink-0">
 																		<div class="progressbar-line" data-percent="50%">
 																			<div class="progressbar-line-item bar-bg-5"></div>
-																		</div> <!-- End Skill Bar -->
+																		</div>
 																	</div>
 																	<div class="bar-percent">2.6</div>
 																</div>
-															</div><!-- end progress-item -->
-														</div><!-- end col-lg-6 -->
-													</div><!-- end row -->
+															</div>
+														</div>
+													</div>
 												</div>
-											</div><!-- end col-lg-8 -->
+											</div>
 										</div>
 									</div>
-								</div><!-- end single-content-item -->
+								</div>
 								<div class="section-block"></div>
-							</div><!-- end reviews -->
+							</div>
 							<div class="review-box">
 								<div class="single-content-item padding-top-40px">
 									<h3 class="title font-size-20">Showing 3 guest reviews</h3>
@@ -1061,7 +701,7 @@ if($breadcrumb_shape == 1) {
 													</div>
 												</div>
 											</div>
-										</div><!-- end comments -->
+										</div>
 										<div class="comment comment-reply-item">
 											<div class="comment-avatar">
 												<img class="avatar__img" alt="" src="images/team9.jpg">
@@ -1094,7 +734,7 @@ if($breadcrumb_shape == 1) {
 													</div>
 												</div>
 											</div>
-										</div><!-- end comments -->
+										</div>
 										<div class="comment">
 											<div class="comment-avatar">
 												<img class="avatar__img" alt="" src="images/team10.jpg">
@@ -1127,16 +767,16 @@ if($breadcrumb_shape == 1) {
 													</div>
 												</div>
 											</div>
-										</div><!-- end comments -->
+										</div>
 										<div class="btn-box load-more text-center">
 											<button class="theme-btn theme-btn-small theme-btn-transparent" type="button">Load More Review</button>
 										</div>
-									</div><!-- end comments-list -->
+									</div>
 									<div class="comment-forum padding-top-40px">
 										<div class="form-box">
 											<div class="form-title-wrap">
 												<h3 class="title">Write a Review</h3>
-											</div><!-- form-title-wrap -->
+											</div>
 											<div class="form-content">
 												<div class="rate-option p-2">
 													<div class="row">
@@ -1156,7 +796,7 @@ if($breadcrumb_shape == 1) {
 																	<label for="lst5"></label>
 																</div>
 															</div>
-														</div><!-- col-lg-4 -->
+														</div>
 														<div class="col-lg-4 responsive-column">
 															<div class="rate-option-item">
 																<label>Location</label>
@@ -1173,7 +813,7 @@ if($breadcrumb_shape == 1) {
 																	<label for="l5"></label>
 																</div>
 															</div>
-														</div><!-- col-lg-4 -->
+														</div>
 														<div class="col-lg-4 responsive-column">
 															<div class="rate-option-item">
 																<label>Value for Money</label>
@@ -1190,7 +830,7 @@ if($breadcrumb_shape == 1) {
 																	<label for="vm5"></label>
 																</div>
 															</div>
-														</div><!-- col-lg-4 -->
+														</div>
 														<div class="col-lg-4 responsive-column">
 															<div class="rate-option-item">
 																<label>Cleanliness</label>
@@ -1207,7 +847,7 @@ if($breadcrumb_shape == 1) {
 																	<label for="cln5"></label>
 																</div>
 															</div>
-														</div><!-- col-lg-4 -->
+														</div>
 														<div class="col-lg-4 responsive-column">
 															<div class="rate-option-item">
 																<label>Facilities</label>
@@ -1224,9 +864,9 @@ if($breadcrumb_shape == 1) {
 																	<label for="f5"></label>
 																</div>
 															</div>
-														</div><!-- col-lg-4 -->
-													</div><!-- end row -->
-												</div><!-- end rate-option -->
+														</div>
+													</div>
+												</div>
 												<div class="contact-form-action">
 													<form method="post">
 														<div class="row">
@@ -1264,14 +904,14 @@ if($breadcrumb_shape == 1) {
 															</div>
 														</div>
 													</form>
-												</div><!-- end contact-form-action -->
-											</div><!-- end form-content -->
-										</div><!-- end form-box -->
-									</div><!-- end comment-forum -->
-								</div><!-- end single-content-item -->
-							</div><!-- end review-box -->
-						</div><!-- end single-content-wrap -->
-					</div><!-- end col-lg-8 -->
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div class="col-lg-4">
 						<div class="sidebar single-content-sidebar mb-0">
 							<div class="sidebar-widget single-content-widget">
@@ -1342,7 +982,7 @@ if($breadcrumb_shape == 1) {
 											</div>
 										</form>
 									</div>
-								</div><!-- end sidebar-widget-item -->
+								</div>
 								<div class="sidebar-widget-item">
 									<div class="qty-box mb-2 d-flex align-items-center justify-content-between">
 										<label class="font-size-16">Adults <span>Age 18+</span></label>
@@ -1351,7 +991,7 @@ if($breadcrumb_shape == 1) {
 											<input type="text" name="qtyInput" value="0">
 											<div class="qtyInc"><i class="la la-plus"></i></div>
 										</div>
-									</div><!-- end qty-box -->
+									</div>
 									<div class="qty-box mb-2 d-flex align-items-center justify-content-between">
 										<label class="font-size-16">Children <span>2-12 years old</span></label>
 										<div class="qtyBtn d-flex align-items-center">
@@ -1359,7 +999,7 @@ if($breadcrumb_shape == 1) {
 											<input type="text" name="qtyInput" value="0">
 											<div class="qtyInc"><i class="la la-plus"></i></div>
 										</div>
-									</div><!-- end qty-box -->
+									</div>
 									<div class="qty-box mb-2 d-flex align-items-center justify-content-between">
 										<label class="font-size-16">Infants <span>0-2 years old</span></label>
 										<div class="qtyBtn d-flex align-items-center">
@@ -1367,8 +1007,8 @@ if($breadcrumb_shape == 1) {
 											<input type="text" name="qtyInput" value="0">
 											<div class="qtyInc"><i class="la la-plus"></i></div>
 										</div>
-									</div><!-- end qty-box -->
-								</div><!-- end sidebar-widget-item -->
+									</div>
+								</div>
 								<div class="btn-box pt-2">
 									<a href="tour-booking.html" class="theme-btn text-center w-100 mb-2"><i class="la la-shopping-cart mr-2 font-size-18"></i>Book Now</a>
 									<a href="#" class="theme-btn text-center w-100 theme-btn-transparent"><i class="la la-heart-o mr-2"></i>Add to Wishlist</a>
@@ -1377,7 +1017,7 @@ if($breadcrumb_shape == 1) {
 										<p><i class="la la-eye mr-1 font-size-15 color-text-2"></i>3456</p>
 									</div>
 								</div>
-							</div><!-- end sidebar-widget -->
+							</div>
 							<div class="sidebar-widget single-content-widget">
 								<h3 class="title stroke-shape">Enquiry Form</h3>
 								<div class="enquiry-forum">
@@ -1423,7 +1063,7 @@ if($breadcrumb_shape == 1) {
 										</div><!-- end form-content -->
 									</div><!-- end form-box -->
 								</div><!-- end enquiry-forum -->
-							</div><!-- end sidebar-widget -->
+							</div>
 							<div class="sidebar-widget single-content-widget">
 								<h3 class="title stroke-shape">Why Book With Us?</h3>
 								<div class="sidebar-list">
@@ -1434,7 +1074,7 @@ if($breadcrumb_shape == 1) {
 										<li><i class="la la-file-text icon-element mr-2"></i>Free Travel Insureance</li>
 									</ul>
 								</div><!-- end sidebar-list -->
-							</div><!-- end sidebar-widget -->
+							</div>
 							<div class="sidebar-widget single-content-widget">
 								<h3 class="title stroke-shape">Get a Question?</h3>
 								<p class="font-size-14 line-height-24">Do not hesitate to give us a call. We are an expert team and we are happy to talk to you.</p>
@@ -1444,7 +1084,7 @@ if($breadcrumb_shape == 1) {
 										<li><i class="la la-envelope icon-element mr-2"></i><a href="mailto:info@trizen.com">info@trizen.com</a></li>
 									</ul>
 								</div><!-- end sidebar-list -->
-							</div><!-- end sidebar-widget -->
+							</div>
 							<div class="sidebar-widget single-content-widget">
 								<h3 class="title stroke-shape">Organized by</h3>
 								<div class="author-content">
@@ -1469,12 +1109,12 @@ if($breadcrumb_shape == 1) {
 										</div>
 									</div>
 								</div>
-							</div><!-- end sidebar-widget -->
-						</div><!-- end sidebar -->
-					</div><!-- end col-lg-4 -->
-				</div><!-- end row -->
-			</div><!-- end container -->
-		</div><!-- end single-content-box -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 	<!-- ================================
 	    END TOUR DETAIL AREA
