@@ -666,7 +666,6 @@ Author Email:   contact@tecydevs.com
             }
         });
 
-
     });
 
 })(jQuery);

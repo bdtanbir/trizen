@@ -1099,7 +1099,7 @@ textarea {
 .breadcrumb-btn .theme-btn:not([href]):not([tabindex]):hover {
 	color: var(--white_color);
 }
-.sidebar-widget-item input,
+.sidebar-widget-item .qtyBtn  input,
 .accordion-item .card-header .btn {
 	border: none;
 }
