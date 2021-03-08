@@ -211,7 +211,9 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 												</div>
 												<div class="col-lg-6 responsive-column">
 													<div class="input-box">
-														<label class="label-text">Adults (18+)</label>
+														<label class="label-text">
+                                                            <?php esc_html_e('Adults (18+)', 'trizen'); ?>
+                                                        </label>
 														<div class="form-group">
 															<div class="select-contain w-auto">
 																<select class="select-contain-select">
