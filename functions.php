@@ -322,18 +322,3 @@ function __search_by_title_only( $search, $wp_query )
 	return $search;
 }
 add_filter('posts_search', '__search_by_title_only', 500, 2);
-
-
-function get_username($user_id) {
-	$userdata = get_userdata($user_id);
-	if (!$userdata) {
-		return __('Customer', ST_TEXTDOMAIN);
-	}
-	if ($userdata->display_name) {
-		return $userdata->display_name;
-	} elseif ($userdata->first_name || $userdata->last_name) {
-		return $userdata->first_name . ' ' . $userdata->last_name;
-	} else {
-		return $userdata->user_login;
-	}
-}

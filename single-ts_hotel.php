@@ -92,12 +92,12 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 							<ul>
 								<li>
                                     <a data-scroll="description" href="#description" class="scroll-link active">
-                                        Hotel Details
+                                        <?php esc_html_e('Hotel Details', 'trizen'); ?>
                                     </a>
                                 </li>
 								<li>
                                     <a data-scroll="availability" href="#availability" class="scroll-link">
-                                        Availability
+                                        <?php esc_html_e('Availability', 'trizen'); ?>
                                     </a>
                                 </li>
                                 <?php if($hotel_facilities) { ?>
@@ -113,7 +113,11 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
                                         </a>
                                     </li>
                                 <?php } ?>
-								<li><a data-scroll="reviews" href="#reviews" class="scroll-link">Reviews</a></li>
+								<li>
+                                    <a data-scroll="reviews" href="#reviews" class="scroll-link">
+                                        <?php esc_html_e('Reviews', 'trizen'); ?>
+                                    </a>
+                                </li>
 							</ul>
 						</div>
 					</div>
@@ -137,8 +141,10 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
                                             <p class="mr-2 mb-0"><?php echo esc_html($hotel_address); ?></p>
                                         <?php } ?>
 										<p class="mb-0">
-											<span class="badge badge-warning text-white font-size-16">4.7</span>
-											<span>(4,209 Reviews)</span>
+											<span class="badge badge-warning text-white font-size-16">
+                                                <?php esc_html_e('4.7', 'trizen'); ?>
+                                            </span>
+											<span><?php esc_html_e('(4,209 Reviews)', 'trizen'); ?></span>
 										</p>
 									</div>
 								</div>
@@ -160,13 +166,15 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 							</div>
 							<div id="availability" class="page-scroll">
 								<div class="single-content-item padding-top-40px padding-bottom-30px">
-									<h3 class="title font-size-20">Availability</h3>
+									<h3 class="title font-size-20">
+                                        <?php esc_html_e('Availability', 'trizen'); ?>
+                                    </h3>
 									<div class="contact-form-action padding-bottom-35px">
 										<form method="post">
 											<div class="row">
 												<div class="col-lg-6 responsive-column">
 													<div class="input-box">
-														<label class="label-text">Check in - Check out</label>
+														<label class="label-text"><?php esc_html_e('Check in - Check out', 'trizen'); ?></label>
 														<div class="form-group">
 															<span class="la la-calendar form-icon"></span>
 															<input class="date-range form-control" type="text" name="daterange">
@@ -175,23 +183,25 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 												</div>
 												<div class="col-lg-6 responsive-column">
 													<div class="input-box">
-														<label class="label-text">Rooms</label>
+														<label class="label-text">
+                                                            <?php esc_html_e('Rooms', 'trizen'); ?>
+                                                        </label>
 														<div class="form-group">
 															<div class="select-contain w-auto">
 																<select class="select-contain-select">
-																	<option value="0">Select Rooms</option>
-																	<option value="1">1 Room</option>
-																	<option value="2">2 Rooms</option>
-																	<option value="3">3 Rooms</option>
-																	<option value="4">4 Rooms</option>
-																	<option value="5">5 Rooms</option>
-																	<option value="6">6 Rooms</option>
-																	<option value="7">7 Rooms</option>
-																	<option value="8">8 Rooms</option>
-																	<option value="9">9 Rooms</option>
-																	<option value="10">10 Rooms</option>
-																	<option value="11">11 Rooms</option>
-																	<option value="12">12 Rooms</option>
+																	<option value="0"><?php esc_html_e('Select Rooms', 'trizen'); ?></option>
+																	<option value="1"><?php esc_html_e('1 Room', 'trizen'); ?></option>
+																	<option value="2"><?php esc_html_e('2 Rooms', 'trizen'); ?></option>
+																	<option value="3"><?php esc_html_e('3 Rooms', 'trizen'); ?></option>
+																	<option value="4"><?php esc_html_e('4 Rooms', 'trizen'); ?></option>
+																	<option value="5"><?php esc_html_e('5 Rooms', 'trizen'); ?></option>
+																	<option value="6"><?php esc_html_e('6 Rooms', 'trizen'); ?></option>
+																	<option value="7"><?php esc_html_e('7 Rooms', 'trizen'); ?></option>
+																	<option value="8"><?php esc_html_e('8 Rooms', 'trizen'); ?></option>
+																	<option value="9"><?php esc_html_e('9 Rooms', 'trizen'); ?></option>
+																	<option value="10"><?php esc_html_e('10 Rooms', 'trizen'); ?></option>
+																	<option value="11"><?php esc_html_e('11 Rooms', 'trizen'); ?></option>
+																	<option value="12"><?php esc_html_e('12 Rooms', 'trizen'); ?></option>
 																	<option value="13">13 Rooms</option>
 																	<option value="14">14 Rooms</option>
 																</select>
