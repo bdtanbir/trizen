@@ -100,6 +100,42 @@ $allowed_html = trizen_wses_allowed_menu_html();
 <!-- end modal-shared -->
 <?php get_template_part('layout/login-form'); ?>
 
+
+<!-- end modal-shared -->
+<div class="modal-popup">
+    <div class="modal fade" id="sharePopupForm" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title title" id="exampleModalLongTitle4">Share this tour</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="la la-close"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="copy-to-clipboard-wrap">
+                        <div class="copy-to-clipboard">
+                            <div class="contact-form-action d-flex align-items-center">
+                                <span class="text-success-message">Copied!</span>
+                                <input type="text" class="form-control copy-input" value="https://www.tripstar.com/share/101WxMB0oac1hVQQ==/">
+                                <div class="btn-box">
+                                    <button class="theme-btn theme-btn-light copy-text">Copy</button>
+                                </div>
+                            </div>
+                        </div><!-- end copy-to-clipboard -->
+                        <ul class="social-profile text-center">
+                            <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="lab la-twitter"></i></a></li>
+                            <li><a href="#"><i class="lab la-instagram"></i></a></li>
+                            <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- end modal-popup -->
+
 <!-- Template JS Files -->
 <?php wp_footer(); ?>
 </body>

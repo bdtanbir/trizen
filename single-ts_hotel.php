@@ -202,8 +202,8 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 																	<option value="10"><?php esc_html_e('10 Rooms', 'trizen'); ?></option>
 																	<option value="11"><?php esc_html_e('11 Rooms', 'trizen'); ?></option>
 																	<option value="12"><?php esc_html_e('12 Rooms', 'trizen'); ?></option>
-																	<option value="13">13 Rooms</option>
-																	<option value="14">14 Rooms</option>
+																	<option value="13"><?php esc_html_e('13 Rooms', 'trizen'); ?></option>
+																	<option value="14"><?php esc_html_e('14 Rooms', 'trizen'); ?></option>
 																</select>
 															</div>
 														</div>
@@ -217,21 +217,21 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 														<div class="form-group">
 															<div class="select-contain w-auto">
 																<select class="select-contain-select">
-																	<option value="0">Select Adults</option>
-																	<option value="1">1 Adults</option>
-																	<option value="2">2 Adults</option>
-																	<option value="3">3 Adults</option>
-																	<option value="4">4 Adults</option>
-																	<option value="5">5 Adults</option>
-																	<option value="6">6 Adults</option>
-																	<option value="7">7 Adults</option>
-																	<option value="8">8 Adults</option>
-																	<option value="9">9 Adults</option>
-																	<option value="10">10 Adults</option>
-																	<option value="11">11 Adults</option>
-																	<option value="12">12 Adults</option>
-																	<option value="13">13 Adults</option>
-																	<option value="14">14 Adults</option>
+																	<option value="0"><?php esc_html_e('Select Adults', 'trizen'); ?></option>
+																	<option value="1"><?php esc_html_e('1 Adults', 'trizen'); ?></option>
+																	<option value="2"><?php esc_html_e('2 Adults', 'trizen'); ?></option>
+																	<option value="3"><?php esc_html_e('3 Adults', 'trizen'); ?></option>
+																	<option value="4"><?php esc_html_e('4 Adults', 'trizen'); ?></option>
+																	<option value="5"><?php esc_html_e('5 Adults', 'trizen'); ?></option>
+																	<option value="6"><?php esc_html_e('6 Adults', 'trizen'); ?></option>
+																	<option value="7"><?php esc_html_e('7 Adults', 'trizen'); ?></option>
+																	<option value="8"><?php esc_html_e('8 Adults', 'trizen'); ?></option>
+																	<option value="9"><?php esc_html_e('9 Adults', 'trizen'); ?></option>
+																	<option value="10"><?php esc_html_e('10 Adults', 'trizen'); ?></option>
+																	<option value="11"><?php esc_html_e('11 Adults', 'trizen'); ?></option>
+																	<option value="12"><?php esc_html_e('12 Adults', 'trizen'); ?></option>
+																	<option value="13"><?php esc_html_e('13 Adults', 'trizen'); ?></option>
+																	<option value="14"><?php esc_html_e('14 Adults', 'trizen'); ?></option>
 																</select>
 															</div>
 														</div>
@@ -239,7 +239,9 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 												</div>
 												<div class="col-lg-6 responsive-column">
 													<div class="input-box">
-														<label class="label-text">Children (0-17)</label>
+														<label class="label-text">
+                                                            <?php esc_html_e('Children (0-17)', 'trizen'); ?>
+                                                        </label>
 														<div class="form-group">
 															<div class="select-contain w-auto">
 																<select class="select-contain-select">

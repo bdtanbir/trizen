@@ -1117,7 +1117,26 @@ textarea {
 .accordion p {
 	margin-bottom: 0;
 }
+.contact-form-action .form-group .form-icon {
+	z-index: 9;
+}
 
+
+
+
+/*-------------------------------------------
+	 Room
+---------------------------------------------*/
+.total-price input {
+	border: none;
+	color: var(--secondary_color);
+}
+.room-detail-bread > img {
+	width: auto;
+}
+.hotel-room-details #description .single-content-item p {
+	margin-bottom: 15px;
+}
 
 
 
