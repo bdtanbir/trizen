@@ -106,18 +106,9 @@ $trizen_room_other_facility_data = get_post_meta(get_the_ID(), 'trizen_room_othe
                                     <?php
                                     the_content();
                                 }
+
+                                get_template_part('template-parts/room/room-rules');
                                 ?>
-								<h3 class="title font-size-15 font-weight-medium pb-3">
-                                    <?php esc_html_e('House Rules', 'trizen'); ?>
-                                </h3>
-								<ul class="list-items">
-									<li>
-                                        <i class="la la-dot-circle mr-2"></i><?php esc_html_e('No smoking, parties or events.', 'trizen'); ?>
-                                    </li>
-									<li>
-                                        <i class="la la-dot-circle mr-2"></i><?php esc_html_e('Check-in time is 2 PM - 4 PM and check-out by 10 AM.', 'trizen'); ?>
-                                    </li>
-								</ul>
 							</div>
 							<div class="section-block"></div>
 						</div>
