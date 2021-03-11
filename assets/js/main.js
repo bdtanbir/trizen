@@ -280,6 +280,7 @@ Author Email:   contact@tecydevs.com
                 dots: true,
                 smartSpeed: 700,
                 autoplay: false,
+                autoHeight: true,
                 active: true,
                 margin: 30,
                 navText: ['<i class="la la-angle-left"></i>', '<i class="la la-angle-right"></i>']

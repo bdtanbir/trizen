@@ -61,6 +61,7 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 									$hidden[]  = $image->ID;
 									$image_src = wp_get_attachment_image_src( $image->ID, array( 80, 80 ) );
 									$image_src = str_replace('-150x150', '', $image_src);
+									$image_src = str_replace( '-100x100', '', $image_src );
 									echo '<a class="d-none"
                                    data-fancybox="gallery"
                                    data-src="'.$image_src[0].'"
