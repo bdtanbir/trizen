@@ -3,6 +3,7 @@
 
 $room_facilities = get_categories( array ( 'taxonomy' => 'room_facilities' ) );
 $trizen_room_other_facility_data = get_post_meta(get_the_ID(), 'trizen_room_other_facility_data_group', true);
+$trizen_room_rules_data = get_post_meta(get_the_ID(), 'trizen_room_rules_data_group', true);
 ?>
 
 
@@ -107,7 +108,9 @@ $trizen_room_other_facility_data = get_post_meta(get_the_ID(), 'trizen_room_othe
                                     the_content();
                                 }
 
-                                get_template_part('template-parts/room/room-rules');
+                                if($trizen_room_rules_data) {
+	                                get_template_part( 'template-parts/room/room-rules' );
+                                }
                                 ?>
 							</div>
 							<div class="section-block"></div>

@@ -1137,6 +1137,9 @@ textarea {
 .hotel-room-details #description .single-content-item p {
 	margin-bottom: 15px;
 }
+.single-content-item .list-items li:last-child {
+	margin-bottom: 0;
+}
 
 
 
