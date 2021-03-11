@@ -118,25 +118,6 @@ $trizen_hotel_room_extra_service_data    = get_post_meta(get_the_ID(), 'trizen_h
                     <?php if($trizen_hotel_room_extra_service_data) { ?>
                         <div id="checkboxContainPrice">
 
-                            <!--<div class="custom-checkbox">
-                                <input type="checkbox" name="cleaning" id="cleaningChb" value="15.00" />
-                                <label for="cleaningChb" class="d-flex justify-content-between align-items-center">
-                                    <?php /*esc_html_e('Cleaning Fee', 'trizen'); */?> <span class="text-black font-weight-regular"><?php /*esc_html_e('$15', 'trizen'); */?></span>
-                                </label>
-                            </div>
-                            <div class="custom-checkbox">
-                                <input type="checkbox" name="airport-pickup" id="airportPickupChb" value="20.00" />
-                                <label for="airportPickupChb" class="d-flex justify-content-between align-items-center">
-                                    <?php /*esc_html_e('Airport pickup', 'trizen'); */?> <span class="text-black font-weight-regular"><?php /*esc_html_e('$20', 'trizen'); */?></span>
-                                </label>
-                            </div>
-                            <div class="custom-checkbox">
-                                <input type="checkbox" name="breakfast" id="breakfastChb" value="10.00" />
-                                <label for="breakfastChb" class="d-flex justify-content-between align-items-center">
-                                    <?php /*esc_html_e('Breakfast', 'trizen'); */?> <span class="text-black font-weight-regular"><?php /*esc_html_e('$10/ per person', 'trizen'); */?></span>
-                                </label>
-                            </div>-->
-
                             <?php
                             foreach ( $trizen_hotel_room_extra_service_data as $key => $item ) {
                                 $extra_price_title = strtolower(str_replace(' ', '-', $item['trizen_hotel_room_extra_service_title']));

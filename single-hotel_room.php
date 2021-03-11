@@ -1,5 +1,8 @@
 <?php
 	get_header();
+
+$room_facilities = get_categories( array ( 'taxonomy' => 'room_facilities' ) );
+$trizen_room_other_facility_data = get_post_meta(get_the_ID(), 'trizen_room_other_facility_data_group', true);
 ?>
 
 
@@ -50,11 +53,13 @@
 									<?php esc_html_e('Services', 'trizen'); ?>
 								</a>
 							</li>
-							<li>
-								<a data-scroll="amenities" href="#amenities" class="scroll-link">
-									<?php esc_html_e('Amenities', 'trizen'); ?>
-								</a>
-							</li>
+                            <?php if($room_facilities) { ?>
+                                <li>
+                                    <a data-scroll="amenities" href="#amenities" class="scroll-link">
+                                        <?php esc_html_e('Amenities', 'trizen'); ?>
+                                    </a>
+                                </li>
+                            <?php } ?>
 							<li>
 								<a data-scroll="location-map" href="#location-map" class="scroll-link">
 									<?php esc_html_e('Map', 'trizen'); ?>
@@ -116,288 +121,16 @@
 							</div>
 							<div class="section-block"></div>
 						</div>
-						<div id="services" class="page-scroll">
-							<div class="single-content-item padding-top-40px padding-bottom-40px">
-								<h3 class="title font-size-20">
-                                    <?php esc_html_e('Services', 'trizen'); ?>
-                                </h3>
-								<div class="row pt-4">
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-check-circle"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Bicycle Hire', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-check-circle"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Conference Rooms', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-check-circle"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Fruit Basket', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-check-circle"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Massage', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-check-circle"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Sightseeing', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-check-circle"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Car Hire', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-check-circle"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Fitness Center', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-check-circle"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Laundry', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-check-circle"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Own Parking Space', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-check-circle"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Wake-Up Call', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="section-block"></div>
-						</div>
-						<div id="amenities" class="page-scroll">
-							<div class="single-content-item padding-top-40px padding-bottom-40px">
-								<h3 class="title font-size-20">
-                                    <?php esc_html_e('Amenities', 'trizen'); ?>
-                                </h3>
-								<div class="row pt-4">
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-couch"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('2 Seater Sofa', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-television"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('40-Inch Samsung LED TV', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-gear"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Butler Service', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-wifi"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Free Wi – Fi', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-swimming-pool"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Private Pool', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-user"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('24h Room Service', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-air-freshener"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Air Conditioning', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-phone"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Direct Dial Phone', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-bullhorn"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Hair Dryer', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-bathtub"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Bathtub', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-hand-holding-usd"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium">
-                                                    <?php esc_html_e('Safe Deposit Box', 'trizen'); ?>
-                                                </h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-4 responsive-column">
-										<div class="single-tour-feature d-flex align-items-center mb-3">
-											<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-												<i class="la la-luggage-cart"></i>
-											</div>
-											<div class="single-feature-titles">
-												<h3 class="title font-size-15 font-weight-medium"><?php esc_html_e('Luggage storage', 'trizen'); ?></h3>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="section-block"></div>
-						</div>
+                        <?php
+                        if($trizen_room_other_facility_data) {
+                            get_template_part('template-parts/room/room-other-facility');
+                        }
+
+                        if($room_facilities) {
+	                        get_template_part( 'template-parts/room/room-amenities' );
+                        }
+                        ?>
+
 						<div id="location-map" class="page-scroll">
 							<div class="single-content-item padding-top-40px padding-bottom-40px">
 								<h3 class="title font-size-20">
