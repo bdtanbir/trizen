@@ -1140,6 +1140,29 @@ textarea {
 .single-content-item .list-items li:last-child {
 	margin-bottom: 0;
 }
+.card-item.empty-hotel-img .card-body  {
+	padding-top: 40px;
+}
+.card-item.empty-hotel-img .card-body > .badge {
+	position: absolute;
+	background-color: #40CC6F;
+	padding: 6px 11px;
+	font-size: 12px;
+	text-transform: uppercase;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	font-weight: 500;
+	z-index: 1;
+	color: #fff;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	top: -10px;
+	left: 20px;
+}
 
 
 
@@ -1295,7 +1318,7 @@ textarea {
 	/*align-items: flex-start;*/
 }
 .comment-list .comment-item .comment-avatar {
-	margin-right: 20px;
+	margin-right: 0;
 	flex: none;
 }
 .comment-list .comment-item .comment-avatar img {
@@ -1353,6 +1376,9 @@ textarea {
 }
 .comment-list .comment .children {
 	padding-left: 70px;
+}
+.comment-list .comment-reply-item {
+	margin-left: 100px;
 }
 
 

@@ -8,7 +8,7 @@
  */
 
 get_header();
-get_template_part('inc/breadcrumb-only-title');
+get_template_part('inc/breadcrumb');
 
 $static_infobox = get_theme_mod('show_static_infobox');
 $static_cta     = get_theme_mod('show_static_footer_cta');

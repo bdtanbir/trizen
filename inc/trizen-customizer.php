@@ -162,6 +162,18 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'settings' => 'show_related_post',
 				'type'     => 'checkbox',
 			));
+			/* Show Related Rooms in Room single */
+			$wp_customize->add_setting('show_related_rooms', array(
+				'default'           => true,
+				'transport'         => 'refresh',
+				'sanitize_callback' => array($this, 'sanitize_checkbox'),
+			));
+			$wp_customize->add_control('show_related_rooms', array(
+				'label'    => __('Show Related Rooms in room single', 'trizen'),
+				'section'  => 'trizen_general_options',
+				'settings' => 'show_related_rooms',
+				'type'     => 'checkbox',
+			));
 
 
 			/*--------------------------
@@ -681,6 +693,45 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'label'   => __('Hover Background', 'trizen'),
 				'section' => 'trizen_hotel_details_bdc_options',
 			)));
+
+			
+
+
+			/*--------------------------
+			 *  Room Grid
+			 * -------------------------*/
+			$wp_customize->add_panel('trizen_room_grid_panel_options', array(
+				'title'    => __('Room Grid', 'trizen'),
+				'priority' => 100,
+			));
+			/* Related Rooms */
+			$wp_customize->add_section('trizen_room_grid_options', array(
+				'title'           => __('Related Rooms', 'trizen'),
+				'priority'        => 2,
+				'panel'           => 'trizen_room_grid_panel_options',
+			));
+			// Title
+			$wp_customize->add_setting('trizen_room_grid_related_rooms_title', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_room_grid_related_rooms_title', array(
+				'label'           => __('Title', 'trizen'),
+				'section'         => 'trizen_room_grid_options',
+				'settings'        => 'trizen_room_grid_related_rooms_title',
+				'type'            => 'text',
+			));
+			// Content
+			$wp_customize->add_setting('trizen_room_grid_related_rooms_content', array(
+				'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_room_grid_related_rooms_content', array(
+				'label'           => __('Content', 'trizen'),
+				'section'         => 'trizen_room_grid_options',
+				'settings'        => 'trizen_room_grid_related_rooms_content',
+				'type'            => 'textarea',
+			));
 
 
 			/*--------------------------
@@ -1204,6 +1255,12 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				));
 				$wp_customize->selective_refresh->add_partial('trizen_hotel_details_bdc_photo_btn_txt', array(
 					'selector'        => '.hotel-details-breadcrumb .breadcrumb-btn .hotel-gallery-btn',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_room_grid_related_rooms_title', array(
+					'selector'        => '.related-rooms-wrap .section-heading h2',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_room_grid_related_rooms_content', array(
+					'selector'        => '.related-rooms-wrap .section-heading p',
 				));
 			}
 
