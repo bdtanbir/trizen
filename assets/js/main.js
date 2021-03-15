@@ -90,24 +90,24 @@ Author Email:   contact@tecydevs.com
         });
 
         /*=========== Dropdown menu ============*/
-        dropdownMenu.parent('li').children('a').append(function() {
+        dropdownMenu.parent('li').children('a').append(function () {
             return '<button class="drop-menu-toggler" type="button"><i class="la la-angle-down"></i></button>';
         });
 
         /*=========== Dropdown menu ============*/
-        $document.on('click', '.main-menu-content .drop-menu-toggler', function() {
+        $document.on('click', '.main-menu-content .drop-menu-toggler', function () {
             var Self = $(this);
             Self.parent().parent().children('.dropdown-menu-item').toggle();
             return false;
         });
 
         /*=========== Sub menu ============*/
-        $('.main-menu-content .dropdown-menu-item .sub-menu').parent('li').children('a').append(function() {
+        $('.main-menu-content .dropdown-menu-item .sub-menu').parent('li').children('a').append(function () {
             return '<button class="sub-menu-toggler" type="button"><i class="la la-plus"></i></button>';
         });
 
         /*=========== Dropdown menu ============*/
-        $document.on('click', '.main-menu-content .dropdown-menu-item .sub-menu-toggler', function() {
+        $document.on('click', '.main-menu-content .dropdown-menu-item .sub-menu-toggler', function () {
             var Self = $(this);
             Self.parent().parent().children('.sub-menu').toggle();
             return false;
@@ -135,13 +135,13 @@ Author Email:   contact@tecydevs.com
                 $('.dropdown-menu-item').show();
                 $('.sub-menu').show();
                 $('.header-top-bar').show();
-            }else {
+            } else {
                 if (isMenuOpen) {
                     $('.main-menu-content').show();
                     $('.dropdown-menu-item').show();
                     $('.sub-menu').show();
                     $('.header-top-bar').show();
-                }else {
+                } else {
                     $('.main-menu-content').hide();
                     $('.dropdown-menu-item').hide();
                     $('.sub-menu').hide();
@@ -151,7 +151,7 @@ Author Email:   contact@tecydevs.com
         });
 
         /*=========== Navbar offset top ============*/
-        if($(topNav).length) {
+        if ($(topNav).length) {
             var topOfNav = topNav.offsetTop;
         }
 
@@ -180,29 +180,29 @@ Author Email:   contact@tecydevs.com
 
         /*========== Page scroll ==========*/
 
-        scrollLink.on('click',function(e){
+        scrollLink.on('click', function (e) {
             var target = $($(this).attr('href'));
 
             $($dom).animate({
-                scrollTop:target.offset().top
-            },600);
+                scrollTop: target.offset().top
+            }, 600);
 
             $(this).addClass('active');
 
             e.preventDefault();
         });
 
-        function findPosition (){
-            $('.page-scroll').each(function(){
-                if(($(this).offset().top - $(window).scrollTop()) < 20){
+        function findPosition() {
+            $('.page-scroll').each(function () {
+                if (($(this).offset().top - $(window).scrollTop()) < 20) {
                     scrollLink.removeClass('active');
-                    $('#single-content-nav').find('[data-scroll="'+ $(this).attr('id') +'"]').addClass('active');
+                    $('#single-content-nav').find('[data-scroll="' + $(this).attr('id') + '"]').addClass('active');
                 }
             });
         }
 
         /*===== Back to top button ======*/
-        $document.on("click", "#back-to-top", function() {
+        $document.on("click", "#back-to-top", function () {
             $($dom).animate({
                 scrollTop: 0
             }, 800);
@@ -221,21 +221,21 @@ Author Email:   contact@tecydevs.com
                 active: true,
                 margin: 30,
                 navText: ['<i class="la la-angle-left"></i>', '<i class="la la-angle-right"></i>'],
-                responsive : {
+                responsive: {
                     // breakpoint from 0 up
-                    0 : {
+                    0: {
                         items: 1
                     },
                     // breakpoint from 991 up
-                    768 : {
+                    768: {
                         items: 2
                     },
                     // breakpoint from 992 up
-                    992 : {
+                    992: {
                         items: 3
                     },
                     // breakpoint from 1441 up
-                    1441 : {
+                    1441: {
                         items: 4
                     }
                 }
@@ -254,17 +254,17 @@ Author Email:   contact@tecydevs.com
                 active: true,
                 margin: 30,
                 navText: ['<i class="la la-angle-left"></i>', '<i class="la la-angle-right"></i>'],
-                responsive : {
+                responsive: {
                     // breakpoint from 0 up
-                    0 : {
+                    0: {
                         items: 1
                     },
                     // breakpoint from 991 up
-                    768 : {
+                    768: {
                         items: 2
                     },
                     // breakpoint from 992 up
-                    992 : {
+                    992: {
                         items: 3
                     },
                 }
@@ -299,17 +299,17 @@ Author Email:   contact@tecydevs.com
                 active: true,
                 margin: 30,
                 navText: ['<i class="la la-angle-left"></i>', '<i class="la la-angle-right"></i>'],
-                responsive : {
+                responsive: {
                     // breakpoint from 167 up
-                    0 : {
+                    0: {
                         items: 1
                     },
                     // breakpoint from 768 up
-                    768 : {
+                    768: {
                         items: 2
                     },
                     // breakpoint from 992 up
-                    992 : {
+                    992: {
                         items: 3
                     }
                 }
@@ -327,17 +327,17 @@ Author Email:   contact@tecydevs.com
                 autoplay: false,
                 margin: 30,
                 navText: ['<i class="la la-long-arrow-left"></i>', '<i class="la la-long-arrow-right"></i>'],
-                responsive : {
+                responsive: {
                     // breakpoint from 0 up
-                    0 : {
+                    0: {
                         items: 1
                     },
                     // breakpoint from 768 up
-                    768 : {
+                    768: {
                         items: 2
                     },
                     // breakpoint from 992 up
-                    992 : {
+                    992: {
                         items: 3
                     }
                 }
@@ -366,25 +366,25 @@ Author Email:   contact@tecydevs.com
                 dots: false,
                 smartSpeed: 700,
                 autoplay: true,
-                responsive : {
+                responsive: {
                     // breakpoint from 0 up
-                    0 : {
+                    0: {
                         items: 1
                     },
                     // breakpoint from 425 up
-                    425 : {
+                    425: {
                         items: 2
                     },
                     // breakpoint from 480 up
-                    480 : {
+                    480: {
                         items: 2
                     },
                     // breakpoint from 767 up
-                    767 : {
+                    767: {
                         items: 4
                     },
                     // breakpoint from 992 up
-                    992 : {
+                    992: {
                         items: 6
                     }
                 }
@@ -402,13 +402,13 @@ Author Email:   contact@tecydevs.com
                 autoplay: false,
                 margin: 30,
                 navText: ['<i class="la la-angle-left"></i>', '<i class="la la-angle-right"></i>'],
-                responsive : {
+                responsive: {
                     // breakpoint from 0 up
-                    0 : {
+                    0: {
                         items: 1
                     },
                     // breakpoint from 900 up
-                    900 : {
+                    900: {
                         items: 2
                     }
 
@@ -427,17 +427,17 @@ Author Email:   contact@tecydevs.com
                 autoplay: false,
                 margin: 30,
                 navText: ['<i class="la la-long-arrow-left"></i>', '<i class="la la-long-arrow-right"></i>'],
-                responsive : {
+                responsive: {
                     // breakpoint from 0 up
-                    0 : {
+                    0: {
                         items: 1
                     },
                     // breakpoint from 768 up
-                    768 : {
+                    768: {
                         items: 2
                     },
                     // breakpoint from 992 up
-                    992 : {
+                    992: {
                         items: 3
                     }
                 }
@@ -488,14 +488,14 @@ Author Email:   contact@tecydevs.com
                 range: true,
                 min: 0,
                 max: 1000,
-                values: [ 40, 800 ],
-                slide: function( event, ui ) {
-                    $(rangeSliderAmount).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+                values: [40, 800],
+                slide: function (event, ui) {
+                    $(rangeSliderAmount).val("$" + ui.values[0] + " - $" + ui.values[1]);
                 }
             });
         }
-        $(rangeSliderAmount).val( "$" + $(rangeSlider).slider( "values", 0 ) +
-            " - $" + $(rangeSlider).slider( "values", 1 ) );
+        $(rangeSliderAmount).val("$" + $(rangeSlider).slider("values", 0) +
+            " - $" + $(rangeSlider).slider("values", 1));
 
         /*======= ui price range slider 2 ========*/
         if ($(rangeSliderTwo).length) {
@@ -503,15 +503,15 @@ Author Email:   contact@tecydevs.com
                 range: true,
                 min: 0,
                 max: 1000,
-                values: [ 40, 800 ],
-                slide: function( event, ui ) {
-                    $(rangeSliderAmountTwo).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+                values: [40, 800],
+                slide: function (event, ui) {
+                    $(rangeSliderAmountTwo).val("$" + ui.values[0] + " - $" + ui.values[1]);
                 }
             });
         }
 
-        $(rangeSliderAmountTwo).val( "$" + $(rangeSliderTwo).slider( "values", 0 ) +
-            " - $" + $(rangeSliderTwo).slider( "values", 1 ) );
+        $(rangeSliderAmountTwo).val("$" + $(rangeSliderTwo).slider("values", 0) +
+            " - $" + $(rangeSliderTwo).slider("values", 1));
 
 
         /*==== Daterangepicker =====*/
@@ -546,7 +546,7 @@ Author Email:   contact@tecydevs.com
         }
 
         /*==== counter =====*/
-        if(numberCounter.length) {
+        if (numberCounter.length) {
             numberCounter.countTo({
                 speed: 1200
             });
@@ -560,7 +560,7 @@ Author Email:   contact@tecydevs.com
         /*==== When you will click the add another flight btn then this action will be work =====*/
         $document.on('click', '.add-flight-btn', function () {
 
-            if ( $('.multi-flight-field').length < 3 ) {
+            if ($('.multi-flight-field').length < 3) {
                 $('.multi-flight-field:last').clone().insertAfter('.multi-flight-field:last');
             }
 
@@ -575,7 +575,7 @@ Author Email:   contact@tecydevs.com
                     singleDatePicker: true,
                     opens: 'right',
                     local: {
-                       format: 'DD/MM/YYYY'
+                        format: 'DD/MM/YYYY'
                     }
                 });
                 i++;
@@ -584,7 +584,7 @@ Author Email:   contact@tecydevs.com
         });
 
         /*=========== multi-flight-remove ============*/
-        $document.on('click', '.multi-flight-remove', function() {
+        $document.on('click', '.multi-flight-remove', function () {
             $('.multi-flight-remove').closest('.multi-flight-wrap').find('.multi-flight-field').not(':first').last().remove();
         });
 
@@ -604,17 +604,17 @@ Author Email:   contact@tecydevs.com
         });
 
         /*====== When you click on the out side of dropdown menu item then its will be hide ======*/
-        $document.on('click', function(event){
+        $document.on('click', function (event) {
             var $trigger = $('.dropdown-contain');
-            if($trigger !== event.target && !$trigger.has(event.target).length){
+            if ($trigger !== event.target && !$trigger.has(event.target).length) {
                 $('.dropdown-menu-wrap').slideUp(300);
             }
         });
 
-        $('.progressbar-line').each(function(){
+        $('.progressbar-line').each(function () {
             $(this).find('.progressbar-line-item').animate({
-                width:$(this).attr('data-percent')
-            },6000);
+                width: $(this).attr('data-percent')
+            }, 6000);
         });
 
         if ($(fullWidthSlider).length) {
@@ -627,13 +627,13 @@ Author Email:   contact@tecydevs.com
                 margin: 10,
                 smartSpeed: 500,
                 navText: ['<i class="la la-long-arrow-left"></i>', '<i class="la la-long-arrow-right"></i>'],
-                responsive:{
-                    0:{
-                        items:1,
+                responsive: {
+                    0: {
+                        items: 1,
                         autoplay: true
                     },
-                    576:{
-                        items:2
+                    576: {
+                        items: 2
                     }
                 }
             });
@@ -669,5 +669,48 @@ Author Email:   contact@tecydevs.com
 
     });
 
+
+
+
+    // single hotel room booking ajax
+    // $('form.hotel-room-booking-form').on('click', 'button.btn-book-ajax', function (e) {
+    //     e.preventDefault();
+    //     var form = $('form.hotel-room-booking-form');
+    //     var data = $('form.hotel-room-booking-form').serializeArray();
+    //     var loadingSubmit = form.find('button[name=submit]');
+    //     $(loadingSubmit).find("i.fa-spin").removeClass("d-none");
+    //     data.push({
+    //         name: 'security',
+    //         value: ts_params._s
+    //     });
+    //     $('div.message-wrapper').html("");
+    //     $.ajax({
+    //         url: ts_params.ajax_url,
+    //         method: "post",
+    //         dataType: 'json',
+    //         data: data,
+    //         beforeSend: function () {
+    //             $('div.message-wrapper').html("");
+    //         },
+    //         success: function (res) {
+    //             $(loadingSubmit).find('i.fa-spin').addClass("d-none");
+    //             if (res) {
+    //                 if (res.status) {
+    //                     if (res.redirect) {
+    //                         window.location = res.redirect;
+    //                     }
+    //                 } else {
+    //                     if (res.message) {
+    //                         $('div.message-wrapper').html(res.message);
+    //                     }
+    //                 }
+    //             }
+    //         },
+    //         error: function (err) {
+    //             $('div.message-wrapper').html("");
+    //             $(loadingSubmit).find('i.fa-spin').addClass("d-none");
+    //         }
+    //     });
+    // });
 })(jQuery);
 

@@ -1163,6 +1163,19 @@ textarea {
 	top: -10px;
 	left: 20px;
 }
+.room-detail-bread .full-width-slide-item img {
+	width: auto;
+}
+
+.dropdown-minicart {
+    position: fixed;
+    top: 32px;
+    z-index: 999999999;
+	background: green;
+    color: white;
+    width: 100px;
+    text-align: center;
+}
 
 
 
@@ -1374,11 +1387,9 @@ textarea {
 	align-items: center;
 	font-size: 16px;
 }
+.comment-list .comment-reply-item,
 .comment-list .comment .children {
 	padding-left: 70px;
-}
-.comment-list .comment-reply-item {
-	margin-left: 100px;
 }
 
 

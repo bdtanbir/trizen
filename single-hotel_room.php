@@ -5,31 +5,46 @@ $room_facilities = get_categories( array ( 'taxonomy' => 'room_facilities' ) );
 $trizen_room_other_facility_data = get_post_meta(get_the_ID(), 'trizen_room_other_facility_data_group', true);
 $trizen_room_rules_data = get_post_meta(get_the_ID(), 'trizen_room_rules_data_group', true);
 $related_rooms = get_theme_mod('show_related_rooms', 1);
-?>
 
+
+if(is_active_sidebar( 'hotel-room-sidebar' )) {
+	$col_num = '8';
+} else {
+	$col_num = '12';
+}
+?>
 
 <!-- ================================
     START ROOM DETAIL BREAD
 ================================= -->
 <section class="room-detail-bread text-center">
 <!--    <img src="https://techydevs.com/demos/themes/html/trizen-demo/trizen/images/img31.jpg" alt="">-->
-	<div class="full-width-slider carousel-action">
-		<div class="full-width-slide-item">
-			<img src="https://techydevs.com/demos/themes/html/trizen-demo/trizen/images/img31.jpg" alt="">
-		</div>
-		<div class="full-width-slide-item">
-			<img src="https://techydevs.com/demos/themes/html/trizen-demo/trizen/images/img31.jpg" alt="">
-		</div>
-		<div class="full-width-slide-item">
-			<img src="https://techydevs.com/demos/themes/html/trizen-demo/trizen/images/img31.jpg" alt="">
-		</div>
-		<div class="full-width-slide-item">
-			<img src="https://techydevs.com/demos/themes/html/trizen-demo/trizen/images/img31.jpg" alt="">
-		</div>
-		<div class="full-width-slide-item">
-			<img src="https://techydevs.com/demos/themes/html/trizen-demo/trizen/images/img31.jpg" alt="">
-		</div>
-	</div>
+	<?php
+			$hidden = array();
+	if ( $images = get_posts( array(
+		'post_type'      => 'attachment',
+		'orderby'        => 'post__in',
+		'order'          => 'ASC',
+		'post__in'       => explode( ',', get_post_meta( get_the_ID(), 'trizen_hotel_room_image_gallery', true ) ),
+		'numberposts'    => - 1,
+		'post_mime_type' => 'image'
+	) ) ) {
+		echo '<div class="full-width-slider carousel-action">';
+		foreach ( $images as $image ) {
+			$hidden[]  = $image->ID;
+			$image_src = wp_get_attachment_image_src( $image->ID, array( 80, 80 ) );
+			$image_src = str_replace('-150x150', '', $image_src);
+			$image_src = str_replace( '-100x100', '', $image_src );
+			echo '<div class="full-width-slide-item" data-id="' . $image->ID . '">
+			<img src="' . $image_src[0] . '" alt="' . __( "Image", "trizen-helper" ) . '"></div>';
+		}
+		echo '</div>';
+	} else {
+		echo '<div class="full-width-slide-item">';
+		the_post_thumbnail();
+		echo '</div>';
+	}
+	?>
 </section>
 <!-- ================================
     END ROOM DETAIL BREAD
@@ -50,12 +65,13 @@ $related_rooms = get_theme_mod('show_related_rooms', 1);
 									<?php esc_html_e('Description', 'trizen'); ?>
 								</a>
 							</li>
-							<li>
-								<a data-scroll="services" href="#services" class="scroll-link">
-									<?php esc_html_e('Services', 'trizen'); ?>
-								</a>
-							</li>
-                            <?php if($room_facilities) { ?>
+							<?php if($trizen_room_other_facility_data) { ?>
+								<li>
+									<a data-scroll="services" href="#services" class="scroll-link">
+										<?php esc_html_e('Services', 'trizen'); ?>
+									</a>
+								</li>
+                            <?php } if($room_facilities) { ?>
                                 <li>
                                     <a data-scroll="amenities" href="#amenities" class="scroll-link">
                                         <?php esc_html_e('Amenities', 'trizen'); ?>
@@ -81,7 +97,7 @@ $related_rooms = get_theme_mod('show_related_rooms', 1);
 	<div class="single-content-box">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8">
+				<div class="col-lg-<?php echo esc_attr( $col_num ); ?>">
 					<div class="single-content-wrap padding-top-60px">
 						<div id="description" class="page-scroll">
 							<div class="single-content-item pb-4">
@@ -139,9 +155,13 @@ $related_rooms = get_theme_mod('show_related_rooms', 1);
 
 					</div>
 				</div>
+				<?php
+				if(is_active_sidebar( 'hotel-room-sidebar' )) {
+				?>
 				<div class="col-lg-4">
 					<?php get_sidebar('hotel_room'); ?>
 				</div>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
@@ -153,7 +173,7 @@ $related_rooms = get_theme_mod('show_related_rooms', 1);
 <div class="section-block"></div>
 
 <!-- ================================
-    START RELATE TOUR AREA
+    START RELATE ROOMS AREA
 ================================= -->
 <?php 
 if($related_rooms == 1) {
@@ -161,7 +181,7 @@ if($related_rooms == 1) {
 }
 ?>
 <!-- ================================
-    END RELATE TOUR AREA
+    END RELATE ROOMS AREA
 ================================= -->
 
 

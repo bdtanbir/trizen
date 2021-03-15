@@ -119,6 +119,10 @@ function trizen_wses_allowed_menu_html() {
 			'id'  => array(),
 			'class' => array(),
 		),
+		'br' => array (
+			'id'  => array(),
+			'class' => array(),
+		),
 		'pre' => array (
 			'id'  => array(),
 			'class' => array(),
@@ -327,3 +331,24 @@ function __search_by_title_only( $search, $wp_query )
 	return $search;
 }
 add_filter('posts_search', '__search_by_title_only', 500, 2);
+
+
+
+
+
+add_filter('ts_is_woocommerce_checkout', 'ts_check_is_checkout_woocomerce');
+
+if (!function_exists('ts_check_is_checkout_woocomerce')) {
+
+	function ts_check_is_checkout_woocomerce($check) {
+		if (class_exists('Woocommerce')) {
+			$check = true;
+		} else {
+			$check = false;
+		}
+
+		return $check;
+	}
+
+}
+

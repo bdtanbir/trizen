@@ -1,6 +1,6 @@
-$(function () {
+(function ($) {
     /*===== single-content-navbar sticky ======*/
-    window.onscroll = function() {stickyFunction()};
+    window.onscroll = function () { stickyFunction() };
 
     var navbarField = document.getElementById("single-content-navbar");
     var sticky = navbarField.offsetTop;
@@ -12,4 +12,4 @@ $(function () {
             navbarField.classList.remove("single-nav-sticky");
         }
     }
-});
+})(jQuery);

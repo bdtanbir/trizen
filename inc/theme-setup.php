@@ -149,6 +149,17 @@ function trizen_widgets_init() {
 			'after_title'   => '</h3>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Hotel Room Sidebar', 'trizen' ),
+			'id'            => 'hotel-room-sidebar',
+			'description'   => esc_html__( 'Add hotel room sidebar Widgets here.', 'trizen' ),
+			'before_widget' => '<div id="%1$s" class="sidebar-widget single-content-widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="title stroke-shape">',
+			'after_title'   => '</h3>',
+		)
+	);
 }
 add_action( 'widgets_init', 'trizen_widgets_init' );
 

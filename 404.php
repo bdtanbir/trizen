@@ -8,53 +8,61 @@
  */
 
 get_header();
+
+$error_img  = get_theme_mod('trizen_error_img', get_template_directory_uri().'/assets/images/404.png');
+$error_pg_title = get_theme_mod('trizen_error_title', __('Ooops! This Page Does Not Exist', 'trizen'));
+$error_pg_content = get_theme_mod('trizen_error_content', __('We\'re sorry, but it appears the website address you entered was</br>
+incorrect, or is temporarily unavailable.', 'trizen'));
+$error_btn_text = get_theme_mod('trizen_error_btn', __('Back to Home', 'trizen'));
+
+$allowed_html = trizen_wses_allowed_menu_html();
 ?>
 
-	<main id="primary" class="site-main">
-
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'trizen' ); ?></h1>
-			</header><!-- .page-header -->
-
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'trizen' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'trizen' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$trizen_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'trizen' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$trizen_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
+<!-- ================================
+    START ERROR AREA
+================================= -->
+<?php if(!empty($error_pg_title) || !empty($error_pg_content) || !empty($error_btn_text)) { ?>
+<section class="error-area section--padding text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 mx-auto">
+				<?php if(!empty($error_img)) { ?>
+					<div class="error-img">
+						<img 
+						src="<?php echo esc_url($error_img); ?>" 
+						alt="<?php esc_attr_e('Error Image', 'trizen'); ?>"
+						width="670"
+						height="388">
+					</div>
+				<?php }
+				if(!empty($error_pg_title) || !empty($error_pg_content)) { ?>
+					<div class="section-heading padding-top-35px">
+						<?php if(!empty($error_pg_title)) { ?>
+							<h2 class="sec__title mb-0">
+								<?php echo esc_html($error_pg_title); ?>
+							</h2>
+						<?php } if(!empty($error_pg_content)) { ?>
+							<p class="sec__desc pt-3">
+								<?php echo wp_kses($error_pg_content, $allowed_html); ?>
+							</p>
+						<?php } ?>
+					</div>
+				<?php } 
+				if(!empty($error_btn_text)) { ?>
+					<div class="btn-box padding-top-30px">
+						<a href="<?php echo esc_url(home_url('/')); ?>" class="theme-btn">
+							<i class="la la-reply mr-1"></i> <?php echo esc_html($error_btn_text); ?>
+						</a>
+					</div>
+				<?php } ?>
+            </div>
+        </div>
+    </div>
+</section>
+<?php } ?>
+<!-- ================================
+    END ERROR AREA
+================================= -->
 
 <?php
 get_footer();

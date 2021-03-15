@@ -735,6 +735,73 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 
 
 			/*--------------------------
+			 *  404 Page
+			 * -------------------------*/
+			$wp_customize->add_section('trizen_error_options', array(
+				'title'           => __('404 Page', 'trizen'),
+				'priority'        => 170,
+			));
+			/* 404 Image */
+			$wp_customize->add_setting('trizen_error_img', array(
+				'default'			=> get_template_directory_uri().'/assets/images/404.png',
+				'transport'         => 'postMessage',
+				'sanitize_callback' => [$this, 'sanitize_file']
+			));
+			$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'trizen_error_img', array(
+				'type'          => 'upload',
+				'label'         => __('Error Image', 'trizen'),
+				'section'       => 'trizen_error_options',
+				'settings'      => 'trizen_error_img',
+				'button_labels' => array(
+					'select'       => __('Select Image', 'trizen'),
+					'change'       => __('Change Image', 'trizen'),
+					'remove'       => __('Remove', 'trizen'),
+					'default'      => __('Default', 'trizen'),
+					'placeholder'  => __('No Image selected', 'trizen'),
+					'frame_title'  => __('Select Image', 'trizen'),
+					'frame_button' => __('Choose Image', 'trizen'),
+				),
+			)));
+			// 404 Title
+			$wp_customize->add_setting('trizen_error_title', array(
+				'default'           => __('Ooops! This Page Does Not Exist', 'trizen'),
+				'transform'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_error_title', array(
+				'label'           => __('Error Title', 'trizen'),
+				'section'         => 'trizen_error_options',
+				'settings'        => 'trizen_error_title',
+				'type'            => 'text',
+			));
+			// 404 Content
+			$wp_customize->add_setting('trizen_error_content', array(
+				'default'           => __('We\'re sorry, but it appears the website address you entered was</br>
+				incorrect, or is temporarily unavailable.', 'trizen'),
+				'transform'         => 'postMessage',
+				'sanitize_callback' => 'trizen_sanitize_textarea',
+			));
+			$wp_customize->add_control('trizen_error_content', array(
+				'label'           => __('Error Content', 'trizen'),
+				'section'         => 'trizen_error_options',
+				'settings'        => 'trizen_error_content',
+				'type'            => 'textarea',
+			));
+			// 404 back to home button
+			$wp_customize->add_setting('trizen_error_btn', array(
+				'default'           => __('Back to Home', 'trizen'),
+				'transform'         => 'postMessage',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			));
+			$wp_customize->add_control('trizen_error_btn', array(
+				'label'           => __('Error Button', 'trizen'),
+				'section'         => 'trizen_error_options',
+				'settings'        => 'trizen_error_btn',
+				'type'            => 'text',
+			));
+
+
+			/*--------------------------
 			 *  Blog
 			 * -------------------------*/
 			$wp_customize->add_panel('trizen_blog_panel_options', array(
@@ -1261,6 +1328,12 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				));
 				$wp_customize->selective_refresh->add_partial('trizen_room_grid_related_rooms_content', array(
 					'selector'        => '.related-rooms-wrap .section-heading p',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_error_title', array(
+					'selector'        => '.error-area .section-heading h2',
+				));
+				$wp_customize->selective_refresh->add_partial('trizen_error_content', array(
+					'selector'        => '.error-area .section-heading p',
 				));
 			}
 

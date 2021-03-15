@@ -4,6 +4,8 @@
     $user_signup_text = get_theme_mod('trizen_hd_user_action_signup_title', __('Sign Up', 'trizen'));
 
     $allowed_html = trizen_wses_allowed_menu_html();
+    
+    get_template_part( 'template-parts/header/cart' );
 ?>
 <div class="header-top-bar padding-right-100px padding-left-100px">
 	<div class="container-fluid">
@@ -17,7 +19,11 @@
                                     <li><a href="#"><i class="la la-phone mr-1"></i><?php echo get_theme_mod('trizen_hd_bar_mobile_num'); ?></a></li>
                                 <?php } if(!empty(get_theme_mod('trizen_hd_bar_email'))) { ?>
                                     <li><a href="#"><i class="la la-envelope mr-1"></i><?php echo get_theme_mod('trizen_hd_bar_email'); ?></a></li>
-                                <?php } ?>
+                                <?php } 
+                                
+                                ?>
+
+
                             </ul>
                         </div>
                     </div>

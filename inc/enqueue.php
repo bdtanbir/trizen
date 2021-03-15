@@ -155,7 +155,7 @@ EOD;
 	wp_enqueue_script('lib-fancybox-min', get_template_directory_uri() .'/assets/js/jquery.fancybox.min.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('lib-countTo-min', get_template_directory_uri() .'/assets/js/jquery.countTo.min.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('lib-animated-headline', get_template_directory_uri() .'/assets/js/animated-headline.js', array('jquery'), '1.0.0', true);
-	wp_enqueue_script('lib-jquery-ripples-min', get_template_directory_uri() .'/assets/js/jquery.ripples-min.js', array('jquery'), '1.0.0', true);
+	// wp_enqueue_script('lib-jquery-ripples-min', get_template_directory_uri() .'/assets/js/jquery.ripples-min.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('lib-quantity-input-js', get_template_directory_uri() .'/assets/js/quantity-input.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('theme-navbar-sticky-js', get_template_directory_uri() .'/assets/js/navbar-sticky.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('theme-total-price-js', get_template_directory_uri() .'/assets/js/total-price.js', array('jquery'), '1.0.0', true);
@@ -180,6 +180,42 @@ EOD;
 			'nonce'   => wp_create_nonce('trizen_main'),
 		)
 	);
+
+
+    
+    wp_localize_script('jquery', 'ts_params', [
+        'theme_url' => get_template_directory_uri(),
+        'site_url' => site_url(),
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'loading_url' => admin_url('/images/wpspin_light.gif'),
+        'st_search_nonce' => wp_create_nonce("st_search_security"),
+        'free_text' => __('Free', 'trizen'),
+        'locale' => get_locale(),
+        'text_refresh' => __("Refresh", 'trizen'),
+        'text_loading' => __("Loading...", 'trizen'),
+        'text_no_more' => __("No More", 'trizen'),
+        'no_vacancy' => __('No vacancies', 'trizen'),
+        'a_vacancy' => __('a vacancy', 'trizen'),
+        'more_vacancy' => __('vacancies', 'trizen'),
+        'utm' => (is_ssl() ? 'https' : 'http') . '://shinetheme.com/utm/utm.gif',
+        '_s' => wp_create_nonce('ts_frontend_security'),
+        'text_price' => __("Price", 'trizen'),
+        'text_origin_price' => __("Origin Price", 'trizen'),
+        'text_unavailable' => __('Not Available ', 'trizen'),
+        'text_available' => __('Available ', 'trizen'),
+        'text_adult_price' => __('Adult Price ', 'trizen'),
+        'text_child_price' => __('Child Price ', 'trizen'),
+        'text_update' => __('Update ', 'trizen'),
+        'text_adult' => __('Adult ', 'trizen'),
+        'text_child' => __('Child ', 'trizen'),
+        'text_use_this_media' => __('Use this media', 'trizen'),
+        'text_select_image' => __('Select Image', 'trizen'),
+        'text_confirm_delete_item' => __('Are you sure want to delete this item?', 'trizen'),
+        'text_process_cancel' => __('You cancelled the process', 'trizen'),
+        'prev_month' => __('prev month', 'trizen'),
+        'next_month' => __('next month', 'trizen'),
+        'please_waite' => __('Please wait...', 'trizen'),
+    ]);
 }
 add_action( 'wp_enqueue_scripts', 'trizen_scripts' );
 
