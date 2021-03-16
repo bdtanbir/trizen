@@ -102,7 +102,7 @@ if(!function_exists('WC')){
         <div id="d-minicart" class="mini-cart" data-toggle="dropdown" aria-haspopup="true"
              aria-expanded="false">
             <div class="cart-caret"><?php echo esc_html($cart_total_item) ?></div>
-            <?php echo '(-_-)'; ?>
+            <?php echo esc_html__('(-_-)', 'trizen'); ?>
         </div>
         <ul class="dropdown-menu" aria-labelledby="d-minicart">
             <li class="heading">
@@ -118,24 +118,30 @@ if(!function_exists('WC')){
                         $room_id = (int)$value['data']['room_id'];
                         $post_title = get_the_title($room_id);
                     }
+                    echo '<pre>';
+                    var_dump($value);
+	                echo '</pre>';
                     $quantity = (int)count($items);
                     $price = (float)getTotal();
-                    // if($post_id == 'travelport_api'){
-                    //     $post_title = $value['data']['fromCode'] . ' -> ' . $value['data']['toCode'];
-                    // }
                     ?>
                     <li class="cart-item">
                         <div class="media">
-                            <?php if($post_id != 'travelport_api'){ ?>
+
+	                        <?php
+	                        if (has_post_thumbnail($post_id)) {
+		                        echo get_the_post_thumbnail($post_id, [70, 70], ['class' => 'media-object']);
+	                        }
+	                        ?>
+
+                            <?php /*if($post_id != 'travelport_api'){ */?><!--
                             <div class="media-left">
                                 <?php
-                                if (has_post_thumbnail($post_id)) {
-//                                    echo get_the_post_thumbnail($post_id, [70, 70], ['class' => 'media-object', 'alt' => TravelHelper::get_alt_image()]);
+/*                                if (has_post_thumbnail($post_id)) {
                                     echo get_the_post_thumbnail($post_id, [70, 70], ['class' => 'media-object']);
                                 }
-                                ?>
+                                */?>
                             </div>
-                            <?php } ?>
+                            --><?php /*} */?>
                             <div class="media-body">
                                 <?php
                                 if (get_post_type($post_id) == 'ts_hotel'):
@@ -153,13 +159,15 @@ if(!function_exists('WC')){
                                         </a>
                                     </h4>
                                 <?php endif; ?>
-                                <div class="price-wrapper"><?php esc_html_e('Price', 'trizen') ;?>:
-                                     <span class="price"><?php //echo format_money($price,false); ?></span>
+                                <div class="price-wrapper">
+                                    <?php esc_html_e('Price:', 'trizen') ;?>
+                                     <span class="price">
+                                         <?php //echo format_money($price,false); ?>
+                                     </span>
                                 </div>
                             </div>
                         </div>
-                        <a href="<?php echo add_query_arg(['action' => 'st-remove-cart', 'security' => wp_create_nonce('st-security')]); ?>"
-                           class="cart-delete-item"><i class="fa">
+                        <a href="<?php echo add_query_arg(['action' => 'st-remove-cart', 'security' => wp_create_nonce('st-security')]); ?>" class="cart-delete-item"><i class="fa">
                                 <svg width="16px" height="16px" viewBox="0 0 16 16"
                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <g id="Menu" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
@@ -184,22 +192,29 @@ if(!function_exists('WC')){
                                         </g>
                                     </g>
                                 </svg>
-                            </i></a>
+                            </i>
+                        </a>
                     </li>
                 <?php
                 endforeach;
                 ?>
                 <li class="cart-total">
-                    <div class="sub-total"><?php esc_html_e('Subtotal', 'trizen') ?>
-                        <span class="price"><?php //echo TravelHelper::format_money($cart_total_amount,false); ?></span>
+                    <div class="sub-total">
+                        <?php esc_html_e('Subtotal', 'trizen') ?>
+                        <span class="price">
+                            <?php //echo TravelHelper::format_money($cart_total_amount,false); ?>
+                        </span>
                     </div>
                     <a href="<?php echo esc_url($check_out_url) ?>"
-                       class="btn btn-green btn-full upper"><?php esc_html_e('Pay Now', 'trizen') ?></a>
+                       class="btn btn-green btn-full upper"><?php esc_html_e('Pay Now', 'trizen') ?>
+                    </a>
                 </li>
             <?php
             else:
                 ?>
-                <div class="col-lg-12 cart-text-empty text-warning"><?php esc_html_e('Your cart is empty', 'trizen'); ?></div>
+                <div class="col-lg-12 cart-text-empty text-warning">
+                    <?php esc_html_e('Your cart is empty', 'trizen'); ?>
+                </div>
             <?php
             endif;
             ?>

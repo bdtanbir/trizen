@@ -1068,7 +1068,9 @@ textarea {
 .main-menu-content ul li.mega-menu .dropdown-menu-item > li a:hover {
 	background: none;
 }
-
+.single-nav-sticky + .single-content-box {
+	padding-top: 0;
+}
 
 
 /*-------------------------------------------

@@ -27,6 +27,9 @@ function trizen_scripts() {
         .fixed-nav .header-menu-wrapper {
             margin-top: 30px;
         }
+        .single-nav-sticky {
+            top: 30px;
+        }
         @media only screen and (max-width: 768px) {
         
         }
