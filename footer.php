@@ -21,23 +21,38 @@ $footer_security_help_url  = get_theme_mod('trizen_foot_security_help_url');
 $copyright = get_theme_mod('trizen_copyright_txt', __('&copy; Copyright Trizen 2020. Made with <i class="la la-heart"></i> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>', 'trizen'));
 
 $allowed_html = trizen_wses_allowed_menu_html();
+
+if (!is_active_sidebar('trizen-footer-widgets') || !$footer_lf_widget == 1 || !empty($footer_security_terms_title) || !empty($footer_security_privacy_title) || !empty($footer_security_help_title) || !empty($copyright) || !empty($social_fb) || !empty($social_tw) || !empty($social_inc) || !empty($social_ln) || !empty($social_ggl) || !empty($social_pnt) || !empty($social_gt)
+) {
+    if(empty($footer_security_terms_title) && empty($footer_security_privacy_title) && empty($footer_security_help_title) && empty($social_fb) && empty($social_tw) && empty($social_inc) && empty($social_ln) && empty($social_ggl) && empty($social_pnt) && empty($social_gt) && !is_active_sidebar('trizen-footer-widgets') && !$footer_lf_widget == 1
+    ) {
+        $extra_pd = '';
+        $border_after_widgets = '';
+    } else {
+        if(!empty($footer_security_terms_title) || !empty($footer_security_privacy_title) || !empty($footer_security_help_title) || !empty($social_fb) || !empty($social_tw) || !empty($social_inc) || !empty($social_ln) || !empty($social_ggl) || !empty($social_pnt) || !empty($social_gt) && !is_active_sidebar('trizen-footer-widgets') && !$footer_lf_widget == 1
+        ) {
+            $extra_pd = 'padding-top-30px';
+        } else {
+            $extra_pd = 'padding-top-100px';
+        }
+        if(!empty($copyright)) {
+            $border_after_widgets = '<div class="section-block mt-4"></div>';
+        } else {
+            $border_after_widgets = '';
+        }
+    }
 ?>
 
-
-<!-- ================================
-       START FOOTER AREA
-================================= -->
-
-<section class="footer-area section-bg padding-top-100px padding-bottom-30px">
+<section class="footer-area section-bg padding-bottom-30px <?php echo esc_attr($extra_pd); ?>">
     <div class="container">
-        <?php if(is_active_sidebar('footer-widgets') || $footer_lf_widget == 1) { ?>
+        <?php if(is_active_sidebar('trizen-footer-widgets') || $footer_lf_widget == 1) { ?>
             <div class="row">
                 <?php
                     if($footer_lf_widget == 1) {
                         get_template_part( 'template-parts/footer/footer-left-widget' );
                     }
 
-                    dynamic_sidebar('footer-widgets');
+                    dynamic_sidebar('trizen-footer-widgets');
                 ?>
             </div>
         <?php } ?>
@@ -71,7 +86,9 @@ $allowed_html = trizen_wses_allowed_menu_html();
             <?php get_template_part('template-parts/footer/footer-social-links'); ?>
         </div>
     </div>
-    <div class="section-block mt-4"></div>
+    <?php echo wp_kses($border_after_widgets, $allowed_html);
+    if(!empty($copyright)) {
+    ?>
     <div class="container">
         <div class="row align-items-center text-center">
             <div class="col-lg-12">
@@ -83,16 +100,13 @@ $allowed_html = trizen_wses_allowed_menu_html();
             </div>
         </div>
     </div>
+    <?php } ?>
 </section>
-<!-- ================================
-       START FOOTER AREA
-================================= -->
+<?php }
 
-<!-- start back-to-top -->
-<div id="back-to-top">
-    <i class="la la-angle-up" title="Go top"></i>
-</div>
-<!-- end back-to-top -->
+get_template_part('layout/back-to-top');
+?>
+
 
 <!-- end modal-shared -->
 <?php get_template_part('layout/register-form'); ?>

@@ -1,13 +1,22 @@
 
 <?php
-	$social_fb = get_theme_mod('trizen_foot_social_fb');
-	$social_tw = get_theme_mod('trizen_foot_social_tw');
+	$social_fb  = get_theme_mod('trizen_foot_social_fb');
+	$social_tw  = get_theme_mod('trizen_foot_social_tw');
 	$social_inc = get_theme_mod('trizen_foot_social_inc');
-	$social_ln = get_theme_mod('trizen_foot_social_ln');
+	$social_ln  = get_theme_mod('trizen_foot_social_ln');
 	$social_ggl = get_theme_mod('trizen_foot_social_ggl');
 	$social_pnt = get_theme_mod('trizen_foot_social_pnt');
-	$social_gt = get_theme_mod('trizen_foot_social_gt');
+	$social_gt  = get_theme_mod('trizen_foot_social_gt');
 
+if(
+    !empty($social_fb) ||
+    !empty($social_tw) ||
+    !empty($social_inc) ||
+    !empty($social_ln) ||
+    !empty($social_ggl) ||
+    !empty($social_pnt) ||
+    !empty($social_gt)
+) {
 ?>
 <div class="col-lg-4">
 	<div class="footer-social-box text-right">
@@ -58,3 +67,4 @@
 		</ul>
 	</div>
 </div>
+<?php } ?>

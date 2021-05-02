@@ -487,6 +487,7 @@ big {
 --------------------------------------------- */
 body {
 	background: #fff;
+	margin-bottom: 0 !important;
 }
 
 hr {
@@ -1471,6 +1472,9 @@ textarea {
 .footer-area img {
 	width: auto;
 	max-width: 100%;
+}
+.copy__desc {
+	margin-bottom: 0;
 }
 
 

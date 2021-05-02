@@ -59,7 +59,7 @@
                                     } ?>
                                 </a>
                             <?php } else { ?>
-                                <a href="<?php echo wp_logout_url(home_url()); ?>" class="theme-btn theme-btn-small theme-btn-transparent user-logout-btn">
+                                <a href="<?php echo wp_logout_url( home_url() ); ?>" class="theme-btn theme-btn-small theme-btn-transparent user-logout-btn">
                                     <?php
                                     if(!empty($user_logout_text)) {
                                         echo wp_kses($user_logout_text, $allowed_html);

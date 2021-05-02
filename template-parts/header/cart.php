@@ -32,9 +32,9 @@ $stroke_cart = false;
                         $room_id    = (int) get_post_meta( $_product->get_id(), 'room_id', true );
                         $post_title = get_the_title( $room_id );
                     }
-                    echo '<pre>';
+                    /*echo '<pre>';
                     print_r($values);
-                    echo '</pre>';
+                    echo '</pre>';*/
                     $quantity = (int) $values['quantity'];
                     $price    = (float) $values['line_total'];
                     $tax      = (float) $values['line_tax'];

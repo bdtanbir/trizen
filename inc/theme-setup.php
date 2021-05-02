@@ -119,7 +119,7 @@ function trizen_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Footer Widgets', 'trizen' ),
-			'id'            => 'footer-widgets',
+			'id'            => 'trizen-footer-widgets',
 			'description'   => esc_html__( 'Add Footer widgets here.', 'trizen' ),
 			'before_widget' => '<div class="col-lg-3 responsive-column"><div id="%1$s" class="footer-item %2$s">',
 			'after_widget'  => '</div></div>',

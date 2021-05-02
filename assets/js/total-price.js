@@ -16,16 +16,18 @@
 
 // call onload or in script segment below form
 function attachCheckboxHandlers() {
-    // get reference to element containing checkboxContainPrice checkboxes
-    var el = document.getElementById('checkboxContainPrice');
+    if(jQuery("#checkboxContainPrice").length) {
+        // get reference to element containing checkboxContainPrice checkboxes
+        var el = document.getElementById('checkboxContainPrice');
 
-    // get reference to input elements in checkboxContainPrice container element
-    var tops = el.getElementsByTagName('input');
+        // get reference to input elements in checkboxContainPrice container element
+        var tops = el.getElementsByTagName('input');
 
-    // assign updateTotal function to onclick property of each checkbox
-    for (var i=0, len=tops.length; i<len; i++) {
-        if ( tops[i].type === 'checkbox' ) {
-            tops[i].onclick = updateTotal;
+        // assign updateTotal function to onclick property of each checkbox
+        for (var i = 0, len = tops.length; i < len; i++) {
+            if (tops[i].type === 'checkbox') {
+                tops[i].onclick = updateTotal;
+            }
         }
     }
 }
