@@ -16,14 +16,18 @@
                         <div class="header-left">
                             <ul class="list-items">
                                 <?php if(!empty(get_theme_mod('trizen_hd_bar_mobile_num'))) { ?>
-                                    <li><a href="#"><i class="la la-phone mr-1"></i><?php echo get_theme_mod('trizen_hd_bar_mobile_num'); ?></a></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="la la-phone mr-1"></i><?php echo get_theme_mod('trizen_hd_bar_mobile_num'); ?>
+                                        </a>
+                                    </li>
                                 <?php } if(!empty(get_theme_mod('trizen_hd_bar_email'))) { ?>
-                                    <li><a href="#"><i class="la la-envelope mr-1"></i><?php echo get_theme_mod('trizen_hd_bar_email'); ?></a></li>
-                                <?php } 
-                                
-                                ?>
-
-
+                                    <li>
+                                        <a href="#">
+                                            <i class="la la-envelope mr-1"></i><?php echo get_theme_mod('trizen_hd_bar_email'); ?>
+                                        </a>
+                                    </li>
+                                <?php } ?>
                             </ul>
                         </div>
                     </div>

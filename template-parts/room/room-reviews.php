@@ -51,7 +51,9 @@
 												<div class="progressbar-line-item bar-bg-2"></div>
 											</div>
 										</div>
-										<div class="bar-percent"><?php esc_html_e('4.7', 'trizen'); ?></div>
+										<div class="bar-percent">
+                                            <?php esc_html_e('4.7', 'trizen'); ?>
+                                        </div>
 									</div>
 								</div>
 							</div>

@@ -69,7 +69,7 @@ Author Email:   contact@tecydevs.com
         var rangeSliderTwo = $('#slider-range2');
         var rangeSliderAmountTwo = $('#amount2');
         var dateRangePicker = $('input[name="daterange"]');
-        var dateRangePickerTwo = $('input[name="daterange-single"]');
+        var dateRangePickerTwo = $('input.date-range');
         var bootstrapSelectMenu = $('.select-contain-select');
         var numberCounter = $('.counter');
         var fullWidthSlider = $('.full-width-slider');
@@ -526,12 +526,35 @@ Author Email:   contact@tecydevs.com
 
         /*==== Daterangepicker =====*/
         if ($(dateRangePickerTwo).length) {
+            /*var options = {
+                timePicker: true,
+                autoUpdateInput: false,
+                autoApply: true,
+                disabledPast: true,
+                dateFormat: dateFormat,
+                timeFormat: timeFormat,
+                widthSingle: 500,
+                onlyShowCurrentMonth: true,
+                minimumCheckin: minimum,
+                classNotAvailable: ['disabled', 'off'],
+                enableLoading: true,
+                todayHighlight: 1,
+                opens: 'left',
+                timePicker24Hour: (ts_params.time_format == '12h') ? false : true,
+            };*/
             $(dateRangePickerTwo).daterangepicker({
                 singleDatePicker: true,
                 opens: 'right',
                 locale: {
                     format: 'DD/MM/YYYY',
-                }
+                },
+                disabledPast: true,
+                widthSingle: 500,
+                onlyShowCurrentMonth: true,
+                classNotAvailable: ['disabled', 'off'],
+                enableLoading: true,
+                todayHighlight: 1,
+                // timePicker24Hour: (ts_params.time_format == '12h') ? false : true,
             });
         }
 
@@ -669,48 +692,4 @@ Author Email:   contact@tecydevs.com
 
     });
 
-
-
-
-    // single hotel room booking ajax
-    // $('form.hotel-room-booking-form').on('click', 'button.btn-book-ajax', function (e) {
-    //     e.preventDefault();
-    //     var form = $('form.hotel-room-booking-form');
-    //     var data = $('form.hotel-room-booking-form').serializeArray();
-    //     var loadingSubmit = form.find('button[name=submit]');
-    //     $(loadingSubmit).find("i.fa-spin").removeClass("d-none");
-    //     data.push({
-    //         name: 'security',
-    //         value: ts_params._s
-    //     });
-    //     $('div.message-wrapper').html("");
-    //     $.ajax({
-    //         url: ts_params.ajax_url,
-    //         method: "post",
-    //         dataType: 'json',
-    //         data: data,
-    //         beforeSend: function () {
-    //             $('div.message-wrapper').html("");
-    //         },
-    //         success: function (res) {
-    //             $(loadingSubmit).find('i.fa-spin').addClass("d-none");
-    //             if (res) {
-    //                 if (res.status) {
-    //                     if (res.redirect) {
-    //                         window.location = res.redirect;
-    //                     }
-    //                 } else {
-    //                     if (res.message) {
-    //                         $('div.message-wrapper').html(res.message);
-    //                     }
-    //                 }
-    //             }
-    //         },
-    //         error: function (err) {
-    //             $('div.message-wrapper').html("");
-    //             $(loadingSubmit).find('i.fa-spin').addClass("d-none");
-    //         }
-    //     });
-    // });
 })(jQuery);
-

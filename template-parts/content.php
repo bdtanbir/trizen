@@ -1,63 +1,46 @@
 <?php
-/**
- * Template part for displaying posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package trizen
- */
-
+if(empty(get_the_post_thumbnail())) {
+	$empty_img = 'empty-blog-image';
+} else {
+	$empty_img = '';
+}
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				trizen_posted_on();
-				trizen_posted_by();
+<div id="post-<?php the_ID(); ?>" <?php post_class('card-item blog-card ' . $empty_img); ?>>
+    <div class="card-img">
+		<?php the_post_thumbnail(); ?>
+        <div class="post-format icon-element">
+            <i class="la la-photo"></i>
+        </div>
+        <div class="card-body">
+			<?php
+			the_category();
+			if(get_the_title()) {
 				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php trizen_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'trizen' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'trizen' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php trizen_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+                <h3 class="card-title line-height-26">
+                    <a href="<?php the_permalink(); ?>">
+						<?php the_title(); ?>
+                    </a>
+                </h3>
+			<?php } ?>
+            <p class="card-meta">
+                <span class="post__date"> <?php the_time( get_option( 'date_format' ) ); ?></span>
+                <span class="post-dot"></span>
+                <span class="post__time"><?php esc_html_e('5 Mins read', 'trizen'); ?></span>
+            </p>
+        </div>
+    </div>
+    <div class="card-footer d-flex align-items-center justify-content-between">
+        <div class="author-content d-flex align-items-center">
+            <div class="author-img">
+				<?php echo get_avatar(get_the_ID()); ?>
+            </div>
+            <div class="author-bio">
+                <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="author__title">
+					<?php echo get_the_author(); ?>
+                </a>
+            </div>
+        </div>
+		<?php get_template_part('template-parts/blog/social-share'); ?>
+    </div>
+</div>

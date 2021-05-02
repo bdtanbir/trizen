@@ -173,7 +173,9 @@
 							</div>
 							<div class="col-lg-4 responsive-column">
 								<div class="rate-option-item">
-									<label><?php esc_html_e('Location', 'trizen'); ?></label>
+									<label>
+                                        <?php esc_html_e('Location', 'trizen'); ?>
+                                    </label>
 									<div class="rate-stars-option">
 										<input type="checkbox" id="l1" value="1">
 										<label for="l1"></label>
@@ -190,7 +192,9 @@
 							</div>
 							<div class="col-lg-4 responsive-column">
 								<div class="rate-option-item">
-									<label><?php esc_html_e('Value for Money', 'trizen'); ?></label>
+									<label>
+                                        <?php esc_html_e('Value for Money', 'trizen'); ?>
+                                    </label>
 									<div class="rate-stars-option">
 										<input type="checkbox" id="vm1" value="1">
 										<label for="vm1"></label>
@@ -207,7 +211,9 @@
 							</div>
 							<div class="col-lg-4 responsive-column">
 								<div class="rate-option-item">
-									<label><?php esc_html_e('Cleanliness', 'trizen'); ?></label>
+									<label>
+                                        <?php esc_html_e('Cleanliness', 'trizen'); ?>
+                                    </label>
 									<div class="rate-stars-option">
 										<input type="checkbox" id="cln1" value="1">
 										<label for="cln1"></label>
@@ -224,7 +230,9 @@
 							</div>
 							<div class="col-lg-4 responsive-column">
 								<div class="rate-option-item">
-									<label><?php esc_html_e('Facilities', 'trizen'); ?></label>
+									<label>
+                                        <?php esc_html_e('Facilities', 'trizen'); ?>
+                                    </label>
 									<div class="rate-stars-option">
 										<input type="checkbox" id="f1" value="1">
 										<label for="f1"></label>
@@ -246,7 +254,9 @@
 							<div class="row">
 								<div class="col-lg-6 responsive-column">
 									<div class="input-box">
-										<label class="label-text" for="input-name"><?php esc_html_e('Name', 'trizen'); ?></label>
+										<label class="label-text" for="input-name">
+                                            <?php esc_html_e('Name', 'trizen'); ?>
+                                        </label>
 										<div class="form-group">
 											<span class="la la-user form-icon"></span>
 											<input id="input-name" class="form-control" type="text" name="text" placeholder="<?php esc_attr_e('Your name', 'trizen'); ?>">

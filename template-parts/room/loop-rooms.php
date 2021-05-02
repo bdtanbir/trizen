@@ -2,7 +2,7 @@
 $number_of_adults = get_post_meta(get_the_ID(), 'trizen_room_facility_num_of_adults', true);
 $number_of_beds   = get_post_meta(get_the_ID(), 'trizen_room_facility_num_of_beds', true);
 $room_footage     = get_post_meta(get_the_ID(), 'trizen_hotel_room_footage', true);
-$room_price       = get_post_meta(get_the_ID(), 'trizen_room_price', true);
+$room_price       = get_post_meta(get_the_ID(), 'price', true);
 $room_gallery     = get_post_meta(get_the_ID(), 'trizen_hotel_room_image_gallery', true );
 
 ?>
@@ -49,16 +49,18 @@ $room_gallery     = get_post_meta(get_the_ID(), 'trizen_hotel_room_image_gallery
                         <span class="price__from">
                             <?php esc_html_e('From', 'trizen'); ?>
                         </span>
-                        <span class="price__num"><?php esc_html_e('$', 'trizen'); echo esc_html($room_price); ?></span>
+                        <span class="price__num">
+                            <?php esc_html_e('$', 'trizen'); echo esc_html($room_price); ?>
+                        </span>
                     </p>
                 </div>
-            <?php } if (!empty(get_the_title())) { ?>
+            <?php } if (get_the_title()) { ?>
                 <h3 class="card-title font-size-26">
                     <a href="<?php the_permalink(); ?>">
                         <?php the_title(); ?>
                     </a>
                 </h3>
-            <?php } if (!empty(get_the_content())) { ?>
+            <?php } if (get_the_content()) { ?>
                 <p class="card-text pt-2">
                     <?php
                         echo wp_trim_words(get_the_content(),'25','');

@@ -2,8 +2,8 @@
 <?php
 $show_related_post  = get_theme_mod('show_related_post', 1);
 $related_post_title = get_theme_mod('trizen_related_post_title', __('Related Posts', 'trizen'));
-$related_post_ppp = get_theme_mod('trizen_related_post_ppp',2);
-$related_post_pi = explode(',', get_theme_mod('trizen_related_post_ids'));
+$related_post_ppp   = get_theme_mod('trizen_related_post_ppp',2);
+$related_post_pi    = explode(',', get_theme_mod('trizen_related_post_ids'));
 
 if(!empty(get_theme_mod('trizen_related_post_ids'))) {
 	$default_args = array(
@@ -33,7 +33,7 @@ if($show_related_post == 1) {
 
             <?php while ($query->have_posts()) { $query->the_post(); ?>
                 <div class="col-lg-6 responsive-column">
-                    <?php get_template_part('template-parts/blog/blog'); ?>
+                    <?php get_template_part('template-parts/content'); ?>
                 </div>
             <?php } ?>
 

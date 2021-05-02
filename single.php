@@ -9,13 +9,19 @@
 
 get_header();
 get_template_part('inc/breadcrumb');
-the_post();
+while (have_posts()) {
+    the_post();
+	if(is_active_sidebar('blog-sidebar')) {
+	    $content_col = '8';
+	} else {
+		$content_col = '12';
+    }
 ?>
 
 	<section class="card-area section--padding blog-details-wrap">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8">
+				<div class="col-lg-<?php echo esc_attr($content_col); ?>">
 					<div class="card-item blog-card blog-card-layout-2 blog-single-card mb-5">
 						<?php if(!empty(get_the_post_thumbnail())) { ?>
 							<div class="card-img before-none">
@@ -44,10 +50,11 @@ the_post();
 							?>
 							<div class="section-block"></div>
 							<div class="post-tag-wrap d-flex align-items-center justify-content-between py-4">
-								<ul class="tag-list">
-									<?php the_tags('<li>', ' ', '</li> '); ?>
-								</ul>
-								<?php get_template_part('template-parts/blog/social-share'); ?>
+                                <?php if(has_tag()) { ?>
+                                    <ul class="tag-list">
+                                        <?php the_tags('<li>', ' ', '</li> '); ?>
+                                    </ul>
+								<?php } get_template_part('template-parts/blog/social-share'); ?>
 							</div>
 							<div class="section-block"></div>
 							<div class="post-navigation d-flex justify-content-between py-4">
@@ -88,7 +95,12 @@ the_post();
 					<div class="comment-forum pt-5">
 						<?php if( comments_open() ) { ?>
 							<h3 class="title">
-								<?php comments_popup_link('0 Comment', '1 Comment', '% Comments', 'comments-link', 'Comments are off for this post'); ?>
+								<?php comments_popup_link(
+								        esc_html__('0 Comment', 'trizen'),
+                                        esc_html__('1 Comment', 'trizen'),
+                                        '% Comments',
+                                        'comments-link',
+                                        esc_html__('Comments are off for this post', 'trizen')); ?>
 							</h3>
 							<div class="form-box-test mt-5">
 								<?php
@@ -97,19 +109,27 @@ the_post();
 							</div>
 						<?php } else { ?>
 							<h3 class="title">
-								<?php comments_popup_link('0 Comment', '1 Comment', '% Comments', 'comments-link', 'Comments are off for this post'); ?>
+								<?php comments_popup_link(
+								        esc_html__('0 Comment', 'trizen'),
+                                        esc_html__('1 Comment', 'trizen'),
+                                        '% Comments',
+                                        'comments-link',
+                                        esc_html__('Comments are off for this post', 'trizen')); ?>
 							</h3>
 						<?php } ?>
 					</div>
 				</div>
 
-				<div class="col-lg-4">
-                    <?php get_sidebar(); ?>
-				</div>
+                <?php if(is_active_sidebar('blog-sidebar')) { ?>
+                    <div class="col-lg-4">
+                        <?php get_sidebar(); ?>
+                    </div>
+                <?php } ?>
 			</div>
 		</div>
 	</section>
 
 <?php
+}
 get_template_part('template-parts/footer/static-cta');
 get_footer();

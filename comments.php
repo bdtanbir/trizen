@@ -29,7 +29,7 @@ if( have_comments() ) : ?>
     <ul class="comment-list ">
 		<?php
 		wp_list_comments( array(
-			'avatar_size' => 90,
+			'avatar_size' => 100,
 			'callback'    => 'trizen_comment',
 			'short_ping'  => true,
 		) );
@@ -72,9 +72,9 @@ if( !isset($args[ 'format' ]) )
 		'class_submit' 		  => 'theme-btn',
 		'comment_note_before' => '',
 		'comment_notes_after' => '',
-		'title_reply' 		  => esc_html__(' ', 'trizen'),
+		'title_reply' 		  => ' ',
 		'title_reply_before'  => '<div class="msg_form"><h5 id="reply-title" class="comment-reply-title">',
-		'title_reply_after'   => '</h5></div><div class="form-title-wrap"><h3 class="title '.$remove_mg.'">'. esc_html__('Add a Comment','trizen') . '</h3></div>',
+		'title_reply_after'   => '</h5></div><div class="form-title-wrap"><h3 class="title '.esc_attr($remove_mg).'">'. esc_html__('Add a Comment','trizen') . '</h3></div>',
 		'logged_in_as'        => '',
 		'class_form' 		  => 'comment-form row',
 		'cancel_reply_before' => '',

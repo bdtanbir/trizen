@@ -336,6 +336,46 @@ add_filter('posts_search', '__search_by_title_only', 500, 2);
 
 
 
+add_filter('ts_customer_infomation_edit_order', '_customer_infomation_edit_order', 15, 2 );
+
+function _customer_infomation_edit_order($html, $order_id){
+
+	$form_builder = get_post_meta( $order_id, 'wb_form_for_order', true );
+
+	if (!empty($form_builder)) {
+		$html = '';
+
+		foreach ($form_builder as $k => $v) {
+
+			$data = wp_parse_args($v, array(
+				'title' => '',
+				'desc' => '',
+				'placeholder' => '',
+				'type' => '',
+				'name' => '',
+				'required' => false,
+				'class' => '',
+				'custom_id' => '',
+				'option_value' => false,
+				'post_type' => '',
+				'taxonomy' => '',
+				'icon' => '',
+				'validate' => '',
+				'attrs' => array()
+			));
+			$data['class'] = implode(' ', $data['class']);
+			$field_object = WB_Form_Builder_Controller::inst()->get_field($data['type']);
+			if($data['name'] == 'st_note'){
+				$field_html = '';
+			}else{
+				$field_html = $field_object->get_admin_html($data, $order_id);
+			}
+			$html .= $field_html;
+		}
+	}
+	return $html;
+}
+
 add_filter('ts_is_woocommerce_checkout', 'ts_check_is_checkout_woocomerce');
 
 if (!function_exists('ts_check_is_checkout_woocomerce')) {
@@ -350,5 +390,36 @@ if (!function_exists('ts_check_is_checkout_woocomerce')) {
 		return $check;
 	}
 
+}
+
+function trizen_setcookie( $name, $value, $expire = 0, $secure = false )
+{
+	setcookie( $name, $value, $expire, '/', null, null );
+}
+
+function delete_cart( $cart_name ) {
+	setcookie( $cart_name, '', time() - 3600 );
+}
+
+function destroy_cart() {
+	do_action( 'ts_before_destroy_cart' );
+
+	delete_cart( 'ts_cart' );
+	delete_cart( 'ts_cart_coupon' );
+
+	do_action( 'ts_after_destroy_cart' );
+
+}
+
+function _remove_cart() {
+	if ( get( 'action', '' ) === 'ts-remove-cart' && wp_verify_nonce( get( 'security', '' ), 'ts-security' ) ) {
+		if ( class_exists( 'WC_Product' ) ) {
+			global $woocommerce;
+			WC()->cart->empty_cart();
+		}
+		destroy_cart();
+		wp_redirect( remove_query_arg( [ 'action', 'security' ] ) );
+		exit();
+	}
 }
 

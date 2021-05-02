@@ -15,7 +15,7 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<meta name="author" content="TechyDevs">
+	<meta name="author" content="<?php esc_attr_e('TechyDevs', 'trizen'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="<?php esc_attr_e('Travel Booking WordPress Theme', 'trizen'); ?>">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -33,12 +33,12 @@ $header_bar = get_theme_mod('show_header_bar', 1);
 $preloader  = get_theme_mod('show_preloader', 1);
 ?>
 
-<!-- start cssload-loader -->
+<!-- start pre-loader -->
 <?php
 if($preloader == 1) {
-	get_template_part( './layout/loader' );
+	get_template_part( 'layout/loader' );
 } ?>
-<!-- end cssload-loader -->
+<!-- end pre-loader -->
 
 <!-- ================================
             START HEADER AREA

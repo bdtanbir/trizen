@@ -8423,7 +8423,7 @@ body {
   .section-tab-2 .nav-tabs .nav-link::before, .section-tab-2 .nav-tabs .nav-link::after {
     position: absolute;
     content: "";
-    top: 8px;
+    top: 6px;
     left: 0;
     width: 14px;
     height: 14px;
@@ -8437,7 +8437,7 @@ body {
     transition: all 0.3s; }
   .section-tab-2 .nav-tabs .nav-link::before {
     left: 4px;
-    top: 12px;
+    top: 10px;
     width: 6px;
     height: 6px;
     background-color: #fff;

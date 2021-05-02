@@ -32,20 +32,19 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => [$this, 'sanitize_file']
 			));
 			$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_logo', array(
-				'label'         => __('Dark Logo', 'trizen'),
+				'label'         => esc_html__('Dark Logo', 'trizen'),
 				'section'       => 'title_tagline',
 				'priority'      => 9,
 				'settings'      => 'custom_logo',
 				'type'          => 'upload',
 				'button_labels' => array(
-					'select'       => __('Select Logo', 'trizen'),
-					'change'       => __('Change Logo', 'trizen'),
-					'remove'       => __('Remove', 'trizen'),
-					'default'      => __('Default', 'trizen'),
-					'placeholder'  => __('No Logo selected', 'trizen'),
-					'frame_title'  => __('Select Logo', 'trizen'),
-					'frame_button' => __('Choose Logo', 'trizen'),
-
+					'select'       => esc_html__('Select Logo', 'trizen'),
+					'change'       => esc_html__('Change Logo', 'trizen'),
+					'remove'       => esc_html__('Remove', 'trizen'),
+					'default'      => esc_html__('Default', 'trizen'),
+					'placeholder'  => esc_html__('No Logo selected', 'trizen'),
+					'frame_title'  => esc_html__('Select Logo', 'trizen'),
+					'frame_button' => esc_html__('Choose Logo', 'trizen'),
 				),
 			)));
 			/* General Retina Logo */
@@ -54,19 +53,19 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => [$this, 'sanitize_file']
 			));
 			$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'retina_logo', array(
-				'label'         => __('Dark Retina Logo', 'trizen'),
+				'label'         => esc_html__('Dark Retina Logo', 'trizen'),
 				'section'       => 'title_tagline',
 				'priority'      => 9,
 				'settings'      => 'retina_logo',
 				'type'          => 'upload',
 				'button_labels' => array(
-					'select'       => __('Select Logo', 'trizen'),
-					'change'       => __('Change Logo', 'trizen'),
-					'remove'       => __('Remove', 'trizen'),
-					'default'      => __('Default', 'trizen'),
-					'placeholder'  => __('No Logo selected', 'trizen'),
-					'frame_title'  => __('Select Logo', 'trizen'),
-					'frame_button' => __('Choose Logo', 'trizen'),
+					'select'       => esc_html__('Select Logo', 'trizen'),
+					'change'       => esc_html__('Change Logo', 'trizen'),
+					'remove'       => esc_html__('Remove', 'trizen'),
+					'default'      => esc_html__('Default', 'trizen'),
+					'placeholder'  => esc_html__('No Logo selected', 'trizen'),
+					'frame_title'  => esc_html__('Select Logo', 'trizen'),
+					'frame_button' => esc_html__('Choose Logo', 'trizen'),
 
 				),
 			)));
@@ -85,7 +84,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => array($this, 'sanitize_checkbox'),
 			));
 			$wp_customize->add_control('show_header_bar', array(
-				'label'    => __('Show Header Bar', 'trizen'),
+				'label'    => esc_html__('Show Header Bar', 'trizen'),
 				'section'  => 'trizen_general_options',
 				'settings' => 'show_header_bar',
 				'type'     => 'checkbox',
@@ -97,7 +96,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => array($this, 'sanitize_checkbox'),
 			));
 			$wp_customize->add_control('show_preloader', array(
-				'label'    => __('Show PreLoader', 'trizen'),
+				'label'    => esc_html__('Show PreLoader', 'trizen'),
 				'section'  => 'trizen_general_options',
 				'settings' => 'show_preloader',
 				'type'     => 'checkbox',
@@ -109,7 +108,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => array($this, 'sanitize_checkbox'),
 			));
 			$wp_customize->add_control('show_static_infobox', array(
-				'label'    => __('Show Static Page\'s InfoBox', 'trizen'),
+				'label'    => esc_html__('Show Static Page\'s InfoBox', 'trizen'),
 				'section'  => 'trizen_general_options',
 				'settings' => 'show_static_infobox',
 				'type'     => 'checkbox',
@@ -121,7 +120,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => array($this, 'sanitize_checkbox'),
 			));
 			$wp_customize->add_control('show_static_footer_cta', array(
-				'label'    => __('Show Static Footer CTA', 'trizen'),
+				'label'    => esc_html__('Show Static Footer CTA', 'trizen'),
 				'section'  => 'trizen_general_options',
 				'settings' => 'show_static_footer_cta',
 				'type'     => 'checkbox',
@@ -133,7 +132,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => array($this, 'sanitize_checkbox'),
 			));
 			$wp_customize->add_control('show_footer_lf_widget', array(
-				'label'    => __('Show Footer Left Widget', 'trizen'),
+				'label'    => esc_html__('Show Footer Left Widget', 'trizen'),
 				'section'  => 'trizen_general_options',
 				'settings' => 'show_footer_lf_widget',
 				'type'     => 'checkbox',
@@ -145,7 +144,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => array($this, 'sanitize_checkbox'),
 			));
 			$wp_customize->add_control('show_breadcrumb_overlay_shape', array(
-				'label'    => __('Show Breadcrumb Overlay Shape', 'trizen'),
+				'label'    => esc_html__('Show Breadcrumb Overlay Shape', 'trizen'),
 				'section'  => 'trizen_general_options',
 				'settings' => 'show_breadcrumb_overlay_shape',
 				'type'     => 'checkbox',
@@ -157,7 +156,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => array($this, 'sanitize_checkbox'),
 			));
 			$wp_customize->add_control('show_related_post', array(
-				'label'    => __('Show Related Post', 'trizen'),
+				'label'    => esc_html__('Show Related Post', 'trizen'),
 				'section'  => 'trizen_general_options',
 				'settings' => 'show_related_post',
 				'type'     => 'checkbox',
@@ -169,7 +168,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => array($this, 'sanitize_checkbox'),
 			));
 			$wp_customize->add_control('show_related_rooms', array(
-				'label'    => __('Show Related Rooms in room single', 'trizen'),
+				'label'    => esc_html__('Show Related Rooms in room single', 'trizen'),
 				'section'  => 'trizen_general_options',
 				'settings' => 'show_related_rooms',
 				'type'     => 'checkbox',
@@ -180,12 +179,12 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 			 *  Header
 			 * -------------------------*/
 			$wp_customize->add_panel('trizen_header_panel_options', array(
-				'title'    => __('Header', 'trizen'),
+				'title'    => esc_html__('Header', 'trizen'),
 				'priority' => 2,
 			));
 			/* Header Bar */
 			$wp_customize->add_section('trizen_header_options', array(
-				'title'           => __('Header Bar', 'trizen'),
+				'title'           => esc_html__('Header Bar', 'trizen'),
 				'priority'        => 2,
 				'panel'           => 'trizen_header_panel_options',
 				'active_callback' => 'trizen_show_header_bar_callback'
@@ -196,7 +195,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_hd_bar_heading', array(
-				'label'           => __('Contact Info', 'trizen'),
+				'label'           => esc_html__('Contact Info', 'trizen'),
 				'section'         => 'trizen_header_options',
 				'settings'        => 'trizen_hd_bar_heading',
 				'type'            => 'hidden',
@@ -207,7 +206,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_hd_bar_mobile_num', array(
-				'label'           => __('Mobile Number', 'trizen'),
+				'label'           => esc_html__('Mobile Number', 'trizen'),
 				'section'         => 'trizen_header_options',
 				'settings'        => 'trizen_hd_bar_mobile_num',
 				'type'            => 'text',
@@ -218,7 +217,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_hd_bar_email', array(
-				'label'           => __('Email', 'trizen'),
+				'label'           => esc_html__('Email', 'trizen'),
 				'section'         => 'trizen_header_options',
 				'settings'        => 'trizen_hd_bar_email',
 				'type'            => 'text',
@@ -229,43 +228,43 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_hd_user_action_hd', array(
-				'label'           => __('User Action', 'trizen'),
+				'label'           => esc_html__('User Action', 'trizen'),
 				'section'         => 'trizen_header_options',
 				'settings'        => 'trizen_hd_user_action_hd',
 				'type'            => 'hidden',
 			));
 			// User Action: Login Title
 			$wp_customize->add_setting('trizen_hd_user_action_login_title', array(
-				'default'           => __('Login', 'trizen'),
+				'default'           => esc_html__('Login', 'trizen'),
 				'transport'         => 'refresh',
 				'sanitize_callback' => 'trizen_sanitize_textarea',
 			));
 			$wp_customize->add_control('trizen_hd_user_action_login_title', array(
-				'label'           => __('Login Title', 'trizen'),
+				'label'           => esc_html__('Login Title', 'trizen'),
 				'section'         => 'trizen_header_options',
 				'settings'        => 'trizen_hd_user_action_login_title',
 				'type'            => 'text',
 			));
 			// User Action: Logout Title
 			$wp_customize->add_setting('trizen_hd_user_action_logout_title', array(
-				'default'           => __('Logout', 'trizen'),
+				'default'           => esc_html__('Logout', 'trizen'),
 				'transport'         => 'refresh',
 				'sanitize_callback' => 'trizen_sanitize_textarea',
 			));
 			$wp_customize->add_control('trizen_hd_user_action_logout_title', array(
-				'label'           => __('Logout Title', 'trizen'),
+				'label'           => esc_html__('Logout Title', 'trizen'),
 				'section'         => 'trizen_header_options',
 				'settings'        => 'trizen_hd_user_action_logout_title',
 				'type'            => 'text',
 			));
 			// User Action: SignUp Title
 			$wp_customize->add_setting('trizen_hd_user_action_signup_title', array(
-				'default'           => __('Sign Up', 'trizen'),
+				'default'           => esc_html__('Sign Up', 'trizen'),
 				'transport'         => 'refresh',
 				'sanitize_callback' => 'trizen_sanitize_textarea',
 			));
 			$wp_customize->add_control('trizen_hd_user_action_signup_title', array(
-				'label'           => __('Sign Up Title', 'trizen'),
+				'label'           => esc_html__('Sign Up Title', 'trizen'),
 				'section'         => 'trizen_header_options',
 				'settings'        => 'trizen_hd_user_action_signup_title',
 				'type'            => 'text',
@@ -274,18 +273,18 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				Header Menu Bar
 			-----------------------*/
 			$wp_customize->add_section('trizen_header_menu_options', array(
-				'title'           => __('Header Menu Bar', 'trizen'),
+				'title'           => esc_html__('Header Menu Bar', 'trizen'),
 				'priority'        => 4,
 				'panel'           => 'trizen_header_panel_options',
 			));
 			// Header Menu Bar Button
 			$wp_customize->add_setting('trizen_hd_menu_bar_btn_text', array(
-				'default'           => __('Become Local Expert', 'trizen'),
+				'default'           => esc_html__('Become Local Expert', 'trizen'),
 				'transport'         => 'refresh',
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_hd_menu_bar_btn_text', array(
-				'label'           => __('Header Button', 'trizen'),
+				'label'           => esc_html__('Header Button', 'trizen'),
 				'section'         => 'trizen_header_menu_options',
 				'settings'        => 'trizen_hd_menu_bar_btn_text',
 				'type'            => 'text',
@@ -297,7 +296,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_hd_menu_bar_btn_url', array(
-				'label'           => __('Header Button URL', 'trizen'),
+				'label'           => esc_html__('Header Button URL', 'trizen'),
 				'section'         => 'trizen_header_menu_options',
 				'settings'        => 'trizen_hd_menu_bar_btn_url',
 				'type'            => 'text',
@@ -308,12 +307,12 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 			 *  Breadcrumb(s)
 			 * -------------------------*/
 			$wp_customize->add_panel('trizen_breadcrumbs_panel_options', array(
-				'title'    => __('Breadcrumb(s)', 'trizen'),
+				'title'    => esc_html__('Breadcrumb(s)', 'trizen'),
 				'priority' => 50,
 			));
 			/* Breadcrumb 1 */
 			$wp_customize->add_section('trizen_breadcrumb1_options', array(
-				'title'           => __('Breadcrumb 1', 'trizen'),
+				'title'           => esc_html__('Breadcrumb 1', 'trizen'),
 				'priority'        => 2,
 				'panel'           => 'trizen_breadcrumbs_panel_options',
 			));
@@ -324,17 +323,17 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 			));
 			$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'trizen_breadcrumb1_bg', array(
 				'type'          => 'upload',
-				'label'         => __('Background', 'trizen'),
+				'label'         => esc_html__('Background', 'trizen'),
 				'section'       => 'trizen_breadcrumb1_options',
 				'settings'      => 'trizen_breadcrumb1_bg',
 				'button_labels' => array(
-					'select'       => __('Select Image', 'trizen'),
-					'change'       => __('Change Image', 'trizen'),
-					'remove'       => __('Remove', 'trizen'),
-					'default'      => __('Default', 'trizen'),
-					'placeholder'  => __('No Image selected', 'trizen'),
-					'frame_title'  => __('Select Image', 'trizen'),
-					'frame_button' => __('Choose Image', 'trizen'),
+					'select'       => esc_html__('Select Image', 'trizen'),
+					'change'       => esc_html__('Change Image', 'trizen'),
+					'remove'       => esc_html__('Remove', 'trizen'),
+					'default'      => esc_html__('Default', 'trizen'),
+					'placeholder'  => esc_html__('No Image selected', 'trizen'),
+					'frame_title'  => esc_html__('Select Image', 'trizen'),
+					'frame_button' => esc_html__('Choose Image', 'trizen'),
 
 				),
 			)));
@@ -344,7 +343,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_breadcrumb1_wrapper_hd', array(
-				'label'    => __('Wrapper', 'trizen'),
+				'label'    => esc_html__('Wrapper', 'trizen'),
 				'section'  => 'trizen_breadcrumb1_options',
 				'settings' => 'trizen_breadcrumb1_wrapper_hd',
 				'type'     => 'hidden',
@@ -356,7 +355,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_breadcrumb1_wrapper_pt', array(
-				'label'    => __('Padding Top', 'trizen'),
+				'label'    => esc_html__('Padding Top', 'trizen'),
 				'section'  => 'trizen_breadcrumb1_options',
 				'settings' => 'trizen_breadcrumb1_wrapper_pt',
 				'type'     => 'number',
@@ -373,7 +372,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_breadcrumb1_wrapper_pb', array(
-				'label'    => __('Padding Bottom', 'trizen'),
+				'label'    => esc_html__('Padding Bottom', 'trizen'),
 				'section'  => 'trizen_breadcrumb1_options',
 				'settings' => 'trizen_breadcrumb1_wrapper_pb',
 				'type'     => 'number',
@@ -389,20 +388,20 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_breadcrumb1_title_hd', array(
-				'label'    => __('Title', 'trizen'),
+				'label'    => esc_html__('Title', 'trizen'),
 				'section'  => 'trizen_breadcrumb1_options',
 				'settings' => 'trizen_breadcrumb1_title_hd',
 				'type'     => 'hidden',
 			));
 			// Title Color
 			$wp_customize->add_setting('trizen_breadcrumb_title_clr', array(
-				'default'           => __('#ffffff', 'trizen'),
+				'default'           => esc_html__('#ffffff', 'trizen'),
 				'sanitize_callback' => 'sanitize_hex_color',
 				'transport'         => 'postMessage'
 			));
 			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_breadcrumb_title_clr', array(
 				'type'    => 'color',
-				'label'   => __('Color', 'trizen'),
+				'label'   => esc_html__('Color', 'trizen'),
 				'section' => 'trizen_breadcrumb1_options',
 			)));
 			// Title Font-size
@@ -412,7 +411,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_breadcrumb1_title_size', array(
-				'label'    => __('Font Size', 'trizen'),
+				'label'    => esc_html__('Font Size', 'trizen'),
 				'section'  => 'trizen_breadcrumb1_options',
 				'settings' => 'trizen_breadcrumb1_title_size',
 				'type'     => 'number',
@@ -428,20 +427,20 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_breadcrumb1_bdc_hd', array(
-				'label'    => __('Breadcrumb', 'trizen'),
+				'label'    => esc_html__('Breadcrumb', 'trizen'),
 				'section'  => 'trizen_breadcrumb1_options',
 				'settings' => 'trizen_breadcrumb1_bdc_hd',
 				'type'     => 'hidden',
 			));
 			// Breadcrumb BG
 			$wp_customize->add_setting('trizen_breadcrumb1_bdc_bg', array(
-				'default'           => __('rgba(0, 0, 0, 0.3)', 'trizen'),
+				'default'           => esc_html__('rgba(0, 0, 0, 0.3)', 'trizen'),
 				'sanitize_callback' => 'sanitize_hex_color',
 				'transport'         => 'postMessage'
 			));
 			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_breadcrumb1_bdc_bg', array(
 				'type'    => 'color',
-				'label'   => __('Background', 'trizen'),
+				'label'   => esc_html__('Background', 'trizen'),
 				'section' => 'trizen_breadcrumb1_options',
 			)));
 			// Breadcrumb Font-size
@@ -451,7 +450,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_breadcrumb1_bdc_size', array(
-				'label'    => __('Font Size', 'trizen'),
+				'label'    => esc_html__('Font Size', 'trizen'),
 				'section'  => 'trizen_breadcrumb1_options',
 				'settings' => 'trizen_breadcrumb1_bdc_size',
 				'type'     => 'number',
@@ -463,31 +462,31 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 			));
 			// Breadcrumb Color
 			$wp_customize->add_setting('trizen_breadcrumb1_bdc_clr', array(
-				'default'           => __('#ffffff', 'trizen'),
+				'default'           => esc_html__('#ffffff', 'trizen'),
 				'sanitize_callback' => 'sanitize_hex_color',
 				'transport'         => 'postMessage'
 			));
 			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_breadcrumb1_bdc_clr', array(
 				'type'    => 'color',
-				'label'   => __('Color', 'trizen'),
+				'label'   => esc_html__('Color', 'trizen'),
 				'section' => 'trizen_breadcrumb1_options',
 			)));
 			// Breadcrumb Hover Color
 			$wp_customize->add_setting('trizen_breadcrumb1_bdc_hv_clr', array(
-				'default'           => __('#287dfa', 'trizen'),
+				'default'           => esc_html__('#287dfa', 'trizen'),
 				'sanitize_callback' => 'sanitize_hex_color',
 				'transport'         => 'postMessage'
 			));
 			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_breadcrumb1_bdc_hv_clr', array(
 				'type'    => 'color',
-				'label'   => __('Hover Color', 'trizen'),
+				'label'   => esc_html__('Hover Color', 'trizen'),
 				'section' => 'trizen_breadcrumb1_options',
 			)));
 
 
 			/* Hotel Details Breadcrumb Customize */
 			$wp_customize->add_section('trizen_hotel_details_bdc_options', array(
-				'title'           => __('Hotel Details Breadcrumb', 'trizen'),
+				'title'           => esc_html__('Hotel Details Breadcrumb', 'trizen'),
 				'priority'        => 2,
 				'panel'           => 'trizen_breadcrumbs_panel_options',
 			));
@@ -498,17 +497,17 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 			));
 			$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'trizen_hotel_details_bdc_bg', array(
 				'type'          => 'upload',
-				'label'         => __('Background', 'trizen'),
+				'label'         => esc_html__('Background', 'trizen'),
 				'section'       => 'trizen_hotel_details_bdc_options',
 				'settings'      => 'trizen_hotel_details_bdc_bg',
 				'button_labels' => array(
-					'select'       => __('Select Image', 'trizen'),
-					'change'       => __('Change Image', 'trizen'),
-					'remove'       => __('Remove', 'trizen'),
-					'default'      => __('Default', 'trizen'),
-					'placeholder'  => __('No Image selected', 'trizen'),
-					'frame_title'  => __('Select Image', 'trizen'),
-					'frame_button' => __('Choose Image', 'trizen'),
+					'select'       => esc_html__('Select Image', 'trizen'),
+					'change'       => esc_html__('Change Image', 'trizen'),
+					'remove'       => esc_html__('Remove', 'trizen'),
+					'default'      => esc_html__('Default', 'trizen'),
+					'placeholder'  => esc_html__('No Image selected', 'trizen'),
+					'frame_title'  => esc_html__('Select Image', 'trizen'),
+					'frame_button' => esc_html__('Choose Image', 'trizen'),
 
 				),
 			)));
@@ -518,7 +517,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_hotel_details_bdc_wrap_hd', array(
-				'label'    => __('Wrapper', 'trizen'),
+				'label'    => esc_html__('Wrapper', 'trizen'),
 				'section'  => 'trizen_hotel_details_bdc_options',
 				'settings' => 'trizen_hotel_details_bdc_wrap_hd',
 				'type'     => 'hidden',
@@ -530,7 +529,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_hotel_details_bdc_wrap_pt', array(
-				'label'    => __('Padding Top', 'trizen'),
+				'label'    => esc_html__('Padding Top', 'trizen'),
 				'section'  => 'trizen_hotel_details_bdc_options',
 				'settings' => 'trizen_hotel_details_bdc_wrap_pt',
 				'type'     => 'number',
@@ -547,7 +546,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_hotel_details_bdc_wrap_pb', array(
-				'label'    => __('Padding Bottom', 'trizen'),
+				'label'    => esc_html__('Padding Bottom', 'trizen'),
 				'section'  => 'trizen_hotel_details_bdc_options',
 				'settings' => 'trizen_hotel_details_bdc_wrap_pb',
 				'type'     => 'number',
@@ -564,65 +563,65 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_hotel_details_bdc_video_btn_hd', array(
-				'label'    => __('Video Button', 'trizen'),
+				'label'    => esc_html__('Video Button', 'trizen'),
 				'section'  => 'trizen_hotel_details_bdc_options',
 				'settings' => 'trizen_hotel_details_bdc_video_btn_hd',
 				'type'     => 'hidden',
 			));
 			// Video Button Text
 			$wp_customize->add_setting('trizen_hotel_details_bdc_video_btn_txt', array(
-				'default'           => __('Video', 'trizen'),
+				'default'           => esc_html__('Video', 'trizen'),
 				'transport'         => 'postMessage',
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_hotel_details_bdc_video_btn_txt', array(
-				'label'    => __('Text', 'trizen'),
+				'label'    => esc_html__('Text', 'trizen'),
 				'section'  => 'trizen_hotel_details_bdc_options',
 				'settings' => 'trizen_hotel_details_bdc_video_btn_txt',
 				'type'     => 'text',
 			));
 			// Video Button Color
 			$wp_customize->add_setting('trizen_hotel_details_bdc_video_btn_clr', array(
-				'default'           => __('#5d646d', 'trizen'),
+				'default'           => esc_html__('#5d646d', 'trizen'),
 				'sanitize_callback' => 'sanitize_hex_color',
 				'transport'         => 'postMessage'
 			));
 			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_hotel_details_bdc_video_btn_clr', array(
 				'type'    => 'color',
-				'label'   => __('Color', 'trizen'),
+				'label'   => esc_html__('Color', 'trizen'),
 				'section' => 'trizen_hotel_details_bdc_options',
 			)));
 			// Video Button Background
 			$wp_customize->add_setting('trizen_hotel_details_bdc_video_btn_bg', array(
-				'default'           => __('#ffffff', 'trizen'),
+				'default'           => esc_html__('#ffffff', 'trizen'),
 				'sanitize_callback' => 'sanitize_hex_color',
 				'transport'         => 'postMessage'
 			));
 			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_hotel_details_bdc_video_btn_bg', array(
 				'type'    => 'color',
-				'label'   => __('Background', 'trizen'),
+				'label'   => esc_html__('Background', 'trizen'),
 				'section' => 'trizen_hotel_details_bdc_options',
 			)));
 			// Video Button Hover Color
 			$wp_customize->add_setting('trizen_hotel_details_bdc_video_btn_clr_hv', array(
-				'default'           => __('#ffffff', 'trizen'),
+				'default'           => esc_html__('#ffffff', 'trizen'),
 				'sanitize_callback' => 'sanitize_hex_color',
 				'transport'         => 'postMessage'
 			));
 			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_hotel_details_bdc_video_btn_clr_hv', array(
 				'type'    => 'color',
-				'label'   => __('Hover Color', 'trizen'),
+				'label'   => esc_html__('Hover Color', 'trizen'),
 				'section' => 'trizen_hotel_details_bdc_options',
 			)));
 			// Video Button Hover Background
 			$wp_customize->add_setting('trizen_hotel_details_bdc_video_btn_bg_hv', array(
-				'default'           => __('#287dfa', 'trizen'),
+				'default'           => esc_html__('#287dfa', 'trizen'),
 				'sanitize_callback' => 'sanitize_hex_color',
 				'transport'         => 'postMessage'
 			));
 			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_hotel_details_bdc_video_btn_bg_hv', array(
 				'type'    => 'color',
-				'label'   => __('Hover Background', 'trizen'),
+				'label'   => esc_html__('Hover Background', 'trizen'),
 				'section' => 'trizen_hotel_details_bdc_options',
 			)));
 
@@ -632,65 +631,65 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_hotel_details_bdc_photo_btn_hd', array(
-				'label'    => __('More Photos Button', 'trizen'),
+				'label'    => esc_html__('More Photos Button', 'trizen'),
 				'section'  => 'trizen_hotel_details_bdc_options',
 				'settings' => 'trizen_hotel_details_bdc_photo_btn_hd',
 				'type'     => 'hidden',
 			));
 			// More Photo Button Text
 			$wp_customize->add_setting('trizen_hotel_details_bdc_photo_btn_txt', array(
-				'default'           => __('More Photos', 'trizen'),
+				'default'           => esc_html__('More Photos', 'trizen'),
 				'transport'         => 'postMessage',
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_hotel_details_bdc_photo_btn_txt', array(
-				'label'    => __('Text', 'trizen'),
+				'label'    => esc_html__('Text', 'trizen'),
 				'section'  => 'trizen_hotel_details_bdc_options',
 				'settings' => 'trizen_hotel_details_bdc_photo_btn_txt',
 				'type'     => 'text',
 			));
 			// More Photo Button Color
 			$wp_customize->add_setting('trizen_hotel_details_bdc_photo_btn_clr', array(
-				'default'           => __('#5d646d', 'trizen'),
+				'default'           => esc_html__('#5d646d', 'trizen'),
 				'sanitize_callback' => 'sanitize_hex_color',
 				'transport'         => 'postMessage'
 			));
 			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_hotel_details_bdc_photo_btn_clr', array(
 				'type'    => 'color',
-				'label'   => __('Color', 'trizen'),
+				'label'   => esc_html__('Color', 'trizen'),
 				'section' => 'trizen_hotel_details_bdc_options',
 			)));
 			// More Photo Button Background
 			$wp_customize->add_setting('trizen_hotel_details_bdc_photo_btn_bg', array(
-				'default'           => __('#ffffff', 'trizen'),
+				'default'           => esc_html__('#ffffff', 'trizen'),
 				'sanitize_callback' => 'sanitize_hex_color',
 				'transport'         => 'postMessage'
 			));
 			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_hotel_details_bdc_photo_btn_bg', array(
 				'type'    => 'color',
-				'label'   => __('Background', 'trizen'),
+				'label'   => esc_html__('Background', 'trizen'),
 				'section' => 'trizen_hotel_details_bdc_options',
 			)));
 			// More Photo Button Hover Color
 			$wp_customize->add_setting('trizen_hotel_details_bdc_photo_btn_clr_hv', array(
-				'default'           => __('#ffffff', 'trizen'),
+				'default'           => esc_html__('#ffffff', 'trizen'),
 				'sanitize_callback' => 'sanitize_hex_color',
 				'transport'         => 'postMessage'
 			));
 			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_hotel_details_bdc_photo_btn_clr_hv', array(
 				'type'    => 'color',
-				'label'   => __('Hover Color', 'trizen'),
+				'label'   => esc_html__('Hover Color', 'trizen'),
 				'section' => 'trizen_hotel_details_bdc_options',
 			)));
 			// More Photo Button Hover Background
 			$wp_customize->add_setting('trizen_hotel_details_bdc_photo_btn_bg_hv', array(
-				'default'           => __('#287dfa', 'trizen'),
+				'default'           => esc_html__('#287dfa', 'trizen'),
 				'sanitize_callback' => 'sanitize_hex_color',
 				'transport'         => 'postMessage'
 			));
 			$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'trizen_hotel_details_bdc_photo_btn_bg_hv', array(
 				'type'    => 'color',
-				'label'   => __('Hover Background', 'trizen'),
+				'label'   => esc_html__('Hover Background', 'trizen'),
 				'section' => 'trizen_hotel_details_bdc_options',
 			)));
 
@@ -701,12 +700,12 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 			 *  Room Grid
 			 * -------------------------*/
 			$wp_customize->add_panel('trizen_room_grid_panel_options', array(
-				'title'    => __('Room Grid', 'trizen'),
+				'title'    => esc_html__('Room Grid', 'trizen'),
 				'priority' => 100,
 			));
 			/* Related Rooms */
 			$wp_customize->add_section('trizen_room_grid_options', array(
-				'title'           => __('Related Rooms', 'trizen'),
+				'title'           => esc_html__('Related Rooms', 'trizen'),
 				'priority'        => 2,
 				'panel'           => 'trizen_room_grid_panel_options',
 			));
@@ -716,7 +715,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_room_grid_related_rooms_title', array(
-				'label'           => __('Title', 'trizen'),
+				'label'           => esc_html__('Title', 'trizen'),
 				'section'         => 'trizen_room_grid_options',
 				'settings'        => 'trizen_room_grid_related_rooms_title',
 				'type'            => 'text',
@@ -727,7 +726,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_room_grid_related_rooms_content', array(
-				'label'           => __('Content', 'trizen'),
+				'label'           => esc_html__('Content', 'trizen'),
 				'section'         => 'trizen_room_grid_options',
 				'settings'        => 'trizen_room_grid_related_rooms_content',
 				'type'            => 'textarea',
@@ -738,7 +737,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 			 *  404 Page
 			 * -------------------------*/
 			$wp_customize->add_section('trizen_error_options', array(
-				'title'           => __('404 Page', 'trizen'),
+				'title'           => esc_html__('404 Page', 'trizen'),
 				'priority'        => 170,
 			));
 			/* 404 Image */
@@ -749,27 +748,27 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 			));
 			$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'trizen_error_img', array(
 				'type'          => 'upload',
-				'label'         => __('Error Image', 'trizen'),
+				'label'         => esc_html__('Error Image', 'trizen'),
 				'section'       => 'trizen_error_options',
 				'settings'      => 'trizen_error_img',
 				'button_labels' => array(
-					'select'       => __('Select Image', 'trizen'),
-					'change'       => __('Change Image', 'trizen'),
-					'remove'       => __('Remove', 'trizen'),
-					'default'      => __('Default', 'trizen'),
-					'placeholder'  => __('No Image selected', 'trizen'),
-					'frame_title'  => __('Select Image', 'trizen'),
-					'frame_button' => __('Choose Image', 'trizen'),
+					'select'       => esc_html__('Select Image', 'trizen'),
+					'change'       => esc_html__('Change Image', 'trizen'),
+					'remove'       => esc_html__('Remove', 'trizen'),
+					'default'      => esc_html__('Default', 'trizen'),
+					'placeholder'  => esc_html__('No Image selected', 'trizen'),
+					'frame_title'  => esc_html__('Select Image', 'trizen'),
+					'frame_button' => esc_html__('Choose Image', 'trizen'),
 				),
 			)));
 			// 404 Title
 			$wp_customize->add_setting('trizen_error_title', array(
-				'default'           => __('Ooops! This Page Does Not Exist', 'trizen'),
+				'default'           => esc_html__('Ooops! This Page Does Not Exist', 'trizen'),
 				'transform'         => 'postMessage',
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_error_title', array(
-				'label'           => __('Error Title', 'trizen'),
+				'label'           => esc_html__('Error Title', 'trizen'),
 				'section'         => 'trizen_error_options',
 				'settings'        => 'trizen_error_title',
 				'type'            => 'text',
@@ -782,19 +781,19 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'trizen_sanitize_textarea',
 			));
 			$wp_customize->add_control('trizen_error_content', array(
-				'label'           => __('Error Content', 'trizen'),
+				'label'           => esc_html__('Error Content', 'trizen'),
 				'section'         => 'trizen_error_options',
 				'settings'        => 'trizen_error_content',
 				'type'            => 'textarea',
 			));
 			// 404 back to home button
 			$wp_customize->add_setting('trizen_error_btn', array(
-				'default'           => __('Back to Home', 'trizen'),
+				'default'           => esc_html__('Back to Home', 'trizen'),
 				'transform'         => 'postMessage',
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_error_btn', array(
-				'label'           => __('Error Button', 'trizen'),
+				'label'           => esc_html__('Error Button', 'trizen'),
 				'section'         => 'trizen_error_options',
 				'settings'        => 'trizen_error_btn',
 				'type'            => 'text',
@@ -805,24 +804,24 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 			 *  Blog
 			 * -------------------------*/
 			$wp_customize->add_panel('trizen_blog_panel_options', array(
-				'title'    => __('Blog', 'trizen'),
+				'title'    => esc_html__('Blog', 'trizen'),
 				'priority' => 200,
 			));
 			/* Blog Related Post */
 			$wp_customize->add_section('trizen_related_post_options', array(
-				'title'           => __('Blog Related Post', 'trizen'),
+				'title'           => esc_html__('Blog Related Post', 'trizen'),
 				'priority'        => 2,
 				'panel'           => 'trizen_blog_panel_options',
 				'active_callback' => 'trizen_show_related_post_callback',
 			));
 			// Blog Related Post Title
 			$wp_customize->add_setting('trizen_related_post_title', array(
-				'default'           => __('Related Posts', 'trizen'),
+				'default'           => esc_html__('Related Posts', 'trizen'),
 				'transform'         => 'postMessage',
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_related_post_title', array(
-				'label'           => __('Section Title', 'trizen'),
+				'label'           => esc_html__('Section Title', 'trizen'),
 				'section'         => 'trizen_related_post_options',
 				'settings'        => 'trizen_related_post_title',
 				'type'            => 'text',
@@ -834,7 +833,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_related_post_ppp', array(
-				'label'    => __('Posts Per page', 'trizen'),
+				'label'    => esc_html__('Posts Per page', 'trizen'),
 				'section'  => 'trizen_related_post_options',
 				'settings' => 'trizen_related_post_ppp',
 				'type'     => 'number',
@@ -850,7 +849,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_related_post_ids', array(
-				'label'           => __('Posts ID(s)', 'trizen'),
+				'label'           => esc_html__('Posts ID(s)', 'trizen'),
 				'section'         => 'trizen_related_post_options',
 				'settings'        => 'trizen_related_post_ids',
 				'type'            => 'text',
@@ -862,12 +861,12 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 			 *  Footer
 			 * -------------------------*/
 			$wp_customize->add_panel('trizen_footer_panel_options', array(
-				'title'    => __('Footer', 'trizen'),
+				'title'    => esc_html__('Footer', 'trizen'),
 				'priority' => 200,
 			));
 			/* Static InfoBox */
 			$wp_customize->add_section('trizen_footer_stc_pg_options', array(
-				'title'           => __('Static InfoBox', 'trizen'),
+				'title'           => esc_html__('Static InfoBox', 'trizen'),
 				'priority'        => 2,
 				'panel'           => 'trizen_footer_panel_options',
 				'active_callback' => 'trizen_show_static_pg_infobox_callback'
@@ -877,7 +876,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_stc_pg_infobox_hd', array(
-				'label'           => __('Box 1', 'trizen'),
+				'label'           => esc_html__('Box 1', 'trizen'),
 				'section'         => 'trizen_footer_stc_pg_options',
 				'settings'        => 'trizen_stc_pg_infobox_hd',
 				'type'            => 'hidden',
@@ -888,7 +887,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'sanitize_callback' => 'wp_filter_nohtml_kses',
 			));
 			$wp_customize->add_control('trizen_stc_pg_infobox_1_title', array(
-				'label'           => __('Title', 'trizen'),
+				'label'           => esc_html__('Title', 'trizen'),
 				'section'         => 'trizen_footer_stc_pg_options',
 				'settings'        => 'trizen_stc_pg_infobox_1_title',
 				'type'            => 'text',

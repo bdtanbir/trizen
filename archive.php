@@ -22,7 +22,7 @@ $static_cta     = get_theme_mod('show_static_footer_cta');
 						while ( have_posts() ) {
 							the_post();?>
                             <div class="col-lg-4 responsive-column blog-item-isotope">
-								<?php get_template_part('template-parts/blog/blog'); ?>
+								<?php get_template_part('template-parts/content'); ?>
                             </div>
 						<?php } ?>
                         <!-- End the Loop -->

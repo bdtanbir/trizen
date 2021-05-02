@@ -44,26 +44,26 @@ EOD;
 
 
 
-	$hotel_details_breadcrumb_bg = get_theme_mod('trizen_hotel_details_bdc_bg');
-	$breadcrumb_bg = get_theme_mod('trizen_breadcrumb1_bg');
-	$hotel_details_bdc_pt = get_theme_mod('trizen_hotel_details_bdc_wrap_pt', 225);
-	$hotel_details_bdc_pb = get_theme_mod('trizen_hotel_details_bdc_wrap_pb', 30);
-	$breadcrumb1_pt = get_theme_mod('trizen_breadcrumb1_wrapper_pt', 90);
-	$breadcrumb1_pb = get_theme_mod('trizen_breadcrumb1_wrapper_pb', 100);
-	$breadcrumb1_title_clr = get_theme_mod('trizen_breadcrumb_title_clr', __('#ffffff', 'trizen'));
-	$breadcrumb1_title_size = get_theme_mod('trizen_breadcrumb1_title_size', 40);
-	$breadcrumb1_bdc_bg = get_theme_mod('trizen_breadcrumb1_bdc_bg', __('rgba(0, 0, 0, 0.3)', 'trizen'));
-	$breadcrumb1_bdc_clr = get_theme_mod('trizen_breadcrumb1_bdc_clr', __('#ffffff', 'trizen'));
-	$breadcrumb1_bdc_hv_clr = get_theme_mod('trizen_breadcrumb1_bdc_hv_clr', __('#287dfa', 'trizen'));
-	$breadcrumb1_bdc_size = get_theme_mod('trizen_breadcrumb1_bdc_size', 16);
-	$hotel_details_bdc_video_btn_clr = get_theme_mod('trizen_hotel_details_bdc_video_btn_clr', __('#5d646d', 'trizen'));
-	$hotel_details_bdc_video_btn_bg = get_theme_mod('trizen_hotel_details_bdc_video_btn_bg', __('#ffffff', 'trizen'));
+	$hotel_details_breadcrumb_bg        = get_theme_mod('trizen_hotel_details_bdc_bg');
+	$breadcrumb_bg                      = get_theme_mod('trizen_breadcrumb1_bg');
+	$hotel_details_bdc_pt               = get_theme_mod('trizen_hotel_details_bdc_wrap_pt', 225);
+	$hotel_details_bdc_pb               = get_theme_mod('trizen_hotel_details_bdc_wrap_pb', 30);
+	$breadcrumb1_pt                     = get_theme_mod('trizen_breadcrumb1_wrapper_pt', 90);
+	$breadcrumb1_pb                     = get_theme_mod('trizen_breadcrumb1_wrapper_pb', 100);
+	$breadcrumb1_title_clr              = get_theme_mod('trizen_breadcrumb_title_clr', __('#ffffff', 'trizen'));
+	$breadcrumb1_title_size             = get_theme_mod('trizen_breadcrumb1_title_size', 40);
+	$breadcrumb1_bdc_bg                 = get_theme_mod('trizen_breadcrumb1_bdc_bg', __('rgba(0, 0, 0, 0.3)', 'trizen'));
+	$breadcrumb1_bdc_clr                = get_theme_mod('trizen_breadcrumb1_bdc_clr', __('#ffffff', 'trizen'));
+	$breadcrumb1_bdc_hv_clr             = get_theme_mod('trizen_breadcrumb1_bdc_hv_clr', __('#287dfa', 'trizen'));
+	$breadcrumb1_bdc_size               = get_theme_mod('trizen_breadcrumb1_bdc_size', 16);
+	$hotel_details_bdc_video_btn_clr    = get_theme_mod('trizen_hotel_details_bdc_video_btn_clr', __('#5d646d', 'trizen'));
+	$hotel_details_bdc_video_btn_bg     = get_theme_mod('trizen_hotel_details_bdc_video_btn_bg', __('#ffffff', 'trizen'));
 	$hotel_details_bdc_video_btn_clr_hv = get_theme_mod('trizen_hotel_details_bdc_video_btn_clr_hv', __('#ffffff', 'trizen'));
-	$hotel_details_bdc_video_btn_bg_hv = get_theme_mod('trizen_hotel_details_bdc_video_btn_bg_hv', __('#287dfa', 'trizen'));
-	$hotel_details_bdc_photo_btn_clr = get_theme_mod('trizen_hotel_details_bdc_photo_btn_clr', __('#5d646d', 'trizen'));
-	$hotel_details_bdc_photo_btn_bg = get_theme_mod('trizen_hotel_details_bdc_photo_btn_bg', __('#ffffff', 'trizen'));
+	$hotel_details_bdc_video_btn_bg_hv  = get_theme_mod('trizen_hotel_details_bdc_video_btn_bg_hv', __('#287dfa', 'trizen'));
+	$hotel_details_bdc_photo_btn_clr    = get_theme_mod('trizen_hotel_details_bdc_photo_btn_clr', __('#5d646d', 'trizen'));
+	$hotel_details_bdc_photo_btn_bg     = get_theme_mod('trizen_hotel_details_bdc_photo_btn_bg', __('#ffffff', 'trizen'));
 	$hotel_details_bdc_photo_btn_clr_hv = get_theme_mod('trizen_hotel_details_bdc_photo_btn_clr_hv', __('#ffffff', 'trizen'));
-	$hotel_details_bdc_photo_btn_bg_hv = get_theme_mod('trizen_hotel_details_bdc_photo_btn_bg_hv', __('#287dfa', 'trizen'));
+	$hotel_details_bdc_photo_btn_bg_hv  = get_theme_mod('trizen_hotel_details_bdc_photo_btn_bg_hv', __('#287dfa', 'trizen'));
 	?>
 	<style>
         .hotel-details-breadcrumb {
@@ -187,37 +187,37 @@ EOD;
 
     
     wp_localize_script('jquery', 'ts_params', [
-        'theme_url' => get_template_directory_uri(),
-        'site_url' => site_url(),
-        'ajax_url' => admin_url('admin-ajax.php'),
-        'loading_url' => admin_url('/images/wpspin_light.gif'),
-        'st_search_nonce' => wp_create_nonce("st_search_security"),
-        'free_text' => __('Free', 'trizen'),
-        'locale' => get_locale(),
-        'text_refresh' => __("Refresh", 'trizen'),
-        'text_loading' => __("Loading...", 'trizen'),
-        'text_no_more' => __("No More", 'trizen'),
-        'no_vacancy' => __('No vacancies', 'trizen'),
-        'a_vacancy' => __('a vacancy', 'trizen'),
-        'more_vacancy' => __('vacancies', 'trizen'),
-        'utm' => (is_ssl() ? 'https' : 'http') . '://shinetheme.com/utm/utm.gif',
-        '_s' => wp_create_nonce('ts_frontend_security'),
-        'text_price' => __("Price", 'trizen'),
-        'text_origin_price' => __("Origin Price", 'trizen'),
-        'text_unavailable' => __('Not Available ', 'trizen'),
-        'text_available' => __('Available ', 'trizen'),
-        'text_adult_price' => __('Adult Price ', 'trizen'),
-        'text_child_price' => __('Child Price ', 'trizen'),
-        'text_update' => __('Update ', 'trizen'),
-        'text_adult' => __('Adult ', 'trizen'),
-        'text_child' => __('Child ', 'trizen'),
-        'text_use_this_media' => __('Use this media', 'trizen'),
-        'text_select_image' => __('Select Image', 'trizen'),
-        'text_confirm_delete_item' => __('Are you sure want to delete this item?', 'trizen'),
-        'text_process_cancel' => __('You cancelled the process', 'trizen'),
-        'prev_month' => __('prev month', 'trizen'),
-        'next_month' => __('next month', 'trizen'),
-        'please_waite' => __('Please wait...', 'trizen'),
+        'theme_url'                => get_template_directory_uri(),
+        'site_url'                 => site_url(),
+        'ajax_url'                 => admin_url('admin-ajax.php'),
+        'loading_url'              => admin_url('/images/wpspin_light.gif'),
+        'ts_search_nonce'          => wp_create_nonce("st_search_security"),
+        'free_text'                => esc_html__('Free', 'trizen'),
+        'locale'                   => get_locale(),
+        'text_refresh'             => esc_html__("Refresh", 'trizen'),
+        'text_loading'             => esc_html__("Loading...", 'trizen'),
+        'text_no_more'             => esc_html__("No More", 'trizen'),
+        'no_vacancy'               => esc_html__('No vacancies', 'trizen'),
+        'a_vacancy'                => esc_html__('a vacancy', 'trizen'),
+        'more_vacancy'             => esc_html__('vacancies', 'trizen'),
+        'utm'                      => (is_ssl() ? 'https' : 'http') . '://shinetheme.com/utm/utm.gif',
+        '_s'                       => wp_create_nonce('ts_frontend_security'),
+        'text_price'               => esc_html__("Price", 'trizen'),
+        'text_origin_price'        => esc_html__("Origin Price", 'trizen'),
+        'text_unavailable'         => esc_html__('Not Available ', 'trizen'),
+        'text_available'           => esc_html__('Available ', 'trizen'),
+        'text_adult_price'         => esc_html__('Adult Price ', 'trizen'),
+        'text_child_price'         => esc_html__('Child Price ', 'trizen'),
+        'text_update'              => esc_html__('Update ', 'trizen'),
+        'text_adult'               => esc_html__('Adult ', 'trizen'),
+        'text_child'               => esc_html__('Child ', 'trizen'),
+        'text_use_this_media'      => esc_html__('Use this media', 'trizen'),
+        'text_select_image'        => esc_html__('Select Image', 'trizen'),
+        'text_confirm_delete_item' => esc_html__('Are you sure want to delete this item?', 'trizen'),
+        'text_process_cancel'      => esc_html__('You cancelled the process', 'trizen'),
+        'prev_month'               => esc_html__('prev month', 'trizen'),
+        'next_month'               => esc_html__('next month', 'trizen'),
+        'please_waite'             => esc_html__('Please wait...', 'trizen'),
     ]);
 }
 add_action( 'wp_enqueue_scripts', 'trizen_scripts' );
@@ -225,11 +225,13 @@ add_action( 'wp_enqueue_scripts', 'trizen_scripts' );
 
 function trizen_admin_script()
 {
+	wp_enqueue_style( 'lib-daterangepicker', get_theme_file_uri( '/assets/css/daterangepicker.css' ) );
 	wp_enqueue_style(
 		'trizen-global-css',
 		get_template_directory_uri().( '/assets/css/trizen-global.css' ),
 		time()
 	);
+	wp_enqueue_script('lib-daterangepicker-min', get_template_directory_uri() .'/assets/js/daterangepicker.js', array('jquery'), '1.0.0', true);
 
 }
 add_action('admin_enqueue_scripts', 'trizen_admin_script');

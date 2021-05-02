@@ -1333,17 +1333,17 @@ textarea {
 	/*align-items: flex-start;*/
 }
 .comment-list .comment-item .comment-avatar {
-	margin-right: 0;
+	margin-right: 20px;
 	flex: none;
 }
 .comment-list .comment-item .comment-avatar img {
 	background: none;
-	width: 90px;
-	height: 90px;
+	width: 100px;
+	height: 100px;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
-	border: 4px solid #fff;
+	border: 3px solid #fff;
 	-webkit-box-shadow: 0 0 40px rgba(82,85,90,.1);
 	-moz-box-shadow: 0 0 40px rgba(82,85,90,.1);
 	box-shadow: 0 0 40px rgba(82,85,90,.1);
@@ -1455,6 +1455,12 @@ textarea {
 .contact-form-action.search-input-form .form-group .form-control {
 	padding-right: 32px;
 }
+.recent-post-card .card-meta {
+	margin-bottom: 0;
+}
+.blog-details-wrap .sidebar-widget:last-child {
+	padding-bottom: 20px;
+}
 
 
 
@@ -1476,4 +1482,11 @@ textarea {
 	from {
 		transform: rotate(-360deg);
 	}
+}
+
+
+
+table.wp-list-table.widefat.posts {
+	width: 800px;
+	margin: auto;
 }
