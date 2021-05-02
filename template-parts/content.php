@@ -26,7 +26,7 @@ if(empty(get_the_post_thumbnail())) {
             <p class="card-meta">
                 <span class="post__date"> <?php the_time( get_option( 'date_format' ) ); ?></span>
                 <span class="post-dot"></span>
-                <span class="post__time"><?php esc_html_e('5 Mins read', 'trizen'); ?></span>
+                <?php post_reading_time( get_the_ID() ); ?>
             </p>
         </div>
     </div>

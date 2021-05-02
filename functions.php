@@ -424,3 +424,30 @@ function _remove_cart() {
 	}
 }
 
+
+if (!function_exists('post_reading_time')) :
+    function post_reading_time($post_id) {
+        $content = apply_filters('the_content', get_post_field('post_content', $post_id));
+        $read_words = '10';
+        $decode_content = html_entity_decode($content);
+        $filter_shortcode = do_shortcode($decode_content);
+        $strip_tags = wp_strip_all_tags($filter_shortcode, true);
+        $count = str_word_count($strip_tags);
+        $word_per_min = (absint($count) / $read_words);
+        $word_per_min = ceil($word_per_min);
+        if ( absint($word_per_min) > 0) {
+            $word_count_strings = sprintf(_n('%s Min Read  ', '%s Min Read  ',
+                number_format_i18n($word_per_min), 'trizen'), number_format_i18n($word_per_min));
+            if ('post' == get_post_type($post_id)):
+                echo '<span class="post__time">';
+                echo esc_html($word_count_strings);
+                echo '</span>';
+            endif;
+        }
+        if ( absint($word_per_min) == Null) {
+            echo '<span class="post__time">';
+            esc_html_e('0 Min Read', 'trizen');
+            echo '</span>';
+        }
+    }
+endif;

@@ -36,6 +36,10 @@ while (have_posts()) {
 								<span class="post__date"> <?php the_time( get_option( 'date_format' ) ); ?></span>
 								<span class="post-dot"></span>
 								<span class="post__time"><?php comments_popup_link('0 Comment', '1 Comment', '% Comments', 'comments-link', ' Comments off'); ?></span>
+								<span class="post-dot"></span>
+								<span class="post__time">
+                                    <?php post_reading_time( get_the_ID() ); ?>
+                                </span>
 							</p>
 							<div class="section-block"></div>
 							<?php
