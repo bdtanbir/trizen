@@ -411,6 +411,7 @@ function destroy_cart() {
 
 }
 
+add_action( 'init', '_remove_cart' );
 function _remove_cart() {
 	if ( get( 'action', '' ) === 'ts-remove-cart' && wp_verify_nonce( get( 'security', '' ), 'ts-security' ) ) {
 		if ( class_exists( 'WC_Product' ) ) {
