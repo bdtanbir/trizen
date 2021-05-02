@@ -5,10 +5,14 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<div>
-						<h5 class="modal-title title" id="exampleModalLongTitle2">Login</h5>
-						<p class="font-size-14">Hello! Welcome to your account</p>
+						<h5 class="modal-title title" id="exampleModalLongTitle2">
+                            <?php esc_html_e('Login', 'trizen'); ?>
+                        </h5>
+						<p class="font-size-14">
+                            <?php esc_html_e('Hello! Welcome to your account', 'trizen'); ?>
+                        </p>
 					</div>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" class="close" data-dismiss="modal" aria-label="<?php esc_attr_e('Close', 'trizen'); ?>">
 						<span aria-hidden="true" class="la la-close"></span>
 					</button>
 				</div>
@@ -19,7 +23,9 @@
 							<p class="trizen-msg-status"></p>
 							<?php wp_nonce_field('ajax-login-nonce', 'security'); ?>
 							<div class="input-box">
-								<label class="label-text" for="username">Username</label>
+								<label class="label-text" for="username">
+                                    <?php esc_html_e('Username', 'trizen'); ?>
+                                </label>
 								<div class="form-group">
 									<span class="la la-user form-icon"></span>
 									<input
@@ -31,7 +37,9 @@
 								</div>
 							</div><!-- end input-box -->
 							<div class="input-box">
-								<label class="label-text" for="password">Password</label>
+								<label class="label-text" for="password">
+                                    <?php esc_html_e('Password', 'trizen'); ?>
+                                </label>
 								<div class="form-group mb-2">
 									<span class="la la-lock form-icon"></span>
 									<input
@@ -47,10 +55,12 @@
 											type="checkbox"
 											id="rememberme"
 											value="forever"/>
-										<label for="rememberme">Remember me</label>
+										<label for="rememberme">
+                                            <?php esc_html_e('Remember me', 'trizen'); ?>
+                                        </label>
 									</div>
 									<p class="forgot-password">
-										<a href="<?php echo esc_url(wp_lostpassword_url()); ?>">Forgot Password?</a>
+										<a href="<?php echo esc_url(wp_lostpassword_url()); ?>"><?php esc_html_e('Forgot Password?', 'trizen'); ?></a>
 									</p>
 								</div>
 							</div><!-- end input-box -->

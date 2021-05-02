@@ -5,10 +5,14 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<div>
-						<h5 class="modal-title title" id="exampleModalLongTitle">Sign Up</h5>
-						<p class="font-size-14">Hello! Welcome Create a New Account</p>
+						<h5 class="modal-title title" id="exampleModalLongTitle">
+                            <?php esc_html_e('Sign Up', 'trizen'); ?>
+                        </h5>
+						<p class="font-size-14">
+                            <?php esc_html_e('Hello! Welcome Create a New Account', 'trizen'); ?>
+                        </p>
 					</div>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" class="close" data-dismiss="modal" aria-label="<?php esc_attr_e('Close', 'trizen'); ?>">
 						<span aria-hidden="true" class="la la-close"></span>
 					</button>
 				</div>
@@ -18,7 +22,9 @@
                             <p class="trizen-msg-status"></p>
 							<?php wp_nonce_field('ajax-register-nonce', 'signonsecurity'); ?>
 							<div class="input-box">
-								<label class="label-text" for="reg-username">Username</label>
+								<label class="label-text" for="reg-username">
+                                    <?php esc_html_e('Username', 'trizen'); ?>
+                                </label>
 								<div class="form-group">
 									<span class="la la-user form-icon"></span>
 									<input
@@ -30,7 +36,9 @@
 								</div>
 							</div><!-- end input-box -->
 							<div class="input-box">
-								<label class="label-text" for="reg-email">Email Address</label>
+								<label class="label-text" for="reg-email">
+                                    <?php esc_html_e('Email Address', 'trizen'); ?>
+                                </label>
 								<div class="form-group">
 									<span class="la la-envelope form-icon"></span>
 									<input
@@ -42,7 +50,9 @@
 								</div>
 							</div><!-- end input-box -->
 							<div class="input-box">
-								<label class="label-text" for="reg-password">Password</label>
+								<label class="label-text" for="reg-password">
+                                    <?php esc_html_e('Password', 'trizen'); ?>
+                                </label>
 								<div class="form-group">
 									<span class="la la-lock form-icon"></span>
 									<input
@@ -54,7 +64,9 @@
 								</div>
 							</div><!-- end input-box -->
 							<div class="input-box">
-								<label class="label-text" for="reg-password2">Repeat Password</label>
+								<label class="label-text" for="reg-password2">
+                                    <?php esc_html_e('Repeat Password', 'trizen'); ?>
+                                </label>
 								<div class="form-group">
 									<span class="la la-lock form-icon"></span>
 									<input
@@ -67,7 +79,7 @@
 							</div><!-- end input-box -->
 							<div class="btn-box pt-3 pb-4">
 								<button id="trizen-register-submit" type="submit" class="theme-btn w-100 trizen-register-submit">
-                                    Register Account
+                                    <?php esc_html_e('Register Account', 'trizen'); ?>
                                 </button>
 							</div>
 						</form>
