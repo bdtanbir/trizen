@@ -1037,6 +1037,10 @@ textarea {
 	animation: rotating 1s infinite linear;
 }
 
+.daterangepicker td.disabled,
+.daterangepicker option.disabled {
+	opacity: 0.5;
+}
 
 
 /*-------------------------------------------

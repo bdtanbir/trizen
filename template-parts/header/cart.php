@@ -12,7 +12,7 @@ $cart_total_amount = WC()->cart->get_cart_subtotal();
             <?php echo esc_html($cart_total_item) ?>
         </div>
     </div>
-    <ul class="dropdown-menu" aria-labelledby="d-minicart">
+    <ul class="dropdown-menu show" aria-labelledby="d-minicart" style="width: 500px;">
         <li class="heading">
             <h4 class="st-heading-section">
                 <?php esc_html_e('Your Cart', 'trizen') ?>

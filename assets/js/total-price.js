@@ -15,6 +15,11 @@
 // }
 
 // call onload or in script segment below form
+var priceval = jQuery("#room-price").val()
+console.log(priceval)
+var nodollar = priceval.replace('$', '');
+priceval = nodollar
+console.log(priceval)
 function attachCheckboxHandlers() {
     if(jQuery("#checkboxContainPrice").length) {
         // get reference to element containing checkboxContainPrice checkboxes
@@ -22,6 +27,7 @@ function attachCheckboxHandlers() {
 
         // get reference to input elements in checkboxContainPrice container element
         var tops = el.getElementsByTagName('input');
+        console.log(tops)
 
         // assign updateTotal function to onclick property of each checkbox
         for (var i = 0, len = tops.length; i < len; i++) {
@@ -39,6 +45,7 @@ function updateTotal(e) {
 
     // get current value in total text box, using parseFloat since it is a string
     var val = parseFloat( form.elements['total'].value );
+    console.log(val)
 
     // if check box is checked, add its value to val, otherwise subtract it
     if ( this.checked ) {
@@ -61,7 +68,7 @@ function formatDecimal(val, n) {
         str = "0" + str;
     }
     var pt = str.length - n;
-    return str.slice(0,pt) + "." + str.slice(pt);
+    return str.slice(0,pt) //+ "." + str.slice(pt);
 }
 
 // in script segment below form

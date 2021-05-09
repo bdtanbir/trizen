@@ -69,7 +69,7 @@ Author Email:   contact@tecydevs.com
         var rangeSliderTwo = $('#slider-range2');
         var rangeSliderAmountTwo = $('#amount2');
         var dateRangePicker = $('input[name="daterange"]');
-        var dateRangePickerTwo = $('input.date-range');
+        var $dateRangePickerTwo = $('input.date-range');
         var bootstrapSelectMenu = $('.select-contain-select');
         var numberCounter = $('.counter');
         var fullWidthSlider = $('.full-width-slider');
@@ -525,36 +525,11 @@ Author Email:   contact@tecydevs.com
         }
 
         /*==== Daterangepicker =====*/
-        if ($(dateRangePickerTwo).length) {
-            /*var options = {
-                timePicker: true,
-                autoUpdateInput: false,
-                autoApply: true,
-                disabledPast: true,
-                dateFormat: dateFormat,
-                timeFormat: timeFormat,
-                widthSingle: 500,
-                onlyShowCurrentMonth: true,
-                minimumCheckin: minimum,
-                classNotAvailable: ['disabled', 'off'],
-                enableLoading: true,
-                todayHighlight: 1,
-                opens: 'left',
-                timePicker24Hour: (ts_params.time_format == '12h') ? false : true,
-            };*/
-            $(dateRangePickerTwo).daterangepicker({
+        if ($($dateRangePickerTwo).length) {
+            $dateRangePickerTwo.daterangepicker({
                 singleDatePicker: true,
                 opens: 'right',
-                locale: {
-                    format: 'DD/MM/YYYY',
-                },
-                disabledPast: true,
-                widthSingle: 500,
-                onlyShowCurrentMonth: true,
-                classNotAvailable: ['disabled', 'off'],
-                enableLoading: true,
-                todayHighlight: 1,
-                // timePicker24Hour: (ts_params.time_format == '12h') ? false : true,
+                minDate: new Date,
             });
         }
 
