@@ -15,11 +15,6 @@
 // }
 
 // call onload or in script segment below form
-var priceval = jQuery("#room-price").val()
-console.log(priceval)
-var nodollar = priceval.replace('$', '');
-priceval = nodollar
-console.log(priceval)
 function attachCheckboxHandlers() {
     if(jQuery("#checkboxContainPrice").length) {
         // get reference to element containing checkboxContainPrice checkboxes

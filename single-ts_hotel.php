@@ -2,6 +2,8 @@
 get_header();
 
 get_template_part('inc/breadcrumb-simple');
+
+
 $hotel_gallery = get_post_meta(get_the_ID(), 'trizen_hotel_image_gallery', true);
 $hotel_address   = get_post_meta( get_the_ID(), 'trizen_hotel_address_title', true );
 $hotel_video   = get_post_meta( get_the_ID(), 'trizen_hotel_video_url', true );
@@ -21,6 +23,7 @@ $hotel_facilities = get_categories( array ( 'taxonomy' => 'hotel_facilities' ) )
 $trizen_hotel_features_data   = get_post_meta(get_the_ID(), 'trizen_hotel_features_data_group', true);
 
 $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data_group', true);
+$review_rate = TSReview::get_avg_rate();
 ?>
 
 
@@ -82,7 +85,7 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 	================================= -->
 
 	<!-- ================================
-	    START TOUR DETAIL AREA
+	    START TOUR DETAIL AREA Your element has gone outside of the viewport for this **transform: translateX(200%);**. So if You remove this **transform: translateX(200%);** then Scrollbar will not show. If you open developer tools on your web page then you will understand better. Thanks
 	================================= -->
 	<section class="tour-detail-area padding-bottom-90px">
 		<div class="single-content-navbar-wrap menu section-bg" id="single-content-navbar">
@@ -143,9 +146,9 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
                                         <?php } ?>
 										<p class="mb-0">
 											<span class="badge badge-warning text-white font-size-16">
-                                                <?php esc_html_e('4.7', 'trizen'); ?>
+                                                <?php echo esc_html($review_rate); ?>
                                             </span>
-											<span><?php esc_html_e('(4,209 Reviews)', 'trizen'); ?></span>
+											<span><?php comments_number(__('(0 review)', 'trizen'), __('(1 review)', 'trizen'), __('(% reviews)', 'trizen')); ?></span>
 										</p>
 									</div>
 								</div>
@@ -516,7 +519,7 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 												</div>
 											</div>
 										</div><!-- end cabin-type-item -->
-									</div><!-- end cabin-type -->
+									</div>
 									<div class="cabin-type padding-top-30px">
 										<div class="cabin-type-item seat-selection-item d-flex">
 											<div class="cabin-type-img flex-shrink-0">
@@ -608,8 +611,8 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 												</div>
 											</div>
 										</div><!-- end cabin-type-item -->
-									</div><!-- end cabin-type -->
-								</div><!-- end single-content-item -->
+									</div>
+								</div>
 								<div class="section-block"></div>
 							</div>
                             <?php if($hotel_facilities) {

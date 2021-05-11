@@ -1,5 +1,7 @@
 <?php
 $trizen_hotel_features_data   = get_post_meta(get_the_ID(), 'trizen_hotel_features_data_group', true);
+
+if($trizen_hotel_features_data) {
 ?>
 <div class="section-block"></div>
 <div class="single-content-item py-4">
@@ -20,8 +22,8 @@ $trizen_hotel_features_data   = get_post_meta(get_the_ID(), 'trizen_hotel_featur
 								</h3>
 							<?php } if(!empty($item['trizen_hotel_features_stitle'])) { ?>
 								<span class="font-size-13">
-                                                                        <?php echo esc_html($item['trizen_hotel_features_stitle']); ?>
-                                                                    </span>
+                                    <?php echo esc_html($item['trizen_hotel_features_stitle']); ?>
+                                </span>
 							<?php } ?>
 						</div>
 					<?php } ?>
@@ -31,3 +33,4 @@ $trizen_hotel_features_data   = get_post_meta(get_the_ID(), 'trizen_hotel_featur
 
 	</div><!-- end row -->
 </div>
+<?php } ?>
