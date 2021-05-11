@@ -65,7 +65,7 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 									echo '<a class="d-none"
                                    data-fancybox="gallery"
                                    data-src="'.$image_src[0].'"
-                                   data-caption="'.__('Showing image - ', 'trizen').$count++.'"
+                                   data-caption="'.esc_attr__('Showing image - ', 'trizen').$count++.'"
                                    data-speed="700"></a>';
 								}
 
@@ -246,12 +246,12 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 														<div class="form-group">
 															<div class="select-contain w-auto">
 																<select class="select-contain-select">
-																	<option value="0">Select Children</option>
-																	<option value="1">1 Children</option>
-																	<option value="2">2 Children</option>
-																	<option value="3">3 Children</option>
-																	<option value="4">4 Children</option>
-																	<option value="5">5 Children</option>
+																	<option value="0"><?php esc_html_e('Select Children', 'trizen'); ?></option>
+																	<option value="1"><?php esc_html_e('1 Children', 'trizen'); ?></option>
+																	<option value="2"><?php esc_html_e('2 Children', 'trizen'); ?></option>
+																	<option value="3"><?php esc_html_e('3 Children', 'trizen'); ?></option>
+																	<option value="4"><?php esc_html_e('4 Children', 'trizen'); ?></option>
+																	<option value="5"><?php esc_html_e('5 Children', 'trizen'); ?></option>
 																</select>
 															</div>
 														</div>
@@ -259,20 +259,21 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 												</div>
 												<div class="col-lg-12">
 													<div class="btn-box">
-														<button type="button" class="theme-btn">Search Now</button>
+														<button type="button" class="theme-btn"><?php esc_html_e('Search Now', 'trizen'); ?></button>
 													</div>
 												</div>
 											</div>
 										</form>
-									</div><!-- end contact-form-action -->
-									<h3 class="title font-size-20">Available Rooms</h3>
+									</div>
+
+									<h3 class="title font-size-20"><?php esc_html_e('Available Rooms', 'trizen'); ?></h3>
 									<div class="cabin-type padding-top-30px">
 										<div class="cabin-type-item seat-selection-item d-flex">
 											<div class="cabin-type-img flex-shrink-0">
-												<img src="images/inside-cabin.jpg" alt="">
+												<img src="<?php echo get_template_directory_uri(); ?>/assets/images/inside-cabin.jpg" alt="<?php esc_attr_e('Room Image', 'trizen'); ?>">
 											</div>
 											<div class="cabin-type-detail">
-												<h3 class="title">Standard Family Room</h3>
+												<h3 class="title"><?php esc_html_e('Standard Family Room', 'trizen'); ?></h3>
 												<div class="row padding-top-20px">
 													<div class="col-lg-6 responsive-column">
 														<div class="single-tour-feature d-flex align-items-center mb-3">
@@ -280,81 +281,82 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 																<i class="la la-wifi"></i>
 															</div>
 															<div class="single-feature-titles">
-																<h3 class="title font-size-15 font-weight-medium">Free Wi-Fi</h3>
+																<h3 class="title font-size-15 font-weight-medium"><?php esc_html_e('Free Wi-Fi','trizen'); ?></h3>
 															</div>
 														</div>
-													</div><!-- end col-lg-6 -->
+													</div>
 													<div class="col-lg-6 responsive-column">
 														<div class="single-tour-feature d-flex align-items-center mb-3">
 															<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
 																<i class="la la-bed"></i>
 															</div>
 															<div class="single-feature-titles">
-																<h3 class="title font-size-15 font-weight-medium">2 Single beds</h3>
+																<h3 class="title font-size-15 font-weight-medium"><?php esc_html_e('2 Single beds', 'trizen'); ?></h3>
 															</div>
 														</div>
-													</div><!-- end col-lg-6 -->
+													</div>
 													<div class="col-lg-6 responsive-column">
 														<div class="single-tour-feature d-flex align-items-center mb-3">
 															<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
 																<i class="la la-building"></i>
 															</div>
 															<div class="single-feature-titles">
-																<h3 class="title font-size-15 font-weight-medium">15 m²</h3>
+																<h3 class="title font-size-15 font-weight-medium"><?php esc_html_e('15 m²', 'trizen'); ?></h3>
 															</div>
 														</div>
-													</div><!-- end col-lg-6 -->
+													</div>
 													<div class="col-lg-6 responsive-column">
 														<div class="single-tour-feature d-flex align-items-center mb-3">
 															<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
 																<i class="la la-hotel"></i>
 															</div>
 															<div class="single-feature-titles">
-																<h3 class="title font-size-15 font-weight-medium">Shower and bathtub</h3>
+																<h3 class="title font-size-15 font-weight-medium"><?php esc_html_e('Shower and bathtub', 'trizen'); ?></h3>
 															</div>
 														</div>
-													</div><!-- end col-lg-6 -->
-												</div><!-- end row -->
+													</div>
+												</div>
 												<div class="room-photos">
-													<a class="btn theme-btn-hover-gray" data-src="images/img1.jpg"
+													<a class="btn theme-btn-hover-gray" data-src="<?php echo get_template_directory_uri(); ?>/assets/images/img1.jpg"
 													   data-fancybox="gallery"
-													   data-caption="Showing image - 01"
+													   data-caption="<?php esc_attr_e('Showing image - 01', 'trizen'); ?>"
 													   data-speed="700">
-														<i class="la la-photo mr-2"></i>Room Photos
+														<i class="la la-photo mr-2"></i><?php esc_html_e('Room Photos', 'trizen'); ?>
 													</a>
 													<a class="d-none"
 													   data-fancybox="gallery"
-													   data-src="images/img2.jpg"
-													   data-caption="Showing image - 02"
+													   data-src="<?php echo get_template_directory_uri(); ?>/assets/images/img2.jpg"
+													   data-caption="<?php esc_attr_e('Showing image - 02', 'trizen'); ?>"
 													   data-speed="700"></a>
 													<a class="d-none"
 													   data-fancybox="gallery"
-													   data-src="images/img3.jpg"
-													   data-caption="Showing image - 03"
+													   data-src="<?php echo get_template_directory_uri(); ?>/assets/images/img3.jpg"
+													   data-caption="<?php esc_attr_e('Showing image - 03', 'trizen'); ?>"
 													   data-speed="700"></a>
 													<a class="d-none"
 													   data-fancybox="gallery"
-													   data-src="images/img4.jpg"
-													   data-caption="Showing image - 04"
+													   data-src="<?php echo get_template_directory_uri(); ?>/assets/images/img4.jpg"
+													   data-caption="<?php esc_attr_e('Showing image - 04', 'trizen'); ?>"
 													   data-speed="700"></a>
 												</div>
 											</div>
 											<div class="cabin-price">
-												<p class="text-uppercase font-size-14">Per/night<strong class="mt-n1 text-black font-size-18 font-weight-black d-block">$121</strong></p>
+												<p class="text-uppercase font-size-14"><?php esc_html_e('Per/night', 'trizen'); ?><strong class="mt-n1 text-black font-size-18 font-weight-black d-block"><?php esc_html_e('$121', 'trizen'); ?></strong></p>
 												<div class="custom-checkbox mb-0">
 													<input type="checkbox" id="selectChb1">
-													<label for="selectChb1" class="theme-btn theme-btn-small">Select</label>
+													<label for="selectChb1" class="theme-btn theme-btn-small"><?php esc_html_e('Select', 'trizen'); ?></label>
 												</div>
 											</div>
-										</div><!-- end cabin-type-item -->
-									</div><!-- end cabin-type -->
+										</div>
+									</div>
+
 									<div class="cabin-type padding-top-30px">
 										<div class="cabin-type-item seat-selection-item d-flex">
 											<div class="cabin-type-img flex-shrink-0">
-												<img src="images/oceanview-cabin.jpg" alt="">
+												<img src="<?php echo get_template_directory_uri(); ?>/assets/images/oceanview-cabin.jpg" alt="<?php esc_attr_e('Room Image', 'trizen'); ?>">
 											</div>
 											<div class="cabin-type-detail">
-												<h3 class="title">Superior Double Room</h3>
+												<h3 class="title"><?php esc_html_e('Superior Double Room', 'trizen'); ?></h3>
 												<div class="row padding-top-20px">
 													<div class="col-lg-6 responsive-column">
 														<div class="single-tour-feature d-flex align-items-center mb-3">
@@ -362,81 +364,82 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 																<i class="la la-wifi"></i>
 															</div>
 															<div class="single-feature-titles">
-																<h3 class="title font-size-15 font-weight-medium">Free Wi-Fi</h3>
+																<h3 class="title font-size-15 font-weight-medium"><?php esc_html_e('Free Wi-Fi', 'trizen'); ?></h3>
 															</div>
 														</div>
-													</div><!-- end col-lg-6 -->
+													</div>
 													<div class="col-lg-6 responsive-column">
 														<div class="single-tour-feature d-flex align-items-center mb-3">
 															<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
 																<i class="la la-bed"></i>
 															</div>
 															<div class="single-feature-titles">
-																<h3 class="title font-size-15 font-weight-medium">2 Single beds</h3>
+																<h3 class="title font-size-15 font-weight-medium"><?php esc_html_e('2 Single beds', 'trizen'); ?></h3>
 															</div>
 														</div>
-													</div><!-- end col-lg-6 -->
+													</div>
 													<div class="col-lg-6 responsive-column">
 														<div class="single-tour-feature d-flex align-items-center mb-3">
 															<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
 																<i class="la la-building"></i>
 															</div>
 															<div class="single-feature-titles">
-																<h3 class="title font-size-15 font-weight-medium">15 m²</h3>
+																<h3 class="title font-size-15 font-weight-medium"><?php esc_html_e('15 m²', 'trizen'); ?></h3>
 															</div>
 														</div>
-													</div><!-- end col-lg-6 -->
+													</div>
 													<div class="col-lg-6 responsive-column">
 														<div class="single-tour-feature d-flex align-items-center mb-3">
 															<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
 																<i class="la la-hotel"></i>
 															</div>
 															<div class="single-feature-titles">
-																<h3 class="title font-size-15 font-weight-medium">Shower and bathtub</h3>
+																<h3 class="title font-size-15 font-weight-medium"><?php esc_html_e('Shower and bathtub', 'trizen'); ?></h3>
 															</div>
 														</div>
-													</div><!-- end col-lg-6 -->
-												</div><!-- end row -->
+													</div>
+												</div>
 												<div class="room-photos">
-													<a class="btn theme-btn-hover-gray" data-src="images/img1.jpg"
+													<a class="btn theme-btn-hover-gray" data-src="<?php echo get_template_directory_uri(); ?>/assets/images/img1.jpg"
 													   data-fancybox="gallery"
-													   data-caption="Showing image - 01"
+													   data-caption="<?php esc_attr_e('Showing image - 01', 'trizen'); ?>"
 													   data-speed="700">
-														<i class="la la-photo mr-2"></i>Room Photos
+														<i class="la la-photo mr-2"></i><?php esc_html_e('Room Photos', 'trizen'); ?>
 													</a>
 													<a class="d-none"
 													   data-fancybox="gallery"
-													   data-src="images/img2.jpg"
-													   data-caption="Showing image - 02"
+													   data-src="<?php echo get_template_directory_uri(); ?>/assets/images/img2.jpg"
+													   data-caption="<?php esc_attr_e('Showing image - 02', 'trizen'); ?>"
 													   data-speed="700"></a>
 													<a class="d-none"
 													   data-fancybox="gallery"
-													   data-src="images/img3.jpg"
-													   data-caption="Showing image - 03"
+													   data-src="<?php echo get_template_directory_uri(); ?>/assets/images/img3.jpg"
+													   data-caption="<?php esc_attr_e('Showing image - 03', 'trizen'); ?>"
 													   data-speed="700"></a>
 													<a class="d-none"
 													   data-fancybox="gallery"
-													   data-src="images/img4.jpg"
-													   data-caption="Showing image - 04"
+													   data-src="<?php echo get_template_directory_uri(); ?>/assets/images/img4.jpg"
+													   data-caption="<?php esc_attr_e('Showing image - 04', 'trizen'); ?>"
 													   data-speed="700"></a>
 												</div>
 											</div>
 											<div class="cabin-price">
-												<p class="text-uppercase font-size-14">Per/night<strong class="mt-n1 text-black font-size-18 font-weight-black d-block">$121</strong></p>
+												<p class="text-uppercase font-size-14"><?php esc_html_e('Per/night', 'trizen'); ?><strong class="mt-n1 text-black font-size-18 font-weight-black d-block"><?php esc_html_e('$121', 'trizen'); ?></strong></p>
 												<div class="custom-checkbox mb-0">
 													<input type="checkbox" id="selectChb2">
-													<label for="selectChb2" class="theme-btn theme-btn-small">Select</label>
+													<label for="selectChb2" class="theme-btn theme-btn-small"><?php esc_html_e('Select', 'trizen'); ?></label>
 												</div>
 											</div>
-										</div><!-- end cabin-type-item -->
-									</div><!-- end cabin-type -->
+										</div>
+									</div>
+
 									<div class="cabin-type padding-top-30px">
 										<div class="cabin-type-item seat-selection-item d-flex">
 											<div class="cabin-type-img flex-shrink-0">
-												<img src="images/balcony-cabin.jpg" alt="">
+												<img src="<?php echo get_template_directory_uri(); ?>/assets/images/balcony-cabin.jpg" alt="">
 											</div>
 											<div class="cabin-type-detail">
-												<h3 class="title">Deluxe Single Room</h3>
+												<h3 class="title"><?php esc_html_e('Deluxe Single Room', 'trizen'); ?></h3>
 												<div class="row padding-top-20px">
 													<div class="col-lg-6 responsive-column">
 														<div class="single-tour-feature d-flex align-items-center mb-3">
@@ -444,70 +447,72 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 																<i class="la la-wifi"></i>
 															</div>
 															<div class="single-feature-titles">
-																<h3 class="title font-size-15 font-weight-medium">Free Wi-Fi</h3>
+																<h3 class="title font-size-15 font-weight-medium"><?php esc_html_e('Free Wi-Fi', 'trizen'); ?></h3>
 															</div>
 														</div>
-													</div><!-- end col-lg-6 -->
+													</div>
 													<div class="col-lg-6 responsive-column">
 														<div class="single-tour-feature d-flex align-items-center mb-3">
 															<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
 																<i class="la la-bed"></i>
 															</div>
 															<div class="single-feature-titles">
-																<h3 class="title font-size-15 font-weight-medium">2 Single beds</h3>
+																<h3 class="title font-size-15 font-weight-medium"><?php esc_html_e('2 Single beds', 'trizen'); ?></h3>
 															</div>
 														</div>
-													</div><!-- end col-lg-6 -->
+													</div>
 													<div class="col-lg-6 responsive-column">
 														<div class="single-tour-feature d-flex align-items-center mb-3">
 															<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
 																<i class="la la-building"></i>
 															</div>
 															<div class="single-feature-titles">
-																<h3 class="title font-size-15 font-weight-medium">15 m²</h3>
+																<h3 class="title font-size-15 font-weight-medium"><?php esc_html_e('15 m²', 'trizen'); ?></h3>
 															</div>
 														</div>
-													</div><!-- end col-lg-6 -->
+													</div>
 													<div class="col-lg-6 responsive-column">
 														<div class="single-tour-feature d-flex align-items-center mb-3">
 															<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
 																<i class="la la-hotel"></i>
 															</div>
 															<div class="single-feature-titles">
-																<h3 class="title font-size-15 font-weight-medium">Shower and bathtub</h3>
+																<h3 class="title font-size-15 font-weight-medium"><?php esc_html_e('Shower and bathtub', 'trizen'); ?></h3>
 															</div>
 														</div>
-													</div><!-- end col-lg-6 -->
-												</div><!-- end row -->
+													</div>
+												</div>
 												<div class="room-photos">
-													<a class="btn theme-btn-hover-gray" data-src="images/img1.jpg"
+													<a class="btn theme-btn-hover-gray" data-src="<?php echo get_template_directory_uri(); ?>/assets/images/img1.jpg"
 													   data-fancybox="gallery"
-													   data-caption="Showing image - 01"
+													   data-caption="<?php esc_attr_e('Showing image - 01', 'trizen'); ?>"
 													   data-speed="700">
-														<i class="la la-photo mr-2"></i>Room Photos
+														<i class="la la-photo mr-2"></i><?php esc_html_e('Room Photos', 'trizen'); ?>
 													</a>
 													<a class="d-none"
 													   data-fancybox="gallery"
-													   data-src="images/img2.jpg"
-													   data-caption="Showing image - 02"
+													   data-src="<?php echo get_template_directory_uri(); ?>/assets/images/img2.jpg"
+													   data-caption="<?php esc_attr_e('Showing image - 02', 'trizen'); ?>"
 													   data-speed="700"></a>
 													<a class="d-none"
 													   data-fancybox="gallery"
-													   data-src="images/img3.jpg"
-													   data-caption="Showing image - 03"
+													   data-src="<?php echo get_template_directory_uri(); ?>/assets/images/img3.jpg"
+													   data-caption="<?php esc_attr_e('Showing image - 03', 'trizen'); ?>"
 													   data-speed="700"></a>
 													<a class="d-none"
 													   data-fancybox="gallery"
-													   data-src="images/img4.jpg"
-													   data-caption="Showing image - 04"
+													   data-src="<?php echo get_template_directory_uri(); ?>/assets/images/img4.jpg"
+													   data-caption="<?php esc_attr_e('Showing image - 04', 'trizen'); ?>"
 													   data-speed="700"></a>
 												</div>
 											</div>
 											<div class="cabin-price">
-												<p class="text-uppercase font-size-14">Per/night<strong class="mt-n1 text-black font-size-18 font-weight-black d-block">$121</strong></p>
+												<p class="text-uppercase font-size-14"><?php esc_html_e('Per/night', 'trizen'); ?><strong class="mt-n1 text-black font-size-18 font-weight-black d-block"><?php esc_html_e('$121','trizen'); ?></strong></p>
 												<div class="custom-checkbox mb-0">
 													<input type="checkbox" id="selectChb3">
-													<label for="selectChb3" class="theme-btn theme-btn-small">Select</label>
+													<label for="selectChb3" class="theme-btn theme-btn-small">
+                                                        <?php esc_html_e('Select', 'trizen'); ?>
+                                                    </label>
 												</div>
 											</div>
 										</div><!-- end cabin-type-item -->
@@ -515,10 +520,10 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 									<div class="cabin-type padding-top-30px">
 										<div class="cabin-type-item seat-selection-item d-flex">
 											<div class="cabin-type-img flex-shrink-0">
-												<img src="images/suite-cabin.jpg" alt="">
+												<img src="<?php echo get_template_directory_uri(); ?>/assets/images/suite-cabin.jpg" alt="">
 											</div>
 											<div class="cabin-type-detail">
-												<h3 class="title">Single Bed Room</h3>
+												<h3 class="title"><?php esc_html_e('Single Bed Room', 'trizen'); ?></h3>
 												<div class="row padding-top-20px">
 													<div class="col-lg-6 responsive-column">
 														<div class="single-tour-feature d-flex align-items-center mb-3">
@@ -526,7 +531,9 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 																<i class="la la-wifi"></i>
 															</div>
 															<div class="single-feature-titles">
-																<h3 class="title font-size-15 font-weight-medium">Free Wi-Fi</h3>
+																<h3 class="title font-size-15 font-weight-medium">
+                                                                    <?php esc_html_e('Free Wi-Fi', 'trizen'); ?>
+                                                                </h3>
 															</div>
 														</div>
 													</div><!-- end col-lg-6 -->
@@ -536,7 +543,9 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 																<i class="la la-bed"></i>
 															</div>
 															<div class="single-feature-titles">
-																<h3 class="title font-size-15 font-weight-medium">1 Single beds</h3>
+																<h3 class="title font-size-15 font-weight-medium">
+                                                                    <?php esc_html_e('1 Single beds', 'trizen'); ?>
+                                                                </h3>
 															</div>
 														</div>
 													</div><!-- end col-lg-6 -->
@@ -546,50 +555,56 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 																<i class="la la-building"></i>
 															</div>
 															<div class="single-feature-titles">
-																<h3 class="title font-size-15 font-weight-medium">15 m²</h3>
+																<h3 class="title font-size-15 font-weight-medium">
+                                                                    <?php esc_html_e('15 m²', 'trizen'); ?>
+                                                                </h3>
 															</div>
 														</div>
-													</div><!-- end col-lg-6 -->
+													</div>
 													<div class="col-lg-6 responsive-column">
 														<div class="single-tour-feature d-flex align-items-center mb-3">
 															<div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
 																<i class="la la-hotel"></i>
 															</div>
 															<div class="single-feature-titles">
-																<h3 class="title font-size-15 font-weight-medium">Shower and bathtub</h3>
+																<h3 class="title font-size-15 font-weight-medium">
+                                                                    <?php esc_html_e('Shower and bathtub', 'trizen'); ?>
+                                                                </h3>
 															</div>
 														</div>
-													</div><!-- end col-lg-6 -->
-												</div><!-- end row -->
+													</div>
+												</div>
 												<div class="room-photos">
 													<a class="btn theme-btn-hover-gray" data-src="images/img1.jpg"
 													   data-fancybox="gallery"
-													   data-caption="Showing image - 01"
+													   data-caption="<?php esc_html_e('Showing image - 01', 'trizen'); ?>"
 													   data-speed="700">
-														<i class="la la-photo mr-2"></i>Room Photos
+														<i class="la la-photo mr-2"></i><?php esc_html_e('Room Photos', 'trizen'); ?>
 													</a>
 													<a class="d-none"
 													   data-fancybox="gallery"
-													   data-src="images/img2.jpg"
-													   data-caption="Showing image - 02"
+													   data-src="<?php echo get_template_directory_uri(); ?>/assets/images/img2.jpg"
+													   data-caption="<?php esc_attr_e('Showing image - 02', 'trizen'); ?>"
 													   data-speed="700"></a>
 													<a class="d-none"
 													   data-fancybox="gallery"
-													   data-src="images/img3.jpg"
-													   data-caption="Showing image - 03"
+													   data-src="<?php echo get_template_directory_uri(); ?>/assets/images/img3.jpg"
+													   data-caption="<?php esc_attr_e('Showing image - 03', 'trizen'); ?>"
 													   data-speed="700"></a>
 													<a class="d-none"
 													   data-fancybox="gallery"
-													   data-src="images/img4.jpg"
-													   data-caption="Showing image - 04"
+													   data-src="<?php echo get_template_directory_uri(); ?>/assets/images/img4.jpg"
+													   data-caption="<?php esc_attr_e('Showing image - 04', 'trizen'); ?>"
 													   data-speed="700"></a>
 												</div>
 											</div>
 											<div class="cabin-price">
-												<p class="text-uppercase font-size-14">Per/night<strong class="mt-n1 text-black font-size-18 font-weight-black d-block">$121</strong></p>
+												<p class="text-uppercase font-size-14"><?php esc_html_e('Per/night', 'trizen'); ?><strong class="mt-n1 text-black font-size-18 font-weight-black d-block"><?php esc_html_e('$121', 'trizen'); ?></strong></p>
 												<div class="custom-checkbox mb-0">
 													<input type="checkbox" id="selectChb4">
-													<label for="selectChb4" class="theme-btn theme-btn-small">Select</label>
+													<label for="selectChb4" class="theme-btn theme-btn-small">
+                                                        <?php esc_html_e('Select', 'trizen'); ?>
+                                                    </label>
 												</div>
 											</div>
 										</div><!-- end cabin-type-item -->
@@ -607,7 +622,7 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
                             ?>
 
 							<div id="reviews" class="page-scroll">
-								<div class="single-content-item padding-top-40px padding-bottom-40px">
+								<!--<div class="single-content-item padding-top-40px padding-bottom-40px">
 									<h3 class="title font-size-20">Reviews</h3>
 									<div class="review-container padding-top-30px">
 										<div class="row align-items-center">
@@ -691,12 +706,32 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 											</div>
 										</div>
 									</div>
-								</div>
+								</div>-->
+                                <?php
+                                $stats = TSReview::get_review_summary();
+                                if ($stats) {
+                                    foreach ($stats as $stat) {
+                                        ?>
+                                        <div class="item">
+                                            <div class="progress">
+                                                <div class="percent"
+                                                     style="width: <?php echo esc_attr($stat['percent']); ?>%;"></div>
+                                            </div>
+                                            <div class="label">
+                                                <?php echo esc_html($stat['name']); ?>
+                                                <div class="number"><?php echo esc_html($stat['summary']) ?>
+                                                    <?php esc_html_e('/5', 'trizen'); ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php }
+                                }
+                                ?>
 								<div class="section-block"></div>
 							</div>
 							<div class="review-box">
 								<div class="single-content-item padding-top-40px">
-									<h3 class="title font-size-20">Showing 3 guest reviews</h3>
+									<!--<h3 class="title font-size-20">Showing 3 guest reviews</h3>
 									<div class="comments-list padding-top-50px">
 										<div class="comment">
 											<div class="comment-avatar">
@@ -800,8 +835,177 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 										<div class="btn-box load-more text-center">
 											<button class="theme-btn theme-btn-small theme-btn-transparent" type="button">Load More Review</button>
 										</div>
-									</div>
-									<div class="comment-forum padding-top-40px">
+									</div>-->
+
+                                    <div class="summary">
+                                        <?php
+                                        $comments_count = wp_count_comments(get_the_ID());
+                                        $total = (int)$comments_count->approved;
+                                        $comment_per_page = (int)get_option('comments_per_page', 10);
+                                        $paged = (int)get('comment_page', 1);
+                                        $from = $comment_per_page * ($paged - 1) + 1;
+                                        $to = ($paged * $comment_per_page < $total) ? ($paged * $comment_per_page) : $total;
+                                        ?>
+                                        <?php comments_number(__('0 review on this Hotel', 'trizen'), __('1 review on this Hotel', 'trizen'), __('% reviews on this Hotel', 'trizen')); ?>
+                                        - <?php echo sprintf(__('Showing %s to %s', 'trizen'), $from, $to) ?>
+                                    </div>
+                                    <?php
+                                    $offset = ($paged - 1) * $comment_per_page;
+                                    $args = [
+                                        'number' => $comment_per_page,
+                                        'offset' => $offset,
+                                        'post_id' => get_the_ID(),
+                                        'status' => ['approve']
+                                    ];
+                                    $comments_query = new WP_Comment_Query;
+                                    $comments = $comments_query->query($args);
+
+                                    if ($comments):
+                                        foreach ($comments as $key => $comment):
+//                                            get_template_part('template-parts/hotel/review-lists');
+                                            $args[ 'avatar_size' ] = 50;
+                                            if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) :
+                                            else :
+                                                $comment_class = empty( $args[ 'has_children' ] ) ? '' : $comment_class .= 'parent';
+                                                if ( !$comment->comment_approved ) {
+                                                    return;
+                                                }
+
+                                                $comment_id   = $comment->comment_ID;
+                                                $user_id      = get_comment( $comment_id )->user_id;
+                                                $user_email   = get_comment( $comment_id )->comment_author_email;
+                                                $current_user = wp_get_current_user();
+                                                ?>
+                                                <div class="comment-item">
+                                                    <div class="comment-item-head">
+                                                        <div class="media">
+                                                            <div class="media-left">
+                                                                <?php echo ts_get_profile_avatar( $user_id, 50 ) ?>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <?php
+                                                                if(!empty($user_id)){
+                                                                    ?>
+                                                                    <h4 class="media-heading"><?php echo TSAdminRoom::get_username( $user_id ); ?></h4>
+                                                                    <?php
+                                                                }else{
+                                                                    ?>
+                                                                    <h4 class="media-heading"><?php echo esc_html($comment->comment_author); ?></h4>
+                                                                    <?php
+                                                                }
+                                                                ?>
+                                                                <div class="date"><?php echo get_comment_date( getDateFormat(), $comment_id ) ?></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="like">
+                                                            <?php
+                                                            $count_like = (int)get_comment_meta( $comment_id, '_comment_like_count', true );
+                                                            echo '<span>' . esc_html($count_like) . '</span>' . _n( ' like this', ' likes this', $count_like, 'trizen' );
+                                                            ?>
+                                                            <?php /*$review_obj = new TSReview();
+                if ( $review_obj->check_like( $comment_id ) ):
+                    */?><!--
+                    <a data-id="<?php /*echo esc_attr( $comment_id ); */?>" href="#"
+                       class="btn-like st-like-review ">
+                        <i class="fa fa-thumbs-o-down"></i>
+                    </a>
+                <?php /*else: */?>
+                    <a data-id="<?php /*echo esc_attr( $comment_id ); */?>" href="#"
+                       class="btn-like st-like-review ">
+                        <i class="fa fa-thumbs-o-up"></i>
+                    </a>
+                --><?php
+                                                            /*                endif;*/
+                                                            ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="comment-item-body">
+                                                        <?php
+                                                        $stats        = TSReview::get_review_stats( get_the_ID() );
+                                                        $comment_rate = (float)get_comment_meta( $comment_id, 'comment_rate', true );
+                                                        ?>
+                                                        <?php if(isset($post_type) and in_array($post_type, ['ts_tours', 'ts_activity'])){ ?>
+                                                            <?php if ( $comment_title = get_comment_meta( $comment_id, 'comment_title', true ) ): ?>
+                                                                <h4 class="title st_tours" <?php if(!$stats) echo 'style="padding-left: 0;"'; ?>>
+                                                                    <?php echo esc_html(balanceTags( $comment_title )) ?>
+                                                                </h4>
+                                                                <?php
+                                                                if ( $stats ) {
+                                                                    echo '<ul class="review-star">';
+                                                                    echo rate_to_string($comment_rate);
+                                                                    echo '</ul>';
+                                                                }
+                                                                ?>
+                                                            <?php else:
+                                                                if ( $stats ) {
+                                                                    echo '<ul class="review-star">';
+                                                                    echo rate_to_string($comment_rate);
+                                                                    echo '</ul>';
+                                                                }
+                                                            endif; ?>
+                                                        <?php }else{
+                                                            ?>
+                                                            <?php if ( $comment_title = get_comment_meta( $comment_id, 'comment_title', true ) ): ?>
+                                                                <h4 class="title" <?php if(!$stats) echo 'style="padding-left: 0;"'; ?>>
+                                                                    <?php
+                                                                    if ( $stats ) {
+                                                                        echo '<span class="comment-rate">' . number_format( $comment_rate, 1, '.', ',' ) . '</span>';
+                                                                    }
+                                                                    ?>
+                                                                    "<?php echo esc_html(balanceTags( $comment_title )) ?>"
+                                                                </h4>
+                                                            <?php else:
+                                                                if ( $stats ) {
+                                                                    echo '<span class="comment-rate">' . number_format( $comment_rate, 1, '.', ',' ) . '</span>';
+                                                                }
+                                                            endif; ?>
+                                                            <?php
+                                                        } ?>
+                                                        <?php
+                                                        if ( !$stats && $comment_rate ) {
+                                                            ?>
+                                                            <div class="ts-stars style-2">
+                                                                <?php
+                                                                for ( $i = 1; $i <= 5; $i++ ) {
+                                                                    if ( $i <= $comment_rate ) {
+                                                                        echo '<i class="fa fa-star"></i>';
+                                                                    } else {
+                                                                        echo '<i class="fa fa-star grey"></i>';
+                                                                    }
+                                                                }
+                                                                ?>
+                                                            </div>
+                                                        <?php }
+                                                        ?>
+                                                        <div class="detail">
+                                                            <?php
+                                                            $content = get_comment_text( $comment_id );
+                                                            ?>
+                                                            <div class="ts-description"
+                                                                 data-show-all="ts-description-<?php echo esc_attr($comment_id); ?>" <?php if ( str_word_count( $content ) >= 80 ) {
+                                                                echo ' data-height="80"';
+                                                            } ?>>
+                                                                <?php echo esc_html(balanceTags($content)); ?>
+                                                            </div>
+                                                            <?php if ( str_word_count( $content ) >= 80 ) { ?>
+                                                                <a href="#" class="ts-link block"
+                                                                   data-show-target="ts-description-<?php echo esc_attr($comment_id); ?>"
+                                                                   data-text-less="<?php esc_attr_e( 'View Less', 'trizen' ) ?>"
+                                                                   data-text-more="<?php esc_attr_e( 'View More', 'trizen' ) ?>">
+                                                                    <span class="text"><?php esc_html_e( 'View More', 'trizen' ) ?></span>
+                                                                    <i class="fa fa-caret-down ml3"></i>
+                                                                </a>
+                                                            <?php } ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php
+                                            endif;
+                                        endforeach;
+                                    endif;
+
+                                    TSAdminRoom::comment_form(); ?>
+									<!--<div class="comment-forum padding-top-40px">
 										<div class="form-box">
 											<div class="form-title-wrap">
 												<h3 class="title">Write a Review</h3>
@@ -936,7 +1140,7 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 												</div>
 											</div>
 										</div>
-									</div>
+									</div>-->
 								</div>
 							</div>
 						</div>

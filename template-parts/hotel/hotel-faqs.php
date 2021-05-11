@@ -2,6 +2,7 @@
 $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data_group', true);
 
 
+if($trizen_hotel_faqs_data) {
 ?>
 
 <div id="faq" class="page-scroll">
@@ -49,3 +50,6 @@ $trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data
 	</div>
 	<div class="section-block"></div>
 </div>
+
+<?php } ?>
+

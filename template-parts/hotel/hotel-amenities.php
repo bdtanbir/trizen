@@ -1,5 +1,7 @@
 <?php
 $hotel_facilities = get_categories( array ( 'taxonomy' => 'hotel_facilities' ) );
+
+if($hotel_facilities) {
 ?>
 
 <div id="amenities" class="page-scroll">
@@ -36,4 +38,4 @@ $hotel_facilities = get_categories( array ( 'taxonomy' => 'hotel_facilities' ) )
 	</div>
 	<div class="section-block"></div>
 </div>
-
+<?php } ?>

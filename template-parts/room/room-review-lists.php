@@ -1,8 +1,8 @@
 
-<div class="review-box">
+<!--<div class="review-box">
 	<div class="single-content-item padding-top-40px">
 		<h3 class="title font-size-20">
-			<?php esc_html_e('Showing 3 guest reviews', 'trizen'); ?>
+			<?php /*esc_html_e('Showing 3 guest reviews', 'trizen'); */?>
 		</h3>
 		<div class="comments-list comment-list padding-top-50px">
 			<div class="comment comment-item">
@@ -12,7 +12,7 @@
 				<div class="comment-body">
 					<div class="meta-data">
 						<h3 class="comment__author">
-							<?php esc_html_e('Jenny Doe', 'trizen'); ?>
+							<?php /*esc_html_e('Jenny Doe', 'trizen'); */?>
 						</h3>
 						<div class="meta-data-inner d-flex">
                             <span class="ratings d-flex align-items-center mr-1">
@@ -23,28 +23,28 @@
                                 <i class="la la-star"></i>
                             </span>
 							<p class="comment__date">
-								<?php esc_html_e('April 5, 2019', 'trizen'); ?>
+								<?php /*esc_html_e('April 5, 2019', 'trizen'); */?>
 							</p>
 						</div>
 					</div>
 					<p class="comment-content">
 						<?php
-						esc_html_e('Lorem ipsum dolor sit amet, dolores mandamus moderatius ea ius, sed civibus vivendum imperdiet ei, amet tritani sea id. Ut veri diceret fierent mei, qui facilisi suavitate euripidis', 'trizen');
-						?>
+/*						esc_html_e('Lorem ipsum dolor sit amet, dolores mandamus moderatius ea ius, sed civibus vivendum imperdiet ei, amet tritani sea id. Ut veri diceret fierent mei, qui facilisi suavitate euripidis', 'trizen');
+						*/?>
 					</p>
 					<div class="comment-reply d-flex align-items-center justify-content-between">
 						<a class="theme-btn" href="#" data-toggle="modal" data-target="#replayPopupForm">
-							<span class="la la-mail-reply mr-1"></span><?php esc_html_e('Reply', 'trizen'); ?>
+							<span class="la la-mail-reply mr-1"></span><?php /*esc_html_e('Reply', 'trizen'); */?>
 						</a>
 						<div class="reviews-reaction">
 							<a href="#" class="comment-like">
-								<i class="la la-thumbs-up"></i> <?php esc_html_e('13', 'trizen'); ?>
+								<i class="la la-thumbs-up"></i> <?php /*esc_html_e('13', 'trizen'); */?>
 							</a>
 							<a href="#" class="comment-dislike">
-								<i class="la la-thumbs-down"></i> <?php esc_html_e('2', 'trizen'); ?>
+								<i class="la la-thumbs-down"></i> <?php /*esc_html_e('2', 'trizen'); */?>
 							</a>
 							<a href="#" class="comment-love">
-								<i class="la la-heart-o"></i> <?php esc_html_e('5', 'trizen'); ?>
+								<i class="la la-heart-o"></i> <?php /*esc_html_e('5', 'trizen'); */?>
 							</a>
 						</div>
 					</div>
@@ -57,7 +57,7 @@
 				<div class="comment-body">
 					<div class="meta-data">
 						<h3 class="comment__author">
-							<?php esc_html_e('Jenny Doe', 'trizen'); ?>
+							<?php /*esc_html_e('Jenny Doe', 'trizen'); */?>
 						</h3>
 						<div class="meta-data-inner d-flex">
                             <span class="ratings d-flex align-items-center mr-1">
@@ -68,26 +68,26 @@
                                 <i class="la la-star"></i>
                             </span>
 							<p class="comment__date">
-								<?php esc_html_e('April 5, 2019', 'trizen'); ?>
+								<?php /*esc_html_e('April 5, 2019', 'trizen'); */?>
 							</p>
 						</div>
 					</div>
 					<p class="comment-content">
-						<?php esc_html_e('Lorem ipsum dolor sit amet, dolores mandamus moderatius ea ius, sed civibus vivendum imperdiet ei, amet tritani sea id. Ut veri diceret fierent mei, qui facilisi suavitate euripidis', 'trizen'); ?>
+						<?php /*esc_html_e('Lorem ipsum dolor sit amet, dolores mandamus moderatius ea ius, sed civibus vivendum imperdiet ei, amet tritani sea id. Ut veri diceret fierent mei, qui facilisi suavitate euripidis', 'trizen'); */?>
 					</p>
 					<div class="comment-reply d-flex align-items-center justify-content-between">
 						<a class="theme-btn" href="#" data-toggle="modal" data-target="#replayPopupForm">
-							<span class="la la-mail-reply mr-1"></span><?php esc_html_e('Reply', 'trizen'); ?>
+							<span class="la la-mail-reply mr-1"></span><?php /*esc_html_e('Reply', 'trizen'); */?>
 						</a>
 						<div class="reviews-reaction">
 							<a href="#" class="comment-like">
-								<i class="la la-thumbs-up"></i> <?php esc_html_e('13', 'trizen'); ?>
+								<i class="la la-thumbs-up"></i> <?php /*esc_html_e('13', 'trizen'); */?>
 							</a>
 							<a href="#" class="comment-dislike">
-								<i class="la la-thumbs-down"></i> <?php esc_html_e('2', 'trizen'); ?>
+								<i class="la la-thumbs-down"></i> <?php /*esc_html_e('2', 'trizen'); */?>
 							</a>
 							<a href="#" class="comment-love">
-								<i class="la la-heart-o"></i> <?php esc_html_e('5', 'trizen'); ?>
+								<i class="la la-heart-o"></i> <?php /*esc_html_e('5', 'trizen'); */?>
 							</a>
 						</div>
 					</div>
@@ -100,7 +100,7 @@
 				<div class="comment-body">
 					<div class="meta-data">
 						<h3 class="comment__author">
-							<?php esc_html_e('Jenny Doe', 'trizen'); ?>
+							<?php /*esc_html_e('Jenny Doe', 'trizen'); */?>
 						</h3>
 						<div class="meta-data-inner d-flex">
                             <span class="ratings d-flex align-items-center mr-1">
@@ -111,26 +111,26 @@
                                 <i class="la la-star"></i>
                             </span>
 							<p class="comment__date">
-								<?php esc_html_e('April 5, 2019', 'trizen'); ?>
+								<?php /*esc_html_e('April 5, 2019', 'trizen'); */?>
 							</p>
 						</div>
 					</div>
 					<p class="comment-content">
-						<?php esc_html_e('Lorem ipsum dolor sit amet, dolores mandamus moderatius ea ius, sed civibus vivendum imperdiet ei, amet tritani sea id. Ut veri diceret fierent mei, qui facilisi suavitate euripidis', 'trizen'); ?>
+						<?php /*esc_html_e('Lorem ipsum dolor sit amet, dolores mandamus moderatius ea ius, sed civibus vivendum imperdiet ei, amet tritani sea id. Ut veri diceret fierent mei, qui facilisi suavitate euripidis', 'trizen'); */?>
 					</p>
 					<div class="comment-reply d-flex align-items-center justify-content-between">
 						<a class="theme-btn" href="#" data-toggle="modal" data-target="#replayPopupForm">
-							<span class="la la-mail-reply mr-1"></span><?php esc_html_e('Reply', 'trizen'); ?>
+							<span class="la la-mail-reply mr-1"></span><?php /*esc_html_e('Reply', 'trizen'); */?>
 						</a>
 						<div class="reviews-reaction">
 							<a href="#" class="comment-like">
-								<i class="la la-thumbs-up"></i> <?php esc_html_e('13', 'trizen'); ?>
+								<i class="la la-thumbs-up"></i> <?php /*esc_html_e('13', 'trizen'); */?>
 							</a>
 							<a href="#" class="comment-dislike">
-								<i class="la la-thumbs-down"></i> <?php esc_html_e('2', 'trizen'); ?>
+								<i class="la la-thumbs-down"></i> <?php /*esc_html_e('2', 'trizen'); */?>
 							</a>
 							<a href="#" class="comment-love">
-								<i class="la la-heart-o"></i> <?php esc_html_e('5', 'trizen'); ?>
+								<i class="la la-heart-o"></i> <?php /*esc_html_e('5', 'trizen'); */?>
 							</a>
 						</div>
 					</div>
@@ -138,7 +138,7 @@
 			</div>
 			<div class="btn-box load-more text-center">
 				<button class="theme-btn theme-btn-small theme-btn-transparent" type="button">
-					<?php esc_html_e('Load More Review', 'trizen'); ?>
+					<?php /*esc_html_e('Load More Review', 'trizen'); */?>
 				</button>
 			</div>
 		</div>
@@ -146,7 +146,7 @@
 			<div class="form-box">
 				<div class="form-title-wrap">
 					<h3 class="title">
-						<?php esc_html_e('Write a Review', 'trizen'); ?>
+						<?php /*esc_html_e('Write a Review', 'trizen'); */?>
 					</h3>
 				</div>
 				<div class="form-content">
@@ -155,7 +155,7 @@
 							<div class="col-lg-4 responsive-column">
 								<div class="rate-option-item">
 									<label>
-										<?php esc_html_e('Service', 'trizen'); ?>
+										<?php /*esc_html_e('Service', 'trizen'); */?>
 									</label>
 									<div class="rate-stars-option">
 										<input type="checkbox" id="lst1" value="1">
@@ -174,7 +174,7 @@
 							<div class="col-lg-4 responsive-column">
 								<div class="rate-option-item">
 									<label>
-                                        <?php esc_html_e('Location', 'trizen'); ?>
+                                        <?php /*esc_html_e('Location', 'trizen'); */?>
                                     </label>
 									<div class="rate-stars-option">
 										<input type="checkbox" id="l1" value="1">
@@ -193,7 +193,7 @@
 							<div class="col-lg-4 responsive-column">
 								<div class="rate-option-item">
 									<label>
-                                        <?php esc_html_e('Value for Money', 'trizen'); ?>
+                                        <?php /*esc_html_e('Value for Money', 'trizen'); */?>
                                     </label>
 									<div class="rate-stars-option">
 										<input type="checkbox" id="vm1" value="1">
@@ -212,7 +212,7 @@
 							<div class="col-lg-4 responsive-column">
 								<div class="rate-option-item">
 									<label>
-                                        <?php esc_html_e('Cleanliness', 'trizen'); ?>
+                                        <?php /*esc_html_e('Cleanliness', 'trizen'); */?>
                                     </label>
 									<div class="rate-stars-option">
 										<input type="checkbox" id="cln1" value="1">
@@ -231,7 +231,7 @@
 							<div class="col-lg-4 responsive-column">
 								<div class="rate-option-item">
 									<label>
-                                        <?php esc_html_e('Facilities', 'trizen'); ?>
+                                        <?php /*esc_html_e('Facilities', 'trizen'); */?>
                                     </label>
 									<div class="rate-stars-option">
 										<input type="checkbox" id="f1" value="1">
@@ -255,40 +255,40 @@
 								<div class="col-lg-6 responsive-column">
 									<div class="input-box">
 										<label class="label-text" for="input-name">
-                                            <?php esc_html_e('Name', 'trizen'); ?>
+                                            <?php /*esc_html_e('Name', 'trizen'); */?>
                                         </label>
 										<div class="form-group">
 											<span class="la la-user form-icon"></span>
-											<input id="input-name" class="form-control" type="text" name="text" placeholder="<?php esc_attr_e('Your name', 'trizen'); ?>">
+											<input id="input-name" class="form-control" type="text" name="text" placeholder="<?php /*esc_attr_e('Your name', 'trizen'); */?>">
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-6 responsive-column">
 									<div class="input-box">
 										<label class="label-text" for="input-email">
-											<?php esc_html_e('Email', 'trizen'); ?>
+											<?php /*esc_html_e('Email', 'trizen'); */?>
 										</label>
 										<div class="form-group">
 											<span class="la la-envelope-o form-icon"></span>
-											<input id="input-email" class="form-control" type="email" name="email" placeholder="<?php esc_attr_e('Email address', 'trizen'); ?>">
+											<input id="input-email" class="form-control" type="email" name="email" placeholder="<?php /*esc_attr_e('Email address', 'trizen'); */?>">
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-12">
 									<div class="input-box">
 										<label class="label-text" for="input-message">
-											<?php esc_html_e('Message', 'trizen'); ?>
+											<?php /*esc_html_e('Message', 'trizen'); */?>
 										</label>
 										<div class="form-group">
 											<span class="la la-pencil form-icon"></span>
-											<textarea id="input-message" class="message-control form-control" name="message" placeholder="<?php esc_attr_e('Write message', 'trizen'); ?>"></textarea>
+											<textarea id="input-message" class="message-control form-control" name="message" placeholder="<?php /*esc_attr_e('Write message', 'trizen'); */?>"></textarea>
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-12">
 									<div class="btn-box">
 										<button type="button" class="theme-btn">
-											<?php esc_html_e('Leave a Review', 'trizen'); ?>
+											<?php /*esc_html_e('Leave a Review', 'trizen'); */?>
 										</button>
 									</div>
 								</div>
@@ -299,4 +299,9 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div>-->
+
+<?php
+echo '<h1>I am Here</h1>';
+TSAdminRoom::comment_form();
+?>
