@@ -7931,7 +7931,7 @@ body {
   filter: grayscale(0); }
 
 /*=============== comments ===============*/
-/*.comment {
+.comment {
   border-bottom: 1px solid rgba(128, 137, 150, 0.1);
   margin-bottom: 40px;
   padding-bottom: 40px;
@@ -7946,7 +7946,7 @@ body {
   @media only screen and (min-width: 320px) and (max-width: 479px) {
     .comment {
       text-align: center;
-      display: block; } }*/
+      display: block; } }
 
 /*=============== comments-avatar ===============*/
 .comment-avatar .avatar__img {

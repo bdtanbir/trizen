@@ -5,7 +5,7 @@ get_template_part('inc/breadcrumb-simple');
 
 
 $hotel_gallery = get_post_meta(get_the_ID(), 'trizen_hotel_image_gallery', true);
-$hotel_address   = get_post_meta( get_the_ID(), 'trizen_hotel_address_title', true );
+$hotel_address = get_post_meta( get_the_ID(), 'trizen_hotel_address_title', true );
 $hotel_video   = get_post_meta( get_the_ID(), 'trizen_hotel_video_url', true );
 
 $breadcrumb_shape     = get_theme_mod('show_breadcrumb_overlay_shape', 1);
@@ -18,12 +18,12 @@ if($breadcrumb_shape == 1) {
 	$breadcrumb_shape_show = 'hide-before';
 }
 
-
-$hotel_facilities = get_categories( array ( 'taxonomy' => 'hotel_facilities' ) );
+$post_id = get_the_ID();
+$count_review                 = get_comment_count($post_id)['approved'];
+$hotel_facilities             = get_categories( array ( 'taxonomy' => 'hotel_facilities' ) );
 $trizen_hotel_features_data   = get_post_meta(get_the_ID(), 'trizen_hotel_features_data_group', true);
-
-$trizen_hotel_faqs_data    = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data_group', true);
-$review_rate = TSReview::get_avg_rate();
+$trizen_hotel_faqs_data       = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data_group', true);
+$review_rate                  = TSReview::get_avg_rate();
 ?>
 
 
@@ -37,16 +37,19 @@ $review_rate = TSReview::get_avg_rate();
 					<div class="col-lg-12">
 						<div class="breadcrumb-btn">
 							<div class="btn-box">
-								<a class="theme-btn hotel-video-btn" data-fancybox="video" data-src="<?php echo esc_attr($hotel_video); ?>"
-								   data-speed="700">
-									<i class="la la-video-camera mr-2"></i><?php echo esc_html($hotel_video_btn_text); ?>
-								</a>
-								<a class="theme-btn hotel-gallery-btn" data-src="<?php the_post_thumbnail_url(); ?>"
-								   data-fancybox="gallery"
-								   data-caption="<?php esc_attr_e('Showing image - 1', 'trizen'); ?>"
-								   data-speed="700">
-									<i class="la la-photo mr-2"></i><?php echo esc_html($hotel_photo_btn_text); ?>
-								</a>
+                                <?php if(!empty($hotel_video_btn_text)) { ?>
+                                    <a class="theme-btn hotel-video-btn" data-fancybox="video" data-src="<?php echo esc_attr($hotel_video); ?>"
+                                       data-speed="700">
+                                        <i class="la la-video-camera mr-2"></i><?php echo esc_html($hotel_video_btn_text); ?>
+                                    </a>
+                                <?php } if(!empty($hotel_photo_btn_text)) { ?>
+                                    <a class="theme-btn hotel-gallery-btn" data-src="<?php the_post_thumbnail_url(); ?>"
+                                       data-fancybox="gallery"
+                                       data-caption="<?php esc_attr_e('Showing image - 1', 'trizen'); ?>"
+                                       data-speed="700">
+                                        <i class="la la-photo mr-2"></i><?php echo esc_html($hotel_photo_btn_text); ?>
+                                    </a>
+                                <?php } ?>
 							</div>
 							<?php
 							$hidden = array();
@@ -85,7 +88,7 @@ $review_rate = TSReview::get_avg_rate();
 	================================= -->
 
 	<!-- ================================
-	    START TOUR DETAIL AREA Your element has gone outside of the viewport for this **transform: translateX(200%);**. So if You remove this **transform: translateX(200%);** then Scrollbar will not show. If you open developer tools on your web page then you will understand better. Thanks
+	    START TOUR DETAIL AREA
 	================================= -->
 	<section class="tour-detail-area padding-bottom-90px">
 		<div class="single-content-navbar-wrap menu section-bg" id="single-content-navbar">
@@ -273,7 +276,7 @@ $review_rate = TSReview::get_avg_rate();
 									<div class="cabin-type padding-top-30px">
 										<div class="cabin-type-item seat-selection-item d-flex">
 											<div class="cabin-type-img flex-shrink-0">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/images/inside-cabin.jpg" alt="<?php esc_attr_e('Room Image', 'trizen'); ?>">
+												<img src="<?php echo get_template_directory_uri(); ?>/assets/images/inside-cabin.jpg" alt="<?php esc_attr_e('Room Image', 'trizen'); ?>" width="170" height="187">
 											</div>
 											<div class="cabin-type-detail">
 												<h3 class="title"><?php esc_html_e('Standard Family Room', 'trizen'); ?></h3>
@@ -352,11 +355,10 @@ $review_rate = TSReview::get_avg_rate();
 											</div>
 										</div>
 									</div>
-
 									<div class="cabin-type padding-top-30px">
 										<div class="cabin-type-item seat-selection-item d-flex">
 											<div class="cabin-type-img flex-shrink-0">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/images/oceanview-cabin.jpg" alt="<?php esc_attr_e('Room Image', 'trizen'); ?>">
+												<img src="<?php echo get_template_directory_uri(); ?>/assets/images/oceanview-cabin.jpg" alt="<?php esc_attr_e('Room Image', 'trizen'); ?>" width="170" height="187">
 											</div>
 											<div class="cabin-type-detail">
 												<h3 class="title"><?php esc_html_e('Superior Double Room', 'trizen'); ?></h3>
@@ -435,11 +437,10 @@ $review_rate = TSReview::get_avg_rate();
 											</div>
 										</div>
 									</div>
-
 									<div class="cabin-type padding-top-30px">
 										<div class="cabin-type-item seat-selection-item d-flex">
 											<div class="cabin-type-img flex-shrink-0">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/images/balcony-cabin.jpg" alt="">
+												<img src="<?php echo get_template_directory_uri(); ?>/assets/images/balcony-cabin.jpg" alt="" width="170" height="187">
 											</div>
 											<div class="cabin-type-detail">
 												<h3 class="title"><?php esc_html_e('Deluxe Single Room', 'trizen'); ?></h3>
@@ -523,7 +524,7 @@ $review_rate = TSReview::get_avg_rate();
 									<div class="cabin-type padding-top-30px">
 										<div class="cabin-type-item seat-selection-item d-flex">
 											<div class="cabin-type-img flex-shrink-0">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/images/suite-cabin.jpg" alt="">
+												<img src="<?php echo get_template_directory_uri(); ?>/assets/images/suite-cabin.jpg" alt="" width="170" height="187">
 											</div>
 											<div class="cabin-type-detail">
 												<h3 class="title"><?php esc_html_e('Single Bed Room', 'trizen'); ?></h3>
@@ -610,8 +611,9 @@ $review_rate = TSReview::get_avg_rate();
                                                     </label>
 												</div>
 											</div>
-										</div><!-- end cabin-type-item -->
+										</div>
 									</div>
+
 								</div>
 								<div class="section-block"></div>
 							</div>
@@ -625,525 +627,164 @@ $review_rate = TSReview::get_avg_rate();
                             ?>
 
 							<div id="reviews" class="page-scroll">
-								<!--<div class="single-content-item padding-top-40px padding-bottom-40px">
-									<h3 class="title font-size-20">Reviews</h3>
+								<div class="single-content-item padding-top-40px padding-bottom-40px">
+									<h3 class="title font-size-20"><?php esc_html_e('Reviews', 'trizen'); ?></h3>
 									<div class="review-container padding-top-30px">
 										<div class="row align-items-center">
 											<div class="col-lg-4">
 												<div class="review-summary">
-													<h2>4.5<span>/5</span></h2>
-													<p>Excellent</p>
-													<span>Based on 4 reviews</span>
+													<h2><?php echo esc_html($review_rate); ?><span><?php esc_html_e('/5', 'trizen'); ?></span></h2>
+													<p><?php echo TSReview::get_rate_review_text($review_rate, $count_review); ?></p>
+													<span><?php comments_number(__('Based on 0 Review', 'trizen'), __('Based on 1 Review', 'trizen'), __('Based on % Reviews', 'trizen')); ?></span>
 												</div>
 											</div>
 											<div class="col-lg-8">
 												<div class="review-bars">
 													<div class="row">
-														<div class="col-lg-6">
-															<div class="progress-item">
-																<h3 class="progressbar-title">Service</h3>
-																<div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-																	<div class="progressbar-box flex-shrink-0">
-																		<div class="progressbar-line" data-percent="70%">
-																			<div class="progressbar-line-item bar-bg-1"></div>
-																		</div>
-																	</div>
-																	<div class="bar-percent">4.6</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-lg-6">
-															<div class="progress-item">
-																<h3 class="progressbar-title">Location</h3>
-																<div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-																	<div class="progressbar-box flex-shrink-0">
-																		<div class="progressbar-line" data-percent="55%">
-																			<div class="progressbar-line-item bar-bg-2"></div>
-																		</div>
-																	</div>
-																	<div class="bar-percent">4.7</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-lg-6">
-															<div class="progress-item">
-																<h3 class="progressbar-title">Value for Money</h3>
-																<div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-																	<div class="progressbar-box flex-shrink-0">
-																		<div class="progressbar-line" data-percent="40%">
-																			<div class="progressbar-line-item bar-bg-3"></div>
-																		</div>
-																	</div>
-																	<div class="bar-percent">2.6</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-lg-6">
-															<div class="progress-item">
-																<h3 class="progressbar-title">Cleanliness</h3>
-																<div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-																	<div class="progressbar-box flex-shrink-0">
-																		<div class="progressbar-line" data-percent="60%">
-																			<div class="progressbar-line-item bar-bg-4"></div>
-																		</div>
-																	</div>
-																	<div class="bar-percent">3.6</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-lg-6">
-															<div class="progress-item">
-																<h3 class="progressbar-title">Facilities</h3>
-																<div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-																	<div class="progressbar-box flex-shrink-0">
-																		<div class="progressbar-line" data-percent="50%">
-																			<div class="progressbar-line-item bar-bg-5"></div>
-																		</div>
-																	</div>
-																	<div class="bar-percent">2.6</div>
-																</div>
-															</div>
-														</div>
+                                                        <?php
+                                                        $stats = TSReview::get_review_summary();
+                                                        if ($stats) {
+                                                            foreach ($stats as $stat) {
+                                                                ?>
+                                                                <div class="col-lg-6">
+                                                                    <div class="progress-item">
+                                                                        <h3 class="progressbar-title"><?php echo esc_html($stat['name']); ?></h3>
+                                                                        <div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
+                                                                            <div class="progressbar-box flex-shrink-0">
+                                                                                <div class="progressbar-line" data-percent="<?php echo esc_attr($stat['percent']); ?>%">
+                                                                                    <div class="progressbar-line-item bar-bg-1"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="bar-percent"><?php echo esc_html($stat['summary']) ?></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!--<div class="item">
+                                                                    <div class="progress">
+                                                                        <div class="percent"
+                                                                             style="width: <?php /*echo esc_attr($stat['percent']); */?>%;"></div>
+                                                                    </div>
+                                                                    <div class="label">
+                                                                        <?php /*echo esc_html($stat['name']); */?>
+                                                                        <div class="number"><?php /*echo esc_html($stat['summary']) */?>
+                                                                            <?php /*esc_html_e('/5', 'trizen'); */?>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>-->
+                                                            <?php }
+                                                        }
+                                                        ?>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-								</div>-->
-                                <?php
-                                $stats = TSReview::get_review_summary();
-                                if ($stats) {
-                                    foreach ($stats as $stat) {
-                                        ?>
-                                        <div class="item">
-                                            <div class="progress">
-                                                <div class="percent"
-                                                     style="width: <?php echo esc_attr($stat['percent']); ?>%;"></div>
-                                            </div>
-                                            <div class="label">
-                                                <?php echo esc_html($stat['name']); ?>
-                                                <div class="number"><?php echo esc_html($stat['summary']) ?>
-                                                    <?php esc_html_e('/5', 'trizen'); ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <?php }
-                                }
-                                ?>
+								</div>
 								<div class="section-block"></div>
 							</div>
 							<div class="review-box">
 								<div class="single-content-item padding-top-40px">
-									<!--<h3 class="title font-size-20">Showing 3 guest reviews</h3>
-									<div class="comments-list padding-top-50px">
-										<div class="comment">
-											<div class="comment-avatar">
-												<img class="avatar__img" alt="" src="images/team8.jpg">
-											</div>
-											<div class="comment-body">
-												<div class="meta-data">
-													<h3 class="comment__author">Jenny Doe</h3>
-													<div class="meta-data-inner d-flex">
-	                                                    <span class="ratings d-flex align-items-center mr-1">
-	                                                        <i class="la la-star"></i>
-	                                                        <i class="la la-star"></i>
-	                                                        <i class="la la-star"></i>
-	                                                        <i class="la la-star"></i>
-	                                                        <i class="la la-star"></i>
-	                                                    </span>
-														<p class="comment__date">April 5, 2019</p>
-													</div>
-												</div>
-												<p class="comment-content">
-													Lorem ipsum dolor sit amet, dolores mandamus moderatius ea ius, sed civibus vivendum imperdiet ei, amet tritani sea id. Ut veri diceret fierent mei, qui facilisi suavitate euripidis
-												</p>
-												<div class="comment-reply d-flex align-items-center justify-content-between">
-													<a class="theme-btn" href="#" data-toggle="modal" data-target="#replayPopupForm">
-														<span class="la la-mail-reply mr-1"></span>Reply
-													</a>
-													<div class="reviews-reaction">
-														<a href="#" class="comment-like"><i class="la la-thumbs-up"></i> 13</a>
-														<a href="#" class="comment-dislike"><i class="la la-thumbs-down"></i> 2</a>
-														<a href="#" class="comment-love"><i class="la la-heart-o"></i> 5</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="comment comment-reply-item">
-											<div class="comment-avatar">
-												<img class="avatar__img" alt="" src="images/team9.jpg">
-											</div>
-											<div class="comment-body">
-												<div class="meta-data">
-													<h3 class="comment__author">Jenny Doe</h3>
-													<div class="meta-data-inner d-flex">
-	                                                    <span class="ratings d-flex align-items-center mr-1">
-	                                                        <i class="la la-star"></i>
-	                                                        <i class="la la-star"></i>
-	                                                        <i class="la la-star"></i>
-	                                                        <i class="la la-star"></i>
-	                                                        <i class="la la-star"></i>
-	                                                    </span>
-														<p class="comment__date">April 5, 2019</p>
-													</div>
-												</div>
-												<p class="comment-content">
-													Lorem ipsum dolor sit amet, dolores mandamus moderatius ea ius, sed civibus vivendum imperdiet ei, amet tritani sea id. Ut veri diceret fierent mei, qui facilisi suavitate euripidis
-												</p>
-												<div class="comment-reply d-flex align-items-center justify-content-between">
-													<a class="theme-btn" href="#" data-toggle="modal" data-target="#replayPopupForm">
-														<span class="la la-mail-reply mr-1"></span>Reply
-													</a>
-													<div class="reviews-reaction">
-														<a href="#" class="comment-like"><i class="la la-thumbs-up"></i> 13</a>
-														<a href="#" class="comment-dislike"><i class="la la-thumbs-down"></i> 2</a>
-														<a href="#" class="comment-love"><i class="la la-heart-o"></i> 5</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="comment">
-											<div class="comment-avatar">
-												<img class="avatar__img" alt="" src="images/team10.jpg">
-											</div>
-											<div class="comment-body">
-												<div class="meta-data">
-													<h3 class="comment__author">Jenny Doe</h3>
-													<div class="meta-data-inner d-flex">
-	                                                    <span class="ratings d-flex align-items-center mr-1">
-	                                                        <i class="la la-star"></i>
-	                                                        <i class="la la-star"></i>
-	                                                        <i class="la la-star"></i>
-	                                                        <i class="la la-star"></i>
-	                                                        <i class="la la-star"></i>
-	                                                    </span>
-														<p class="comment__date">April 5, 2019</p>
-													</div>
-												</div>
-												<p class="comment-content">
-													Lorem ipsum dolor sit amet, dolores mandamus moderatius ea ius, sed civibus vivendum imperdiet ei, amet tritani sea id. Ut veri diceret fierent mei, qui facilisi suavitate euripidis
-												</p>
-												<div class="comment-reply d-flex align-items-center justify-content-between">
-													<a class="theme-btn" href="#" data-toggle="modal" data-target="#replayPopupForm">
-														<span class="la la-mail-reply mr-1"></span>Reply
-													</a>
-													<div class="reviews-reaction">
-														<a href="#" class="comment-like"><i class="la la-thumbs-up"></i> 13</a>
-														<a href="#" class="comment-dislike"><i class="la la-thumbs-down"></i> 2</a>
-														<a href="#" class="comment-love"><i class="la la-heart-o"></i> 5</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="btn-box load-more text-center">
-											<button class="theme-btn theme-btn-small theme-btn-transparent" type="button">Load More Review</button>
-										</div>
-									</div>-->
-
-                                    <div class="summary">
-                                        <?php
-                                        $comments_count = wp_count_comments(get_the_ID());
-                                        $total = (int)$comments_count->approved;
-                                        $comment_per_page = (int)get_option('comments_per_page', 10);
-                                        $paged = (int)get('comment_page', 1);
-                                        $from = $comment_per_page * ($paged - 1) + 1;
-                                        $to = ($paged * $comment_per_page < $total) ? ($paged * $comment_per_page) : $total;
-                                        ?>
-                                        <?php comments_number(__('0 review on this Hotel', 'trizen'), __('1 review on this Hotel', 'trizen'), __('% reviews on this Hotel', 'trizen')); ?>
-                                        - <?php echo sprintf(__('Showing %s to %s', 'trizen'), $from, $to) ?>
-                                    </div>
                                     <?php
-                                    $offset = ($paged - 1) * $comment_per_page;
-                                    $args = [
-                                        'number' => $comment_per_page,
-                                        'offset' => $offset,
-                                        'post_id' => get_the_ID(),
-                                        'status' => ['approve']
-                                    ];
-                                    $comments_query = new WP_Comment_Query;
-                                    $comments = $comments_query->query($args);
+                                    $comments_count   = wp_count_comments(get_the_ID());
+                                    $total            = (int)$comments_count->approved;
+                                    $comment_per_page = (int)get_option('comments_per_page', 10);
+                                    $paged            = (int)get('comment_page', 1);
+                                    $from             = $comment_per_page * ($paged - 1) + 1;
+                                    $to               = ($paged * $comment_per_page < $total) ? ($paged * $comment_per_page) : $total;
+                                    ?>
+									<h3 class="title font-size-20"><?php echo sprintf(__('Showing %s reviews', 'trizen'), $to); ?></h3>
+									<div class="comments-list padding-top-50px">
+                                        <?php
+                                        $offset = ($paged - 1) * $comment_per_page;
+                                        $args = [
+                                            'number'  => $comment_per_page,
+                                            'offset'  => $offset,
+                                            'post_id' => get_the_ID(),
+                                            'status'  => ['approve']
+                                        ];
+                                        $comments_query = new WP_Comment_Query;
+                                        $comments       = $comments_query->query($args);
 
-                                    if ($comments):
-                                        foreach ($comments as $key => $comment):
-//                                            get_template_part('template-parts/hotel/review-lists');
-                                            $args[ 'avatar_size' ] = 50;
-                                            if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) :
-                                            else :
-                                                $comment_class = empty( $args[ 'has_children' ] ) ? '' : $comment_class .= 'parent';
-                                                if ( !$comment->comment_approved ) {
-                                                    return;
-                                                }
+                                        if ($comments):
+                                            foreach ($comments as $key => $comment):
+                                                $args[ 'avatar_size' ] = 90;
+                                                if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) :
+                                                else :
+                                                    $comment_class = empty( $args[ 'has_children' ] ) ? '' : $comment_class .= 'parent';
+                                                    if ( !$comment->comment_approved ) {
+                                                        return;
+                                                    }
 
-                                                $comment_id   = $comment->comment_ID;
-                                                $user_id      = get_comment( $comment_id )->user_id;
-                                                $user_email   = get_comment( $comment_id )->comment_author_email;
-                                                $current_user = wp_get_current_user();
-                                                ?>
-                                                <div class="comment-item">
-                                                    <div class="comment-item-head">
-                                                        <div class="media">
-                                                            <div class="media-left">
-                                                                <?php echo ts_get_profile_avatar( $user_id, 50 ) ?>
-                                                            </div>
-                                                            <div class="media-body">
-                                                                <?php
-                                                                if(!empty($user_id)){
-                                                                    ?>
-                                                                    <h4 class="media-heading"><?php echo TSAdminRoom::get_username( $user_id ); ?></h4>
-                                                                    <?php
-                                                                }else{
-                                                                    ?>
-                                                                    <h4 class="media-heading"><?php echo esc_html($comment->comment_author); ?></h4>
-                                                                    <?php
-                                                                }
-                                                                ?>
-                                                                <div class="date"><?php echo get_comment_date( getDateFormat(), $comment_id ) ?></div>
-                                                            </div>
+                                                    $comment_id   = $comment->comment_ID;
+                                                    $user_id      = get_comment( $comment_id )->user_id;
+                                                    $user_email   = get_comment( $comment_id )->comment_author_email;
+                                                    $current_user = wp_get_current_user();
+                                                    ?>
+                                                    <div class="comment">
+                                                        <div class="comment-avatar">
+                                                            <?php echo ts_get_profile_avatar( $user_id, 90 ) ?>
                                                         </div>
-                                                        <div class="like">
-                                                            <?php
-                                                            $count_like = (int)get_comment_meta( $comment_id, '_comment_like_count', true );
-                                                            echo '<span>' . esc_html($count_like) . '</span>' . _n( ' like this', ' likes this', $count_like, 'trizen' );
-                                                            ?>
-                                                            <?php /*$review_obj = new TSReview();
-                if ( $review_obj->check_like( $comment_id ) ):
-                    */?><!--
-                    <a data-id="<?php /*echo esc_attr( $comment_id ); */?>" href="#"
-                       class="btn-like st-like-review ">
-                        <i class="fa fa-thumbs-o-down"></i>
-                    </a>
-                <?php /*else: */?>
-                    <a data-id="<?php /*echo esc_attr( $comment_id ); */?>" href="#"
-                       class="btn-like st-like-review ">
-                        <i class="fa fa-thumbs-o-up"></i>
-                    </a>
-                --><?php
-                                                            /*                endif;*/
-                                                            ?>
-                                                        </div>
-                                                    </div>
-                                                    <div class="comment-item-body">
-                                                        <?php
-                                                        $stats        = TSReview::get_review_stats( get_the_ID() );
-                                                        $comment_rate = (float)get_comment_meta( $comment_id, 'comment_rate', true );
-                                                        ?>
-                                                        <?php if(isset($post_type) and in_array($post_type, ['ts_tours', 'ts_activity'])){ ?>
-                                                            <?php if ( $comment_title = get_comment_meta( $comment_id, 'comment_title', true ) ): ?>
-                                                                <h4 class="title st_tours" <?php if(!$stats) echo 'style="padding-left: 0;"'; ?>>
-                                                                    <?php echo esc_html(balanceTags( $comment_title )) ?>
-                                                                </h4>
+                                                        <div class="comment-body">
+                                                            <div class="meta-data">
                                                                 <?php
-                                                                if ( $stats ) {
-                                                                    echo '<ul class="review-star">';
-                                                                    echo rate_to_string($comment_rate);
-                                                                    echo '</ul>';
-                                                                }
-                                                                ?>
-                                                            <?php else:
-                                                                if ( $stats ) {
-                                                                    echo '<ul class="review-star">';
-                                                                    echo rate_to_string($comment_rate);
-                                                                    echo '</ul>';
-                                                                }
-                                                            endif; ?>
-                                                        <?php }else{
-                                                            ?>
-                                                            <?php if ( $comment_title = get_comment_meta( $comment_id, 'comment_title', true ) ): ?>
-                                                                <h4 class="title" <?php if(!$stats) echo 'style="padding-left: 0;"'; ?>>
+                                                                if(!empty($user_id)){ ?>
+                                                                    <h3 class="comment__author"><?php echo TSAdminRoom::get_username( $user_id ); ?></h3>
                                                                     <?php
-                                                                    if ( $stats ) {
-                                                                        echo '<span class="comment-rate">' . number_format( $comment_rate, 1, '.', ',' ) . '</span>';
-                                                                    }
-                                                                    ?>
-                                                                    "<?php echo esc_html(balanceTags( $comment_title )) ?>"
-                                                                </h4>
-                                                            <?php else:
-                                                                if ( $stats ) {
-                                                                    echo '<span class="comment-rate">' . number_format( $comment_rate, 1, '.', ',' ) . '</span>';
-                                                                }
-                                                            endif; ?>
-                                                            <?php
-                                                        } ?>
-                                                        <?php
-                                                        if ( !$stats && $comment_rate ) {
-                                                            ?>
-                                                            <div class="ts-stars style-2">
-                                                                <?php
-                                                                for ( $i = 1; $i <= 5; $i++ ) {
-                                                                    if ( $i <= $comment_rate ) {
-                                                                        echo '<i class="fa fa-star"></i>';
-                                                                    } else {
-                                                                        echo '<i class="fa fa-star grey"></i>';
-                                                                    }
+                                                                } else { ?>
+                                                                    <h3 class="comment__author"><?php echo esc_html($comment->comment_author); ?></h3>
+                                                                    <?php
                                                                 }
                                                                 ?>
+                                                                <div class="meta-data-inner d-flex">
+                                                                    <span class="ratings d-flex align-items-center mr-1">
+                                                                        <i class="la la-star"></i>
+                                                                        <i class="la la-star"></i>
+                                                                        <i class="la la-star"></i>
+                                                                        <i class="la la-star"></i>
+                                                                        <i class="la la-star"></i>
+                                                                    </span>
+                                                                    <p class="comment__date"><?php echo get_comment_date( getDateFormat(), $comment_id ) ?></p>
+                                                                </div>
                                                             </div>
-                                                        <?php }
-                                                        ?>
-                                                        <div class="detail">
-                                                            <?php
-                                                            $content = get_comment_text( $comment_id );
-                                                            ?>
-                                                            <div class="ts-description"
-                                                                 data-show-all="ts-description-<?php echo esc_attr($comment_id); ?>" <?php if ( str_word_count( $content ) >= 80 ) {
-                                                                echo ' data-height="80"';
-                                                            } ?>>
-                                                                <?php echo esc_html(balanceTags($content)); ?>
+                                                            <p class="comment-content">
+                                                                <?php
+                                                                $content = get_comment_text( $comment_id );
+
+                                                                echo esc_html(balanceTags($content)); ?>
+                                                            </p>
+                                                            <div class="comment-reply d-flex align-items-center justify-content-between">
+                                                                <div class="reviews-reaction">
+                                                                    <?php
+                                                                    $count_like = (int)get_comment_meta( $comment_id, '_comment_like_count', true );
+
+                                                                    $review_obj = new TSReview();
+                                                                    if ( $review_obj->check_like( $comment_id ) ):
+                                                                        ?>
+                                                                        <a data-id="<?php echo esc_attr( $comment_id ); ?>" class="btn-like comment-dislike ts-like-review" href="#" title="Dislike This" data-toggle="tooltip" data-placement="top">
+                                                                            <i class="la la-thumbs-o-down"></i> <?php echo '<span class="like-count">' . esc_html($count_like) . '</span>'; ?>
+                                                                        </a>
+                                                                    <?php else: ?>
+                                                                        <a data-id="<?php echo esc_attr( $comment_id ); ?>" href="#" class="btn-like comment-like ts-like-review " title="Like This" data-toggle="tooltip" data-placement="top">
+                                                                            <i class="la la-thumbs-o-up"></i> <?php echo '<span class="like-count">' . esc_html($count_like) . '</span>'; ?>
+                                                                        </a>
+                                                                    <?php
+                                                                    endif;
+
+                                                                    ?>
+                                                                </div>
                                                             </div>
-                                                            <?php if ( str_word_count( $content ) >= 80 ) { ?>
-                                                                <a href="#" class="ts-link block"
-                                                                   data-show-target="ts-description-<?php echo esc_attr($comment_id); ?>"
-                                                                   data-text-less="<?php esc_attr_e( 'View Less', 'trizen' ) ?>"
-                                                                   data-text-more="<?php esc_attr_e( 'View More', 'trizen' ) ?>">
-                                                                    <span class="text"><?php esc_html_e( 'View More', 'trizen' ) ?></span>
-                                                                    <i class="fa fa-caret-down ml3"></i>
-                                                                </a>
-                                                            <?php } ?>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            <?php
-                                            endif;
-                                        endforeach;
-                                    endif;
+                                                <?php
+                                                endif;
+                                            endforeach;
+                                        endif;
+                                        ?>
+                                    </div>
 
-                                    TSAdminRoom::comment_form(); ?>
-									<!--<div class="comment-forum padding-top-40px">
-										<div class="form-box">
-											<div class="form-title-wrap">
-												<h3 class="title">Write a Review</h3>
-											</div>
-											<div class="form-content">
-												<div class="rate-option p-2">
-													<div class="row">
-														<div class="col-lg-4 responsive-column">
-															<div class="rate-option-item">
-																<label>Service</label>
-																<div class="rate-stars-option">
-																	<input type="checkbox" id="lst1" value="1">
-																	<label for="lst1"></label>
-																	<input type="checkbox" id="lst2" value="2">
-																	<label for="lst2"></label>
-																	<input type="checkbox" id="lst3" value="3">
-																	<label for="lst3"></label>
-																	<input type="checkbox" id="lst4" value="4">
-																	<label for="lst4"></label>
-																	<input type="checkbox" id="lst5" value="5">
-																	<label for="lst5"></label>
-																</div>
-															</div>
-														</div>
-														<div class="col-lg-4 responsive-column">
-															<div class="rate-option-item">
-																<label>Location</label>
-																<div class="rate-stars-option">
-																	<input type="checkbox" id="l1" value="1">
-																	<label for="l1"></label>
-																	<input type="checkbox" id="l2" value="2">
-																	<label for="l2"></label>
-																	<input type="checkbox" id="l3" value="3">
-																	<label for="l3"></label>
-																	<input type="checkbox" id="l4" value="4">
-																	<label for="l4"></label>
-																	<input type="checkbox" id="l5" value="5">
-																	<label for="l5"></label>
-																</div>
-															</div>
-														</div>
-														<div class="col-lg-4 responsive-column">
-															<div class="rate-option-item">
-																<label>Value for Money</label>
-																<div class="rate-stars-option">
-																	<input type="checkbox" id="vm1" value="1">
-																	<label for="vm1"></label>
-																	<input type="checkbox" id="vm2" value="2">
-																	<label for="vm2"></label>
-																	<input type="checkbox" id="vm3" value="3">
-																	<label for="vm3"></label>
-																	<input type="checkbox" id="vm4" value="4">
-																	<label for="vm4"></label>
-																	<input type="checkbox" id="vm5" value="5">
-																	<label for="vm5"></label>
-																</div>
-															</div>
-														</div>
-														<div class="col-lg-4 responsive-column">
-															<div class="rate-option-item">
-																<label>Cleanliness</label>
-																<div class="rate-stars-option">
-																	<input type="checkbox" id="cln1" value="1">
-																	<label for="cln1"></label>
-																	<input type="checkbox" id="cln2" value="2">
-																	<label for="cln2"></label>
-																	<input type="checkbox" id="cln3" value="3">
-																	<label for="cln3"></label>
-																	<input type="checkbox" id="cln4" value="4">
-																	<label for="cln4"></label>
-																	<input type="checkbox" id="cln5" value="5">
-																	<label for="cln5"></label>
-																</div>
-															</div>
-														</div>
-														<div class="col-lg-4 responsive-column">
-															<div class="rate-option-item">
-																<label>Facilities</label>
-																<div class="rate-stars-option">
-																	<input type="checkbox" id="f1" value="1">
-																	<label for="f1"></label>
-																	<input type="checkbox" id="f2" value="2">
-																	<label for="f2"></label>
-																	<input type="checkbox" id="f3" value="3">
-																	<label for="f3"></label>
-																	<input type="checkbox" id="f4" value="4">
-																	<label for="f4"></label>
-																	<input type="checkbox" id="f5" value="5">
-																	<label for="f5"></label>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="contact-form-action">
-													<form method="post">
-														<div class="row">
-															<div class="col-lg-6 responsive-column">
-																<div class="input-box">
-																	<label class="label-text">Name</label>
-																	<div class="form-group">
-																		<span class="la la-user form-icon"></span>
-																		<input class="form-control" type="text" name="text" placeholder="Your name">
-																	</div>
-																</div>
-															</div>
-															<div class="col-lg-6 responsive-column">
-																<div class="input-box">
-																	<label class="label-text">Email</label>
-																	<div class="form-group">
-																		<span class="la la-envelope-o form-icon"></span>
-																		<input class="form-control" type="email" name="email" placeholder="Email address">
-																	</div>
-																</div>
-															</div>
-															<div class="col-lg-12">
-																<div class="input-box">
-																	<label class="label-text">Message</label>
-																	<div class="form-group">
-																		<span class="la la-pencil form-icon"></span>
-																		<textarea class="message-control form-control" name="message" placeholder="Write message"></textarea>
-																	</div>
-																</div>
-															</div>
-															<div class="col-lg-12">
-																<div class="btn-box">
-																	<button type="button" class="theme-btn">Leave a Review</button>
-																</div>
-															</div>
-														</div>
-													</form>
-												</div>
-											</div>
-										</div>
-									</div>-->
+                                    <?php
+                                        TSAdminRoom::comment_form();
+                                    ?>
 								</div>
 							</div>
 						</div>

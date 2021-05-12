@@ -1426,6 +1426,28 @@ textarea {
 .review-form .review-items .rates i.selected {
 	color: #f9b851;
 }
+.review-box .comments-list .comment .comment-avatar {
+	flex: none;
+	margin-right: 25px;
+}
+.review-box .comments-list .comment .comment-avatar img {
+	width: 90px;
+	height: 90px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	margin-right: 0;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	border: 4px solid #fff;
+	-webkit-box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
+	-moz-box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
+	box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
+	background: none;
+}
+.review-box .comments-list .comment .meta-data .comment__date {
+	margin-bottom: 0;
+}
 
 
 
