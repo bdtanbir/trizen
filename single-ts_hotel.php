@@ -761,7 +761,7 @@ $review_rate                  = TSReview::get_avg_rate();
                                                                     if ( $review_obj->check_like( $comment_id ) ):
                                                                         ?>
                                                                         <a data-id="<?php echo esc_attr( $comment_id ); ?>" class="btn-like comment-dislike ts-like-review" href="#" title="Dislike This" data-toggle="tooltip" data-placement="top">
-                                                                            <i class="la la-thumbs-o-down"></i> <?php echo '<span class="like-count">' . esc_html($count_like) . '</span>'; ?>
+                                                                            <i class="la la-thumbs-o-up"></i> <?php echo '<span class="like-count">' . esc_html($count_like) . '</span>'; ?>
                                                                         </a>
                                                                     <?php else: ?>
                                                                         <a data-id="<?php echo esc_attr( $comment_id ); ?>" href="#" class="btn-like comment-like ts-like-review " title="Like This" data-toggle="tooltip" data-placement="top">

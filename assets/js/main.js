@@ -714,11 +714,11 @@ Author Email:   contact@tecydevs.com
                 },
                 success: function (res) {
                     if (res.status) {
-                        $('i', me).toggleClass('la-thumbs-o-up la-thumbs-o-down');
+                        // $('i', me).toggleClass('la-thumbs-o-up la-thumbs-o-down');
                         $(me).toggleClass('comment-like comment-dislike');
-                        if ($('.booking-item-review-rate').length) {
+                        /*if ($('.booking-item-review-rate').length) {
                             $(me).toggleClass('la-thumbs-o-up la-thumbs-o-down');
-                        }
+                        }*/
                         if (typeof res.data.like_count != undefined) {
                             res.data.like_count = parseInt(res.data.like_count);
                             me.find('span.like-count').html(res.data.like_count);

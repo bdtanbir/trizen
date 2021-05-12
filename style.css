@@ -1448,6 +1448,12 @@ textarea {
 .review-box .comments-list .comment .meta-data .comment__date {
 	margin-bottom: 0;
 }
+.reviews-reaction a.comment-like {
+	color: #aaa;
+}
+.reviews-reaction a.comment-dislike {
+	color: #28d5a7;
+}
 
 
 
