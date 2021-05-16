@@ -642,20 +642,20 @@ $review_rate                  = TSReview::get_avg_rate();
 												<div class="review-bars">
 													<div class="row">
                                                         <?php
-                                                        $stats = TSReview::get_review_summary();
-                                                        if ($stats) {
-                                                            foreach ($stats as $stat) {
+                                                        $stars = TSReview::get_review_summary();
+//                                                        if ($stars) {
+                                                            foreach ($stars as $star) {
                                                                 ?>
                                                                 <div class="col-lg-6">
                                                                     <div class="progress-item">
-                                                                        <h3 class="progressbar-title"><?php echo esc_html($stat['name']); ?></h3>
+                                                                        <h3 class="progressbar-title"><?php echo esc_html($star['name']); ?></h3>
                                                                         <div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
                                                                             <div class="progressbar-box flex-shrink-0">
-                                                                                <div class="progressbar-line" data-percent="<?php echo esc_attr($stat['percent']); ?>%">
+                                                                                <div class="progressbar-line" data-percent="<?php echo esc_attr($star['percent']); ?>%">
                                                                                     <div class="progressbar-line-item bar-bg-1"></div>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="bar-percent"><?php echo esc_html($stat['summary']) ?></div>
+                                                                            <div class="bar-percent"><?php echo esc_html($star['summary']) ?></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -672,7 +672,7 @@ $review_rate                  = TSReview::get_avg_rate();
                                                                     </div>
                                                                 </div>-->
                                                             <?php }
-                                                        }
+//                                                        }
                                                         ?>
 													</div>
 												</div>
@@ -727,6 +727,9 @@ $review_rate                  = TSReview::get_avg_rate();
                                                         <div class="comment-body">
                                                             <div class="meta-data">
                                                                 <?php
+                                                                $stats        = TSReview::get_review_stats( get_the_ID() );
+                                                                $comment_rate = (float)get_comment_meta( $comment_id, 'comment_rate', true );
+
                                                                 if(!empty($user_id)){ ?>
                                                                     <h3 class="comment__author"><?php echo TSAdminRoom::get_username( $user_id ); ?></h3>
                                                                     <?php
@@ -737,11 +740,11 @@ $review_rate                  = TSReview::get_avg_rate();
                                                                 ?>
                                                                 <div class="meta-data-inner d-flex">
                                                                     <span class="ratings d-flex align-items-center mr-1">
-                                                                        <i class="la la-star"></i>
-                                                                        <i class="la la-star"></i>
-                                                                        <i class="la la-star"></i>
-                                                                        <i class="la la-star"></i>
-                                                                        <i class="la la-star"></i>
+                                                                        <?php
+//                                                                        if ( $stats ) {
+                                                                            echo number_format( $comment_rate, 1, '.', ',' );
+//                                                                        }
+                                                                        ?>
                                                                     </span>
                                                                     <p class="comment__date"><?php echo get_comment_date( getDateFormat(), $comment_id ) ?></p>
                                                                 </div>
@@ -760,11 +763,11 @@ $review_rate                  = TSReview::get_avg_rate();
                                                                     $review_obj = new TSReview();
                                                                     if ( $review_obj->check_like( $comment_id ) ):
                                                                         ?>
-                                                                        <a data-id="<?php echo esc_attr( $comment_id ); ?>" class="btn-like comment-dislike ts-like-review" href="#" title="Dislike This" data-toggle="tooltip" data-placement="top">
+                                                                        <a data-id="<?php echo esc_attr( $comment_id ); ?>" class="btn-like comment-dislike ts-like-review" href="#" title="<?php esc_attr_e('Dislike This', 'trizen'); ?>" data-toggle="tooltip" data-placement="top">
                                                                             <i class="la la-thumbs-o-up"></i> <?php echo '<span class="like-count">' . esc_html($count_like) . '</span>'; ?>
                                                                         </a>
                                                                     <?php else: ?>
-                                                                        <a data-id="<?php echo esc_attr( $comment_id ); ?>" href="#" class="btn-like comment-like ts-like-review " title="Like This" data-toggle="tooltip" data-placement="top">
+                                                                        <a data-id="<?php echo esc_attr( $comment_id ); ?>" href="#" class="btn-like comment-like ts-like-review " title="<?php esc_attr_e('Like This', 'trizen'); ?>" data-toggle="tooltip" data-placement="top">
                                                                             <i class="la la-thumbs-o-up"></i> <?php echo '<span class="like-count">' . esc_html($count_like) . '</span>'; ?>
                                                                         </a>
                                                                     <?php

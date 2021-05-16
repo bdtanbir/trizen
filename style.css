@@ -1454,6 +1454,16 @@ textarea {
 .reviews-reaction a.comment-dislike {
 	color: #28d5a7;
 }
+.review-box .comments-list .comment .meta-data .meta-data-inner {
+	align-items: center;
+}
+.review-box .comments-list .comment .ratings {
+	background: #f9b851;
+	color: #fff;
+	border-radius: 4px;
+	padding: 0 5px;
+	line-height: 23px;
+}
 
 
 
