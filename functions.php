@@ -62,8 +62,6 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
 
-
-
 /* Allowed Html */
 function trizen_wses_allowed_menu_html() {
 	return array (
@@ -151,7 +149,6 @@ add_filter('upload_mimes', 'cc_mime_types');
 
 /**
  * Trizen Function - Printing the current user name.
- *
  * Displays the currently logged in user name.
  */
 
@@ -164,10 +161,8 @@ if( ! function_exists( 'trizen_print_current_user_name' ) ){
 add_action( 'wp_ajax_trizen_main_ajax',  'trizen_main_ajax' );
 add_action( 'wp_ajax_nopriv_trizen_main_ajax','trizen_main_ajax');
 
-
 /**
  * Trizen Function - Authorization init.
- *
  * Initializing the authorisation.
  */
 
@@ -193,10 +188,8 @@ if( ! function_exists( 'trizen_authorisation_init' ) ){
 }
 add_action('init', 'trizen_authorisation_init');
 
-
 /**
  * Trizen Function - Ajax Login.
- *
  * Ajax popup login actions.
  */
 if( ! function_exists( 'trizen_ajaxlogin' ) ){
@@ -216,7 +209,6 @@ if( ! function_exists( 'trizen_ajaxlogin' ) ){
 
 /**
  * Techydevs Function - Ajax Register.
- *
  * Ajax popup register actions.
  */
 
@@ -271,10 +263,8 @@ if( ! function_exists( 'trizen_ajax_register' ) ){
 
 /**
  * Trizen Function - Auth user login.
- *
  * Authenticating the popup login user.
  */
-
 if( ! function_exists( 'trizen_auth_user_login' ) ){
 	function trizen_auth_user_login($user_login, $password, $login)
 	{
@@ -332,12 +322,7 @@ function __search_by_title_only( $search, $wp_query )
 }
 add_filter('posts_search', '__search_by_title_only', 500, 2);
 
-
-
-
-
 add_filter('ts_customer_infomation_edit_order', '_customer_infomation_edit_order', 15, 2 );
-
 function _customer_infomation_edit_order($html, $order_id){
 
 	$form_builder = get_post_meta( $order_id, 'wb_form_for_order', true );
@@ -377,23 +362,18 @@ function _customer_infomation_edit_order($html, $order_id){
 }
 
 add_filter('ts_is_woocommerce_checkout', 'ts_check_is_checkout_woocomerce');
-
 if (!function_exists('ts_check_is_checkout_woocomerce')) {
-
 	function ts_check_is_checkout_woocomerce($check) {
 		if (class_exists('Woocommerce')) {
 			$check = true;
 		} else {
 			$check = false;
 		}
-
 		return $check;
 	}
-
 }
 
-function trizen_setcookie( $name, $value, $expire = 0, $secure = false )
-{
+function trizen_setcookie( $name, $value, $expire = 0, $secure = false ) {
 	setcookie( $name, $value, $expire, '/', null, null );
 }
 
