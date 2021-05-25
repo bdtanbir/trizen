@@ -276,14 +276,14 @@ $review_rate                  = TSReview::get_avg_rate();
                                     <div class="ts-list-rooms relative" data-toggle-section="ts-list-rooms">
                                         <div class="fetch">
                                             <?php
-                                            global $post;
+                                            /*global $post;
 //                                            $hotel = new TSHotel();
-//                                            $query = $hotel->search_room();
-                                            while (have_posts()) {
-                                                the_post();
+                                            $query = TSHotel::inst()->testfunction();
+                                            while ($query->have_posts()) {
+                                                $query->the_post();
                                                 get_template_part('template-parts/room/available-room');
                                             }
-                                            wp_reset_postdata();
+                                            wp_reset_postdata();*/
                                             ?>
                                         </div>
                                     </div>
