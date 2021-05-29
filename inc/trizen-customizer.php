@@ -763,7 +763,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
                 'sanitize_callback' => 'wp_filter_nohtml_kses',
             ));
             $wp_customize->add_control('trizen_hotel_related_items_sec_title', array(
-                'label'           => esc_html__('Title', 'trizen'),
+                'label'           => esc_html__('Section Title', 'trizen'),
                 'section'         => 'trizen_hotel_options',
                 'settings'        => 'trizen_hotel_related_items_sec_title',
                 'type'            => 'text',
@@ -775,11 +775,11 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
                 'sanitize_callback' => 'wp_filter_nohtml_kses',
             ));
             $wp_customize->add_control('trizen_hotel_related_items_ids', array(
-                'label'           => esc_html__('Items ID(s)', 'trizen'),
+                'label'           => esc_html__('Hotel(s) ID', 'trizen'),
                 'section'         => 'trizen_hotel_options',
                 'settings'        => 'trizen_hotel_related_items_ids',
                 'type'            => 'text',
-                'description'     => __('Related hotel Items ID(s) for example: <strong>1, 2, 3</strong>', 'trizen')
+                'description'     => __('Related hotel(s) ID for example: <strong>1, 2, 3</strong>', 'trizen')
             ));
 
 

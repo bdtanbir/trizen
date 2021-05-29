@@ -1,6 +1,7 @@
 <?php
 get_header();
 
+while (have_posts()): the_post();
 get_template_part('inc/breadcrumb-simple');
 
 
@@ -276,14 +277,14 @@ $review_rate                  = TSReview::get_avg_rate();
                                     <div class="ts-list-rooms relative" data-toggle-section="ts-list-rooms">
                                         <div class="fetch">
                                             <?php
-                                            /*global $post;
-//                                            $hotel = new TSHotel();
-                                            $query = TSHotel::inst()->testfunction();
-                                            while ($query->have_posts()) {
-                                                $query->the_post();
+//                                            global $post;
+//                                            $hotel = new TSHotelHelper();
+//                                            $query = $hotel->search_room();
+//                                            while ($query->have_posts()) {
+//                                                $query->the_post();
                                                 get_template_part('template-parts/room/available-room');
-                                            }
-                                            wp_reset_postdata();*/
+//                                            }
+//                                            wp_reset_postdata();
                                             ?>
                                         </div>
                                     </div>
@@ -477,7 +478,11 @@ $review_rate                  = TSReview::get_avg_rate();
 	================================= -->
 
 <?php
+
+share_hotel_room_tour_etc(get_the_title(), get_the_permalink(), 'Hotel');
 get_template_part('template-parts/hotel/hotel-related-items');
+endwhile;
 
 get_template_part('template-parts/footer/static-cta');
+
 get_footer();

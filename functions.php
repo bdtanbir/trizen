@@ -433,3 +433,47 @@ if (!function_exists('post_reading_time')) :
         }
     }
 endif;
+
+if (!function_exists('share_hotel_room_tour_etc')) {
+    function share_hotel_room_tour_etc($title, $link, $posttype) {
+        ?>
+        <div class="modal-popup">
+            <div class="modal fade" id="sharePopupForm" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title title" id="exampleModalLongTitle4">
+                                <?php esc_html_e('Share this ' . $posttype, 'trizen'); ?>
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="<?php esc_attr_e('Close', 'trizen-helper'); ?>">
+                                <span aria-hidden="true" class="la la-close"></span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="copy-to-clipboard-wrap">
+                                <ul class="social-profile text-center">
+                                    <li>
+                                        <a href="<?php echo __('//facebook.com/sharer.php?u=', 'trizen') . $link; ?>">
+                                            <i class="lab la-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo __('//twitter.com/intent/tweet?url=', 'trizen') . $link . __('&text=', 'trizen') . $title;  ?>">
+                                            <i class="lab la-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo __('//plus.google.com/share?url=', 'trizen') . $link . __('&text=', 'trizen') . $title; ?>">
+                                            <i class="lab la-google-plus"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+}

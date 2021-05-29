@@ -53,13 +53,13 @@ $cart_total_amount = WC()->cart->get_cart_subtotal();
                                 $room_id = (int) get_post_meta( $_product->ID, 'room_id', true );
                                 ?>
                                 <h4 class="media-heading">
-                                    <a class="st-link c-main" href="<?php echo get_the_permalink($room_id) ?>">
+                                    <a class="ts-link c-main" href="<?php echo get_the_permalink($room_id) ?>">
                                         <?php echo esc_html($post_title); ?>
                                     </a>
                                 </h4>
                             <?php else: ?>
                                 <h4 class="media-heading">
-                                    <a class="st-link c-main" href="<?php echo get_the_permalink($post_id) ?>">
+                                    <a class="ts-link c-main" href="<?php echo get_the_permalink($post_id) ?>">
                                         <?php echo esc_html($post_title); ?>
                                     </a>
                                 </h4>
