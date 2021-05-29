@@ -219,8 +219,26 @@ EOD;
         'next_month'               => esc_html__('next month', 'trizen'),
         'please_waite'             => esc_html__('Please wait...', 'trizen'),
     ]);
+
+
+    if (function_exists('edd_get_option')) {
+        $loginRedirectPageID = edd_get_option( 'login_redirect_page', '' );
+        $loginRedirect       = get_permalink( $loginRedirectPageID );
+    } else {
+        $loginRedirect = home_url();
+    }
+    wp_enqueue_script('trizen-login-register', get_template_directory_uri().'/assets/js/trizen-login-register.js', array('jquery'), time(),true);
+    wp_localize_script( 'trizen-login-register', 'ajax_auth_object', array(
+        'ajaxurl'         => admin_url( 'admin-ajax.php' ),
+        'redirecturl'     => isset($loginRedirect) ? $loginRedirect : home_url(),
+        'loadingmessage'  => esc_html__('Sending user info, please wait...','trizen')
+    ));
 }
 add_action( 'wp_enqueue_scripts', 'trizen_scripts' );
+add_action( 'wp_ajax_trizen_ajaxlogin', 'trizen_ajaxlogin' );
+add_action( 'wp_ajax_nopriv_trizen_ajaxlogin', 'trizen_ajaxlogin' );
+add_action( 'wp_ajax_nopriv_trizen_ajaxregister','trizen_ajax_register' );
+add_action( 'wp_ajax_trizen_ajaxregister', 'trizen_ajax_register' );
 
 
 function trizen_admin_script()

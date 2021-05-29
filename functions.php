@@ -166,27 +166,11 @@ add_action( 'wp_ajax_nopriv_trizen_main_ajax','trizen_main_ajax');
  * Initializing the authorisation.
  */
 
-if( ! function_exists( 'trizen_authorisation_init' ) ){
+/*if( ! function_exists( 'trizen_authorisation_init' ) ){
 	function trizen_authorisation_init(){
-		if (function_exists('edd_get_option')) {
-			$loginRedirectPageID = edd_get_option( 'login_redirect_page', '' );
-			$loginRedirect       = get_permalink( $loginRedirectPageID );
-		} else {
-			$loginRedirect = home_url();
-		}
-		wp_enqueue_script('trizen-login-register', get_template_directory_uri().'/assets/js/trizen-login-register.js', array('jquery'), time(),true);
-		wp_localize_script( 'trizen-login-register', 'ajax_auth_object', array(
-			'ajaxurl'         => admin_url( 'admin-ajax.php' ),
-			'redirecturl'     => isset($loginRedirect) ? $loginRedirect : home_url(),
-			'loadingmessage'  => esc_html__('Sending user info, please wait...','trizen')
-		));
-		add_action( 'wp_ajax_trizen_ajaxlogin', 'trizen_ajaxlogin' );
-		add_action( 'wp_ajax_nopriv_trizen_ajaxlogin', 'trizen_ajaxlogin' );
-		add_action( 'wp_ajax_nopriv_trizen_ajaxregister','trizen_ajax_register' );
-		add_action( 'wp_ajax_trizen_ajaxregister', 'trizen_ajax_register' );
 	}
 }
-add_action('init', 'trizen_authorisation_init');
+add_action('init', 'trizen_authorisation_init');*/
 
 /**
  * Trizen Function - Ajax Login.
@@ -266,8 +250,7 @@ if( ! function_exists( 'trizen_ajax_register' ) ){
  * Authenticating the popup login user.
  */
 if( ! function_exists( 'trizen_auth_user_login' ) ){
-	function trizen_auth_user_login($user_login, $password, $login)
-	{
+	function trizen_auth_user_login($user_login, $password, $login) {
 		$info                  = array();
 		$info['user_login']    = $user_login;
 		$info['user_password'] = $password;
@@ -409,14 +392,14 @@ function _remove_cart() {
 
 if (!function_exists('post_reading_time')) :
     function post_reading_time($post_id) {
-        $content = apply_filters('the_content', get_post_field('post_content', $post_id));
-        $read_words = '10';
-        $decode_content = html_entity_decode($content);
+        $content          = apply_filters('the_content', get_post_field('post_content', $post_id));
+        $read_words       = '10';
+        $decode_content   = html_entity_decode($content);
         $filter_shortcode = do_shortcode($decode_content);
-        $strip_tags = wp_strip_all_tags($filter_shortcode, true);
-        $count = str_word_count($strip_tags);
-        $word_per_min = (absint($count) / $read_words);
-        $word_per_min = ceil($word_per_min);
+        $strip_tags       = wp_strip_all_tags($filter_shortcode, true);
+        $count            = str_word_count($strip_tags);
+        $word_per_min     = (absint($count) / $read_words);
+        $word_per_min     = ceil($word_per_min);
         if ( absint($word_per_min) > 0) {
             $word_count_strings = sprintf(_n('%s Min Read  ', '%s Min Read  ',
                 number_format_i18n($word_per_min), 'trizen'), number_format_i18n($word_per_min));
