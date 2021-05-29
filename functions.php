@@ -393,7 +393,7 @@ function destroy_cart() {
 
 add_action( 'init', '_remove_cart' );
 function _remove_cart() {
-    if(class_exists('TSAvailability')) {
+//    if(class_exists('TSAvailability')) {
         if (get('action', '') === 'ts-remove-cart' && wp_verify_nonce(get('security', ''), 'ts-security')) {
             if (class_exists('WC_Product')) {
                 global $woocommerce;
@@ -403,7 +403,7 @@ function _remove_cart() {
             wp_redirect(remove_query_arg(['action', 'security']));
             exit();
         }
-    }
+//    }
 }
 
 

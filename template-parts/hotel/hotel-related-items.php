@@ -78,7 +78,7 @@
                             <div class="card-price d-flex align-items-center justify-content-between">
                                 <p>
                                     <span class="price__from"><?php esc_html_e('From ', 'trizen'); ?></span>
-                                    <span class="price__num"><?php echo format_money($price); ?></span>
+                                    <span class="price__num"><?php echo TravelHelper::format_money($price); ?></span>
                                     <span class="price__text"><?php esc_html_e('Per night', 'trizen'); ?></span>
                                 </p>
                                 <a href="<?php the_permalink(); ?>" class="btn-text">
