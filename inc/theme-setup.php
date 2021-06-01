@@ -180,7 +180,7 @@ add_filter('comment_form_fields', 'trizen_comment_field_move_to_bottom');
 /*
 * Highlight Search
 */
-function trizen_highlight_search_results($text){
+/*function trizen_highlight_search_results($text){
 	if (is_search()){
 		$pattern = '/('.join('|', explode( ' ', get_search_query())).')/i';
 		$text = preg_replace($pattern, '<span class="search-highlight">\0</span>', $text);
@@ -189,7 +189,7 @@ function trizen_highlight_search_results($text){
 }
 add_filter('the_content','trizen_highlight_search_results');
 add_filter('the_excerpt','trizen_highlight_search_results');
-add_filter('the_title','trizen_highlight_search_results');
+add_filter('the_title','trizen_highlight_search_results');*/
 
 /**
  * Trizen Breadcrumb Setup

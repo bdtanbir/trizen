@@ -162,17 +162,6 @@ add_action( 'wp_ajax_trizen_main_ajax',  'trizen_main_ajax' );
 add_action( 'wp_ajax_nopriv_trizen_main_ajax','trizen_main_ajax');
 
 /**
- * Trizen Function - Authorization init.
- * Initializing the authorisation.
- */
-
-/*if( ! function_exists( 'trizen_authorisation_init' ) ){
-	function trizen_authorisation_init(){
-	}
-}
-add_action('init', 'trizen_authorisation_init');*/
-
-/**
  * Trizen Function - Ajax Login.
  * Ajax popup login actions.
  */
@@ -428,7 +417,7 @@ if (!function_exists('share_hotel_room_tour_etc')) {
                             <h5 class="modal-title title" id="exampleModalLongTitle4">
                                 <?php esc_html_e('Share this ' . $posttype, 'trizen'); ?>
                             </h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="<?php esc_attr_e('Close', 'trizen-helper'); ?>">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="<?php esc_attr_e('Close', 'trizen'); ?>">
                                 <span aria-hidden="true" class="la la-close"></span>
                             </button>
                         </div>

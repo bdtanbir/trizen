@@ -36,7 +36,7 @@ if(is_active_sidebar( 'hotel-room-sidebar' )) {
 			$image_src = str_replace('-150x150', '', $image_src);
 			$image_src = str_replace( '-100x100', '', $image_src );
 			echo '<div class="full-width-slide-item" data-id="' . $image->ID . '">
-			<img src="' . $image_src[0] . '" alt="' . __( "Image", "trizen-helper" ) . '"></div>';
+			<img src="' . $image_src[0] . '" alt="' . __( "Image", "trizen" ) . '"></div>';
 		}
 		echo '</div>';
 	} else {

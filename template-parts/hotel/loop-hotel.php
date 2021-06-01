@@ -1,7 +1,7 @@
 <?php
     $badge_title = get_post_meta(get_the_ID(), 'trizen_hotel_badge_title', true);
     $address_title = get_post_meta(get_the_ID(), 'trizen_hotel_address_title', true);
-    $hotel_regular_price = get_post_meta( get_the_ID(), 'trizen_hotel_regular_price', true );
+    $hotel_regular_price = get_post_meta( get_the_ID(), 'price_avg', true );
 
     if(get_the_post_thumbnail()) {
         $empty_img = 'empty-hotel-img';
