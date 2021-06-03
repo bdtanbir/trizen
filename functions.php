@@ -298,10 +298,6 @@ function trizen_setcookie( $name, $value, $expire = 0, $secure = false ) {
 	setcookie( $name, $value, $expire, '/', null, null );
 }
 
-function delete_cart( $cart_name ) {
-	setcookie( $cart_name, '', time() - 3600 );
-}
-
 
 if (!function_exists('post_reading_time')) :
     function post_reading_time($post_id) {
