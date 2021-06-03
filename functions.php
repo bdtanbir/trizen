@@ -294,18 +294,6 @@ function __search_by_title_only( $search, $wp_query )
 }
 add_filter('posts_search', '__search_by_title_only', 500, 2);
 
-add_filter('ts_is_woocommerce_checkout', 'ts_check_is_checkout_woocomerce');
-if (!function_exists('ts_check_is_checkout_woocomerce')) {
-	function ts_check_is_checkout_woocomerce($check) {
-		if (class_exists('Woocommerce')) {
-			$check = true;
-		} else {
-			$check = false;
-		}
-		return $check;
-	}
-}
-
 function trizen_setcookie( $name, $value, $expire = 0, $secure = false ) {
 	setcookie( $name, $value, $expire, '/', null, null );
 }
