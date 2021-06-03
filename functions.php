@@ -294,45 +294,6 @@ function __search_by_title_only( $search, $wp_query )
 }
 add_filter('posts_search', '__search_by_title_only', 500, 2);
 
-add_filter('ts_customer_infomation_edit_order', '_customer_infomation_edit_order', 15, 2 );
-function _customer_infomation_edit_order($html, $order_id){
-
-	$form_builder = get_post_meta( $order_id, 'wb_form_for_order', true );
-
-	if (!empty($form_builder)) {
-		$html = '';
-
-		foreach ($form_builder as $k => $v) {
-
-			$data = wp_parse_args($v, array(
-				'title'        => '',
-				'desc'         => '',
-				'placeholder'  => '',
-				'type'         => '',
-				'name'         => '',
-				'required'     => false,
-				'class'        => '',
-				'custom_id'    => '',
-				'option_value' => false,
-				'post_type'    => '',
-				'taxonomy'     => '',
-				'icon'         => '',
-				'validate'     => '',
-				'attrs'        => array()
-			));
-			$data['class'] = implode(' ', $data['class']);
-			$field_object = WB_Form_Builder_Controller::inst()->get_field($data['type']);
-			if($data['name'] == 'st_note'){
-				$field_html = '';
-			}else{
-				$field_html = $field_object->get_admin_html($data, $order_id);
-			}
-			$html .= $field_html;
-		}
-	}
-	return $html;
-}
-
 add_filter('ts_is_woocommerce_checkout', 'ts_check_is_checkout_woocomerce');
 if (!function_exists('ts_check_is_checkout_woocomerce')) {
 	function ts_check_is_checkout_woocomerce($check) {
