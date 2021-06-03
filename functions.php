@@ -305,20 +305,20 @@ function _customer_infomation_edit_order($html, $order_id){
 		foreach ($form_builder as $k => $v) {
 
 			$data = wp_parse_args($v, array(
-				'title' => '',
-				'desc' => '',
-				'placeholder' => '',
-				'type' => '',
-				'name' => '',
-				'required' => false,
-				'class' => '',
-				'custom_id' => '',
+				'title'        => '',
+				'desc'         => '',
+				'placeholder'  => '',
+				'type'         => '',
+				'name'         => '',
+				'required'     => false,
+				'class'        => '',
+				'custom_id'    => '',
 				'option_value' => false,
-				'post_type' => '',
-				'taxonomy' => '',
-				'icon' => '',
-				'validate' => '',
-				'attrs' => array()
+				'post_type'    => '',
+				'taxonomy'     => '',
+				'icon'         => '',
+				'validate'     => '',
+				'attrs'        => array()
 			));
 			$data['class'] = implode(' ', $data['class']);
 			$field_object = WB_Form_Builder_Controller::inst()->get_field($data['type']);
@@ -351,16 +351,6 @@ function trizen_setcookie( $name, $value, $expire = 0, $secure = false ) {
 
 function delete_cart( $cart_name ) {
 	setcookie( $cart_name, '', time() - 3600 );
-}
-
-function destroy_cart() {
-	do_action( 'ts_before_destroy_cart' );
-
-	delete_cart( 'ts_cart' );
-	delete_cart( 'ts_cart_coupon' );
-
-	do_action( 'ts_after_destroy_cart' );
-
 }
 
 
