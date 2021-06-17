@@ -22,13 +22,11 @@ $hotel->alter_search_query();
 query_posts($query);
 $ts_search_query = $wp_query;
 $hotel->remove_alter_search_query();
-wp_reset_query();
+//wp_reset_query();
 
 get_template_part('template-parts/hotel/elements/content');
-?>
 
 
-<?php
 get_footer();
 ?>
 

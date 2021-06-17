@@ -50,26 +50,25 @@ switch ($post_type){
         </div>
 
         <div class="modern-search-result" id="modern-search-result">
-        <div class="row">
-
-            <?php
-            if($query->have_posts()) {
-                while ($query->have_posts()) {
-                    $query->the_post();
-                ?>
-                    <div class="col-lg-4 responsive-column">
-                        <?php get_template_part('template-parts/hotel/elements/item-loop'); ?>
-
-                    </div>
+            <div class="row">
                 <?php
-                }
-            } else{
-                get_template_part('template-parts/hotel/elements/none');
-            }
-            wp_reset_query();
-            ?>
+                if($query->have_posts()) {
+                    while ($query->have_posts()) {
+                        $query->the_post();
+                        ?>
+                        <div class="col-lg-4 responsive-column">
+                            <?php get_template_part('template-parts/hotel/elements/item-loop'); ?>
 
-        </div>
+                        </div>
+                        <?php
+                    }
+                } else{
+                    get_template_part('template-parts/hotel/elements/none');
+                }
+                wp_reset_query();
+                ?>
+
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-12">
