@@ -58,7 +58,6 @@ switch ($post_type){
                         ?>
                         <div class="col-lg-4 responsive-column">
                             <?php get_template_part('template-parts/hotel/elements/item-loop'); ?>
-
                         </div>
                         <?php
                     }
@@ -88,7 +87,8 @@ switch ($post_type){
                             echo sprintf(__('Showing %d - %d of %d ', 'trizen'), (int)$posts_per_page * ($page - 1) + 1, $last, $query->found_posts );
                             echo ( $query->found_posts == 1 ) ? __( 'Hotel', 'trizen' ) : __( 'Hotels', 'trizen' );
                         endif;
-                        ?></p>
+                        ?>
+                    </p>
                 </div>
             </div>
         </div>
