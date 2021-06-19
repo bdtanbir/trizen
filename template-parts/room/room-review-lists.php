@@ -303,5 +303,5 @@
 
 <?php
 echo '<h1>I am Here</h1>';
-TSAdminRoom::comment_form();
+TravelHelper::comment_form();
 ?>

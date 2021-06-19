@@ -120,12 +120,16 @@ $review_rate                  = TSReview::get_avg_rate();
                                             <?php esc_html_e('Faq', 'trizen'); ?>
                                         </a>
                                     </li>
+                                <?php }
+
+                                if(comments_open($post_id) && get_option('hotel_review') == 'on') {
+                                ?>
+                                    <li>
+                                        <a data-scroll="reviews" href="#reviews" class="scroll-link">
+                                            <?php esc_html_e('Reviews', 'trizen'); ?>
+                                        </a>
+                                    </li>
                                 <?php } ?>
-								<li>
-                                    <a data-scroll="reviews" href="#reviews" class="scroll-link">
-                                        <?php esc_html_e('Reviews', 'trizen'); ?>
-                                    </a>
-                                </li>
 							</ul>
 						</div>
 					</div>
@@ -321,7 +325,7 @@ $review_rate                  = TSReview::get_avg_rate();
 													<div class="row">
                                                         <?php
                                                         $stars = TSReview::get_review_summary();
-//                                                        if ($stars) {
+                                                            $i = 1;
                                                             foreach ($stars as $star) {
                                                                 ?>
                                                                 <div class="col-lg-6">
@@ -330,27 +334,14 @@ $review_rate                  = TSReview::get_avg_rate();
                                                                         <div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
                                                                             <div class="progressbar-box flex-shrink-0">
                                                                                 <div class="progressbar-line" data-percent="<?php echo esc_attr($star['percent']); ?>%">
-                                                                                    <div class="progressbar-line-item bar-bg-1"></div>
+                                                                                    <div class="progressbar-line-item bar-bg-<?php echo $i++; ?>"></div>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="bar-percent"><?php echo esc_html($star['summary']) ?></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <!--<div class="item">
-                                                                    <div class="progress">
-                                                                        <div class="percent"
-                                                                             style="width: <?php /*echo esc_attr($stat['percent']); */?>%;"></div>
-                                                                    </div>
-                                                                    <div class="label">
-                                                                        <?php /*echo esc_html($stat['name']); */?>
-                                                                        <div class="number"><?php /*echo esc_html($stat['summary']) */?>
-                                                                            <?php /*esc_html_e('/5', 'trizen'); */?>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>-->
                                                             <?php }
-//                                                        }
                                                         ?>
 													</div>
 												</div>
@@ -360,80 +351,78 @@ $review_rate                  = TSReview::get_avg_rate();
 								</div>
 								<div class="section-block"></div>
 							</div>
-							<div class="review-box">
-								<div class="single-content-item padding-top-40px">
-                                    <?php
-                                    $comments_count   = wp_count_comments(get_the_ID());
-                                    $total            = (int)$comments_count->approved;
-                                    $comment_per_page = (int)get_option('comments_per_page', 10);
-                                    $paged            = (int)get('comment_page', 1);
-                                    $from             = $comment_per_page * ($paged - 1) + 1;
-                                    $to               = ($paged * $comment_per_page < $total) ? ($paged * $comment_per_page) : $total;
-                                    ?>
-									<h3 class="title font-size-20"><?php echo sprintf(__('Showing %s reviews', 'trizen'), $to); ?></h3>
-									<div class="comments-list padding-top-50px">
+                            <?php if(comments_open($post_id)) { ?>
+                                <div class="review-box">
+                                    <div class="single-content-item padding-top-40px">
                                         <?php
-                                        $offset = ($paged - 1) * $comment_per_page;
-                                        $args = [
-                                            'number'  => $comment_per_page,
-                                            'offset'  => $offset,
-                                            'post_id' => get_the_ID(),
-                                            'status'  => ['approve']
-                                        ];
-                                        $comments_query = new WP_Comment_Query;
-                                        $comments       = $comments_query->query($args);
+                                        $comments_count   = wp_count_comments(get_the_ID());
+                                        $total            = (int)$comments_count->approved;
+                                        $comment_per_page = (int)get_option('comments_per_page', 10);
+                                        $paged            = (int)get('comment_page', 1);
+                                        $from             = $comment_per_page * ($paged - 1) + 1;
+                                        $to               = ($paged * $comment_per_page < $total) ? ($paged * $comment_per_page) : $total;
+                                        ?>
+                                        <h3 class="title font-size-20"><?php echo sprintf(__('Showing %s reviews', 'trizen'), $to); ?></h3>
+                                        <div class="comments-list padding-top-50px">
+                                            <?php
+                                            $offset = ($paged - 1) * $comment_per_page;
+                                            $args = [
+                                                'number'  => $comment_per_page,
+                                                'offset'  => $offset,
+                                                'post_id' => get_the_ID(),
+                                                'status'  => ['approve']
+                                            ];
+                                            $comments_query = new WP_Comment_Query;
+                                            $comments       = $comments_query->query($args);
 
-                                        if ($comments):
-                                            foreach ($comments as $key => $comment):
-                                                $args[ 'avatar_size' ] = 90;
-                                                if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) :
-                                                else :
-                                                    $comment_class = empty( $args[ 'has_children' ] ) ? '' : $comment_class .= 'parent';
-                                                    if ( !$comment->comment_approved ) {
-                                                        return;
-                                                    }
+                                            if ($comments):
+                                                foreach ($comments as $key => $comment):
+                                                    $args[ 'avatar_size' ] = 90;
+                                                    if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) :
+                                                    else :
+                                                        $comment_class = empty( $args[ 'has_children' ] ) ? '' : $comment_class .= 'parent';
+                                                        if ( !$comment->comment_approved ) {
+                                                            return;
+                                                        }
 
-                                                    $comment_id   = $comment->comment_ID;
-                                                    $user_id      = get_comment( $comment_id )->user_id;
-                                                    $user_email   = get_comment( $comment_id )->comment_author_email;
-                                                    $current_user = wp_get_current_user();
-                                                    ?>
-                                                    <div class="comment">
-                                                        <div class="comment-avatar">
-                                                            <?php echo ts_get_profile_avatar( $user_id, 90 ) ?>
-                                                        </div>
-                                                        <div class="comment-body">
-                                                            <div class="meta-data">
-                                                                <?php
-                                                                $stats        = TSReview::get_review_stats( get_the_ID() );
-                                                                $comment_rate = (float)get_comment_meta( $comment_id, 'comment_rate', true );
-
-                                                                if(!empty($user_id)){ ?>
-                                                                    <h3 class="comment__author"><?php echo TSAdminRoom::get_username( $user_id ); ?></h3>
-                                                                    <?php
-                                                                } else { ?>
-                                                                    <h3 class="comment__author"><?php echo esc_html($comment->comment_author); ?></h3>
-                                                                    <?php
-                                                                }
-                                                                ?>
-                                                                <div class="meta-data-inner d-flex">
-                                                                    <span class="ratings d-flex align-items-center mr-1">
-                                                                        <?php
-//                                                                        if ( $stats ) {
-                                                                            echo number_format( $comment_rate, 1, '.', ',' );
-//                                                                        }
-                                                                        ?>
-                                                                    </span>
-                                                                    <p class="comment__date"><?php echo get_comment_date( getDateFormat(), $comment_id ) ?></p>
-                                                                </div>
+                                                        $comment_id   = $comment->comment_ID;
+                                                        $user_id      = get_comment( $comment_id )->user_id;
+                                                        $user_email   = get_comment( $comment_id )->comment_author_email;
+                                                        $current_user = wp_get_current_user();
+                                                        ?>
+                                                        <div class="comment">
+                                                            <div class="comment-avatar">
+                                                                <?php echo ts_get_profile_avatar( $user_id, 90 ) ?>
                                                             </div>
-                                                            <p class="comment-content">
-                                                                <?php
-                                                                $content = get_comment_text( $comment_id );
+                                                            <div class="comment-body">
+                                                                <div class="meta-data">
+                                                                    <?php
+                                                                    $stats        = TSReview::get_review_stars( get_the_ID() );
+                                                                    $comment_rate = (float)get_comment_meta( $comment_id, 'comment_rate', true );
 
-                                                                echo esc_html(balanceTags($content)); ?>
-                                                            </p>
-                                                            <div class="comment-reply d-flex align-items-center justify-content-between">
+                                                                    if(!empty($user_id)){ ?>
+                                                                        <h3 class="comment__author"><?php echo TSAdminRoom::get_username( $user_id ); ?></h3>
+                                                                        <?php
+                                                                    } else { ?>
+                                                                        <h3 class="comment__author"><?php echo esc_html($comment->comment_author); ?></h3>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+                                                                    <div class="meta-data-inner d-flex">
+                                                                        <span class="ratings d-flex align-items-center mr-1">
+                                                                            <?php
+                                                                                echo number_format( $comment_rate, 1, '.', ',' );
+                                                                            ?>
+                                                                        </span>
+                                                                        <p class="comment__date"><?php echo get_comment_date( getDateFormat(), $comment_id ) ?></p>
+                                                                    </div>
+                                                                </div>
+                                                                <p class="comment-content">
+                                                                    <?php
+                                                                    $content = get_comment_text( $comment_id );
+
+                                                                    echo esc_html(balanceTags($content)); ?>
+                                                                </p>
                                                                 <div class="reviews-reaction">
                                                                     <?php
                                                                     $count_like = (int)get_comment_meta( $comment_id, '_comment_like_count', true );
@@ -455,19 +444,18 @@ $review_rate                  = TSReview::get_avg_rate();
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                <?php
-                                                endif;
-                                            endforeach;
-                                        endif;
+                                                    <?php
+                                                    endif;
+                                                endforeach;
+                                            endif;
+                                            ?>
+                                        </div>
+                                        <?php
+                                            TravelHelper::comment_form();
                                         ?>
                                     </div>
-
-                                    <?php
-                                        TSAdminRoom::comment_form();
-                                    ?>
-								</div>
-							</div>
+                                </div>
+                            <?php } ?>
 						</div>
 					</div>
 					<div class="col-lg-4">

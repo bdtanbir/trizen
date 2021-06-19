@@ -1447,6 +1447,7 @@ textarea {
 }
 .review-box .comments-list .comment .meta-data .comment__date {
 	margin-bottom: 0;
+	line-height: 27px;
 }
 .reviews-reaction a.comment-like {
 	color: #aaa;
