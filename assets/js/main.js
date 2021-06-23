@@ -669,7 +669,7 @@ Author Email:   contact@tecydevs.com
 
 
         /* Review Rate Stars */
-        $('.review-form .review-items .rates .la').each(function () {
+        $('.review-form .review-items .rates > i').each(function () {
             var list = $(this).parent(),
                 listItems = list.children(),
                 itemIndex = $(this).index(),

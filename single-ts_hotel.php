@@ -24,7 +24,6 @@ $count_review                 = get_comment_count($post_id)['approved'];
 $hotel_facilities             = get_categories( array ( 'taxonomy' => 'hotel_facilities' ) );
 $trizen_hotel_features_data   = get_post_meta(get_the_ID(), 'trizen_hotel_features_data_group', true);
 $trizen_hotel_faqs_data       = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_data_group', true);
-$review_rate                  = TSReview::get_avg_rate();
 ?>
 
 
@@ -151,10 +150,13 @@ $review_rate                  = TSReview::get_avg_rate();
 									<div class="d-flex align-items-center pt-2">
                                         <?php if(!empty($hotel_address)) { ?>
                                             <p class="mr-2 mb-0"><?php echo esc_html($hotel_address); ?></p>
-                                        <?php } ?>
+                                        <?php }
+
+                                        $avg = TSReview::get_avg_rate();
+                                        ?>
 										<p class="mb-0">
 											<span class="badge badge-warning text-white font-size-16">
-                                                <?php echo esc_html($review_rate); ?>
+                                                <?php echo esc_html($avg); ?>
                                             </span>
 											<span><?php comments_number(__('(0 review)', 'trizen'), __('(1 review)', 'trizen'), __('(% reviews)', 'trizen')); ?></span>
 										</p>
@@ -178,110 +180,10 @@ $review_rate                  = TSReview::get_avg_rate();
 							</div>
 							<div id="availability" class="page-scroll">
 								<div class="single-content-item padding-top-40px padding-bottom-30px">
-									<!--<h3 class="title font-size-20">
-                                        <?php /*esc_html_e('Availability', 'trizen'); */?>
-                                    </h3>
-									<div class="contact-form-action padding-bottom-35px">
-										<form method="post">
-											<div class="row">
-												<div class="col-lg-6 responsive-column">
-													<div class="input-box">
-														<label class="label-text"><?php /*esc_html_e('Check in - Check out', 'trizen'); */?></label>
-														<div class="form-group">
-															<span class="la la-calendar form-icon"></span>
-															<input class="date-range form-control" type="text" name="daterange">
-														</div>
-													</div>
-												</div>
-												<div class="col-lg-6 responsive-column">
-													<div class="input-box">
-														<label class="label-text">
-                                                            <?php /*esc_html_e('Rooms', 'trizen'); */?>
-                                                        </label>
-														<div class="form-group">
-															<div class="select-contain w-auto">
-																<select class="select-contain-select">
-																	<option value="0"><?php /*esc_html_e('Select Rooms', 'trizen'); */?></option>
-																	<option value="1"><?php /*esc_html_e('1 Room', 'trizen'); */?></option>
-																	<option value="2"><?php /*esc_html_e('2 Rooms', 'trizen'); */?></option>
-																	<option value="3"><?php /*esc_html_e('3 Rooms', 'trizen'); */?></option>
-																	<option value="4"><?php /*esc_html_e('4 Rooms', 'trizen'); */?></option>
-																	<option value="5"><?php /*esc_html_e('5 Rooms', 'trizen'); */?></option>
-																	<option value="6"><?php /*esc_html_e('6 Rooms', 'trizen'); */?></option>
-																	<option value="7"><?php /*esc_html_e('7 Rooms', 'trizen'); */?></option>
-																	<option value="8"><?php /*esc_html_e('8 Rooms', 'trizen'); */?></option>
-																	<option value="9"><?php /*esc_html_e('9 Rooms', 'trizen'); */?></option>
-																	<option value="10"><?php /*esc_html_e('10 Rooms', 'trizen'); */?></option>
-																	<option value="11"><?php /*esc_html_e('11 Rooms', 'trizen'); */?></option>
-																	<option value="12"><?php /*esc_html_e('12 Rooms', 'trizen'); */?></option>
-																	<option value="13"><?php /*esc_html_e('13 Rooms', 'trizen'); */?></option>
-																	<option value="14"><?php /*esc_html_e('14 Rooms', 'trizen'); */?></option>
-																</select>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-lg-6 responsive-column">
-													<div class="input-box">
-														<label class="label-text">
-                                                            <?php /*esc_html_e('Adults (18+)', 'trizen'); */?>
-                                                        </label>
-														<div class="form-group">
-															<div class="select-contain w-auto">
-																<select class="select-contain-select">
-																	<option value="0"><?php /*esc_html_e('Select Adults', 'trizen'); */?></option>
-																	<option value="1"><?php /*esc_html_e('1 Adults', 'trizen'); */?></option>
-																	<option value="2"><?php /*esc_html_e('2 Adults', 'trizen'); */?></option>
-																	<option value="3"><?php /*esc_html_e('3 Adults', 'trizen'); */?></option>
-																	<option value="4"><?php /*esc_html_e('4 Adults', 'trizen'); */?></option>
-																	<option value="5"><?php /*esc_html_e('5 Adults', 'trizen'); */?></option>
-																	<option value="6"><?php /*esc_html_e('6 Adults', 'trizen'); */?></option>
-																	<option value="7"><?php /*esc_html_e('7 Adults', 'trizen'); */?></option>
-																	<option value="8"><?php /*esc_html_e('8 Adults', 'trizen'); */?></option>
-																	<option value="9"><?php /*esc_html_e('9 Adults', 'trizen'); */?></option>
-																	<option value="10"><?php /*esc_html_e('10 Adults', 'trizen'); */?></option>
-																	<option value="11"><?php /*esc_html_e('11 Adults', 'trizen'); */?></option>
-																	<option value="12"><?php /*esc_html_e('12 Adults', 'trizen'); */?></option>
-																	<option value="13"><?php /*esc_html_e('13 Adults', 'trizen'); */?></option>
-																	<option value="14"><?php /*esc_html_e('14 Adults', 'trizen'); */?></option>
-																</select>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-lg-6 responsive-column">
-													<div class="input-box">
-														<label class="label-text">
-                                                            <?php /*esc_html_e('Children (0-17)', 'trizen'); */?>
-                                                        </label>
-														<div class="form-group">
-															<div class="select-contain w-auto">
-																<select class="select-contain-select">
-																	<option value="0"><?php /*esc_html_e('Select Children', 'trizen'); */?></option>
-																	<option value="1"><?php /*esc_html_e('1 Children', 'trizen'); */?></option>
-																	<option value="2"><?php /*esc_html_e('2 Children', 'trizen'); */?></option>
-																	<option value="3"><?php /*esc_html_e('3 Children', 'trizen'); */?></option>
-																	<option value="4"><?php /*esc_html_e('4 Children', 'trizen'); */?></option>
-																	<option value="5"><?php /*esc_html_e('5 Children', 'trizen'); */?></option>
-																</select>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-lg-12">
-													<div class="btn-box">
-														<button type="button" class="theme-btn"><?php /*esc_html_e('Search Now', 'trizen'); */?></button>
-													</div>
-												</div>
-											</div>
-										</form>
-									</div>-->
-
 									<h3 class="title font-size-20"><?php esc_html_e('Available Rooms', 'trizen'); ?></h3>
                                     <div class="ts-list-rooms relative" data-toggle-section="ts-list-rooms">
                                         <div class="fetch">
                                             <?php
-//                                            echo 'loop started';
                                             global $post;
                                             $hotel = TSHotel::inst();
                                             $query = $hotel->search_room();
@@ -315,9 +217,9 @@ $review_rate                  = TSReview::get_avg_rate();
 										<div class="row align-items-center">
 											<div class="col-lg-4">
 												<div class="review-summary">
-													<h2><?php echo esc_html($review_rate); ?><span><?php esc_html_e('/5', 'trizen'); ?></span></h2>
-													<p><?php echo TSReview::get_rate_review_text($review_rate, $count_review); ?></p>
-													<span><?php comments_number(__('Based on 0 Review', 'trizen'), __('Based on 1 Review', 'trizen'), __('Based on % Reviews', 'trizen')); ?></span>
+													<h2><?php echo esc_html($avg); ?><span><?php esc_html_e('/5', 'trizen'); ?></span></h2>
+													<p><?php echo TSReview::get_rate_review_text($avg, $count_review); ?></p>
+													<span><?php esc_html_e('Based on ', 'trizen'); comments_number(__('0 Review', 'trizen'), __('1 Review', 'trizen'), __('% Reviews', 'trizen')); ?></span>
 												</div>
 											</div>
 											<div class="col-lg-8">
@@ -397,11 +299,11 @@ $review_rate                  = TSReview::get_avg_rate();
                                                             <div class="comment-body">
                                                                 <div class="meta-data">
                                                                     <?php
-                                                                    $stats        = TSReview::get_review_stars( get_the_ID() );
+                                                                    $stars        = TSReview::get_review_stars( get_the_ID() );
                                                                     $comment_rate = (float)get_comment_meta( $comment_id, 'comment_rate', true );
 
                                                                     if(!empty($user_id)){ ?>
-                                                                        <h3 class="comment__author"><?php echo TSAdminRoom::get_username( $user_id ); ?></h3>
+                                                                        <h3 class="comment__author"><?php echo TravelHelper::get_username( $user_id ); ?></h3>
                                                                         <?php
                                                                     } else { ?>
                                                                         <h3 class="comment__author"><?php echo esc_html($comment->comment_author); ?></h3>
@@ -409,12 +311,16 @@ $review_rate                  = TSReview::get_avg_rate();
                                                                     }
                                                                     ?>
                                                                     <div class="meta-data-inner d-flex">
-                                                                        <span class="ratings d-flex align-items-center mr-1">
-                                                                            <?php
-                                                                                echo number_format( $comment_rate, 1, '.', ',' );
-                                                                            ?>
-                                                                        </span>
-                                                                        <p class="comment__date"><?php echo get_comment_date( getDateFormat(), $comment_id ) ?></p>
+                                                                        <?php if( $stars ) { ?>
+                                                                            <span class="ratings d-flex align-items-center mr-1">
+                                                                                <?php
+                                                                                    echo '->- '. number_format( $comment_rate, 1, '.', ',' );
+                                                                                ?>
+                                                                            </span>
+                                                                        <?php } ?>
+                                                                        <p class="comment__date">
+                                                                            <?php echo get_comment_date( getDateFormat(), $comment_id ) ?>
+                                                                        </p>
                                                                     </div>
                                                                 </div>
                                                                 <p class="comment-content">
@@ -439,7 +345,6 @@ $review_rate                  = TSReview::get_avg_rate();
                                                                         </a>
                                                                     <?php
                                                                     endif;
-
                                                                     ?>
                                                                 </div>
                                                             </div>

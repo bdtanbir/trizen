@@ -134,6 +134,7 @@ pre {
  */
 a {
 	background-color: transparent;
+	cursor: pointer;
 }
 
 /**
@@ -1013,6 +1014,17 @@ textarea {
 /*-------------------------------------------
 	 Blog
 ---------------------------------------------*/
+.fancybox-can-pan .fancybox-content:active,
+.fancybox-can-swipe .fancybox-content:active,
+.fancybox-can-pan .fancybox-content img:active,
+.fancybox-can-swipe .fancybox-content img:active {
+	cursor: grabbing;
+}
+
+
+/*-------------------------------------------
+	 Blog
+---------------------------------------------*/
 .site-name {
 	color: var(--secondary_color);
 }
@@ -1194,6 +1206,9 @@ textarea {
 }
 .card-item .card-price .price__from {
 	margin-right: 3px;
+}
+.title a {
+	color: #0d233e;
 }
 
 
@@ -1420,6 +1435,10 @@ textarea {
 	margin-bottom: 0;
 	color: rgba(128,137,150,.6);
 	font-size: 18px;
+	margin-right: 5px;
+}
+.review-form .review-items .rates i:last-child {
+	margin-right: 0;
 }
 .review-form .review-items .rates i.hovered,
 .review-form .review-items .rates i:hover,
@@ -1464,6 +1483,16 @@ textarea {
 	border-radius: 4px;
 	padding: 0 5px;
 	line-height: 23px;
+}
+.review-box .form-content {
+	padding-bottom: 0;
+}
+.review-box .review-comment-btn-wrap {
+	padding: 0 20px 20px 20px;
+}
+.review-box .review-comment-btn-wrap .review-comment-btn:hover {
+	background-color: #ffffff;
+	color: var(--primary_color);
 }
 
 

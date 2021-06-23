@@ -270,8 +270,7 @@ if( ! function_exists( 'trizen_auth_user_login' ) ){
 }
 
 
-function __search_by_title_only( $search, $wp_query )
-{
+function __search_by_title_only( $search, $wp_query ) {
 	global $wpdb;
 	if(empty($search)) {
 		return $search; // skip processing - no search term in query
@@ -369,3 +368,6 @@ if (!function_exists('share_hotel_room_tour_etc')) {
         <?php
     }
 }
+
+
+

@@ -1,7 +1,7 @@
 <?php
 	get_header();
 
-$room_facilities = get_categories( array ( 'taxonomy' => 'room_facilities' ) );
+$room_facilities = get_the_terms( get_the_ID() , 'room_facilities' );
 $trizen_room_other_facility_data = get_post_meta(get_the_ID(), 'trizen_room_other_facility_data_group', true);
 $trizen_room_rules_data = get_post_meta(get_the_ID(), 'trizen_room_rules_data_group', true);
 $related_rooms = get_theme_mod('show_related_rooms', 1);
@@ -18,7 +18,6 @@ if(is_active_sidebar( 'hotel-room-sidebar' )) {
     START ROOM DETAIL BREAD
 ================================= -->
 <section class="room-detail-bread text-center">
-<!--    <img src="https://techydevs.com/demos/themes/html/trizen-demo/trizen/images/img31.jpg" alt="">-->
 	<?php
 			$hidden = array();
 	if ( $images = get_posts( array(

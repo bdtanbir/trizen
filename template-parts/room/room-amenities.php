@@ -1,5 +1,5 @@
 <?php
-$room_facilities = get_categories( array ( 'taxonomy' => 'room_facilities' ) );
+$room_facilities = get_the_terms( get_the_ID() , 'room_facilities' );
 ?>
 
 
