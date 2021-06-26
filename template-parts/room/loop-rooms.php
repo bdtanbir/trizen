@@ -4,6 +4,15 @@ $number_of_beds   = get_post_meta(get_the_ID(), 'trizen_room_facility_num_of_bed
 $room_footage     = get_post_meta(get_the_ID(), 'trizen_hotel_room_footage', true);
 $room_price       = get_post_meta(get_the_ID(), 'price', true);
 $room_gallery     = get_post_meta(get_the_ID(), 'trizen_hotel_room_image_gallery', true );
+$current_calendar = get_current_available_calendar(get_the_ID());
+$current_calendar_reverb = date('m/d/Y', strtotime($current_calendar));
+$start          = get( 'start', date( getDateFormat(), strtotime($current_calendar)) );
+$end            = get( 'end', date( getDateFormat(), strtotime( "+ 1 day", strtotime($current_calendar)) ) );
+$room_id   = get_the_ID();
+$adult_number = request( 'adult_number', 1 );
+$child_number = request( 'child_number', '' );
+$room_num_search = (int)get( 'room_num_search', 1 );
+$sale_price  = TSPrice::getRoomPrice( $room_id, strtotime( $start ), strtotime( $end ), $room_num_search, $adult_number, $child_number );
 
 ?>
 	<div class="card-item room-card">
@@ -50,7 +59,7 @@ $room_gallery     = get_post_meta(get_the_ID(), 'trizen_hotel_room_image_gallery
                             <?php esc_html_e('From', 'trizen'); ?>
                         </span>
                         <span class="price__num">
-                            <?php esc_html_e('$', 'trizen'); echo esc_html($room_price); ?>
+                            <?php echo TravelHelper::format_money($sale_price) ?>
                         </span>
                     </p>
                 </div>
