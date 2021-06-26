@@ -185,8 +185,8 @@ $trizen_hotel_faqs_data       = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_d
                                         <div class="fetch">
                                             <?php
                                             global $post;
-                                            $hotel = TSHotel::inst();
-                                            $query = $hotel->search_room();
+//                                            $hotel = TSHotel::inst();
+                                            $query = search_room();
                                             /*echo '<pre>';
                                             var_dump($query);
                                             echo '</pre>';*/
@@ -314,7 +314,7 @@ $trizen_hotel_faqs_data       = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_d
                                                                         <?php if( $stars ) { ?>
                                                                             <span class="ratings d-flex align-items-center mr-1">
                                                                                 <?php
-                                                                                    echo '->- '. number_format( $comment_rate, 1, '.', ',' );
+                                                                                    echo number_format( $comment_rate, 1, '.', ',' );
                                                                                 ?>
                                                                             </span>
                                                                         <?php } ?>

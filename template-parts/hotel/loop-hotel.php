@@ -1,13 +1,14 @@
 <?php
     $badge_title = get_post_meta(get_the_ID(), 'trizen_hotel_badge_title', true);
     $address_title = get_post_meta(get_the_ID(), 'trizen_hotel_address_title', true);
-    $hotel_regular_price = get_post_meta( get_the_ID(), 'price_avg', true );
+    $price = get_price();
 
     if(get_the_post_thumbnail()) {
         $empty_img = 'empty-hotel-img';
     } else {
         $empty_img = 'empty-hotel-img';
     }
+        $avg = TSReview::get_avg_rate();
 ?>
 
 <div class="card-item <?php echo esc_attr($empty_img); ?>">
@@ -44,13 +45,13 @@
         <?php } ?>
 		<div class="card-rating">
 			<span class="badge text-white">
-                <?php esc_html_e('4.4/5', 'trizen'); ?>
+                <?php echo esc_html($avg); ?>
             </span>
 			<span class="review__text">
                 <?php esc_html_e('Average', 'trizen'); ?>
             </span>
 			<span class="rating__text">
-                <?php esc_html_e('(30 Reviews)', 'trizen'); ?>
+                <?php comments_number(__('(0 Review)', 'trizen'), __('(1 Review)', 'trizen'), __('(% Reviews)', 'trizen')); ?>
             </span>
 		</div>
 		<div class="card-price d-flex align-items-center justify-content-between">
@@ -59,11 +60,7 @@
                     <?php esc_html_e('From', 'trizen'); ?>
                 </span>
                 <span class="price__num">
-                    <?php if(!empty($hotel_regular_price)) {
-                        esc_html_e('$', 'trizen'); echo esc_html($hotel_regular_price);
-                    } else {
-                        esc_html_e('$0.00', 'trizen');
-                    } ?>
+                    <?php echo TravelHelper::format_money($price); ?>
                 </span>
                 <span class="price__text">
                     <?php esc_html_e('Per night', 'trizen'); ?>
