@@ -20,7 +20,7 @@ function trizen_scripts() {
 	wp_enqueue_style( 'lib-leaflet', get_theme_file_uri( '/assets/css/leaflet.css' ) );
 	wp_enqueue_style( 'trizen-main-style', get_theme_file_uri( '/assets/css/style.css' ) );
 
-	wp_enqueue_style( 'trizen-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'trizen-style', get_stylesheet_uri(), array(), time() );
 
 	if ( is_admin_bar_showing() ) {
 		$admin_bar_showing_body_sp = <<<EOD

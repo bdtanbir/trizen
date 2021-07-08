@@ -6,7 +6,7 @@ get_template_part('inc/breadcrumb-simple');
 
 
 $hotel_gallery = get_post_meta(get_the_ID(), 'trizen_hotel_image_gallery', true);
-$hotel_address = get_post_meta( get_the_ID(), 'trizen_hotel_address_title', true );
+$hotel_address = get_post_meta( get_the_ID(), 'address', true );
 $hotel_video   = get_post_meta( get_the_ID(), 'trizen_hotel_video_url', true );
 
 $breadcrumb_shape     = get_theme_mod('show_breadcrumb_overlay_shape', 1);
@@ -185,11 +185,10 @@ $trizen_hotel_faqs_data       = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_d
                                         <div class="fetch">
                                             <?php
                                             global $post;
-//                                            $hotel = TSHotel::inst();
                                             $query = search_room();
-                                            /*echo '<pre>';
-                                            var_dump($query);
-                                            echo '</pre>';*/
+                                            // echo '<pre>';
+                                            // var_dump($query);
+                                            // echo '</pre>';
                                             while ($query->have_posts()) {
                                                 $query->the_post();
                                                 get_template_part('template-parts/room/available-room');

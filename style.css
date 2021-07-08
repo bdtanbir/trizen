@@ -1210,6 +1210,9 @@ textarea {
 .title a {
 	color: #0d233e;
 }
+.comment-respond .title a {
+	color: #287dfa;
+}
 
 
 

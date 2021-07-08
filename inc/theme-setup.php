@@ -268,3 +268,6 @@ if (!function_exists( 'trizen_breadcrumb_title' )) :
 	}
 endif;
 
+
+
+add_filter('duplicate_comment_id', '__return_false');

@@ -1,6 +1,6 @@
 <?php
     $badge_title = get_post_meta(get_the_ID(), 'trizen_hotel_badge_title', true);
-    $address_title = get_post_meta(get_the_ID(), 'trizen_hotel_address_title', true);
+    $address_title = get_post_meta(get_the_ID(), 'address', true);
     $price = get_price();
 
     if(get_the_post_thumbnail()) {
