@@ -186,9 +186,6 @@ $trizen_hotel_faqs_data       = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_d
                                             <?php
                                             global $post;
                                             $query = search_room();
-                                            // echo '<pre>';
-                                            // var_dump($query);
-                                            // echo '</pre>';
                                             while ($query->have_posts()) {
                                                 $query->the_post();
                                                 get_template_part('template-parts/room/available-room');

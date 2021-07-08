@@ -724,6 +724,12 @@ Author Email:   contact@tecydevs.com
                 }
             });
         });
+
+        var body = $('body');
+        body.on('click', '.btn-show-price', function (ev) {
+            ev.preventDefault();
+            $('.form-check-availability-hotel', body).trigger('submit');
+        });
     });
 
 })(jQuery);
