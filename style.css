@@ -1213,6 +1213,10 @@ textarea {
 .comment-respond .title a {
 	color: #287dfa;
 }
+.ts-list-rooms .cabin-type-img img {
+	object-fit: cover;
+    height: 100%;
+}
 
 
 

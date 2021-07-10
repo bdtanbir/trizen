@@ -182,6 +182,13 @@ $trizen_hotel_faqs_data       = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_d
 								<div class="single-content-item padding-top-40px padding-bottom-30px">
 									<h3 class="title font-size-20"><?php esc_html_e('Available Rooms', 'trizen'); ?></h3>
                                     <div class="ts-list-rooms relative" data-toggle-section="ts-list-rooms">
+                                        <div class="loader-wrapper">
+                                            <div class="loader">
+                                                <svg class="spinner" viewBox="0 0 50 50">
+                                                    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                                                </svg>
+                                            </div>
+                                        </div>
                                         <div class="fetch">
                                             <?php
                                             global $post;
