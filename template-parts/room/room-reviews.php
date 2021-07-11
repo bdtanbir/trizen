@@ -1,119 +1,98 @@
+<div class="comments-list padding-top-50px">
+    <?php
+    $comments_count   = wp_count_comments(get_the_ID());
+    $total            = (int)$comments_count->approved;
+    $comment_per_page = (int)get_option('comments_per_page', 10);
+    $paged            = (int)get('comment_page', 1);
+    $from             = $comment_per_page * ($paged - 1) + 1;
+    $to               = ($paged * $comment_per_page < $total) ? ($paged * $comment_per_page) : $total;
+    
+    $offset = ($paged - 1) * $comment_per_page;
+    $args = [
+        'number'  => $comment_per_page,
+        'offset'  => $offset,
+        'post_id' => get_the_ID(),
+        'status'  => ['approve']
+    ];
+    $comments_query = new WP_Comment_Query;
+    $comments       = $comments_query->query($args);
 
+    if ($comments):
+        foreach ($comments as $key => $comment):
+            $args[ 'avatar_size' ] = 90;
+            if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) :
+            else :
+                $comment_class = empty( $args[ 'has_children' ] ) ? '' : $comment_class .= 'parent';
+                if ( !$comment->comment_approved ) {
+                    return;
+                }
 
-<div id="reviews" class="page-scroll">
-	<div class="single-content-item padding-top-40px padding-bottom-40px">
-		<h3 class="title font-size-20">
-			<?php esc_html_e('Reviews', 'trizen'); ?>
-		</h3>
-		<div class="review-container padding-top-30px">
-			<div class="row align-items-center">
-				<div class="col-lg-4">
-					<div class="review-summary">
-						<h2>
-							<?php esc_html_e('4.5', 'trizen'); ?><span><?php esc_html_e('/5', 'trizen'); ?></span>
-						</h2>
-						<p>
-							<?php esc_html_e('Excellent', 'trizen'); ?>
-						</p>
-						<span>
-                            <?php esc_html_e('Based on 4 reviews', 'trizen'); ?>
-                        </span>
-					</div>
-				</div>
-				<div class="col-lg-8">
-					<div class="review-bars">
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="progress-item">
-									<h3 class="progressbar-title">
-										<?php esc_html_e('Service', 'trizen'); ?>
-									</h3>
-									<div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-										<div class="progressbar-box flex-shrink-0">
-											<div class="progressbar-line" data-percent="70%">
-												<div class="progressbar-line-item bar-bg-1"></div>
-											</div>
-										</div>
-										<div class="bar-percent">
-											<?php esc_html_e('4.6', 'trizen'); ?>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="progress-item">
-									<h3 class="progressbar-title">
-										<?php esc_html_e('Location', 'trizen'); ?>
-									</h3>
-									<div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-										<div class="progressbar-box flex-shrink-0">
-											<div class="progressbar-line" data-percent="55%">
-												<div class="progressbar-line-item bar-bg-2"></div>
-											</div>
-										</div>
-										<div class="bar-percent">
-                                            <?php esc_html_e('4.7', 'trizen'); ?>
-                                        </div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="progress-item">
-									<h3 class="progressbar-title">
-										<?php esc_html_e('Value for Money', 'trizen'); ?>
-									</h3>
-									<div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-										<div class="progressbar-box flex-shrink-0">
-											<div class="progressbar-line" data-percent="40%">
-												<div class="progressbar-line-item bar-bg-3"></div>
-											</div>
-										</div>
-										<div class="bar-percent">
-											<?php esc_html_e('2.6', 'trizen'); ?>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="progress-item">
-									<h3 class="progressbar-title">
-										<?php esc_html_e('Cleanliness', 'trizen'); ?>
-									</h3>
-									<div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-										<div class="progressbar-box flex-shrink-0">
-											<div class="progressbar-line" data-percent="60%">
-												<div class="progressbar-line-item bar-bg-4"></div>
-											</div>
-										</div>
-										<div class="bar-percent">
-											<?php esc_html_e('3.6', 'trizen'); ?>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="progress-item">
-									<h3 class="progressbar-title">
-										<?php esc_html_e('Facilities', 'trizen'); ?>
-									</h3>
-									<div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-										<div class="progressbar-box flex-shrink-0">
-											<div class="progressbar-line" data-percent="50%">
-												<div class="progressbar-line-item bar-bg-5"></div>
-											</div>
-										</div>
-										<div class="bar-percent">
-											<?php esc_html_e('2.6', 'trizen'); ?>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="section-block"></div>
+                $comment_id   = $comment->comment_ID;
+                $user_id      = get_comment( $comment_id )->user_id;
+                $user_email   = get_comment( $comment_id )->comment_author_email;
+                $current_user = wp_get_current_user();
+                ?>
+                <div class="comment">
+                    <div class="comment-avatar">
+                        <?php echo ts_get_profile_avatar( $user_id, 90 ) ?>
+                    </div>
+                    <div class="comment-body">
+                        <div class="meta-data">
+                            <?php
+                            $stars        = TSReview::get_review_stars( get_the_ID() );
+                            $comment_rate = (float)get_comment_meta( $comment_id, 'comment_rate', true );
+ ?>
+                            <h3 class="comment__author">
+                                <?php echo TravelHelper::get_username( $user_id ); ?>
+                            </h3>
+                            <div class="meta-data-inner d-flex">
+                                <?php if ( !$stars && $comment_rate ) { ?>
+                                    <span class="ratings d-flex align-items-center mr-1 ts-stars">
+                                        <?php
+                                            for ( $i = 1; $i <= 5; $i++ ) {
+                                                if ( $i <= $comment_rate ) {
+                                                    echo '<i class="la la-star"></i>';
+                                                } else {
+                                                    echo '<i class="la la-star grey"></i>';
+                                                }
+                                            }
+                                        ?>
+                                    </span>
+                                <?php } ?>
+                                <p class="comment__date">
+                                    <?php echo get_comment_date( 'M d, Y', $comment_id ) ?>
+                                </p>
+                            </div>
+                        </div>
+                        <p class="comment-content">
+                            <?php
+                            $content = get_comment_text( $comment_id );
+
+                            echo esc_html(balanceTags($content)); ?>
+                        </p>
+                        <div class="reviews-reaction">
+                            <?php
+                            $count_like = (int)get_comment_meta( $comment_id, '_comment_like_count', true );
+
+                            $review_obj = new TSReview();
+                            if ( $review_obj->check_like( $comment_id ) ):
+                                ?>
+                                <a data-id="<?php echo esc_attr( $comment_id ); ?>" class="btn-like comment-dislike ts-like-review" href="#" title="<?php esc_attr_e('Dislike This', 'trizen'); ?>" data-toggle="tooltip" data-placement="top">
+                                    <i class="la la-thumbs-o-up"></i> <?php echo '<span class="like-count">' . esc_html($count_like) . '</span>'; ?>
+                                </a>
+                            <?php else: ?>
+                                <a data-id="<?php echo esc_attr( $comment_id ); ?>" href="#" class="btn-like comment-like ts-like-review " title="<?php esc_attr_e('Like This', 'trizen'); ?>" data-toggle="tooltip" data-placement="top">
+                                    <i class="la la-thumbs-o-up"></i> <?php echo '<span class="like-count">' . esc_html($count_like) . '</span>'; ?>
+                                </a>
+                            <?php
+                            endif;
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            <?php
+            endif;
+        endforeach;
+    endif;
+    ?>
 </div>
-

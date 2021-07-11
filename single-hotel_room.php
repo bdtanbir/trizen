@@ -12,6 +12,7 @@ if(is_active_sidebar( 'hotel-room-sidebar' )) {
 } else {
 	$col_num = '12';
 }
+$review_rate = TSReview::get_avg_rate();
 ?>
 
 <!-- ================================
@@ -52,7 +53,7 @@ if(is_active_sidebar( 'hotel-room-sidebar' )) {
 <!-- ================================
     START TOUR DETAIL AREA
 ================================= -->
-<section class="tour-detail-area hotel-room-details padding-bottom-90px">
+<section class="room-detail-area hotel-room-details padding-bottom-90px">
 	<div class="single-content-navbar-wrap menu section-bg" id="single-content-navbar">
 		<div class="container">
 			<div class="row">
@@ -107,10 +108,10 @@ if(is_active_sidebar( 'hotel-room-sidebar' )) {
                                 <?php } ?>
 								<p class="pt-2 mb-0">
 									<span class="badge badge-warning text-white font-size-16">
-										<?php esc_html_e('4.6', 'trizen'); ?>
+										<?php echo esc_html($review_rate); ?>
 									</span>
 									<span>
-                                        <?php esc_html_e('(4,209 Reviews)', 'trizen'); ?>
+										<?php comments_number(__('(0 Review)', 'trizen'), __('(1 Review)', 'trizen'), __('(% Reviews)', 'trizen')); ?>
                                     </span>
 								</p>
 							</div>
@@ -146,20 +147,51 @@ if(is_active_sidebar( 'hotel-room-sidebar' )) {
                         get_template_part('template-parts/room/room-location');
 
                         /* Reviews */
-                        get_template_part('template-parts/room/room-reviews');
-
-                        /* Review Lists */
-                        get_template_part('template-parts/room/room-review-lists');
                         ?>
+						<div id="reviews" class="page-scroll">
+							<div class="review-box">
+								<div class="single-content-item padding-top-40px ">
+									<h3 class="title font-size-20">
+										<?php comments_number( __( '0 Review', 'trizen' ), __( '1 Review', 'trizen' ), __( '% Reviews', 'trizen' ) ); ?>
+									</h3>
+									<span class="ts-stars room-review-avg-stars">
+										<?php
+											$star  = !isset( $review_rate ) ? 5 : round($review_rate, 0);
+											for($i = 1; $i<= 5; $i++){
+												if($i <= $star){
+													echo '<i class="la la-star"></i>';
+												}else{
+													echo '<i class="la la-star grey"></i>';
+												}
+											}
+										?>
+									</span>
+
+									<?php
+										get_template_part( 'template-parts/room/room-reviews' );
+									?>
+								</div>
+							</div>
+						</div>
+
+						<?php
+                        /* Review Lists */
+						if(comments_open()) { ?>
+							<div class="review-box">
+								<?php
+								TravelHelper::comment_form();
+								?>
+							</div>
+						<?php } ?>
 
 					</div>
 				</div>
 				<?php
 				if(is_active_sidebar( 'hotel-room-sidebar' )) {
 				?>
-				<div class="col-lg-4">
-					<?php get_sidebar('hotel_room'); ?>
-				</div>
+					<div class="col-lg-4">
+						<?php get_sidebar('hotel_room'); ?>
+					</div>
 				<?php } ?>
 			</div>
 		</div>

@@ -1217,6 +1217,19 @@ textarea {
 	object-fit: cover;
     height: 100%;
 }
+.room-detail-area .comment .ts-stars i.grey,
+.room-review-avg-stars i.grey {
+    color: rgba(128,137,150,.6);
+}
+.room-review-avg-stars i {
+    margin-right: 3px;
+    font-size: 18px;
+    color: #f9b851;
+}
+.room-detail-area .comments-list .comment .ts-stars {
+	background: none !important;
+	padding: 0 !important;
+}
 
 
 
