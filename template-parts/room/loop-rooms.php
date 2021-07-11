@@ -1,6 +1,6 @@
 <?php
-$number_of_adults = get_post_meta(get_the_ID(), 'trizen_room_facility_num_of_adults', true);
-$number_of_beds   = get_post_meta(get_the_ID(), 'trizen_room_facility_num_of_beds', true);
+$number_of_adults = get_post_meta(get_the_ID(), 'adult_number', true);
+$number_of_beds   = get_post_meta(get_the_ID(), 'bed_number', true);
 $room_footage     = get_post_meta(get_the_ID(), 'trizen_hotel_room_footage', true);
 $room_price       = get_post_meta(get_the_ID(), 'price', true);
 $room_gallery     = get_post_meta(get_the_ID(), 'trizen_hotel_room_image_gallery', true );
