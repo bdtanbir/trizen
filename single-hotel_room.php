@@ -107,6 +107,18 @@ $review_rate = TSReview::get_avg_rate();
                                     </h3>
                                 <?php } ?>
 								<p class="pt-2 mb-0">
+									<span class="ts-stars room-review-avg-stars">
+										<?php
+											$star  = !isset( $review_rate ) ? 5 : round($review_rate, 0);
+											for($i = 1; $i<= 5; $i++){
+												if($i <= $star){
+													echo '<i class="la la-star"></i>';
+												}else{
+													echo '<i class="la la-star grey"></i>';
+												}
+											}
+										?>
+									</span>
 									<span class="badge badge-warning text-white font-size-16">
 										<?php echo esc_html($review_rate); ?>
 									</span>
@@ -147,42 +159,34 @@ $review_rate = TSReview::get_avg_rate();
                         get_template_part('template-parts/room/room-location');
 
                         /* Reviews */
-                        ?>
-						<div id="reviews" class="page-scroll">
-							<div class="review-box">
-								<div class="single-content-item padding-top-40px ">
-									<h3 class="title font-size-20">
-										<?php comments_number( __( '0 Review', 'trizen' ), __( '1 Review', 'trizen' ), __( '% Reviews', 'trizen' ) ); ?>
-									</h3>
-									<span class="ts-stars room-review-avg-stars">
-										<?php
-											$star  = !isset( $review_rate ) ? 5 : round($review_rate, 0);
-											for($i = 1; $i<= 5; $i++){
-												if($i <= $star){
-													echo '<i class="la la-star"></i>';
-												}else{
-													echo '<i class="la la-star grey"></i>';
-												}
-											}
-										?>
-									</span>
 
-									<?php
-										get_template_part( 'template-parts/room/room-reviews' );
-									?>
+						if(get_option( 'hotel_room_review' ) == 'on') {
+                        ?>
+							<div class="section-block"></div>
+							<div id="reviews" class="page-scroll">
+								<div class="review-box">
+									<div class="single-content-item padding-top-40px ">
+										<h3 class="title font-size-20">
+											<?php comments_number( __( '0 Review', 'trizen' ), __( '1 Review', 'trizen' ), __( '% Reviews', 'trizen' ) ); ?>
+										</h3>
+
+										<?php
+											get_template_part( 'template-parts/room/room-reviews' );
+										?>
+									</div>
 								</div>
 							</div>
-						</div>
 
-						<?php
-                        /* Review Lists */
-						if(comments_open()) { ?>
-							<div class="review-box">
-								<?php
-								TravelHelper::comment_form();
-								?>
-							</div>
-						<?php } ?>
+							<?php
+							/* Review Lists */
+							if(comments_open()) { ?>
+								<div class="review-box">
+									<?php
+									TravelHelper::comment_form();
+									?>
+								</div>
+							<?php } 
+						} ?>
 
 					</div>
 				</div>

@@ -135,18 +135,17 @@ $link_with_params = add_query_arg($get_data, get_the_permalink());
                     <?php esc_html_e('Per/night', 'trizen'); ?>
                     <strong class="mt-n1 text-black font-size-18 font-weight-black d-block">
                       <?php echo TravelHelper::format_money( $sale_price ); ?> 
-                        $595.33
                     </strong>
                 </p>
                 <div class="custom-checkbox mb-0">
                     <a href="<?php the_permalink(); ?>" class="theme-btn theme-btn-small">
-                        Room Details
+                        <?php esc_html_e( 'Room Details', 'trizen' ); ?>
                     </a>
                 </div>
                 <?php } else { ?>
                     <div class="custom-checkbox mb-0">
                         <a href="#" class="btn-show-price theme-btn theme-btn-small">
-                            Show Price
+                            <?php esc_html_e( 'Show Price', 'trizen' ); ?>
                         </a>
                     </div>
                 <?php } ?>

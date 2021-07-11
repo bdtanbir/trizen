@@ -312,7 +312,7 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 			));
 			/* Breadcrumb 1 */
 			$wp_customize->add_section('trizen_breadcrumb1_options', array(
-				'title'           => esc_html__('Breadcrumb 1', 'trizen'),
+				'title'           => esc_html__('General Breadcrumb', 'trizen'),
 				'priority'        => 2,
 				'panel'           => 'trizen_breadcrumbs_panel_options',
 			));

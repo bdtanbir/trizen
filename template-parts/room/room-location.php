@@ -9,5 +9,4 @@
 			<div id="map"></div>
 		</div>
 	</div>
-	<div class="section-block"></div>
 </div>

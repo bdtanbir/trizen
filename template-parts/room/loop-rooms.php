@@ -2,7 +2,6 @@
 $number_of_adults = get_post_meta(get_the_ID(), 'adult_number', true);
 $number_of_beds   = get_post_meta(get_the_ID(), 'bed_number', true);
 $room_footage     = get_post_meta(get_the_ID(), 'trizen_hotel_room_footage', true);
-$room_price       = get_post_meta(get_the_ID(), 'price', true);
 $room_gallery     = get_post_meta(get_the_ID(), 'trizen_hotel_room_image_gallery', true );
 $current_calendar = get_current_available_calendar(get_the_ID());
 $current_calendar_reverb = date('m/d/Y', strtotime($current_calendar));
@@ -52,18 +51,17 @@ $sale_price  = TSPrice::getRoomPrice( $room_id, strtotime( $start ), strtotime( 
             }
         } ?>
 		<div class="card-body">
-            <?php if(!empty($room_price)) { ?>
-                <div class="card-price pb-2">
-                    <p>
-                        <span class="price__from">
-                            <?php esc_html_e('From', 'trizen'); ?>
-                        </span>
-                        <span class="price__num">
-                            <?php echo TravelHelper::format_money($sale_price) ?>
-                        </span>
-                    </p>
-                </div>
-            <?php } if (get_the_title()) { ?>
+            <div class="card-price pb-2">
+                <p>
+                    <span class="price__from">
+                        <?php esc_html_e('From', 'trizen'); ?>
+                    </span>
+                    <span class="price__num">
+                        <?php echo TravelHelper::format_money($sale_price) ?>
+                    </span>
+                </p>
+            </div>
+            <?php if (get_the_title()) { ?>
                 <h3 class="card-title font-size-26">
                     <a href="<?php the_permalink(); ?>">
                         <?php the_title(); ?>
