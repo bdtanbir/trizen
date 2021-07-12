@@ -11,10 +11,10 @@ if ($ts_search_query) {
 $result_string = '';
 switch ($post_type){
     case 'ts_hotel':
-        $result_string = balanceTags(TSHotel::inst()->get_result_string());
+        $result_string = balanceTags(get_result_string());
         break;
     default:
-        $result_string = balanceTags(TSHotel::inst()->get_result_string());
+        $result_string = balanceTags(get_result_string());
         break;
 }
 ?>

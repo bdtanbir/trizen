@@ -8,7 +8,7 @@
     } else {
         $empty_img = 'empty-hotel-img';
     }
-        $avg = TSReview::get_avg_rate();
+    $avg = TSReview::get_avg_rate();
 ?>
 
 <div class="card-item <?php echo esc_attr($empty_img); ?>">

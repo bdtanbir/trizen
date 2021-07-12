@@ -1,12 +1,13 @@
 <?php
 global $post;
-the_post();
 $post_id         = get_the_ID();
 $post_translated = TravelHelper::post_translated($post_id, 'ts_hotel');
 $url             = ts_get_link_with_search(get_permalink($post_translated),array('start','end','date','adult_number','child_number'),$_GET);
 $badge_title     = get_post_meta(get_the_ID(), 'trizen_hotel_badge_title', true);
 $address         = get_post_meta(get_the_ID(), 'address', true);
 $price           = get_price();
+$avg             = TSReview::get_avg_rate();
+$count_review    = get_comment_count($post_id)['approved'];
 ?>
 
 <div class="card-item">
@@ -15,8 +16,6 @@ $price           = get_price();
             <?php
             if (has_post_thumbnail()) {
                 echo get_the_post_thumbnail($post_translated);
-            } else {
-                echo 'No Image Added';
             }
             ?>
         </a>
@@ -45,7 +44,7 @@ $price           = get_price();
     <div class="card-body">
         <h3 class="card-title">
             <a href="<?php echo esc_url($url); ?>">
-                <?php echo get_the_title($post_translated); ?>
+                <?php echo get_the_title(); ?>
             </a>
         </h3>
         <?php if(!empty($address)) { ?>
@@ -55,13 +54,13 @@ $price           = get_price();
         <?php } ?>
         <div class="card-rating">
             <span class="badge text-white">
-                <?php esc_html_e('4.4/5', 'trizen'); ?>
+                <?php echo esc_html($avg); ?>
             </span>
             <span class="review__text">
-                <?php esc_html_e('Average', 'trizen'); ?>
+                <?php echo TSReview::get_rate_review_text($avg, $count_review); ?>
             </span>
             <span class="rating__text">
-                <?php esc_html_e('(30 Reviews)', 'trizen'); ?>
+                <?php comments_number(__('(0) Review', 'trizen'), __('(1) Review', 'trizen'), __('(%) Reviews', 'trizen')); ?>
             </span>
         </div>
         <div class="card-price d-flex align-items-center justify-content-between">
