@@ -1230,6 +1230,9 @@ textarea {
 	background: none !important;
 	padding: 0 !important;
 }
+.room-detail-area .comment .meta-data .comment__author {
+	margin-bottom: 4px;
+}
 
 
 

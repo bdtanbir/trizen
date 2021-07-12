@@ -1,6 +1,7 @@
 <?php
 	get_header();
 
+$count_review                 = get_comment_count($post_id)['approved'];
 $room_facilities = get_the_terms( get_the_ID() , 'room_facilities' );
 $trizen_room_other_facility_data = get_post_meta(get_the_ID(), 'trizen_room_other_facility_data_group', true);
 $trizen_room_rules_data = get_post_meta(get_the_ID(), 'trizen_room_rules_data_group', true);
@@ -107,18 +108,6 @@ $review_rate = TSReview::get_avg_rate();
                                     </h3>
                                 <?php } ?>
 								<p class="pt-2 mb-0">
-									<span class="ts-stars room-review-avg-stars">
-										<?php
-											$star  = !isset( $review_rate ) ? 5 : round($review_rate, 0);
-											for($i = 1; $i<= 5; $i++){
-												if($i <= $star){
-													echo '<i class="la la-star"></i>';
-												}else{
-													echo '<i class="la la-star grey"></i>';
-												}
-											}
-										?>
-									</span>
 									<span class="badge badge-warning text-white font-size-16">
 										<?php echo esc_html($review_rate); ?>
 									</span>
@@ -164,26 +153,60 @@ $review_rate = TSReview::get_avg_rate();
                         ?>
 							<div class="section-block"></div>
 							<div id="reviews" class="page-scroll">
-								<div class="review-box">
-									<div class="single-content-item padding-top-40px ">
-										<h3 class="title font-size-20">
-											<?php comments_number( __( '0 Review', 'trizen' ), __( '1 Review', 'trizen' ), __( '% Reviews', 'trizen' ) ); ?>
-										</h3>
-
-										<?php
-											get_template_part( 'template-parts/room/room-reviews' );
-										?>
+								<div class="single-content-item padding-top-40px padding-bottom-40px">
+									<h3 class="title font-size-20"><?php esc_html_e('Reviews', 'trizen'); ?></h3>
+									<div class="review-container padding-top-30px">
+										<div class="row align-items-center">
+											<div class="col-lg-4">
+												<div class="review-summary">
+													<h2><?php echo esc_html($review_rate); ?><span><?php esc_html_e('/5', 'trizen'); ?></span></h2>
+													<p><?php echo TSReview::get_rate_review_text($review_rate, $count_review); ?></p>
+													<span><?php esc_html_e('Based on ', 'trizen'); comments_number(__('0 Review', 'trizen'), __('1 Review', 'trizen'), __('% Reviews', 'trizen')); ?></span>
+												</div>
+											</div>
+											<div class="col-lg-8">
+												<div class="review-bars">
+													<div class="row">
+                                                        <?php
+                                                        $stars = TSReview::get_review_summary();
+                                                            $i = 1;
+                                                            foreach ($stars as $star) {
+                                                                ?>
+                                                                <div class="col-lg-6">
+                                                                    <div class="progress-item">
+                                                                        <h3 class="progressbar-title"><?php echo esc_html($star['name']); ?></h3>
+                                                                        <div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
+                                                                            <div class="progressbar-box flex-shrink-0">
+                                                                                <div class="progressbar-line" data-percent="<?php echo esc_attr($star['percent']); ?>%">
+                                                                                    <div class="progressbar-line-item bar-bg-<?php echo $i++; ?>"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="bar-percent"><?php echo esc_html($star['summary']) ?></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            <?php }
+                                                        ?>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
+								<div class="section-block"></div>
 							</div>
 
 							<?php
 							/* Review Lists */
 							if(comments_open()) { ?>
 								<div class="review-box">
-									<?php
-									TravelHelper::comment_form();
-									?>
+                                    <div class="single-content-item padding-top-40px">
+										<?php
+										get_template_part( 'template-parts/room/room-reviews' );
+
+										TravelHelper::comment_form();
+										?>
+									</div>
 								</div>
 							<?php } 
 						} ?>

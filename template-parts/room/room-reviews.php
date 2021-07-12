@@ -1,11 +1,16 @@
-<div class="comments-list padding-top-50px">
-    <?php
+<?php
     $comments_count   = wp_count_comments(get_the_ID());
     $total            = (int)$comments_count->approved;
     $comment_per_page = (int)get_option('comments_per_page', 10);
     $paged            = (int)get('comment_page', 1);
     $from             = $comment_per_page * ($paged - 1) + 1;
     $to               = ($paged * $comment_per_page < $total) ? ($paged * $comment_per_page) : $total;
+
+?>
+
+<h3 class="title font-size-20"><?php echo sprintf(__('Showing %s reviews', 'trizen'), $to); ?></h3>
+<div class="comments-list padding-top-50px">
+    <?php
     
     $offset = ($paged - 1) * $comment_per_page;
     $args = [
@@ -46,16 +51,10 @@
                                 <?php echo TravelHelper::get_username( $user_id ); ?>
                             </h3>
                             <div class="meta-data-inner d-flex">
-                                <?php if ( !$stars && $comment_rate ) { ?>
-                                    <span class="ratings d-flex align-items-center mr-1 ts-stars">
+                                <?php if( $stars ) { ?>
+                                    <span class="ratings d-flex align-items-center mr-1">
                                         <?php
-                                            for ( $i = 1; $i <= 5; $i++ ) {
-                                                if ( $i <= $comment_rate ) {
-                                                    echo '<i class="la la-star"></i>';
-                                                } else {
-                                                    echo '<i class="la la-star grey"></i>';
-                                                }
-                                            }
+                                            echo number_format( $comment_rate, 1, '.', ',' );
                                         ?>
                                     </span>
                                 <?php } ?>
