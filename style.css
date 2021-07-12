@@ -1245,6 +1245,33 @@ textarea {
 	margin-top: -20px;
 	animation: spin .7s infinite linear;
 }
+.price-slider-amount .amounts {
+	display: inline-block;
+}
+.price-slider-amount .irs-line {
+	height: 6px;
+	border: none;
+	background: rgba(128,137,150,.2);
+}
+.price-slider-amount .irs-bar {
+	background: #287dfa;
+	height: 6px;
+}
+.price-slider-amount .irs-slider.to,
+.price-slider-amount .irs-slider.from {
+	background: #287dfa;
+	-webkit-box-shadow: 0 0 20px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 0 20px rgba(0,0,0,.2);
+	box-shadow: 0 0 20px rgba(0,0,0,.2);
+	border: 5px solid #fff;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	height: 18px;
+	width: 18px;
+	cursor: ew-resize;
+	outline: 0;
+}
 
 
 

@@ -16,6 +16,8 @@ function trizen_scripts() {
 	wp_enqueue_style( 'lib-animate-min', get_theme_file_uri( '/assets/css/animate.min.css' ) );
 	wp_enqueue_style( 'lib-animated-headline', get_theme_file_uri( '/assets/css/animated-headline.css' ) );
 	wp_enqueue_style( 'lib-jquery-ui', get_theme_file_uri( '/assets/css/jquery-ui.css' ) );
+	wp_enqueue_style( 'ion-rangeslider-css', get_theme_file_uri('assets/css/ion.rangeslider.css'));
+	wp_enqueue_style( 'ion-rangeSlider-skinHTML5-css', get_theme_file_uri('assets/css/ion.rangeSlider.skinHTML5.css'));
 	wp_enqueue_style( 'lib-flag-icon-min', get_theme_file_uri( '/assets/css/flag-icon.min.css' ) );
 	wp_enqueue_style( 'lib-leaflet', get_theme_file_uri( '/assets/css/leaflet.css' ) );
 	wp_enqueue_style( 'trizen-main-style', get_theme_file_uri( '/assets/css/style.css' ) );
@@ -157,8 +159,8 @@ EOD;
 	}
 	wp_enqueue_script('lib-fancybox-min', get_template_directory_uri() .'/assets/js/jquery.fancybox.min.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('lib-countTo-min', get_template_directory_uri() .'/assets/js/jquery.countTo.min.js', array('jquery'), '1.0.0', true);
+	 wp_enqueue_script('ion-rangeslider-js', get_template_directory_uri() .'/assets/js/ion.rangeslider.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('lib-animated-headline', get_template_directory_uri() .'/assets/js/animated-headline.js', array('jquery'), '1.0.0', true);
-	// wp_enqueue_script('lib-jquery-ripples-min', get_template_directory_uri() .'/assets/js/jquery.ripples-min.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('lib-quantity-input-js', get_template_directory_uri() .'/assets/js/quantity-input.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('theme-navbar-sticky-js', get_template_directory_uri() .'/assets/js/navbar-sticky.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('theme-total-price-js', get_template_directory_uri() .'/assets/js/total-price.js', array('jquery'), '1.0.0', true);
@@ -219,6 +221,11 @@ EOD;
         'prev_month'               => esc_html__('prev month', 'trizen'),
         'next_month'               => esc_html__('next month', 'trizen'),
         'please_waite'             => esc_html__('Please wait...', 'trizen'),
+        'booking_currency_precision' => get_woocommerce_currency_symbol(),
+        'thousand_separator' => '.',
+        'decimal_separator' => ',',
+        'currency_symbol' => get_woocommerce_currency_symbol(),
+        'currency_position' => 'left',
     ]);
 
 

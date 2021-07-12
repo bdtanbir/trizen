@@ -1,8 +1,6 @@
 
 
 
-
-
 <section class="breadcrumb-area bread-bg-7">
 	<div class="breadcrumb-wrap">
 		<div class="container">
@@ -29,27 +27,7 @@
 										<?php get_template_part('template-parts/hotel/elements/guest'); ?>
 									</div>
 
-                                    <div class="advanced-wrap col-lg-12">
-                                        <a class="btn collapse-btn theme-btn-hover-gray font-size-15" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
-                                            More option <i class="la la-angle-down ml-1"></i>
-                                        </a>
-                                        <div class="pt-3 collapse" id="collapseTwo">
-                                            <div class="slider-range-wrap ">
-                                                <div class="price-slider-amount padding-bottom-20px">
-                                                    <label for="amount" class="filter__label">Price:</label>
-                                                    <input type="text" id="amount" class="amounts" readonly>
-                                                </div>
-                                                <div id="slider-range"></div>
-                                            </div>
-                                            <div class="checkbox-wrap padding-top-30px">
-                                                <h3 class="title font-size-15 pb-3">Hotel Facilities</h3>
-                                                <div class="custom-checkbox d-inline-block mr-4">
-                                                    <input type="checkbox" id="c1">
-                                                    <label for="c1">Air Conditioning</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+									<?php get_template_part('template-parts/hotel/elements/advanced'); ?>
 
                                     <div class="btn-box pt-3 col-lg-12">
                                         <button class="theme-btn btn-search" type="submit">

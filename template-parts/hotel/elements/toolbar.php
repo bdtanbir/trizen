@@ -34,7 +34,7 @@ if(!isset($post_type)){
                         </h3>
                     </div>
                     <div class="sort-item st-icheck">
-                        <div class="st-icheck-item">
+                        <div class="ts-icheck-item">
                             <label>
                                 <input class="service_order" type="radio" name="service_order_" data-value="new"/><span class="checkmark"></span>
 	                            <?php echo esc_html__('New hotel', 'trizen'); ?>
@@ -43,13 +43,13 @@ if(!isset($post_type)){
                     </div>
                     <div class="sort-item st-icheck">
                         <span class="title"><?php echo __('Price', 'trizen'); ?></span>
-                        <div class="st-icheck-item">
+                        <div class="ts-icheck-item">
                             <label>
                                 <input class="service_order" type="radio" name="service_order_"  data-value="price_asc"/><span class="checkmark"></span>
 	                            <?php echo __('Low to High', 'trizen'); ?>
                             </label>
                         </div>
-                        <div class="st-icheck-item">
+                        <div class="ts-icheck-item">
                             <label>
                                 <input class="service_order" type="radio" name="service_order_"  data-value="price_desc"/><span class="checkmark"></span>
 	                            <?php echo __('High to Low', 'trizen'); ?>
@@ -58,13 +58,13 @@ if(!isset($post_type)){
                     </div>
                     <div class="sort-item st-icheck">
                         <span class="title"><?php echo __('Name', 'trizen'); ?></span>
-                        <div class="st-icheck-item">
+                        <div class="ts-icheck-item">
                             <label>
                                 <input class="service_order" type="radio" name="service_order_"  data-value="<?php echo esc_attr($name_asc); ?>"/><span class="checkmark"></span>
 	                            <?php echo __('a - z', 'trizen'); ?>
                             </label>
                         </div>
-                        <div class="st-icheck-item">
+                        <div class="ts-icheck-item">
                             <label>
                                 <input class="service_order" type="radio" name="service_order_"  data-value="<?php echo esc_attr($name_desc); ?>"/><span class="checkmark"></span>
 	                            <?php echo __('z - a', 'trizen'); ?>

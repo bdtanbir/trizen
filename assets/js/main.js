@@ -730,6 +730,114 @@ Author Email:   contact@tecydevs.com
             ev.preventDefault();
             $('.form-check-availability-hotel', body).trigger('submit');
         });
+
+
+
+
+
+        /* Price range */
+        function format_money($money) {
+            // if (!$money) {
+            //     return ts_params.free_text;
+            // }
+
+            $money = ts_number_format($money, ts_params.booking_currency_precision, ts_params.decimal_separator, ts_params.thousand_separator);
+            var $symbol = ts_params.currency_symbol;
+            var $money_string = '';
+
+            switch (ts_params.currency_position) {
+                case "right":
+                    $money_string = $money + $symbol;
+                    break;
+                case "left_space":
+                    $money_string = $symbol + " " + $money;
+                    break;
+
+                case "right_space":
+                    $money_string = $money + " " + $symbol;
+                    break;
+                case "left":
+                default:
+                    $money_string = $symbol + $money;
+                    break;
+            }
+
+            return $money_string;
+        }
+        function ts_number_format(number, decimals, dec_point, thousands_sep) {
+            number = (number + '')
+                .replace(/[^0-9+\-Ee.]/g, '');
+            var n = !isFinite(+number) ? 0 : +number,
+                prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+                sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+                dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+                s = '',
+                toFixedFix = function (n, prec) {
+                    var k = Math.pow(10, prec);
+                    return '' + (Math.round(n * k) / k)
+                        .toFixed(prec);
+                };
+            // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+            s = (prec ? toFixedFix(n, prec) : '' + Math.round(n))
+                .split('.');
+            if (s[0].length > 3) {
+                s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+            }
+            if ((s[1] || '')
+                .length < prec) {
+                s[1] = s[1] || '';
+                s[1] += new Array(prec - s[1].length + 1)
+                    .join('0');
+            }
+            return s.join(dec);
+        }
+        $(".price_range").each(function () {
+            var t = $(this);
+            var min = $(this).data('min');
+            var max = $(this).data('max');
+            var step = $(this).data('step');
+            var value = $(this).val();
+            var from = value.split(';');
+            var prefix_symbol = $(this).data('symbol');
+            var to = from[1];
+            from = from[0];
+            $(this).ionRangeSlider({
+                min: min,
+                max: max,
+                type: 'double',
+                prefix: prefix_symbol,
+                prettify: false,
+                step: step,
+                onFinish: function (data) {
+                    t.trigger('ts_ranger_price_change');
+                    set_price_range_val(data, $('input[name="price_range"]'));
+                    format_price_price_ranger(data);
+                },
+                from: from,
+                to: to,
+                force_edges: true,
+            });
+        });
+        var rangeContainer = $('.sidebar-item.range-slider');
+        function format_price_price_ranger(data) {
+
+
+            var min = rangeContainer.find('.price_range').data('min');
+            var max = rangeContainer.find('.price_range').data('max');
+            var convert_price_min = data.from;
+            var convert_price_max = data.to;
+            rangeContainer.find('.irs-from').text(convert_price_min);
+            rangeContainer.find('.irs-to').text(convert_price_max);
+
+        }
+
+        function set_price_range_val(data, element) {
+            var exchange = 1;
+            var from = Math.round(parseInt(data.from) / exchange);
+            var to = Math.round(parseInt(data.to) / exchange);
+            var text = from + ";" + to;
+            element.val(text);
+        }
     });
 
 })(jQuery);
