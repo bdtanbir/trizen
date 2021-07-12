@@ -4,6 +4,7 @@
  */
 get_header();
 
+get_template_part('template-parts/hotel/elements/search-form');
 
 $query = array(
     'post_type'   => 'ts_hotel',
