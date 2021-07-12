@@ -33,14 +33,6 @@ switch ($post_type){
                                 <?php esc_html_e('Book with confidence: No hotel booking fees', 'trizen'); ?>
                             </p>
                         </div>
-                        <div class="layout-view d-flex align-items-center">
-                            <a href="hotel-grid.html" data-toggle="tooltip" data-placement="top" title="<?php esc_attr_e('Grid View', 'trizen'); ?>" class="active">
-                                <i class="la la-th-large"></i>
-                            </a>
-                            <a href="hotel-list.html" data-toggle="tooltip" data-placement="top" title="<?php esc_attr_e('List View', 'trizen'); ?>">
-                                <i class="la la-th-list"></i>
-                            </a>
-                        </div>
                     </div>
 
                     <!-- Toolbar -->
@@ -49,25 +41,23 @@ switch ($post_type){
             </div>
         </div>
 
-        <div class="modern-search-result" id="modern-search-result">
-            <div class="row">
-                <?php
-                if($query->have_posts()) {
-                    while ($query->have_posts()) {
-                        $query->the_post();
-                        ?>
-                        <div class="col-lg-4 responsive-column">
-                            <?php get_template_part('template-parts/hotel/elements/item-loop'); ?>
-                        </div>
-                        <?php
-                    }
-                } else{
-                    get_template_part('template-parts/hotel/elements/none');
+        <div class="row modern-search-result" id="modern-search-result">
+            <?php
+            if($query->have_posts()) {
+                while ($query->have_posts()) {
+                    $query->the_post();
+                    ?>
+                    <div class="col-lg-4 responsive-column">
+                        <?php get_template_part('template-parts/hotel/loop-hotel'); ?>
+                    </div>
+                    <?php
                 }
-                wp_reset_query();
-                ?>
+            } else{
+                get_template_part('template-parts/hotel/elements/none');
+            }
+            wp_reset_query();
+            ?>
 
-            </div>
         </div>
         <div class="row">
             <div class="col-lg-12">

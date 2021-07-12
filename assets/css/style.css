@@ -2033,9 +2033,6 @@ body {
         color: #fff; }
     .select-contain .dropdown-item:focus {
       outline: none; }
-    .select-contain .dropdown-item:hover {
-      background-color: rgba(40, 125, 250, 0.1);
-      color: #287dfa; }
 
 /* select--contain */
 .select--contain .dropdown-toggle::after {

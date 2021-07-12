@@ -2,6 +2,7 @@
     $badge_title = get_post_meta(get_the_ID(), 'trizen_hotel_badge_title', true);
     $address_title = get_post_meta(get_the_ID(), 'address', true);
     $price = get_price();
+    $count_review    = get_comment_count(get_the_ID())['approved'];
 
     if(get_the_post_thumbnail()) {
         $empty_img = 'empty-hotel-img';
@@ -48,7 +49,7 @@
                 <?php echo esc_html($avg); ?>
             </span>
 			<span class="review__text">
-                <?php esc_html_e('Average', 'trizen'); ?>
+                <?php echo TSReview::get_rate_review_text($avg, $count_review); ?>
             </span>
 			<span class="rating__text">
                 <?php comments_number(__('(0 Review)', 'trizen'), __('(1 Review)', 'trizen'), __('(% Reviews)', 'trizen')); ?>

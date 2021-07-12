@@ -167,6 +167,7 @@ EOD;
 
 	wp_enqueue_script( 'trizen-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
+	wp_enqueue_script('trizen-hotel-js', get_template_directory_uri().'/assets/js/hotel.js', array('jquery'), _S_VERSION, true);
 	wp_enqueue_script('trizen-js', get_template_directory_uri().'/assets/js/main.js', array('jquery'), _S_VERSION, true);
 
 
