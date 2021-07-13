@@ -838,6 +838,29 @@ Author Email:   contact@tecydevs.com
             var text = from + ";" + to;
             element.val(text);
         }
+
+
+
+        /* Taxonomy advance search */
+        var advFacilities = [];
+        $('.taxonomy-advance-search input[type="checkbox"]').each(function () {
+            var t = $(this);
+            if (t.is(':checked')) {
+                advFacilities.push(t.val());
+            }
+        });
+        $('.taxonomy-advance-search input[type="checkbox"]').change(function () {
+            var t = $(this);
+            if (t.is(':checked')) {
+                advFacilities.push(t.val());
+            } else {
+                var index = advFacilities.indexOf(t.val());
+                if (index > -1) {
+                    advFacilities.splice(index, 1);
+                }
+            }
+            t.closest('.taxonomy-advance-search').find('.data_taxonomy').val(advFacilities.join(','));
+        });
     });
 
 })(jQuery);

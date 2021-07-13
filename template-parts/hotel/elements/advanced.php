@@ -44,7 +44,7 @@
                 </div>
             </div>
         </div>
-        <div class="checkbox-wrap">
+        <div class="checkbox-wrap taxonomy-advance-search">
 			<?php
 			$search_tax_advance = 'hotel_facilities';
 			$get_label_tax = get_taxonomy($search_tax_advance);
@@ -76,15 +76,18 @@
 					foreach ( $facilities as $term ) {
 						?>
                         <div class="custom-checkbox d-inline-block mr-4 ts-icheck-item">
-                            <input type="checkbox" id="c<?php echo esc_attr($term->term_id); ?>" <?php echo in_array($term->term_id, $in_facilities) ? 'checked' : ''; ?>>
+                            <input
+                                    type="checkbox" id="c<?php echo esc_attr($term->term_id); ?>"
+                                    name="" value="<?php echo esc_attr($term->term_id); ?>"
+								<?php echo in_array($term->term_id, $in_facilities) ? 'checked' : ''; ?>>
                             <label for="c<?php echo esc_attr($term->term_id); ?>"><?php echo esc_html($term->name); ?></label>
                         </div>
 						<?php
 					}
 				}
 				?>
-                <input type="hidden" class="data_taxonomy" name="taxonomy[<?php echo esc_attr($search_tax_advance)?>]" value="<?php echo esc_attr($temp_facilities); ?>">
             </div>
+            <input type="hidden" class="data_taxonomy" name="taxonomy[<?php echo esc_attr($search_tax_advance)?>]" value="<?php echo esc_attr($temp_facilities); ?>">
         </div>
     </div>
 </div>

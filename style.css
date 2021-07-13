@@ -1253,6 +1253,11 @@ textarea {
 	border: none;
 	background: rgba(128,137,150,.2);
 }
+.price-slider-amount .irs-from,
+.price-slider-amount .irs-to,
+.price-slider-amount .irs-single {
+	background: #287dfa;
+}
 .price-slider-amount .irs-bar {
 	background: #287dfa;
 	height: 6px;
@@ -1271,6 +1276,10 @@ textarea {
 	width: 18px;
 	cursor: ew-resize;
 	outline: 0;
+}
+.price-slider-amount .irs-min,
+.price-slider-amount .irs-max {
+	display: none;
 }
 
 
