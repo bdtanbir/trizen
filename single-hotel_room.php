@@ -78,17 +78,14 @@ $review_rate = TSReview::get_avg_rate();
                                         <?php esc_html_e('Amenities', 'trizen'); ?>
                                     </a>
                                 </li>
+                            <?php }
+							if(get_option( 'hotel_room_review' ) == 'on' && comments_open()) { ?>
+                                <li>
+                                    <a data-scroll="reviews" href="#reviews" class="scroll-link">
+                                        <?php esc_html_e('Reviews', 'trizen'); ?>
+                                    </a>
+                                </li>
                             <?php } ?>
-							<li>
-								<a data-scroll="location-map" href="#location-map" class="scroll-link">
-									<?php esc_html_e('Map', 'trizen'); ?>
-								</a>
-							</li>
-							<li>
-								<a data-scroll="reviews" href="#reviews" class="scroll-link">
-									<?php esc_html_e('Reviews', 'trizen'); ?>
-								</a>
-							</li>
 						</ul>
 					</div>
 				</div>
@@ -144,11 +141,7 @@ $review_rate = TSReview::get_avg_rate();
 	                        get_template_part( 'template-parts/room/room-amenities' );
                         }
 
-                        /* Location */
-                        get_template_part('template-parts/room/room-location');
-
                         /* Reviews */
-
 						if(get_option( 'hotel_room_review' ) == 'on') {
                         ?>
 							<div class="section-block"></div>
