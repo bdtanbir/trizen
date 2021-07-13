@@ -5,7 +5,7 @@
 	<div class="breadcrumb-wrap">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-lg-12">
+				<div class="col-lg-10 mx-auto">
 					<div class="search-result-content">
                         <?php if(get_the_title()) { ?>
                             <div class="section-heading">
@@ -17,13 +17,13 @@
 						<div class="search-fields-container margin-top-30px">
 							<div class="contact-form-action hotel-search-form-home">
 								<form action="#" class="row">
-									<div class="col-lg-3 col-sm-6 pr-0">
+									<div class="col-lg-4 col-sm-6 pr-0">
 										<?php get_template_part('template-parts/hotel/elements/location'); ?>
 									</div>
-									<div class="col-lg-6 pr-0">
+									<div class="col-lg-4 pr-0">
 										<?php get_template_part('template-parts/hotel/elements/date'); ?>
 									</div>
-									<div class="col-lg-3 col-sm-6">
+									<div class="col-lg-4 col-sm-6">
 										<?php get_template_part('template-parts/hotel/elements/guest'); ?>
 									</div>
 
