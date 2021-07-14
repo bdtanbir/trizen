@@ -3935,19 +3935,19 @@ body {
       display: none; } }
 
 /*---------------- fixed-nav ----------------*/
-.fixed-nav .header-top-bar {
-  height: 0;
-  border: none;
-  opacity: 0;
-  visibility: hidden; }
+/*.fixed-nav .header-top-bar {*/
+/*  height: 0;*/
+/*  border: none;*/
+/*  opacity: 0;*/
+/*  visibility: hidden; }*/
 
-.fixed-nav .header-menu-wrapper {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  -webkit-box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
-  -moz-box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
-  box-shadow: 0 0 40px rgba(82, 85, 90, 0.1); }
+/*.fixed-nav .header-menu-wrapper {*/
+/*  position: fixed;*/
+/*  top: 0;*/
+/*  width: 100%;*/
+/*  -webkit-box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);*/
+/*  -moz-box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);*/
+/*  box-shadow: 0 0 40px rgba(82, 85, 90, 0.1); }*/
 
 /*===== modal-backdrop =====*/
 .modal-backdrop.show {

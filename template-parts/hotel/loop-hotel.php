@@ -5,7 +5,7 @@
     $count_review    = get_comment_count(get_the_ID())['approved'];
 
     if(get_the_post_thumbnail()) {
-        $empty_img = 'empty-hotel-img';
+        $empty_img = '';
     } else {
         $empty_img = 'empty-hotel-img';
     }

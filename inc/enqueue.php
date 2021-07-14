@@ -6,10 +6,9 @@ function trizen_scripts() {
 	if ( !function_exists('add_UA_widget_categories')) {
 		wp_enqueue_style('lib-bootstrap-min', get_theme_file_uri('/assets/css/bootstrap.min.css'));
 		wp_enqueue_style('lib-line-awesome', '//maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css');
-
-		wp_enqueue_style( 'owl-carousel-min', get_theme_file_uri( '/assets/css/owl.carousel.min.css' ) );
-		wp_enqueue_style( 'owl-theme-default-min', get_theme_file_uri( '/assets/css/owl.theme.default.min.css' ) );
 	}
+    wp_enqueue_style( 'owl-carousel-min-css', get_theme_file_uri( '/assets/css/owl.carousel.min.css' ) );
+    wp_enqueue_style( 'owl-theme-default-min', get_theme_file_uri( '/assets/css/owl.theme.default.min.css' ) );
 	wp_enqueue_style('lib-bootstrap-select-min', get_theme_file_uri('/assets/css/bootstrap-select.min.css'));
 	wp_enqueue_style( 'lib-jquery-fancybox-min', get_theme_file_uri( '/assets/css/jquery.fancybox.min.css' ) );
 	wp_enqueue_style( 'lib-daterangepicker', get_theme_file_uri( '/assets/css/daterangepicker.css' ) );
@@ -26,12 +25,16 @@ function trizen_scripts() {
 
 	if ( is_admin_bar_showing() ) {
 		$admin_bar_showing_body_sp = <<<EOD
-        .fixed-nav .header-menu-wrapper {
-            margin-top: 30px;
-        }
-        .single-nav-sticky {
+        
+        .header-menu-wrapper {
             top: 30px;
         }
+//        .fixed-nav .header-menu-wrapper {
+//            margin-top: 30px;
+//        }
+//        .single-nav-sticky {
+//            top: 30px;
+//        }
         @media only screen and (max-width: 768px) {
         
         }
@@ -153,10 +156,8 @@ EOD;
 	wp_enqueue_script('lib-bootstrap-select-min', get_template_directory_uri() .'/assets/js/bootstrap-select.min.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('lib-moment-min', get_template_directory_uri() .'/assets/js/moment.min.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('lib-daterangepicker-min', get_template_directory_uri() .'/assets/js/daterangepicker.js', array('jquery'), '1.0.0', true);
-	if(!function_exists('add_UA_widget_categories')) {
-		wp_enqueue_script('lib-owl-carousel-min', get_template_directory_uri() .'/assets/js/owl.carousel.min.js', array('jquery'), '1.0.0', true);
-		wp_enqueue_script('lib-isotope', get_template_directory_uri() .'/assets/js/isotope.js', array('jquery'), '1.0.0', true);
-	}
+    wp_enqueue_script('owl-carousel-js', get_template_directory_uri() .'/assets/js/owl.carousel.min.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('lib-isotope', get_template_directory_uri() .'/assets/js/isotope.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('lib-fancybox-min', get_template_directory_uri() .'/assets/js/jquery.fancybox.min.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('lib-countTo-min', get_template_directory_uri() .'/assets/js/jquery.countTo.min.js', array('jquery'), '1.0.0', true);
 	 wp_enqueue_script('ion-rangeslider-js', get_template_directory_uri() .'/assets/js/ion.rangeslider.js', array('jquery'), '1.0.0', true);

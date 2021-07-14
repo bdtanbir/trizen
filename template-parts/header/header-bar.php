@@ -5,7 +5,7 @@
 
     $allowed_html = trizen_wses_allowed_menu_html();
     
-    get_template_part( 'template-parts/header/cart' );
+//    get_template_part( 'template-parts/header/cart' );
 ?>
 <div class="header-top-bar padding-right-100px padding-left-100px">
 	<div class="container-fluid">

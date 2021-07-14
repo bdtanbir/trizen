@@ -43,7 +43,7 @@ if($preloader == 1) {
 <!-- ================================
             START HEADER AREA
 ================================= -->
-<header class="header-area">
+<!--<header class="header-area">-->
 	<?php
     if($header_bar == 1) {
 		get_template_part( 'template-parts/header/header-bar' );
@@ -52,7 +52,7 @@ if($preloader == 1) {
     $header_btn = get_theme_mod('trizen_hd_menu_bar_btn_text', __('Become Local Expert', 'trizen'));
 	$header_btn_url = get_theme_mod('trizen_hd_menu_bar_btn_url', __('#', 'trizen'));
     ?>
-	<div class="header-menu-wrapper padding-right-100px padding-left-100px">
+	<header class="header-menu-wrapper padding-right-100px padding-left-100px">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-12">
@@ -80,8 +80,8 @@ if($preloader == 1) {
 				</div>
 			</div>
 		</div>
-	</div>
-</header>
+	</header>
+<!--</header>-->
 <!-- ================================
          END HEADER AREA
 ================================= -->

@@ -1058,6 +1058,10 @@ textarea {
 /*-------------------------------------------
 	 Header
 ---------------------------------------------*/
+.header-menu-wrapper {
+	position: sticky;
+	top: 0;
+}
 .main-menu-content ul li a {
 	padding: 0 0 22px 0;
 }
@@ -1386,6 +1390,9 @@ textarea {
 }
 .blog-card .post-categories {
 	padding-bottom: 25px;
+}
+.blog-card .post-categories li {
+	display: inline-block;
 }
 .blog-card.blog-single-card .post-categories {
 	padding-bottom: 10px;
