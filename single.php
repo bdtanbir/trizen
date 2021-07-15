@@ -30,7 +30,7 @@ while (have_posts()) {
 						<?php } ?>
 						<div class="card-body px-0 pb-0">
 							<?php the_category(); ?>
-							<p class="card-meta pb-3">
+							<p class="card-meta pb-3 mb-0">
 								<span class="post__author"><?php trizen_posted_by(); ?></span>
 								<span class="post-dot"></span>
 								<span class="post__date"> <?php the_time( get_option( 'date_format' ) ); ?></span>
@@ -41,7 +41,7 @@ while (have_posts()) {
                                     <?php post_reading_time( get_the_ID() ); ?>
                                 </span>
 							</p>
-							<div class="section-block"></div>
+							<div class="section-block mb-3"></div>
 							<?php
 							the_content();
 

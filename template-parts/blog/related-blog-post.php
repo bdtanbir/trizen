@@ -2,19 +2,18 @@
 <?php
 $show_related_post  = get_theme_mod('show_related_post', 1);
 $related_post_title = get_theme_mod('trizen_related_post_title', __('Related Posts', 'trizen'));
-$related_post_ppp   = get_theme_mod('trizen_related_post_ppp',2);
 $related_post_pi    = explode(',', get_theme_mod('trizen_related_post_ids'));
 
 if(!empty(get_theme_mod('trizen_related_post_ids'))) {
 	$default_args = array(
 		'post_type'      => 'post',
-		'posts_per_page' => $related_post_ppp,
+		'posts_per_page' => 1,
         'post__in'       => $related_post_pi
 	);
 } else {
 	$default_args = array(
 		'post_type'      => 'post',
-		'posts_per_page' => $related_post_ppp
+		'posts_per_page' => 1
 	);
 }
 $query = new WP_Query($default_args);

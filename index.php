@@ -17,7 +17,7 @@ get_template_part('inc/breadcrumb');
 $static_infobox = get_theme_mod('show_static_infobox');
 $static_cta     = get_theme_mod('show_static_footer_cta');
 ?>
-    <section class="card-area blog-grid-wrap section--padding">
+    <section class="card-area blog-grid-wrap section--padding overflow-hidden">
         <div class="container">
             <?php if(have_posts()) : ?>
             <div class="row">

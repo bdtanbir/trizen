@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-    <section class="card-area blog-grid-wrap section--padding default-page">
+    <section class="section--padding default-page">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

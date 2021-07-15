@@ -20,13 +20,18 @@
 		<?php
 		the_content();
 
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'trizen' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
+        ?>
+
+        <div class="navigation pagination text-center">
+			<?php 
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">',
+					'after'  => '</div>',
+				)
+			);
+			?>
+        </div>
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>

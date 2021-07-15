@@ -876,23 +876,6 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 				'settings'        => 'trizen_related_post_title',
 				'type'            => 'text',
 			));
-			// Blog Related Post Posts per Page
-			$wp_customize->add_setting('trizen_related_post_ppp', array(
-				'default'           => 2,
-				'transport'         => 'postMessage',
-				'sanitize_callback' => 'wp_filter_nohtml_kses',
-			));
-			$wp_customize->add_control('trizen_related_post_ppp', array(
-				'label'    => esc_html__('Posts Per page', 'trizen'),
-				'section'  => 'trizen_related_post_options',
-				'settings' => 'trizen_related_post_ppp',
-				'type'     => 'number',
-				'choices'  => array(
-					'min'  => 1,
-					'max'  => 6,
-					'step' => 1,
-				),
-			));
 			// Blog Related Post ID(s)
 			$wp_customize->add_setting('trizen_related_post_ids', array(
 				'transform'         => 'postMessage',

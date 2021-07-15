@@ -94,6 +94,77 @@ if ( ! function_exists( 'trizen_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+        // Add support for Block Styles.
+        add_theme_support( 'wp-block-styles' );
+        // Add support for full and wide align images.
+        add_theme_support( 'align-wide' );
+        // Add support for editor styles.
+        add_theme_support( 'editor-styles' );
+        // Add editor style css
+        add_editor_style( 'style-editor.css' );
+        // Add support for responsive embedded content.
+        add_theme_support( 'responsive-embeds' );
+        // Add custom editor font sizes.
+        add_theme_support(
+            'editor-font-sizes',
+            array(
+                array(
+                    'name'      => __( 'Small', 'trizen' ),
+                    'shortName' => __( 'S', 'trizen' ),
+                    'size'      => 16,
+                    'slug'      => 'small',
+                ),
+                array(
+                    'name'      => __( 'Normal', 'trizen' ),
+                    'shortName' => __( 'M', 'trizen' ),
+                    'size'      => 22,
+                    'slug'      => 'normal',
+                ),
+                array(
+                    'name'      => __( 'Large', 'trizen' ),
+                    'shortName' => __( 'L', 'trizen' ),
+                    'size'      => 36,
+                    'slug'      => 'large',
+                ),
+                array(
+                    'name'      => __( 'Huge', 'trizen' ),
+                    'shortName' => __( 'XL', 'trizen' ),
+                    'size'      => 50,
+                    'slug'      => 'huge',
+                ),
+            )
+        );
+        // Editor color palette.
+        add_theme_support(
+            'editor-color-palette',
+            array(
+                array(
+                    'name'  => __( 'Primary', 'trizen' ),
+                    'slug'  => 'primary',
+                    'color' => '#287dfa',
+                ),
+                array(
+                    'name'  => __( 'Secondary', 'trizen' ),
+                    'slug'  => 'secondary',
+                    'color' => '#0d233e',
+                ),
+                array(
+                    'name'  => __( 'Dark Gray', 'trizen' ),
+                    'slug'  => 'dark-gray',
+                    'color' => '#7f8897',
+                ),
+                array(
+                    'name'  => __( 'Light Gray', 'trizen' ),
+                    'slug'  => 'light-gray',
+                    'color' => '#eeeeee',
+                ),
+                array(
+                    'name'  => __( 'White', 'trizen' ),
+                    'slug'  => 'white',
+                    'color' => '#ffffff',
+                ),
+            )
+        );
 	}
 endif;
 add_action( 'after_setup_theme', 'trizen_setup' );
