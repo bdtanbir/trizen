@@ -3904,7 +3904,7 @@ body {
       padding-right: 0; }
 
 @media (min-width: 992px) {
-  .main-menu-content ul li:hover .dropdown-menu-item {
+  .main-menu-content ul > li:hover > .dropdown-menu-item {
     -webkit-transform: perspective(300px) rotateX(0);
     -moz-transform: perspective(300px) rotateX(0);
     -ms-transform: perspective(300px) rotateX(0);
@@ -3912,7 +3912,7 @@ body {
     transform: perspective(300px) rotateX(0);
     opacity: 1;
     visibility: visible; }
-  .main-menu-content ul li .dropdown-menu-item li:hover .sub-menu {
+  .main-menu-content ul li .dropdown-menu-item > li:hover > .sub-menu {
     opacity: 1;
     visibility: visible;
     -webkit-transform: perspective(250px) rotateX(0);

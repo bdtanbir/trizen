@@ -31,9 +31,9 @@ if (!is_active_sidebar('trizen-footer-widgets') || !$footer_lf_widget == 1 || !e
     } else {
         if(!empty($footer_security_terms_title) || !empty($footer_security_privacy_title) || !empty($footer_security_help_title) || !empty($social_fb) || !empty($social_tw) || !empty($social_inc) || !empty($social_ln) || !empty($social_ggl) || !empty($social_pnt) || !empty($social_gt) && !is_active_sidebar('trizen-footer-widgets') && !$footer_lf_widget == 1
         ) {
-            $extra_pd = 'padding-top-30px';
-        } else {
             $extra_pd = 'padding-top-100px';
+        } else {
+            $extra_pd = 'padding-top-30px';
         }
         if(!empty($copyright)) {
             $border_after_widgets = '<div class="section-block mt-4"></div>';

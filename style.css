@@ -1092,6 +1092,10 @@ textarea {
 .single-nav-sticky + .single-content-box {
 	padding-top: 0;
 }
+.main-menu-content ul li .dropdown-menu-item li .dropdown-menu-item {
+	top: -10px;
+    left: 200px;
+}
 
 
 /*-------------------------------------------
@@ -1748,6 +1752,9 @@ textarea {
 .copy__desc {
 	margin-bottom: 0;
 }
+.footer-item .footer__desc {
+	margin-bottom: 0;
+}
 
 
 
@@ -1761,8 +1768,33 @@ textarea {
 }
 
 
-
 table.wp-list-table.widefat.posts {
 	width: 800px;
 	margin: auto;
 }
+
+@media (max-width: 991px) {
+	.main-menu-content ul li.dropdown > a:after {
+		display: none;
+	}
+	.main-menu-content nav {
+		max-height: 280px;
+		overflow-x: hidden;
+	}
+	.main-menu-content ul li .dropdown-menu-item {
+		height: auto;
+	}
+	.main-menu-content ul li .dropdown-menu-item li .dropdown-menu-item {
+		top: 0;
+		left: 0;
+		padding-left: 20px;
+	}
+	.main-menu-content ul li .drop-menu-toggler {
+		padding: 0;
+	}
+	.main-menu-content ul > li:last-child,
+	.main-menu-content ul li a {
+		padding-bottom: 0;
+	}
+}
+
