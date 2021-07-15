@@ -25,23 +25,18 @@ function trizen_scripts() {
 
 	if ( is_admin_bar_showing() ) {
 		$admin_bar_showing_body_sp = <<<EOD
-        
         .header-menu-wrapper {
             top: 30px;
         }
-//        .fixed-nav .header-menu-wrapper {
-//            margin-top: 30px;
-//        }
-//        .single-nav-sticky {
-//            top: 30px;
-//        }
         @media only screen and (max-width: 768px) {
-        
+            .header-menu-wrapper {
+                top: 46px;
+            }
         }
         @media screen and (max-width: 600px) {
-        
-        }
-        @media screen and (max-width: 425px) {
+            .header-menu-wrapper {
+                top: 0;
+            }
         }
 EOD;
 		wp_add_inline_style('trizen-style', $admin_bar_showing_body_sp);

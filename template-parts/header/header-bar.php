@@ -8,7 +8,7 @@
 //    get_template_part( 'template-parts/header/cart' );
 ?>
 <div class="header-top-bar padding-right-100px padding-left-100px">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row align-items-center">
 			<?php if(!empty(get_theme_mod('trizen_hd_bar_mobile_num')) || !empty(get_theme_mod('trizen_hd_bar_email'))) { ?>
                 <div class="col-lg-6">

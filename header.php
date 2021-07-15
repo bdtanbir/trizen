@@ -53,7 +53,7 @@ if($preloader == 1) {
 	$header_btn_url = get_theme_mod('trizen_hd_menu_bar_btn_url', __('#', 'trizen'));
     ?>
 	<header class="header-menu-wrapper padding-right-100px padding-left-100px">
-		<div class="container-fluid">
+		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="menu-wrapper">
