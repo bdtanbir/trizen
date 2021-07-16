@@ -802,12 +802,14 @@ textarea {
 .pagination {
 	width: 100%;
 }
+.ua-blog2-pagination-list,
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
 	display: flex;
     align-items: center;
 }
+.ua-blog2-pagination-list > *,
 .page-links > * {
     width: 35px;
     height: 35px;
@@ -819,9 +821,12 @@ textarea {
     margin-right: 5px;
 	transition: .3s;
 }
+.ua-blog2-pagination-list > *:last-child,
 .page-links > *:last-child {
 	margin-right: 0;
 }
+.ua-blog2-pagination-list > *:hover,
+.ua-blog2-pagination-list .current,
 .page-links > *:hover,
 .page-links .current {
 	background:var(--primary_color);
