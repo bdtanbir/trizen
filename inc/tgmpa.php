@@ -63,7 +63,7 @@ function trizen_register_required_plugins() {
 				Included 8 Plugins
 		-----------------------------------------*/
 		// Trizen Helper
-		/*array(
+		array(
 			'name'               => __('Trizen Helper', 'trizen'), // The plugin name.
 			'slug'               => 'trizen-helper', // The plugin slug (typically the folder name).
 			'source'             => get_template_directory() . '/inc/plugins/trizen-helper.zip', // The plugin source.
@@ -73,10 +73,10 @@ function trizen_register_required_plugins() {
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
 			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
-		),*/
+		),
 
 		// Useful Addons For Elementor
-		/*array(
+		array(
 			'name'               => __('Useful Addons Elementor', 'trizen'), // The plugin name.
 			'slug'               => 'useful-addons-elementor', // The plugin slug (typically the folder name).
 			'source'             => get_template_directory() . '/inc/plugins/useful-addons-elementor.zip', // The plugin source.
@@ -86,7 +86,7 @@ function trizen_register_required_plugins() {
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
 			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
-		),*/
+		),
 
 		// One Click Demo Import
 		array(
