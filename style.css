@@ -832,6 +832,9 @@ textarea {
 	background:var(--primary_color);
 	color: #ffffff;
 }
+.elementor-image-gallery .gallery .gallery-item {
+	max-width: 100% !important;
+}
 
 /* Comments
 --------------------------------------------- */
@@ -868,6 +871,24 @@ textarea {
 .custom-logo-link {
 	display: inline-block;
 }
+
+
+/* Elementor Addons
+--------------------------------------------- */
+.elementor-accordion .elementor-tab-title {
+	margin-top: 10px !important;
+}
+.elementor-accordion .elementor-tab-title .elementor-accordion-icon.elementor-accordion-icon-right {
+    margin-top: 4px !important;
+}
+.elementor-accordion .elementor-accordion-item:first-child .elementor-tab-title {
+	margin-top: 0 !important;
+}
+.elementor-accordion .elementor-accordion-item + .elementor-accordion-item {
+	border-color: rgba(128,137,150,.1) !important;
+}
+
+
 
 /* Captions
 --------------------------------------------- */
