@@ -9,14 +9,14 @@ if(!isset($post_type)){
 
 <div class="filter-bar d-flex align-items-center justify-content-between">
 
-    <div class="layout-view d-flex align-items-center">
+    <!-- <div class="layout-view d-flex align-items-center">
         <a href="hotel-grid.html" data-toggle="tooltip" data-placement="top" title="<?php esc_attr_e('Grid View', 'trizen'); ?>" class="active">
             <i class="la la-th-large"></i>
         </a>
         <a href="hotel-list.html" data-toggle="tooltip" data-placement="top" title="<?php esc_attr_e('List View', 'trizen'); ?>">
             <i class="la la-th-list"></i>
         </a>
-    </div>
+    </div> -->
     <div class="select-contain">
 
         <div class="dropdown dropdown-contain">

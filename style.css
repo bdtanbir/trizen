@@ -1919,6 +1919,12 @@ textarea {
 	border-color: var(--primary_color);
 	color: var(--primary_color);
 }
+.sidebar-widget {
+	margin-bottom: 25px;
+}
+.sidebar-widget .title {
+	margin-top: 0;
+}
 .widget_nav_menu > .menu-testing-menu-container,
 .widget_pages > ul,
 .widget_categories > ul,
@@ -2092,6 +2098,11 @@ textarea {
     -o-transition: all .3s;
     transition: all .3s;
 	color: #0d233e;
+}
+.wp-block-latest-posts li .post-date, 
+.widget_recent_entries ul li .post-date,
+ .widget_recent_comments ul li .post-date {
+	display: block;
 }
 .contact-form-action .form-group .search-btn {
 	line-height: 28px;

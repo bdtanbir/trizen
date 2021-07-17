@@ -7,13 +7,13 @@ $related_post_pi    = explode(',', get_theme_mod('trizen_related_post_ids'));
 if(!empty(get_theme_mod('trizen_related_post_ids'))) {
 	$default_args = array(
 		'post_type'      => 'post',
-		'posts_per_page' => 1,
+		'posts_per_page' => 2,
         'post__in'       => $related_post_pi
 	);
 } else {
 	$default_args = array(
 		'post_type'      => 'post',
-		'posts_per_page' => 1
+		'posts_per_page' => 2
 	);
 }
 $query = new WP_Query($default_args);
