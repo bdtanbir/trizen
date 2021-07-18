@@ -7,24 +7,24 @@ $child_number    = get( 'child_number', 0 );
 
 <div class="input-box form-extra-field field-guest">
 	<label class="label-text">
-		<?php esc_html_e('Guests', 'useful-addons-elementor'); ?>
+		<?php esc_html_e('Guests', 'trizen'); ?>
     </label>
     <div class="form-group">
         <div class="dropdown dropdown-contain gty-container">
             <a class="dropdown-toggle dropdown-btn" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                <span class="adult" data-text="<?php esc_attr_e('Adult', 'useful-addons-elementor'); ?>" data-text-multi="<?php esc_attr_e('Adults', 'useful-addons-elementor'); ?>">
-                    <?php echo sprintf( _n( '%s Adult', '%s Adults', esc_attr($adult_number), 'useful-addons-elementor' ), esc_attr($adult_number) ) ?>
+                <span class="adult" data-text="<?php esc_attr_e('Adult', 'trizen'); ?>" data-text-multi="<?php esc_attr_e('Adults', 'trizen'); ?>">
+                    <?php echo sprintf( _n( '%s Adult', '%s Adults', esc_attr($adult_number), 'trizen' ), esc_attr($adult_number) ) ?>
                 </span>
                 &nbsp;-&nbsp;
-                <span class="children" data-text="<?php esc_attr_e('Child', 'useful-addons-elementor'); ?>" data-text-multi="<?php esc_attr_e('Children', 'useful-addons-elementor'); ?>">
-                    <?php echo sprintf( _n( '%s Child', '%s Children', esc_attr($child_number), 'useful-addons-elementor' ), esc_attr($child_number) ); ?>
+                <span class="children" data-text="<?php esc_attr_e('Child', 'trizen'); ?>" data-text-multi="<?php esc_attr_e('Children', 'trizen'); ?>">
+                    <?php echo sprintf( _n( '%s Child', '%s Children', esc_attr($child_number), 'trizen' ), esc_attr($child_number) ); ?>
                 </span>
             </a>
             <div class="dropdown-menu dropdown-menu-wrap">
                 <div class="dropdown-item">
                     <div class="qty-box d-flex align-items-center justify-content-between">
                         <label for="room_num_search">
-							<?php esc_html_e('Rooms', 'useful-addons-elementor'); ?>
+							<?php esc_html_e('Rooms', 'trizen'); ?>
                         </label>
                         <div class="qtyBtn d-flex align-items-center">
                             <div class="qtyDec">
@@ -46,7 +46,7 @@ $child_number    = get( 'child_number', 0 );
                 <div class="dropdown-item">
                     <div class="qty-box d-flex align-items-center justify-content-between">
                         <label for="adult_number">
-							<?php esc_html_e('Adults', 'useful-addons-elementor'); ?>
+							<?php esc_html_e('Adults', 'trizen'); ?>
                         </label>
                         <div class="qtyBtn d-flex align-items-center">
                             <div class="qtyDec">
@@ -68,7 +68,7 @@ $child_number    = get( 'child_number', 0 );
                 <div class="dropdown-item">
                     <div class="qty-box d-flex align-items-center justify-content-between">
                         <label for="child_number">
-							<?php esc_html_e('Children', 'useful-addons-elementor'); ?>
+							<?php esc_html_e('Children', 'trizen'); ?>
                         </label>
                         <div class="qtyBtn d-flex align-items-center">
                             <div class="qtyDec">

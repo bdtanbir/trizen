@@ -1281,9 +1281,9 @@ if ( ! class_exists( 'Trizen_Customizer' ) ) {
 			));
 			// Copyright text
 			$wp_customize->add_setting('trizen_copyright_txt', array(
-				'default'           => __('&copy; Copyright Trizen 2020. Made with <i class="la la-heart"></i> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>', 'trizen'),
+				'default'           => __('© Copyright Trizen 2020. Made with by TechyDevs.com', 'trizen'),
 				'transport'         => 'postMessage',
-				'sanitize_callback' => 'trizen_sanitize_textarea'
+				'sanitize_callback' => 'wp_filter_nohtml_kses'
 			));
 			$wp_customize->add_control('trizen_copyright_txt', array(
 				'label'    => __('Copyright text', 'trizen'),

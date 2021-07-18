@@ -239,7 +239,7 @@ $trizen_hotel_faqs_data       = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_d
                                                                         <div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
                                                                             <div class="progressbar-box flex-shrink-0">
                                                                                 <div class="progressbar-line" data-percent="<?php echo esc_attr($star['percent']); ?>%">
-                                                                                    <div class="progressbar-line-item bar-bg-<?php echo $i++; ?>"></div>
+                                                                                    <div class="progressbar-line-item bar-bg-<?php echo esc_attr( $i++ ); ?>"></div>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="bar-percent"><?php echo esc_html($star['summary']) ?></div>
@@ -330,7 +330,7 @@ $trizen_hotel_faqs_data       = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_d
                                                                     <?php
                                                                     $content = get_comment_text( $comment_id );
 
-                                                                    echo esc_html(balanceTags($content)); ?>
+                                                                    echo balanceTags(esc_html($content)); ?>
                                                                 </p>
                                                                 <div class="reviews-reaction">
                                                                     <?php

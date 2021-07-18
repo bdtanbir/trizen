@@ -25,7 +25,7 @@ if(!empty($end)){
     <div class="date-wrapper clearfix">
         <div class="check-in-wrapper">
             <label class="label-text">
-				<?php esc_html_e('Check In Out', 'useful-addons-elementor'); ?>
+				<?php esc_html_e('Check In Out', 'trizen'); ?>
             </label>
             <div class="d-flex form-group form-control">
                 <span class="la la-calendar form-icon"></span>

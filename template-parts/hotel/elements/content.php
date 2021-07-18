@@ -27,7 +27,7 @@ switch ($post_type){
                     <div class="filter-top d-flex align-items-center justify-content-between pb-4">
                         <div>
                             <h3 class="title font-size-24">
-                                <?php echo balanceTags($result_string); ?>
+                                <?php echo balanceTags(esc_html( $result_string )); ?>
                             </h3>
                             <p class="font-size-14">
                                 <?php esc_html_e('Book with confidence: No hotel booking fees', 'trizen'); ?>
@@ -75,7 +75,7 @@ switch ($post_type){
                             $last = (int)$posts_per_page * (int)($page);
                             if ($last > $query->found_posts) $last = $query->found_posts;
                             echo sprintf(__('Showing %d - %d of %d ', 'trizen'), (int)$posts_per_page * ($page - 1) + 1, $last, $query->found_posts );
-                            echo ( $query->found_posts == 1 ) ? __( 'Hotel', 'trizen' ) : __( 'Hotels', 'trizen' );
+                            echo ''.( $query->found_posts == 1 ) ? __( 'Hotel', 'trizen' ) : __( 'Hotels', 'trizen' );
                         endif;
                         ?>
                     </p>

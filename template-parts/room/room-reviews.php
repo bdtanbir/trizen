@@ -67,7 +67,7 @@
                             <?php
                             $content = get_comment_text( $comment_id );
 
-                            echo esc_html(balanceTags($content)); ?>
+                            echo balanceTags(esc_html($content)); ?>
                         </p>
                         <div class="reviews-reaction">
                             <?php

@@ -25,13 +25,13 @@ if(is_singular('location')){
 	<div class="form-group tp-hotel-wrapper">
 		<div class="dropdown" data-toggle="dropdown" id="dropdown-destination">
 			<label class="label-text">
-				<?php esc_html_e( 'Destination / Hotel name', 'useful-addons-elementor' ); ?>
+				<?php esc_html_e( 'Destination / Hotel name', 'trizen' ); ?>
 			</label>
 			<div class="render position-relative">
 				<span class="la la-map-marker form-icon"></span>
 				<?php
 				if(empty($location_name)) {
-					$placeholder = esc_html__('Where are you going?', 'useful-addons-elementor');
+					$placeholder = esc_html__('Where are you going?', 'trizen');
 				}else{
 					$placeholder = esc_html($location_name);
 				}
@@ -66,10 +66,10 @@ if(is_singular('location')){
             data-name="destination"
             autocomplete="off"
             type="text"
-            data-text="<?php /*echo esc_html__('hotel(s)', 'useful-addons-elementor'); */?>"
+            data-text="<?php /*echo esc_html__('hotel(s)', 'trizen'); */?>"
             data-locale="<?php /*echo esc_attr($locale_default); */?>"
             value=""
-            placeholder="<?php /*esc_attr_e('Enter city or property', 'useful-addons-elementor'); */?>">-->
+            placeholder="<?php /*esc_attr_e('Enter city or property', 'trizen'); */?>">-->
 
 	</div>
 </div>

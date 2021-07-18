@@ -77,7 +77,7 @@ $cart_total_amount = WC()->cart->get_cart_subtotal();
             <li class="cart-total">
                 <div class="sub-total">
                     <?php esc_html_e('Subtotal', 'trizen') ?> <span class="price">
-                        <?php echo balanceTags($cart_total_amount); ?>
+                        <?php echo balanceTags(esc_html( $cart_total_amount )); ?>
                     </span>
                 </div>
                 <a href="<?php echo add_query_arg(['action' => 'ts-remove-cart', 'security' => wp_create_nonce('ts-security')]); ?>" class="btn btn-danger btn-full upper">

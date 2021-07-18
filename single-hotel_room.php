@@ -171,7 +171,7 @@ $review_rate = TSReview::get_avg_rate();
                                                                         <div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
                                                                             <div class="progressbar-box flex-shrink-0">
                                                                                 <div class="progressbar-line" data-percent="<?php echo esc_attr($star['percent']); ?>%">
-                                                                                    <div class="progressbar-line-item bar-bg-<?php echo $i++; ?>"></div>
+                                                                                    <div class="progressbar-line-item bar-bg-<?php echo esc_attr($i++); ?>"></div>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="bar-percent"><?php echo esc_html($star['summary']) ?></div>
