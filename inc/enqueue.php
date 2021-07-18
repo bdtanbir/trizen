@@ -17,7 +17,7 @@ function trizen_scripts() {
 	wp_enqueue_style( 'lib-jquery-ui', get_theme_file_uri( '/assets/css/jquery-ui.css' ) );
 	wp_enqueue_style( 'ion-rangeslider-css', get_theme_file_uri('assets/css/ion.rangeslider.css'));
 	wp_enqueue_style( 'ion-rangeSlider-skinHTML5-css', get_theme_file_uri('assets/css/ion.rangeSlider.skinHTML5.css'));
-	wp_enqueue_style( 'lib-flag-icon-min', get_theme_file_uri( '/assets/css/flag-icon.min.css' ) );
+	// wp_enqueue_style( 'lib-flag-icon-min', get_theme_file_uri( '/assets/css/flag-icon.min.css' ) );
 	wp_enqueue_style( 'lib-leaflet', get_theme_file_uri( '/assets/css/leaflet.css' ) );
 	wp_enqueue_style( 'trizen-main-style', get_theme_file_uri( '/assets/css/style.css' ) );
 
