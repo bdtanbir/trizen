@@ -51,12 +51,18 @@ if($preloader == 1) {
 
     $header_btn = get_theme_mod('trizen_hd_menu_bar_btn_text', __('Become Local Expert', 'trizen'));
 	$header_btn_url = get_theme_mod('trizen_hd_menu_bar_btn_url', __('#', 'trizen'));
+	if(has_nav_menu('primary_menu'))  {
+		$justify_between = '';
+
+	} else {
+		$justify_between = ' justify-content-between';
+	} 
     ?>
 	<header class="header-menu-wrapper padding-right-100px padding-left-100px">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="menu-wrapper">
+					<div class="menu-wrapper<?php echo esc_attr( $justify_between ); ?>">
 						<a href="#" class="down-button"><i class="la la-angle-down"></i></a>
 						<div class="logo">
 							<?php get_template_part('template-parts/header/common-logo'); ?>
@@ -69,7 +75,8 @@ if($preloader == 1) {
                             <div class="main-menu-content">
                                 <?php get_template_part('template-parts/header/nav-menu'); ?>
                             </div>
-                        <?php } if(!empty($header_btn)) { ?>
+                        <?php }
+						if(!empty($header_btn)) { ?>
                             <div class="nav-btn">
                                 <a href="<?php echo esc_url($header_btn_url); ?>" class="theme-btn">
                                     <?php echo esc_html($header_btn); ?>

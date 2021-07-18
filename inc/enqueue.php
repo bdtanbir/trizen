@@ -17,7 +17,6 @@ function trizen_scripts() {
 	wp_enqueue_style( 'lib-jquery-ui', get_theme_file_uri( '/assets/css/jquery-ui.css' ) );
 	wp_enqueue_style( 'ion-rangeslider-css', get_theme_file_uri('assets/css/ion.rangeslider.css'));
 	wp_enqueue_style( 'ion-rangeSlider-skinHTML5-css', get_theme_file_uri('assets/css/ion.rangeSlider.skinHTML5.css'));
-	wp_enqueue_style( 'lib-leaflet', get_theme_file_uri( '/assets/css/leaflet.css' ) );
 	wp_enqueue_style( 'trizen-main-style', get_theme_file_uri( '/assets/css/style.css' ) );
 
 	wp_enqueue_style( 'trizen-style', get_stylesheet_uri(), array(), time() );
@@ -159,7 +158,6 @@ EOD;
 	wp_enqueue_script('lib-quantity-input-js', get_template_directory_uri() .'/assets/js/quantity-input.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('theme-navbar-sticky-js', get_template_directory_uri() .'/assets/js/navbar-sticky.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('theme-total-price-js', get_template_directory_uri() .'/assets/js/total-price.js', array('jquery'), '1.0.0', true);
-	wp_enqueue_script('lib-leaflet-js', get_template_directory_uri() .'/assets/js/leaflet.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('lib-map-js', get_template_directory_uri() .'/assets/js/map.js', array('jquery'), '1.0.0', true);
 
 	wp_enqueue_script( 'trizen-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
@@ -216,10 +214,10 @@ EOD;
         'prev_month'               => esc_html__('prev month', 'trizen'),
         'next_month'               => esc_html__('next month', 'trizen'),
         'please_waite'             => esc_html__('Please wait...', 'trizen'),
-        'booking_currency_precision' => get_woocommerce_currency_symbol(),
+        'booking_currency_precision' => class_exists('WooCommerce') ? get_woocommerce_currency_symbol() :  '$',
         'thousand_separator' => '.',
         'decimal_separator' => ',',
-        'currency_symbol' => get_woocommerce_currency_symbol(),
+        'currency_symbol' => class_exists('WooCommerce') ? get_woocommerce_currency_symbol() : '$',
         'currency_position' => 'left',
     ]);
 
