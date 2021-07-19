@@ -1,8 +1,8 @@
 
 <?php
-	if(function_exists('wp_nav_menu') && has_nav_menu('primary_menu')) {
+	if(function_exists('wp_nav_menu') && has_nav_menu('header_menu')) {
 		wp_nav_menu(array(
-			'theme_location' => 'primary_menu',
+			'theme_location' => 'header_menu',
 			'depth'          => 3,
 			'menu'           => 'ul',
 			'menu_class'     => ' ',

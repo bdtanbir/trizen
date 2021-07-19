@@ -51,7 +51,7 @@ if($preloader == 1) {
 
     $header_btn = get_theme_mod('trizen_hd_menu_bar_btn_text', __('Become Local Expert', 'trizen'));
 	$header_btn_url = get_theme_mod('trizen_hd_menu_bar_btn_url', __('#', 'trizen'));
-	if(has_nav_menu('primary_menu'))  {
+	if(has_nav_menu('header_menu'))  {
 		$justify_between = '';
 
 	} else {
@@ -71,7 +71,7 @@ if($preloader == 1) {
 								<i class="la la-times"></i>
 							</div>
 						</div>
-                        <?php if(has_nav_menu('primary_menu')) { ?>
+                        <?php if(has_nav_menu('header_menu')) { ?>
                             <div class="main-menu-content">
                                 <?php get_template_part('template-parts/header/nav-menu'); ?>
                             </div>

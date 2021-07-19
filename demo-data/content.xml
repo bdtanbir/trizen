@@ -22,7 +22,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/5.7.2" created="2021-07-18 02:15" -->
+	<!-- generator="WordPress/5.7.2" created="2021-07-19 04:31" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -35,7 +35,7 @@
 	<title>Trizen</title>
 	<link>http://localhost/trizen</link>
 	<description>Just another WordPress site</description>
-	<pubDate>Sun, 18 Jul 2021 02:15:08 +0000</pubDate>
+	<pubDate>Mon, 19 Jul 2021 04:31:27 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>http://localhost/trizen</wp:base_site_url>
@@ -8017,10 +8017,10 @@ Suits Your Needs</h2>
 		<content:encoded><![CDATA[ ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>25</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-07 05:11:02]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[25]]></wp:post_name>
@@ -8071,6 +8071,10 @@ Suits Your Needs</h2>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 		<wp:meta_value><![CDATA[2021-07-15]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Hotel]]></title>
@@ -8082,10 +8086,10 @@ Suits Your Needs</h2>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>682</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-15 03:18:27]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[hotel]]></wp:post_name>
@@ -8132,6 +8136,10 @@ Suits Your Needs</h2>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 		<wp:meta_value><![CDATA[2021-07-15]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Hotel Details]]></title>
@@ -8143,10 +8151,10 @@ Suits Your Needs</h2>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>685</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-15 03:18:27]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[hotel-details]]></wp:post_name>
@@ -8193,6 +8201,10 @@ Suits Your Needs</h2>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 		<wp:meta_value><![CDATA[2021-07-15]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Rooms]]></title>
@@ -8204,10 +8216,10 @@ Suits Your Needs</h2>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>686</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-15 03:18:27]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[rooms]]></wp:post_name>
@@ -8254,6 +8266,10 @@ Suits Your Needs</h2>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 		<wp:meta_value><![CDATA[2021-07-15]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Room Details]]></title>
@@ -8265,10 +8281,10 @@ Suits Your Needs</h2>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>688</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-15 03:18:27]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[room-details]]></wp:post_name>
@@ -8315,6 +8331,10 @@ Suits Your Needs</h2>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 		<wp:meta_value><![CDATA[2021-07-15]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Blog]]></title>
@@ -8326,10 +8346,10 @@ Suits Your Needs</h2>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>689</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-15 03:19:25]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[blog]]></wp:post_name>
@@ -8375,6 +8395,10 @@ Suits Your Needs</h2>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 		<wp:meta_value><![CDATA[2021-07-15]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -9734,10 +9758,10 @@ You Might Like</h2>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>690</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-15 03:19:25]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[blog-grid]]></wp:post_name>
@@ -9784,6 +9808,10 @@ You Might Like</h2>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 		<wp:meta_value><![CDATA[2021-07-15]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Blog Details]]></title>
@@ -9795,10 +9823,10 @@ You Might Like</h2>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>691</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-15 03:19:25]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[blog-details]]></wp:post_name>
@@ -9844,6 +9872,10 @@ You Might Like</h2>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 		<wp:meta_value><![CDATA[2021-07-15]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -9954,10 +9986,10 @@ inquiry@trizen.com                        </p>
 		<content:encoded><![CDATA[ ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>695</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-15 04:33:36]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[695]]></wp:post_name>
@@ -10004,6 +10036,10 @@ inquiry@trizen.com                        </p>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 		<wp:meta_value><![CDATA[2021-07-15]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[]]></title>
@@ -10015,10 +10051,10 @@ inquiry@trizen.com                        </p>
 		<content:encoded><![CDATA[ ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>2008</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-17 03:23:00]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[2008]]></wp:post_name>
@@ -10061,6 +10097,10 @@ inquiry@trizen.com                        </p>
 		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
 		<wp:meta_value><![CDATA[]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Pages]]></title>
@@ -10072,10 +10112,10 @@ inquiry@trizen.com                        </p>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>2437</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-17 10:31:22]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[pages-2]]></wp:post_name>
@@ -10118,6 +10158,10 @@ inquiry@trizen.com                        </p>
 		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
 		<wp:meta_value><![CDATA[#]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[]]></title>
@@ -10129,10 +10173,10 @@ inquiry@trizen.com                        </p>
 		<content:encoded><![CDATA[ ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>2438</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-17 10:31:22]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[2438]]></wp:post_name>
@@ -10175,6 +10219,10 @@ inquiry@trizen.com                        </p>
 		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
 		<wp:meta_value><![CDATA[]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[]]></title>
@@ -10186,10 +10234,10 @@ inquiry@trizen.com                        </p>
 		<content:encoded><![CDATA[ ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>2439</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-17 10:31:22]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[2439]]></wp:post_name>
@@ -10232,6 +10280,10 @@ inquiry@trizen.com                        </p>
 		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
 		<wp:meta_value><![CDATA[]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[]]></title>
@@ -10243,10 +10295,10 @@ inquiry@trizen.com                        </p>
 		<content:encoded><![CDATA[ ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>2440</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-17 10:31:22]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[2440]]></wp:post_name>
@@ -10289,6 +10341,10 @@ inquiry@trizen.com                        </p>
 		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
 		<wp:meta_value><![CDATA[]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Our Services]]></title>
@@ -10300,10 +10356,10 @@ inquiry@trizen.com                        </p>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>2441</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-17 10:31:22]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[our-services]]></wp:post_name>
@@ -10346,6 +10402,10 @@ inquiry@trizen.com                        </p>
 		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
 		<wp:meta_value><![CDATA[]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[]]></title>
@@ -10357,10 +10417,10 @@ inquiry@trizen.com                        </p>
 		<content:encoded><![CDATA[ ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>2442</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-17 10:31:22]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[2442]]></wp:post_name>
@@ -10403,6 +10463,10 @@ inquiry@trizen.com                        </p>
 		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
 		<wp:meta_value><![CDATA[]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Room Grid]]></title>
@@ -10414,10 +10478,10 @@ inquiry@trizen.com                        </p>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>2546</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-17 13:57:13]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[room-grid-2]]></wp:post_name>
@@ -10460,6 +10524,10 @@ inquiry@trizen.com                        </p>
 		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
 		<wp:meta_value><![CDATA[]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Hotel Grid]]></title>
@@ -10471,10 +10539,10 @@ inquiry@trizen.com                        </p>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>2547</wp:post_id>
-		<wp:post_date><![CDATA[2021-07-17 13:57:32]]></wp:post_date>
+		<wp:post_date><![CDATA[2021-07-19 04:29:42]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-07-17 13:57:13]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-07-17 13:57:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-07-17 13:57:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2021-07-19 04:29:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-07-19 04:29:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[hotel-grid-2]]></wp:post_name>
@@ -10516,6 +10584,10 @@ inquiry@trizen.com                        </p>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
 		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021-07-17]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>

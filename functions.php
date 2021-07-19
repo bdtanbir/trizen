@@ -291,10 +291,10 @@ add_filter( 'pt-ocdi/import_files', 'ocdi_import_files' );
 
 function ocdi_after_import_setup() {
     // Assign menus to their locations.
-    $primary_menu = get_term_by( 'name', 'Header Primary Menu', 'nav_menu' );
+    $header_menu = get_term_by( 'name', 'Header Menu', 'nav_menu' );
 
     set_theme_mod( 'nav_menu_locations', array(
-            'primary_menu' => $primary_menu->term_id,
+            'header_menu' => $header_menu->term_id,
         )
     );
 
