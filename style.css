@@ -1579,6 +1579,7 @@ textarea {
 .woocommerce .cart-collaterals {
 	max-width: 370px;
     margin-left: auto;
+	padding-top: 10px;
 }
 .woocommerce .cart-collaterals h2 {
     font-size: 24px;

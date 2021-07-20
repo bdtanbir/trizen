@@ -61,6 +61,7 @@ $cart_total_amount = WC()->cart->get_cart_subtotal();
                 $price    = $price + $tax;
                 $product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $values ) : '', $values, $item );
 
+                error_log(print_r($values, 1));
 					?>
                     <tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $values, $item ) ); ?>">
                         <td class="product-details" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
@@ -72,14 +73,36 @@ $cart_total_amount = WC()->cart->get_cart_subtotal();
                                         }
                                     ?>
                                 </a>
-                                <?php
-                                    echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( get_the_permalink( $post_id ) ), $_product->get_name() ), $values, $item ) );
-                                    do_action( 'woocommerce_after_cart_item_name', $values, $item );
-                                    echo wc_get_formatted_cart_item_data( $values ); // PHPCS: XSS ok.
-                                    if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $values['quantity'] ) ) {
-                                        echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
-                                    }
-                                ?>
+                                <div class="product-content-right">
+                                    <?php
+                                        echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( get_the_permalink( $post_id ) ), $_product->get_name() ), $values, $item ) );
+                                        do_action( 'woocommerce_after_cart_item_name', $values, $item );
+                                        echo wc_get_formatted_cart_item_data( $values ); // PHPCS: XSS ok.
+                                        if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $values['quantity'] ) ) {
+                                            echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
+                                        }
+                                    ?>
+                                    <div class="product-info line-height-24">
+                                        <span class="product-info-label">
+                                            <?php esc_html_e( 'Reservation:', 'trizen' ); ?>
+                                        </span>
+                                        <span class="product-info-value">
+                                            <span class="product-check-in">
+                                                <?php echo esc_html($values['ts_booking_data']['check_in']); ?>
+                                            </span>
+                                            <span class="product-mark">/</span>
+                                            <span class="product-check-out">
+                                                <?php echo esc_html($values['ts_booking_data']['check_out']); ?>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="product-info line-height-24">
+                                        <span class="product-info-label">
+                                            <?php esc_html_e( 'Guests:', 'trizen' ); ?>
+                                        </span>
+                                        <span class="product-info-value"><?php echo esc_html($values['ts_booking_data']['adult_number']); esc_html_e( ' Adult(s)', 'trizen' ); ?></span>
+                                    </div>
+                                </div>
                             </div>
                         </td>
 
