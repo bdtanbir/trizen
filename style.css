@@ -1534,9 +1534,93 @@ textarea {
 
 
 
-	/*-------------------------------------------
-         Blog
-    ---------------------------------------------*/
+/*-------------------------------------------
+		Blog
+---------------------------------------------*/
+.woocommerce-cart-form table tbody tr td,
+.woocommerce-cart-form table thead tr th {
+	background: rgba(128,137,150,.1);
+	border: none;
+	font-size: 15px;
+	color: #0d233e;
+	padding: .75rem;
+	vertical-align: middle;
+}
+.woocommerce-cart-form table tbody tr td {
+	background: none;
+	color: #5d646d;
+}
+.woocommerce-cart-form table tbody tr:last-child {
+	border-top: 1px solid #f5f7fc;
+}
+.woocommerce-cart-form table tbody tr td.actions {
+	text-align: right;
+}
+.woocommerce-cart-form table tbody tr td.actions .coupon {
+	float: left;
+}
+.woocommerce-cart-form table tbody tr td.actions .coupon input {
+    height: auto;
+    line-height: inherit;
+    padding: 8px 20px 8px 20px;
+    font-size: 13px;
+    color: #0d233e;
+    border-color: rgba(128,137,150,.2);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    background-color: #fff;
+}
+.woocommerce .cart-collaterals {
+	max-width: 370px;
+    margin-left: auto;
+}
+.woocommerce .cart-collaterals h2 {
+    font-size: 24px;
+}
+.woocommerce .cart-collaterals .wc-proceed-to-checkout .checkout-button {
+    font-size: 15px;
+    color: #fff;
+    line-height: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: var(--primary_color);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    position: relative;
+    display: inline-block;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid var(--primary_color);
+    font-weight: 500;
+}
+.woocommerce .cart-collaterals .wc-proceed-to-checkout .checkout-button:hover {
+	background: none;
+	color: var(--primary_color);
+}
+.woocommerce-cart-form .product-details img {
+	width: 100px;
+	object-fit: cover;
+}
+.woocommerce-cart-form .product-details .product-content  a {
+	font-weight: 500;
+}
+
+
+
+
+/*-------------------------------------------
+		Blog
+---------------------------------------------*/
 .blog-masonry {
 	display: block;
 	width: 100%;
