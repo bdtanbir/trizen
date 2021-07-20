@@ -2451,5 +2451,12 @@ table.wp-list-table.widefat.posts {
 	.woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper .form-row {
 		width: 100%;
 	}
+	.woocommerce-cart-form .product-details .product-content {
+		flex-wrap: wrap;
+		justify-content: flex-end;
+	}
+	.woocommerce-cart-form .product-details img {
+		margin-right: 0;
+	}
 }
 

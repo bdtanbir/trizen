@@ -90,7 +90,7 @@ $cart_total_amount = WC()->cart->get_cart_subtotal();
                                             <span class="product-check-in">
                                                 <?php echo esc_html($values['ts_booking_data']['check_in']); ?>
                                             </span>
-                                            <span class="product-mark">/</span>
+                                            <span class="product-mark"> - </span>
                                             <span class="product-check-out">
                                                 <?php echo esc_html($values['ts_booking_data']['check_out']); ?>
                                             </span>
