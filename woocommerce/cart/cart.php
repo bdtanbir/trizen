@@ -60,8 +60,6 @@ $cart_total_amount = WC()->cart->get_cart_subtotal();
                 $tax      = (float) $values['line_tax'];
                 $price    = $price + $tax;
                 $product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $values ) : '', $values, $item );
-
-                error_log(print_r($values, 1));
 					?>
                     <tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $values, $item ) ); ?>">
                         <td class="product-details" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
