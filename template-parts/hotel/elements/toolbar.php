@@ -74,13 +74,5 @@ if(!isset($post_type)){
                 </div>
             </div>
         </div>
-
-<!--        <select class="select-contain-select">
-            <option value="1">Short by default</option>
-            <option value="2">Popular Hotel</option>
-            <option value="3">Price: low to high</option>
-            <option value="4">Price: high to low</option>
-            <option value="5">A to Z</option>
-        </select>-->
     </div>
 </div>

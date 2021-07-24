@@ -24,13 +24,13 @@ if(trizen_breadcrumb_title()) { ?>
 						<span class="arrow-blink">
                             <i class="la la-arrow-down"></i>
                         </span>
-					</div><!-- end breadcrumb-content -->
-				</div><!-- end col-lg-12 -->
-			</div><!-- end row -->
-		</div><!-- end container -->
-	</div><!-- end breadcrumb-wrap -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="bread-svg-box">
 		<svg class="bread-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none"><polygon points="100 0 50 10 0 0 0 10 100 10"></polygon></svg>
-	</div><!-- end bread-svg -->
-</section><!-- end breadcrumb-area -->
+	</div>
+</section>
 <?php } ?>

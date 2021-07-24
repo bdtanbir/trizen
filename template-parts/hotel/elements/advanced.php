@@ -2,7 +2,7 @@
 
 <div class="advanced-wrap col-lg-12 pb-3">
     <a class="btn collapse-btn theme-btn-hover-gray font-size-15" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
-        More option <i class="la la-angle-down ml-1"></i>
+        <?php esc_html_e( 'More option', 'trizen' ); ?> <i class="la la-angle-down ml-1"></i>
     </a>
     <div class="pt-3 collapse" id="collapseTwo">
         <div class="slider-range-wrap ">

@@ -80,9 +80,9 @@ $sale_price  = TSPrice::getRoomPrice( $room_id, strtotime( $start ), strtotime( 
                         <i class="la la-bed"></i><span><?php echo esc_html($number_of_beds); esc_html_e(' Beds', 'trizen'); ?></span>
                     </li>
                     <?php if(!empty($room_footage)) { ?>
-					<li class="d-flex align-items-center">
-                        <i class="la la-building"></i><span><?php echo esc_html($room_footage); ?> <?php esc_html_e('ft', 'trizen'); ?><sup><?php esc_html_e('2', 'trizen'); ?></sup></span>
-                    </li>
+                        <li class="d-flex align-items-center">
+                            <i class="la la-building"></i><span><?php echo esc_html($room_footage); ?> <?php esc_html_e('ft', 'trizen'); ?><sup><?php esc_html_e('2', 'trizen'); ?></sup></span>
+                        </li>
                     <?php } ?>
 					<li class="d-flex align-items-center">
                         <i class="la la-users"></i><span><?php echo esc_html($number_of_adults); esc_html_e(' Adults', 'trizen'); ?></span>

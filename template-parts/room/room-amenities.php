@@ -1,7 +1,7 @@
 <?php
 $room_facilities = get_the_terms( get_the_ID() , 'room_facilities' );
+if($room_facilities) {
 ?>
-
 
 <div id="amenities" class="page-scroll">
 	<div class="single-content-item padding-top-40px padding-bottom-40px">
@@ -35,5 +35,5 @@ $room_facilities = get_the_terms( get_the_ID() , 'room_facilities' );
 	</div>
 	<div class="section-block"></div>
 </div>
-
+<?php } ?>
 

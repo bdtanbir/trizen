@@ -1,7 +1,4 @@
 <?php
-//    wp_enqueue_style('ts-select.css');
-//    wp_enqueue_script('ts-select.js');
-
 
 $location_id   = get( 'location_id', '' );
 $location_name = get( 'location_name', '' );
@@ -43,33 +40,9 @@ if(is_singular('location')){
 		</div>
 		<ul class="dropdown-menu" id="dropdown_destination" aria-labelledby="dropdown-destination">
 			<?php
-			//            if ( $enable_tree == 'on' ) {
-			//            if(class_exists('TravelHelper')) {
 			TravelHelper::buildTreeOptionLocation($locations, $location_id);
-			//            }
-			//            } else {
-			//                if ( is_array( $locations ) && count( $locations ) ):
-			//                    foreach ( $locations as $key => $value ):
-			//                        ?>
-			<!--                        <li class="item" data-value="--><?php //echo esc_attr($value->ID); ?><!--">-->
-			<!--                            --><?php //echo TravelHelper::getNewIcon('ico_maps_search_box'); ?>
-			<!--                            <span>--><?php //echo esc_attr($value->fullname); ?><!--</span></li>-->
-			<!--                    --><?php
-			//                    endforeach;
-			//                endif;
-			//            }
 			?>
 		</ul>
-		<!--<input
-            class="form-control tp-hotel-destination"
-            id="location_destination_h"
-            data-name="destination"
-            autocomplete="off"
-            type="text"
-            data-text="<?php /*echo esc_html__('hotel(s)', 'trizen'); */?>"
-            data-locale="<?php /*echo esc_attr($locale_default); */?>"
-            value=""
-            placeholder="<?php /*esc_attr_e('Enter city or property', 'trizen'); */?>">-->
 
 	</div>
 </div>

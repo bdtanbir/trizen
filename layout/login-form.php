@@ -35,7 +35,7 @@
                                         name="name"
 										placeholder="<?php esc_attr_e('Type your username', 'trizen'); ?>">
 								</div>
-							</div><!-- end input-box -->
+							</div>
 							<div class="input-box">
 								<label class="label-text" for="password">
                                     <?php esc_html_e('Password', 'trizen'); ?>
@@ -63,7 +63,7 @@
 										<a href="<?php echo esc_url(wp_lostpassword_url()); ?>"><?php esc_html_e('Forgot Password?', 'trizen'); ?></a>
 									</p>
 								</div>
-							</div><!-- end input-box -->
+							</div>
 							<div class="btn-box pt-3">
 								<button id="trizen-login-submit" type="submit" class="theme-btn w-100">
 									<?php esc_html_e('Login Account', 'trizen'); ?>
@@ -75,4 +75,4 @@
 			</div>
 		</div>
 	</div>
-</div><!-- end modal-popup -->
+</div>

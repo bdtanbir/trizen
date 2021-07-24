@@ -134,7 +134,7 @@ $trizen_hotel_faqs_data       = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_d
 					</div>
 				</div>
 			</div>
-		</div><!-- end single-content-navbar-wrap -->
+		</div>
 		<div class="single-content-box">
 			<div class="container">
 				<div class="row">

@@ -43,7 +43,6 @@ if($preloader == 1) {
 <!-- ================================
             START HEADER AREA
 ================================= -->
-<!--<header class="header-area">-->
 	<?php
     if($header_bar == 1) {
 		get_template_part( 'template-parts/header/header-bar' );
@@ -88,7 +87,6 @@ if($preloader == 1) {
 			</div>
 		</div>
 	</header>
-<!--</header>-->
 <!-- ================================
          END HEADER AREA
 ================================= -->

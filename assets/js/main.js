@@ -51,55 +51,45 @@ Author Email:   contact@tecydevs.com
         var topNav = document.querySelector('.header-menu-wrapper');
         var scrollTopBtn = $('#back-to-top');
         var scrollLink = $('#single-content-nav .scroll-link');
-        var hotelCardCarousel = $('.hotel-card-carousel');
-        var hotelCardCarouselTwo = $('.hotel-card-carousel-2');
         var cardImgCarousel = $('.card-img-carousel');
-        var carCarousel = $('.car-carousel');
-        var trendingCarousel = $('.trending-carousel');
-        var galleryCarousel = $('.gallery-carousel');
-        var clientCarousel = $('.client-logo');
-        var testimonialCarousel = $('.testimonial-carousel');
-        var testimonialCarouselTwo = $('.testimonial-carousel-2');
         var fancyVideo = $('[data-fancybox="video"]');
         var fancyGallery = $('[data-fancybox="gallery"]');
-        var rippleBg = $('.ripple-bg');
-        var masonryGrid = $('.grid-masonry');
-        var rangeSlider = $('#slider-range');
-        var rangeSliderAmount = $('#amount');
-        var rangeSliderTwo = $('#slider-range2');
-        var rangeSliderAmountTwo = $('#amount2');
-        var dateRangePicker = $('input[name="daterange"]');
-        var $dateRangePickerTwo = $('input.date-range');
-        var bootstrapSelectMenu = $('.select-contain-select');
-        var numberCounter = $('.counter');
         var fullWidthSlider = $('.full-width-slider');
 
         /* ======= Preloader ======= */
         preloader.delay('500').fadeOut(2000);
 
         /*=========== Header top bar menu ============*/
-        $document.on('click', '.down-button', function () {
-            $(this).toggleClass('active');
-            $('.header-top-bar').slideToggle(200);
-        });
+        if($(".down-button").length) {
+            $document.on('click', '.down-button', function () {
+                $(this).toggleClass('active');
+                $('.header-top-bar').slideToggle(200);
+            });
+        }
 
         /*=========== Responsive Mobile menu ============*/
-        $document.on('click', '.menu-toggler', function () {
-            $(this).toggleClass('active');
-            $('.main-menu-content').slideToggle(200);
-        });
+        if($(".menu-toggler").length) {
+            $document.on('click', '.menu-toggler', function () {
+                $(this).toggleClass('active');
+                $('.main-menu-content').slideToggle(200);
+            });
+        }
 
         /*=========== Dropdown menu ============*/
-        dropdownMenu.parent('li').children('a').append(function () {
-            return '<button class="drop-menu-toggler" type="button"><i class="la la-angle-down"></i></button>';
-        });
+        if($(dropdownMenu).length) {
+            dropdownMenu.parent('li').children('a').append(function () {
+                return '<button class="drop-menu-toggler" type="button"><i class="la la-angle-down"></i></button>';
+            });
+        }
 
         /*=========== Dropdown menu ============*/
-        $document.on('click', '.main-menu-content .drop-menu-toggler', function () {
-            var Self = $(this);
-            Self.parent().parent().children('.dropdown-menu-item').toggle();
-            return false;
-        });
+        if($(".main-menu-content .drop-menu-toggler").length) {
+            $document.on('click', '.main-menu-content .drop-menu-toggler', function () {
+                var Self = $(this);
+                Self.parent().parent().children('.dropdown-menu-item').toggle();
+                return false;
+            });
+        }
 
         /*=========== Sub menu ============*/
         $('.main-menu-content .dropdown-menu-item .sub-menu').parent('li').children('a').append(function () {
@@ -114,19 +104,25 @@ Author Email:   contact@tecydevs.com
         });
 
         /*=========== Canvas menu open ============*/
-        $document.on('click', '.user-menu-open', function () {
-            $('.user-canvas-container').addClass('active');
-        });
+        if($(".user-menu-open").length) {
+            $document.on('click', '.user-menu-open', function () {
+                $('.user-canvas-container').addClass('active');
+            });
+        }
 
         /*=========== Canvas menu close ============*/
-        $document.on('click', '.side-menu-close', function () {
-            $('.user-canvas-container, .sidebar-nav').removeClass('active');
-        });
+        if($(".side-menu-close").length) {
+            $document.on('click', '.side-menu-close', function () {
+                $('.user-canvas-container, .sidebar-nav').removeClass('active');
+            });
+        }
 
         /*=========== Dashboard menu ============*/
-        $document.on('click', '.menu-toggler', function () {
-            $('.sidebar-nav').toggleClass('active');
-        });
+        if($(".menu-toggler").length) {
+            $document.on('click', '.menu-toggler', function () {
+                $('.sidebar-nav').toggleClass('active');
+            });
+        }
 
         /*=========== When window will resize then this action will work ============*/
         $window.on('resize', function () {
@@ -202,72 +198,12 @@ Author Email:   contact@tecydevs.com
         }
 
         /*===== Back to top button ======*/
-        $document.on("click", "#back-to-top", function () {
-            $($dom).animate({
-                scrollTop: 0
-            }, 800);
-            return false;
-        });
-
-        /*==== Hotel-card-carousel =====*/
-        if ($(hotelCardCarousel).length) {
-            $(hotelCardCarousel).owlCarousel({
-                loop: true,
-                items: 4,
-                nav: true,
-                dots: true,
-                smartSpeed: 700,
-                autoplay: false,
-                active: true,
-                margin: 30,
-                navText: ['<i class="la la-angle-left"></i>', '<i class="la la-angle-right"></i>'],
-                responsive: {
-                    // breakpoint from 0 up
-                    0: {
-                        items: 1
-                    },
-                    // breakpoint from 991 up
-                    768: {
-                        items: 2
-                    },
-                    // breakpoint from 992 up
-                    992: {
-                        items: 3
-                    },
-                    // breakpoint from 1441 up
-                    1441: {
-                        items: 4
-                    }
-                }
-            });
-        }
-
-        /*==== Hotel-card-carousel 2 =====*/
-        if ($(hotelCardCarouselTwo).length) {
-            $(hotelCardCarouselTwo).owlCarousel({
-                loop: true,
-                items: 3,
-                nav: true,
-                dots: true,
-                smartSpeed: 700,
-                autoplay: false,
-                active: true,
-                margin: 30,
-                navText: ['<i class="la la-angle-left"></i>', '<i class="la la-angle-right"></i>'],
-                responsive: {
-                    // breakpoint from 0 up
-                    0: {
-                        items: 1
-                    },
-                    // breakpoint from 991 up
-                    768: {
-                        items: 2
-                    },
-                    // breakpoint from 992 up
-                    992: {
-                        items: 3
-                    },
-                }
+        if($("#back-to-top").length) {
+            $document.on("click", "#back-to-top", function () {
+                $($dom).animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
             });
         }
 
@@ -284,163 +220,6 @@ Author Email:   contact@tecydevs.com
                 active: true,
                 margin: 30,
                 navText: ['<i class="la la-angle-left"></i>', '<i class="la la-angle-right"></i>']
-            });
-        }
-
-        /*==== Car-carousel =====*/
-        if ($(carCarousel).length) {
-            $(carCarousel).owlCarousel({
-                loop: true,
-                items: 3,
-                nav: true,
-                dots: true,
-                smartSpeed: 700,
-                autoplay: false,
-                active: true,
-                margin: 30,
-                navText: ['<i class="la la-angle-left"></i>', '<i class="la la-angle-right"></i>'],
-                responsive: {
-                    // breakpoint from 167 up
-                    0: {
-                        items: 1
-                    },
-                    // breakpoint from 768 up
-                    768: {
-                        items: 2
-                    },
-                    // breakpoint from 992 up
-                    992: {
-                        items: 3
-                    }
-                }
-            });
-        }
-
-        /*==== Trending-carousel =====*/
-        if ($(trendingCarousel).length) {
-            $(trendingCarousel).owlCarousel({
-                loop: true,
-                items: 3,
-                nav: true,
-                dots: true,
-                smartSpeed: 700,
-                autoplay: false,
-                margin: 30,
-                navText: ['<i class="la la-long-arrow-left"></i>', '<i class="la la-long-arrow-right"></i>'],
-                responsive: {
-                    // breakpoint from 0 up
-                    0: {
-                        items: 1
-                    },
-                    // breakpoint from 768 up
-                    768: {
-                        items: 2
-                    },
-                    // breakpoint from 992 up
-                    992: {
-                        items: 3
-                    }
-                }
-            });
-        }
-
-        /*==== Gallery-carousel =====*/
-        if ($(galleryCarousel).length) {
-            $(galleryCarousel).owlCarousel({
-                loop: true,
-                items: 1,
-                nav: true,
-                dots: true,
-                smartSpeed: 700,
-                margin: 20,
-                navText: ['<i class="la la-long-arrow-left"></i>', '<i class="la la-long-arrow-right"></i>']
-            });
-        }
-
-        /*==== Client logo =====*/
-        if ($(clientCarousel).length) {
-            $(clientCarousel).owlCarousel({
-                loop: true,
-                items: 6,
-                nav: false,
-                dots: false,
-                smartSpeed: 700,
-                autoplay: true,
-                responsive: {
-                    // breakpoint from 0 up
-                    0: {
-                        items: 1
-                    },
-                    // breakpoint from 425 up
-                    425: {
-                        items: 2
-                    },
-                    // breakpoint from 480 up
-                    480: {
-                        items: 2
-                    },
-                    // breakpoint from 767 up
-                    767: {
-                        items: 4
-                    },
-                    // breakpoint from 992 up
-                    992: {
-                        items: 6
-                    }
-                }
-            });
-        }
-
-        /*==== testimonial-carousel =====*/
-        if ($(testimonialCarousel).length) {
-            $(testimonialCarousel).owlCarousel({
-                loop: true,
-                items: 2,
-                nav: true,
-                dots: false,
-                smartSpeed: 700,
-                autoplay: false,
-                margin: 30,
-                navText: ['<i class="la la-angle-left"></i>', '<i class="la la-angle-right"></i>'],
-                responsive: {
-                    // breakpoint from 0 up
-                    0: {
-                        items: 1
-                    },
-                    // breakpoint from 900 up
-                    900: {
-                        items: 2
-                    }
-
-                }
-            });
-        }
-
-        /*==== testimonial-carousel-2 =====*/
-        if ($(testimonialCarouselTwo).length) {
-            $(testimonialCarouselTwo).owlCarousel({
-                loop: true,
-                items: 3,
-                nav: true,
-                dots: true,
-                smartSpeed: 700,
-                autoplay: false,
-                margin: 30,
-                navText: ['<i class="la la-long-arrow-left"></i>', '<i class="la la-long-arrow-right"></i>'],
-                responsive: {
-                    // breakpoint from 0 up
-                    0: {
-                        items: 1
-                    },
-                    // breakpoint from 768 up
-                    768: {
-                        items: 2
-                    },
-                    // breakpoint from 992 up
-                    992: {
-                        items: 3
-                    }
-                }
             });
         }
 
@@ -469,122 +248,10 @@ Author Email:   contact@tecydevs.com
             });
         }
 
-        /*====  Ripple-bg =====*/
-        if ($(rippleBg).length) {
-            $(rippleBg).ripples({
-                resolution: 500,
-                dropRadius: 20,
-                perturbance: 0
-            });
-        }
-
-        if ($(masonryGrid).length) {
-            $(masonryGrid).masonry({});
-        }
-
-        /*======= ui price range slider ========*/
-        if ($(rangeSlider).length) {
-            $(rangeSlider).slider({
-                range: true,
-                min: 0,
-                max: 1000,
-                values: [40, 800],
-                slide: function (event, ui) {
-                    $(rangeSliderAmount).val("$" + ui.values[0] + " - $" + ui.values[1]);
-                }
-            });
-        }
-        $(rangeSliderAmount).val("$" + $(rangeSlider).slider("values", 0) +
-            " - $" + $(rangeSlider).slider("values", 1));
-
-        /*======= ui price range slider 2 ========*/
-        if ($(rangeSliderTwo).length) {
-            $(rangeSliderTwo).slider({
-                range: true,
-                min: 0,
-                max: 1000,
-                values: [40, 800],
-                slide: function (event, ui) {
-                    $(rangeSliderAmountTwo).val("$" + ui.values[0] + " - $" + ui.values[1]);
-                }
-            });
-        }
-
-        $(rangeSliderAmountTwo).val("$" + $(rangeSliderTwo).slider("values", 0) +
-            " - $" + $(rangeSliderTwo).slider("values", 1));
-
-
-        /*==== Daterangepicker =====*/
-        if ($(dateRangePicker).length) {
-            $(dateRangePicker).daterangepicker({
-                opens: 'right',
-                locale: {
-                    format: 'DD/MM/YYYY',
-                }
-            });
-        }
-
-        /*==== Daterangepicker =====*/
-        if ($($dateRangePickerTwo).length) {
-            $dateRangePickerTwo.daterangepicker({
-                singleDatePicker: true,
-                opens: 'right',
-                minDate: new Date,
-            });
-        }
-
-        /*==== Bootstrap select picker =====*/
-        if ($(bootstrapSelectMenu).length) {
-            $(bootstrapSelectMenu).selectpicker({
-                liveSearch: true,
-                liveSearchPlaceholder: 'Search',
-                liveSearchStyle: 'contains',
-                size: 5
-            });
-        }
-
-        /*==== counter =====*/
-        if (numberCounter.length) {
-            numberCounter.countTo({
-                speed: 1200
-            });
-        }
-
         /*==== Bootstrap tooltip =====*/
         if ($('[data-toggle="tooltip"]').length) {
             $('[data-toggle="tooltip"]').tooltip();
         }
-
-        /*==== When you will click the add another flight btn then this action will be work =====*/
-        $document.on('click', '.add-flight-btn', function () {
-
-            if ($('.multi-flight-field').length < 3) {
-                $('.multi-flight-field:last').clone().insertAfter('.multi-flight-field:last');
-            }
-
-            $(this).closest('.multi-flight-wrap').find('.multi-flight-field:last').children('.multi-flight-delete-wrap').show();
-
-            $('.date-multi-picker').daterangepicker('destroy');
-
-            var i = 0;
-            $('.date-multi-picker').each(function () {
-                var $this = $(this);
-                $this.attr('id', 'date' + i).daterangepicker({
-                    singleDatePicker: true,
-                    opens: 'right',
-                    local: {
-                        format: 'DD/MM/YYYY'
-                    }
-                });
-                i++;
-            });
-
-        });
-
-        /*=========== multi-flight-remove ============*/
-        $document.on('click', '.multi-flight-remove', function () {
-            $('.multi-flight-remove').closest('.multi-flight-wrap').find('.multi-flight-field').not(':first').last().remove();
-        });
 
         /*====  mobile dropdown menu  =====*/
         $document.on('click', '.toggle-menu > li .toggle-menu-icon', function (e) {
@@ -595,11 +262,13 @@ Author Email:   contact@tecydevs.com
         });
 
         /*====== Dropdown btn ======*/
-        $('.dropdown-btn').on('click', function (e) {
-            e.preventDefault();
-            $(this).next('.dropdown-menu-wrap').slideToggle(300);
-            e.stopPropagation();
-        });
+        if($("dropdown-btn").length) {
+            $('.dropdown-btn').on('click', function (e) {
+                e.preventDefault();
+                $(this).next('.dropdown-menu-wrap').slideToggle(300);
+                e.stopPropagation();
+            });
+        }
 
         /*====== When you click on the out side of dropdown menu item then its will be hide ======*/
         $document.on('click', function (event) {
@@ -609,11 +278,13 @@ Author Email:   contact@tecydevs.com
             }
         });
 
-        $('.progressbar-line').each(function () {
-            $(this).find('.progressbar-line-item').animate({
-                width: $(this).attr('data-percent')
-            }, 6000);
-        });
+        if($(".progressbar-line").length) { 
+            $('.progressbar-line').each(function () {
+                $(this).find('.progressbar-line-item').animate({
+                    width: $(this).attr('data-percent')
+                }, 6000);
+            });
+        }
 
         if ($(fullWidthSlider).length) {
             $(fullWidthSlider).owlCarousel({
@@ -636,25 +307,6 @@ Author Email:   contact@tecydevs.com
                 }
             });
         }
-
-        /*======= Recommended tag =======*/
-        $document.on('click', '.recommended-tag', function () {
-            $(this).addClass('active');
-            $('.undo-btn').addClass('active');
-            $(this).siblings().removeClass('active');
-        });
-
-        /*======= Undo btn =======*/
-        $document.on('click', '.undo-btn', function () {
-            $(this).removeClass('active');
-            $('.recommended-tag').removeClass('active');
-        });
-
-        /*======= paste-btn =======*/
-        $document.on('click', '.paste-btn', function (e) {
-            e.preventDefault();
-            $('#resume_text').toggle();
-        });
 
         /*======= isotope =======*/
         $('.blog-masonry').isotope({

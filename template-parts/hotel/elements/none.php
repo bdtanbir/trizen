@@ -1,1 +1,1 @@
-<div class="alert alert-warning mt15"><?php echo __('No hotels found.', 'trizen'); ?></div>
+<div class="alert alert-warning mt15"><?php esc_html_e( 'No hotels found.', 'trizen' ); ?></div>

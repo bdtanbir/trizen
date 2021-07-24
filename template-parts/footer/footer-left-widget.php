@@ -11,7 +11,7 @@
 	<div class="footer-item">
 		<div class="footer-logo padding-bottom-30px">
 			<?php get_template_part('template-parts/header/common-logo'); ?>
-		</div><!-- end logo -->
+		</div>
         <?php if(!empty($footer_lf_content)) { ?>
             <p class="footer__desc">
                 <?php echo wp_kses($footer_lf_content, $allowed_html); ?>

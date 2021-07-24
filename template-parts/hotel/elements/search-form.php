@@ -1,4 +1,8 @@
 
+<?php
+	$action_page = get_option('hotel_search_result_page');
+
+?>
 
 
 <section class="breadcrumb-area bread-bg-7">
@@ -16,7 +20,7 @@
                         <?php } ?>
 						<div class="search-fields-container margin-top-30px">
 							<div class="contact-form-action hotel-search-form-home">
-								<form action="#" class="row">
+								<form action="<?php echo esc_url(home_url($action_page)); ?>" class="row">
 									<div class="col-lg-4 col-sm-6 pr-0">
 										<?php get_template_part('template-parts/hotel/elements/location'); ?>
 									</div>

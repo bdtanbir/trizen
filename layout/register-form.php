@@ -34,7 +34,7 @@
                                         id="reg-username"
                                         placeholder="<?php esc_attr_e('Type your username', 'trizen'); ?>">
 								</div>
-							</div><!-- end input-box -->
+							</div>
 							<div class="input-box">
 								<label class="label-text" for="reg-email">
                                     <?php esc_html_e('Email Address', 'trizen'); ?>
@@ -48,7 +48,7 @@
                                         id="reg-email"
                                         placeholder="<?php esc_attr_e('Type your email', 'trizen'); ?>">
 								</div>
-							</div><!-- end input-box -->
+							</div>
 							<div class="input-box">
 								<label class="label-text" for="reg-password">
                                     <?php esc_html_e('Password', 'trizen'); ?>
@@ -62,7 +62,7 @@
                                         id="reg-password"
                                         placeholder="<?php esc_attr_e('Type password', 'trizen'); ?>">
 								</div>
-							</div><!-- end input-box -->
+							</div>
 							<div class="input-box">
 								<label class="label-text" for="reg-password2">
                                     <?php esc_html_e('Repeat Password', 'trizen'); ?>
@@ -76,7 +76,7 @@
                                         id="reg-password2"
                                         placeholder="<?php esc_attr_e('Type again password', 'trizen'); ?>">
 								</div>
-							</div><!-- end input-box -->
+							</div>
 							<div class="btn-box pt-3 pb-4">
 								<button id="trizen-register-submit" type="submit" class="theme-btn w-100 trizen-register-submit">
                                     <?php esc_html_e('Register Account', 'trizen'); ?>

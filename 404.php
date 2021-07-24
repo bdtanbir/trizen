@@ -11,8 +11,7 @@ get_header();
 
 $error_img        = get_theme_mod('trizen_error_img', get_template_directory_uri().'/assets/images/404.png');
 $error_pg_title   = get_theme_mod('trizen_error_title', __('Ooops! This Page Does Not Exist', 'trizen'));
-$error_pg_content = get_theme_mod('trizen_error_content', __('We\'re sorry, but it appears the website address you entered was</br>
-incorrect, or is temporarily unavailable.', 'trizen'));
+$error_pg_content = get_theme_mod('trizen_error_content', __('We\'re sorry, but it appears the website address you entered was</br> incorrect, or is temporarily unavailable.', 'trizen'));
 $error_btn_text   = get_theme_mod('trizen_error_btn', __('Back to Home', 'trizen'));
 
 $allowed_html = trizen_wses_allowed_menu_html();

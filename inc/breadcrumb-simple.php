@@ -12,9 +12,9 @@ if ( function_exists('add_UA_widget_categories') ) { ?>
 							\UsefulAddons\Includes\Elements\Breadcrumbs\OEE_Breadcrumbs::breadcrumb();
 							?>
 						</ul>
-					</div><!-- end breadcrumb-list -->
-				</div><!-- end col-lg-12 -->
-			</div><!-- end row -->
-		</div><!-- end container -->
-	</section><!-- end breadcrumb-top-bar -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 <?php } ?>
