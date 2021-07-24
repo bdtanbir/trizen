@@ -62,7 +62,7 @@ $cart_total_amount = WC()->cart->get_cart_subtotal();
                 $product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $values ) : '', $values, $item );
 					?>
                     <tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $values, $item ) ); ?>">
-                        <td class="product-details" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
+                        <td class="product-details" data-title="<?php esc_attr_e( 'Product', 'trizen' ); ?>">
                             <div class="table-content product-content d-flex align-items-center">
                                 <a href="<?php echo get_the_permalink( $post_id ); ?>">
                                     <?php
@@ -77,7 +77,7 @@ $cart_total_amount = WC()->cart->get_cart_subtotal();
                                         do_action( 'woocommerce_after_cart_item_name', $values, $item );
                                         echo wc_get_formatted_cart_item_data( $values ); // PHPCS: XSS ok.
                                         if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $values['quantity'] ) ) {
-                                            echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
+                                            echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'trizen' ) . '</p>', $product_id ) );
                                         }
                                     ?>
                                     <div class="product-info line-height-24">
@@ -104,13 +104,13 @@ $cart_total_amount = WC()->cart->get_cart_subtotal();
                             </div>
                         </td>
 
-                        <td class="product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
+                        <td class="product-price" data-title="<?php esc_attr_e( 'Price', 'trizen' ); ?>">
                             <?php
                                 echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $values, $item ); // PHPCS: XSS ok.
                             ?>
                         </td>
 
-                        <td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
+                        <td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'trizen' ); ?>">
                             <?php
                             if ( $_product->is_sold_individually() ) {
                                 $product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $item );
@@ -132,7 +132,7 @@ $cart_total_amount = WC()->cart->get_cart_subtotal();
                             ?>
                         </td>
 
-                        <td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
+                        <td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'trizen' ); ?>">
                             <?php
                                 echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $values['quantity'] ), $values, $item ); // PHPCS: XSS ok.
                             ?>
@@ -146,7 +146,7 @@ $cart_total_amount = WC()->cart->get_cart_subtotal();
                                         sprintf(
                                             '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s"><i class="la la-times"></i></a>',
                                             esc_url( wc_get_cart_remove_url( $item ) ),
-                                            esc_html__( 'Remove this item', 'woocommerce' ),
+                                            esc_html__( 'Remove this item', 'trizen' ),
                                             esc_attr( $post_id ),
                                             esc_attr( $_product->get_sku() )
                                         ),
@@ -168,12 +168,12 @@ $cart_total_amount = WC()->cart->get_cart_subtotal();
 
 					<?php if ( wc_coupons_enabled() ) { ?>
 						<div class="coupon">
-                            <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?></button>
+                            <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'trizen' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'trizen' ); ?>"><?php esc_attr_e( 'Apply coupon', 'trizen' ); ?></button>
 							<?php do_action( 'woocommerce_cart_coupon' ); ?>
 						</div>
 					<?php } ?>
 
-					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'trizen' ); ?>"><?php esc_html_e( 'Update cart', 'trizen' ); ?></button>
 
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 
