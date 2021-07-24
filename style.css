@@ -1241,6 +1241,9 @@ textarea {
 	top: -10px;
     left: 200px;
 }
+.main-menu-content ul li.active .drop-menu-toggler::before {
+	display: none;
+}
 
 
 /*-------------------------------------------
