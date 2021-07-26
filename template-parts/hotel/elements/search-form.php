@@ -5,7 +5,7 @@
 ?>
 
 
-<section class="breadcrumb-area bread-bg-7">
+<section class="breadcrumb-area static-breadcrumb bread-bg-7">
 	<div class="breadcrumb-wrap">
 		<div class="container">
 			<div class="row align-items-center">
