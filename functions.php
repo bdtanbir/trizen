@@ -287,8 +287,7 @@ function ocdi_import_files() {
         ),
     );
 }
-add_filter( 'pt-ocdi/pre_download_import_files', 'ocdi_import_files' );
-// add_filter( 'pt-ocdi/import_files', 'ocdi_import_files' );
+add_filter( 'pt-ocdi/import_files', 'ocdi_import_files' );
 
 function ocdi_after_import_setup() {
     // Assign menus to their locations.
