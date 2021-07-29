@@ -77,7 +77,7 @@ $link_with_params = add_query_arg($get_data, get_the_permalink());
                     </div>
                 <?php } ?>
                 <div class="room-photos">
-                    <a class="btn theme-btn-hover-gray" data-src="<?php the_post_thumbnail_url(); ?>"
+                    <a href="#" class="btn theme-btn-hover-gray" data-src="<?php the_post_thumbnail_url(); ?>"
                        data-fancybox="gallery<?php the_ID(); ?>"
                        data-caption="<?php esc_attr_e('Showing image - 01', 'trizen'); ?>"
                        data-speed="700">
@@ -104,7 +104,7 @@ $link_with_params = add_query_arg($get_data, get_the_permalink());
                             } else {
                                 $zero_nm = '';
                             }
-                            echo '<a class="d-none"
+                            echo '<a href="#" class="d-none"
                                    data-fancybox="gallery'.get_the_ID().'"
                                    data-src="' . $image_src[0] . '"
                                    data-caption="' . esc_attr__('Showing image - ', 'trizen') . esc_attr($zero_nm) . $count++. '"

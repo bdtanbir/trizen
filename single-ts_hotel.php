@@ -38,12 +38,12 @@ $trizen_hotel_faqs_data       = get_post_meta(get_the_ID(), 'trizen_hotel_faqs_d
 						<div class="breadcrumb-btn">
 							<div class="btn-box">
                                 <?php if(!empty($hotel_video_btn_text)) { ?>
-                                    <a class="theme-btn hotel-video-btn" data-fancybox="video" data-src="<?php echo esc_attr($hotel_video); ?>"
+                                    <a href="#" class="theme-btn hotel-video-btn" data-fancybox="video" data-src="<?php echo esc_attr($hotel_video); ?>"
                                        data-speed="700">
                                         <i class="la la-video-camera mr-2"></i><?php echo esc_html($hotel_video_btn_text); ?>
                                     </a>
                                 <?php } if(!empty($hotel_photo_btn_text)) { ?>
-                                    <a class="theme-btn hotel-gallery-btn" data-src="<?php the_post_thumbnail_url(); ?>"
+                                    <a href="#" class="theme-btn hotel-gallery-btn" data-src="<?php the_post_thumbnail_url(); ?>"
                                        data-fancybox="gallery"
                                        data-caption="<?php esc_attr_e('Showing image - 1', 'trizen'); ?>"
                                        data-speed="700">

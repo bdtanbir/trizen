@@ -1244,6 +1244,9 @@ textarea {
 .main-menu-content ul li.active .drop-menu-toggler::before {
 	display: none;
 }
+.main-menu-content ul li .dropdown-menu-item li a:hover {
+	background-color: #f8f9fa;
+}
 
 
 /*-------------------------------------------
@@ -1949,9 +1952,6 @@ textarea {
 	-moz-box-shadow: 0 0 40px rgba(82,85,90,.1);
 	box-shadow: 0 0 40px rgba(82,85,90,.1);
 }
-.comment-list .comment-item .comment-body {
-	/*margin-left: 120px;*/
-}
 .comment-list .comment-item .comment-body > p {
 	margin-top: 8px;
 	margin-bottom: 12px;
@@ -2044,6 +2044,9 @@ textarea {
 }
 .wp-block-image.is-style-circle-mask img {
 	width: 150px;
+}
+.recent-post-card .card-title {
+	margin-top: 0;
 }
 
 
@@ -2412,6 +2415,9 @@ textarea {
 .footer-item .footer__desc {
 	margin-bottom: 0;
 }
+.footer-item .title {
+	margin-top: 0;
+}
 
 
 
@@ -2464,6 +2470,16 @@ table.wp-list-table.widefat.posts {
 	}
 	.woocommerce-cart-form .product-details img {
 		margin-right: 0;
+	}
+	.woocommerce-cart-form table tbody tr td .remove-wrap {
+		text-align: right !important;
+	}
+	.woocommerce-cart-form table tbody tr td.actions .coupon input {
+		width: 100%;
+	}
+	.woocommerce-cart-form table tbody tr td.actions .coupon input,
+	.woocommerce-cart-form table tbody tr td.actions .coupon button {
+		margin-bottom: 10px;
 	}
 }
 

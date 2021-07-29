@@ -1,6 +1,8 @@
 <?php
 	get_header();
 
+
+while(have_posts(  )) { the_post(  );
 $count_review                 = get_comment_count($post_id)['approved'];
 $room_facilities = get_the_terms( get_the_ID() , 'room_facilities' );
 $trizen_room_other_facility_data = get_post_meta(get_the_ID(), 'trizen_room_other_facility_data_group', true);
@@ -37,7 +39,7 @@ $review_rate = TSReview::get_avg_rate();
 			$image_src = str_replace('-150x150', '', $image_src);
 			$image_src = str_replace( '-100x100', '', $image_src );
 			echo '<div class="full-width-slide-item" data-id="' . $image->ID . '">
-			<img src="' . $image_src[0] . '" alt="' . __( "Image", "trizen" ) . '"></div>';
+			<img width="831" height="554" src="' . $image_src[0] . '" alt="' . __( "Image", "trizen" ) . '"></div>';
 		}
 		echo '</div>';
 	} else {
@@ -227,6 +229,7 @@ $review_rate = TSReview::get_avg_rate();
     START RELATE ROOMS AREA
 ================================= -->
 <?php 
+}
 if($related_rooms == 1) {
 	get_template_part('template-parts/room/related-rooms');
 }

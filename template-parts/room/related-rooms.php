@@ -6,6 +6,7 @@
 
 	$default_args = array(
 		'post_type' => 'hotel_room',
+		'posts_per_page' => 2
 	);
 	$query_args = new WP_Query($default_args);
 ?>

@@ -32,7 +32,7 @@ $sale_price  = TSPrice::getRoomPrice( $room_id, strtotime( $start ), strtotime( 
                         $image_src = str_replace( '-100x100', '', $image_src );
                         echo '<div class="card-img">
                                 <a href="'.get_the_permalink().'" class="d-block">
-                                    <img src="' . $image_src[0] . '" alt="'.get_the_title().'">
+                                    <img width="570" height="380" src="' . $image_src[0] . '" alt="'.get_the_title().'">
                                 </a>
                             </div>';
                     }

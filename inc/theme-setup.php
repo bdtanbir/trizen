@@ -194,8 +194,8 @@ function trizen_widgets_init() {
 			'description'   => esc_html__( 'Add Footer widgets here.', 'trizen' ),
 			'before_widget' => '<div class="col-lg-3 responsive-column"><div id="%1$s" class="footer-item %2$s">',
 			'after_widget'  => '</div></div>',
-			'before_title'  => '<h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">',
-			'after_title'   => '</h4>',
+			'before_title'  => '<h1 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">',
+			'after_title'   => '</h1>',
 		)
 	);
 	register_sidebar(

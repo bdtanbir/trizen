@@ -23,15 +23,18 @@ function trizen_scripts() {
 
 	if ( is_admin_bar_showing() ) {
 		$admin_bar_showing_body_sp = <<<EOD
+        .single-nav-sticky,
         .header-menu-wrapper {
             top: 30px;
         }
         @media only screen and (max-width: 768px) {
+            .single-nav-sticky,
             .header-menu-wrapper {
                 top: 46px;
             }
         }
         @media screen and (max-width: 600px) {
+            .single-nav-sticky,
             .header-menu-wrapper {
                 top: 0;
             }
