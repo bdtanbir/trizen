@@ -51,9 +51,6 @@
                                 <?php if(!empty($hotel_badge_title)) { ?>
                                     <span class="badge"><?php echo esc_html($hotel_badge_title); ?></span>
                                 <?php } ?>
-                                <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="<?php esc_attr_e('Bookmark', 'trizen'); ?>">
-                                    <i class="la la-heart-o"></i>
-                                </div>
                             </div>
                         <?php } ?>
                         <div class="card-body">

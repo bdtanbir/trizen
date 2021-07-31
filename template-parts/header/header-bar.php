@@ -39,7 +39,7 @@
             } ?>
 			<div class="col-lg-<?php echo esc_attr($login_reg_class); ?>">
 				<div class="header-top-content">
-					<div class="header-right d-flex align-items-center">
+					<div class="header-right d-flex align-items-center justify-content-end">
 						<div class="header-right-action">
 							<?php if(! is_user_logged_in()) { ?>
                                 <a href="#" class="theme-btn theme-btn-small theme-btn-transparent mr-1 user-signup-btn" data-toggle="modal" data-target="#signupPopupForm">
