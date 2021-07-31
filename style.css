@@ -1834,6 +1834,12 @@ textarea {
 .post-share ul li .post-share-dropdown {
 	padding-left: 0;
 }
+.post-share ul li .post-share-dropdown li a {
+	padding-right: 0;
+}
+.post-share ul li .post-share-dropdown li:last-child a {
+	padding-right: 6px;
+}
 .blog-details-wrap .card-body img {
 	width: auto;
 	max-width: 100%;
