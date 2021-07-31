@@ -4,11 +4,13 @@
     if(!empty(get_theme_mod('trizen_hotel_related_items_ids'))) {
         $args = array(
             'post_type' => 'ts_hotel',
-            'post__in' => $hotel_ids
+            'post__in' => $hotel_ids,
+            'posts_per_page' => 3
         );
     } else {
         $args = array(
             'post_type' => 'ts_hotel',
+            'posts_per_page' => 3
         );
     }
     $item_query = new WP_Query($args);

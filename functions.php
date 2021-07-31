@@ -283,11 +283,12 @@ function ocdi_import_files() {
             'local_import_file'            => trailingslashit( get_template_directory() ) . 'demo-data/content.xml',
             'local_import_widget_file'     => trailingslashit( get_template_directory() ) . 'demo-data/widgets.wie',
             'local_import_customizer_file' => trailingslashit( get_template_directory() ) . 'demo-data/customizer.dat',
-            // 'preview_url'                  => 'https://trizen.techydevs.com/',
+            'preview_url'                  => 'https://trizen.techydevs.com/',
         ),
     );
 }
-add_filter( 'pt-ocdi/import_files', 'ocdi_import_files' );
+add_filter( 'pt-ocdi/pre_download_import_files', 'ocdi_import_files' );
+// add_filter( 'pt-ocdi/import_files', 'ocdi_import_files' );
 
 function ocdi_after_import_setup() {
     // Assign menus to their locations.
