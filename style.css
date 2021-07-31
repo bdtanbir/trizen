@@ -2152,7 +2152,7 @@ textarea {
 .sidebar-widget .title {
 	margin-top: 0;
 }
-.sidebar-widget label {
+.sidebar-widget.widget_block label {
 	font-size: 17px;
     margin-bottom: 20px;
     padding-bottom: 12px;
@@ -2161,8 +2161,8 @@ textarea {
 	font-weight: 500 !important;
 	color: #0d233e;
 }
-.sidebar-widget label:after,
-.sidebar-widget label:before {
+.sidebar-widget.widget_block label:after,
+.sidebar-widget.widget_block label:before {
 	position: absolute;
     content: "";
     bottom: 0;
@@ -2171,7 +2171,7 @@ textarea {
     width: 45px;
     background-color: #287dfa;
 }
-.sidebar-widget label:after {
+.sidebar-widget.widget_block label:after {
 	width: 7px;
     background-color: #fff;
     left: 25px;
